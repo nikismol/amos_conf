@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : CAD_COLLECT_AFL_ATECH_MEL_MONITOR</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Reports_43642559.html">Reports</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : CAD_COLLECT_AFL_ATECH_MEL_MONITOR
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on нояб. 15, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Task Action</td><td class="confluenceTd">DatasourceExporterTask</td></tr><tr><td class="confluenceTd">Source Type</td><td class="confluenceTd">Plain SQL</td></tr><tr><td colspan="1" class="confluenceTd">Include Columns Header</td><td colspan="1" class="confluenceTd">Yes</td></tr><tr><td class="confluenceTd">Output format</td><td class="confluenceTd">Log only</td></tr><tr><td colspan="1" class="confluenceTd">Scheduling | Rec. pattern | Cron</td><td colspan="1" class="confluenceTd">0 59 23 * * ?</td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">INSERT INTO AFL_ATECH_MEL_MONITOR
+SELECT DISTINCT
+    sysdate as current_sysdate
+    , FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;)) as current_amosdate
+    , woh.event_perfno_i as wo_event_perfno_i
+    , woh.ac_registr as wo_ac_registr
+    , a.ac_typ as wo_ac_typ
+    , a.ac_model as wo_ac_model
+    , woh.issue_sign as wo_issue_sign
+    , wot.user_sign as wo_transfer_sign
+    , wot.reason_code as wo_transfer_reason_code
+    , wot.event_transferno_i as wo_current_event_transferno_i
+    , DECODE(woh.type, &#39;M&#39;, &#39;Maint&#39;, &#39;P&#39;, &#39;PiRep&#39;, &#39;C&#39;, &#39;Cabin&#39;, &#39;Unknown&#39;) as wo_type
+    , wph.wpno_i as wo_current_wpno_i
+    , pr.part_requestno_i as wo_part_requestno_i
+    , pr.partno as part_request_partno
+    , pr.status as part_request_status
+    , pf.status as part_forecast_status
+FROM 
+    wo_header woh
+LEFT JOIN
+    wo_transfer wot ON woh.event_perfno_i = wot.event_perfno_i  AND wot.is_last_transfer = &#39;Y&#39;
+LEFT JOIN
+    aircraft a ON a.ac_registr = woh.ac_registr
+LEFT JOIN
+    wp_assignment wps ON wps.event_perfno_i = woh.event_perfno_i
+LEFT JOIN
+    wp_header wph ON wps.wpno_i = wph.wpno_i
+LEFT JOIN
+    workstep_link wsl ON wsl.event_perfno_i = woh.event_perfno_i
+LEFT JOIN 
+    part_request_2 pr ON pr.status = 0 AND pr.event_type = &#39;WSL&#39; AND pr.event_key = wsl.workstep_linkno_i
+LEFT JOIN
+    part_forecast pf ON pr.part_requestno_i = pf.part_requestno_i
+WHERE 
+    woh.state = &#39;O&#39;
+    AND woh.mel_code IS NOT NULL
+    AND woh.type IN (&#39;M&#39;, &#39;P&#39;, &#39;C&#39;)</pre>
+</div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

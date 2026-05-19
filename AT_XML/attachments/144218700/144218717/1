@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000377</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="3">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="4">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 168</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ALT@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="visible">YES</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ALT@</field>
+              <field id="2">Y</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="header-height">35</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="7" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">PN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="8" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.part_request_template.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">245</attribute>
+          <view class="LabelReportView" id="11" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">245 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">PN description</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="12" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">245 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.part.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="15" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Material Class</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="16" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.mat_class@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="19" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Material Type</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="20" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.mat_type@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="23" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Общее кол-во</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="24" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.total_qty_for_check@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">35</attribute>
+          <view class="LabelReportView" id="27" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">35 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Единицы измерения</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="28" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">35 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.part.measure_unit@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="31" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Reorder Lvl</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="32" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.Reorder_Level@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="35" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Alert Lvl</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="36" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.Alert_QTY@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="39" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 35</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Max Purch</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="40" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@143_RMX_INF_PART_REQ_total_qty.Max_Purchase@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">143_RMX_INF_PART_REQ_total_qty</attribute>
+    </view>
+    <view class="DatasourceTableView" id="41">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">1 234</attribute>
+      <attribute name="size">984 168</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ALT@</field>
+              <field id="2">Y</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="visible">YES</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ALT@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="3">
+          <attribute name="left">0</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ALT@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="4">
+          <attribute name="top">0</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ALT@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="header-height">50</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="44" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">PN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="45" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.part_request_template.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">245</attribute>
+          <view class="LabelReportView" id="48" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">245 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">PN description</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="49" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">245 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.part.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="52" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Material Class</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="53" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.mat_class@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="56" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Material Type</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="57" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.mat_type@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="60" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Общее кол-во</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="61" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.total_qty_for_check@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">35</attribute>
+          <view class="LabelReportView" id="64" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">35 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Единицы измерения</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="65" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">35 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.part.measure_unit@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="68" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Reorder Lvl</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="69" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.Reorder_Level@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="72" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Alert Lvl</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="73" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.Alert_QTY@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="76" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Max Purch</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="77" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.Max_Purchase@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">150</attribute>
+          <view class="LabelReportView" id="80" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">150 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Alt Partno</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="81" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">150 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.Alt_Partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="84" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Alt Reorder Lvl</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="85" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.Alt_Reorder_Level@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="88" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Alt Alert Lvl</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="89" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.Alt_Alert_QTY@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">54</attribute>
+          <view class="LabelReportView" id="92" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">54 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Alt Max Purch</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="93" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">54 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO2.Alt_Max_Purchase@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">INFO2</attribute>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="CHTI" description="" id="CHECK"/>
+        <ds:columnDescriptor amosType="BOOL" description="" id="ALT"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="revisionno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="CHECK" id="CHECK">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Show Alternates" id="ALT">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Revision №" id="revisionno">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="143_RMX_INF_PART_REQ_total_qty" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part_request_template.partno" id="part_request_template.partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.description" id="part.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="SUM(part_request_template.qty) AS total_qty_for_check" id="total_qty_for_check"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;DECODE (part.mat_class 'C' 'Consumable'&#10;                        'E' 'Expendable'&#10;                        'R' 'Rotable'&#10;                        'S''Service') as mat_class" id="mat_class"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;DECODE (part.mat_type 'CONS' 'CONSUMABLES'&#10;                       'EQUI' 'EQUIPMENT'&#10;                       'FLMB' 'FLAMMABLE LIQUIDS'&#10;                       'GREA' 'SPECIAL GREASE'&#10;                       'KIT' 'KIT'&#10;                       'LIQU' 'SPECIAL LIQUIDS'                    &#10;                       'N' 'NON AIRCRAFT MATERIAL'&#10;                       'P' 'AIRCRAFT PART'&#10;                       'RM' 'RAW MATERIAL'&#10;                       'S' 'SERVICE'&#10;                       'SW' 'SOFTWARE'&#10;                       'T' 'TOOL'&#10;                       'ZSOD''SPECIAL PROTECTIVE EQUIPMENT') as mat_type" id="mat_type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.measure_unit" id="part.measure_unit"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.reord_level AS Reorder_Level" id="Reorder_Level"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.max_purch AS Max_Purchase" id="Max_Purchase"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.alert_qty AS Alert_QTY" id="Alert_QTY"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.CHECK@">
+          <ds:object>@VAR.CHECK@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.revisionno@">
+          <ds:object>@VAR.revisionno@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT 
+part_request_template.partno,
+part.description,
+SUM(part_request_template.qty) AS total_qty_for_check,
+DECODE (part.mat_class, 'C', 'Consumable',
+                        'E', 'Expendable',
+                        'R', 'Rotable',
+                        'S', 'Service') as mat_class,
+DECODE (part.mat_type, 'CONS', 'CONSUMABLES',
+                       'EQUI', 'EQUIPMENT',
+                       'FLMB', 'FLAMMABLE LIQUIDS',
+                       'GREA', 'SPECIAL GREASE',
+                       'KIT', 'KIT',
+                       'LIQU', 'SPECIAL LIQUIDS',                    
+                       'N', 'NON AIRCRAFT MATERIAL',
+                       'P', 'AIRCRAFT PART',
+                       'RM', 'RAW MATERIAL',
+                       'S', 'SERVICE',
+                       'SW', 'SOFTWARE',
+                       'T', 'TOOL',
+                       'ZSOD', 'SPECIAL PROTECTIVE EQUIPMENT') as mat_type,
+part.measure_unit,
+part.reord_level AS Reorder_Level,
+part.max_purch AS Max_Purchase,
+part.alert_qty AS Alert_QTY
+FROM check_type
+JOIN check_type_int ON check_type.checkno_i = check_type_int.checkno_i
+JOIN event_effectivity_link ON check_type_int.check_intno_i = event_effectivity_link.event_key AND event_effectivity_link.event_type = 'CHTI'
+JOIN requirement_link ON event_effectivity_link.effectivity_linkno_i = requirement_link.target AND requirement_link.target_mimetype = 'EFL'
+JOIN msc_requirement_tc_link ON requirement_link.source = msc_requirement_tc_link.req_linkno_i AND requirement_link.source_mimetype = 'TCREQLI'
+JOIN msc_taskcard_version ON msc_requirement_tc_link.taskcard_verno_i_mri = msc_taskcard_version.taskcard_verno_i
+LEFT JOIN msc_taskcard ON msc_taskcard_version.taskcardno_i = msc_taskcard.taskcardno_i 
+JOIN msc_operator_rev_req ON msc_requirement_tc_link.req_linkno_i = msc_operator_rev_req.req_linkno_i
+JOIN msc_operator_revision ON msc_operator_revision.op_revisionno_i = msc_operator_rev_req.op_revisionno_i AND msc_operator_revision.revision_status = 'a'  
+JOIN msc_item ON msc_taskcard_version.taskcard_verno_i=msc_item.taskcard_verno_i
+join msc_maintenance_program on msc_taskcard.mpno_i=msc_maintenance_program.mpno_i AND msc_maintenance_program.program_type='MP'
+join msc_requirement_tc_link on msc_requirement_tc_link.taskcard_verno_i_mri = msc_taskcard_version.taskcard_verno_i
+join msc_mprev_taskcards ON msc_mprev_taskcards.taskcard_verno_i=msc_taskcard_version.taskcard_verno_i
+join msc_mp_revision ON msc_mprev_taskcards.revisionno_i=msc_mp_revision.revisionno_i AND msc_mp_revision.revision_type='MP' AND msc_mp_revision.revision_status in ('a', 'b')
+JOIN requirement_header ON msc_item.itemno_i = requirement_header.event_key AND requirement_header.event_type = 'TI'
+JOIN worktemplate_link ON requirement_header.requirement_headerno_i = worktemplate_link.event_key AND worktemplate_link.event_type = 'REQH' 
+JOIN event_template ON worktemplate_link.wtno_i = event_template.wtno_i AND event_template.revision_status = '1'
+JOIN workstep_link ON event_template.event_perfno_i = workstep_link.event_perfno_i
+JOIN part_request_template ON workstep_link.descno_i = part_request_template.event_key AND part_request_template.event_type = 'WS' AND part_request_template.partno IS NOT NULL
+JOIN part ON part.partno = part_request_template.partno
+WHERE 
+check_type_int.check_intno_i = '@VAR.CHECK@' 
+and (REGEXP_LIKE(msc_mp_revision.revision_no, REPLACE('@VAR.revisionno@', ', ', '|')) OR '@VAR.revisionno@' IS NULL) 
+GROUP BY 
+part_request_template.partno,
+part.description,
+part.measure_unit,
+part.mat_class,
+part.mat_type,
+part.reord_level,
+part.max_purch,
+part.alert_qty
+ORDER BY 
+        part_request_template.partno</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="INFO2" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part_request_template.partno" id="part_request_template.partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.description" id="part.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="SUM(part_request_template.qty) AS total_qty_for_check" id="total_qty_for_check"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;DECODE (part.mat_class 'C' 'Consumable'&#10;                        'E' 'Expendable'&#10;                        'R' 'Rotable'&#10;                        'S''Service') as mat_class" id="mat_class"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;DECODE (part.mat_type 'CONS' 'CONSUMABLES'&#10;                       'EQUI' 'EQUIPMENT'&#10;                       'FLMB' 'FLAMMABLE LIQUIDS'&#10;                       'GREA' 'SPECIAL GREASE'&#10;                       'KIT' 'KIT'&#10;                       'LIQU' 'SPECIAL LIQUIDS'                    &#10;                       'N' 'NON AIRCRAFT MATERIAL'&#10;                       'P' 'AIRCRAFT PART'&#10;                       'RM' 'RAW MATERIAL'&#10;                       'S' 'SERVICE'&#10;                       'SW' 'SOFTWARE'&#10;                       'T' 'TOOL'&#10;                       'ZSOD''SPECIAL PROTECTIVE EQUIPMENT') as mat_type" id="mat_type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.measure_unit" id="part.measure_unit"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.reord_level AS Reorder_Level" id="Reorder_Level"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.max_purch AS Max_Purchase" id="Max_Purchase"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part.alert_qty AS Alert_QTY" id="Alert_QTY"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part3.altpartno AS Alt_Partno" id="Alt_Partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part3.reord_level AS Alt_Reorder_Level" id="Alt_Reorder_Level"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part3.max_purch AS Alt_Max_Purchase" id="Alt_Max_Purchase"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part3.alert_qty AS Alt_Alert_QTY" id="Alt_Alert_QTY"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.CHECK@">
+          <ds:object>@VAR.CHECK@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.revisionno@">
+          <ds:object>@VAR.revisionno@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT 
+part_request_template.partno,
+part.description,
+SUM(part_request_template.qty) AS total_qty_for_check,
+DECODE (part.mat_class, 'C', 'Consumable',
+                        'E', 'Expendable',
+                        'R', 'Rotable',
+                        'S', 'Service') as mat_class,
+DECODE (part.mat_type, 'CONS', 'CONSUMABLES',
+                       'EQUI', 'EQUIPMENT',
+                       'FLMB', 'FLAMMABLE LIQUIDS',
+                       'GREA', 'SPECIAL GREASE',
+                       'KIT', 'KIT',
+                       'LIQU', 'SPECIAL LIQUIDS',                    
+                       'N', 'NON AIRCRAFT MATERIAL',
+                       'P', 'AIRCRAFT PART',
+                       'RM', 'RAW MATERIAL',
+                       'S', 'SERVICE',
+                       'SW', 'SOFTWARE',
+                       'T', 'TOOL',
+                       'ZSOD', 'SPECIAL PROTECTIVE EQUIPMENT') as mat_type,
+part.measure_unit,
+part.reord_level AS Reorder_Level,
+part.max_purch AS Max_Purchase,
+part.alert_qty AS Alert_QTY,
+part3.altpartno AS Alt_Partno,
+part3.reord_level AS Alt_Reorder_Level,
+part3.max_purch AS Alt_Max_Purchase,
+part3.alert_qty AS Alt_Alert_QTY 
+FROM check_type
+JOIN check_type_int ON check_type.checkno_i = check_type_int.checkno_i
+JOIN event_effectivity_link ON check_type_int.check_intno_i = event_effectivity_link.event_key AND event_effectivity_link.event_type = 'CHTI'
+JOIN requirement_link ON event_effectivity_link.effectivity_linkno_i = requirement_link.target AND requirement_link.target_mimetype = 'EFL'
+JOIN msc_requirement_tc_link ON requirement_link.source = msc_requirement_tc_link.req_linkno_i AND requirement_link.source_mimetype = 'TCREQLI'
+JOIN msc_taskcard_version ON msc_requirement_tc_link.taskcard_verno_i_mri = msc_taskcard_version.taskcard_verno_i
+LEFT JOIN msc_taskcard ON msc_taskcard_version.taskcardno_i = msc_taskcard.taskcardno_i 
+JOIN msc_operator_rev_req ON msc_requirement_tc_link.req_linkno_i = msc_operator_rev_req.req_linkno_i
+JOIN msc_operator_revision ON msc_operator_revision.op_revisionno_i = msc_operator_rev_req.op_revisionno_i AND msc_operator_revision.revision_status = 'a'  
+JOIN msc_item ON msc_taskcard_version.taskcard_verno_i=msc_item.taskcard_verno_i
+join msc_maintenance_program on msc_taskcard.mpno_i=msc_maintenance_program.mpno_i AND msc_maintenance_program.program_type='MP'
+join msc_requirement_tc_link on msc_requirement_tc_link.taskcard_verno_i_mri = msc_taskcard_version.taskcard_verno_i
+join msc_mprev_taskcards ON msc_mprev_taskcards.taskcard_verno_i=msc_taskcard_version.taskcard_verno_i
+join msc_mp_revision ON msc_mprev_taskcards.revisionno_i=msc_mp_revision.revisionno_i AND msc_mp_revision.revision_type='MP' AND msc_mp_revision.revision_status in ('a', 'b')
+JOIN requirement_header ON msc_item.itemno_i = requirement_header.event_key AND requirement_header.event_type = 'TI'
+JOIN worktemplate_link ON requirement_header.requirement_headerno_i = worktemplate_link.event_key AND worktemplate_link.event_type = 'REQH' 
+JOIN event_template ON worktemplate_link.wtno_i = event_template.wtno_i AND event_template.revision_status = '1'
+JOIN workstep_link ON event_template.event_perfno_i = workstep_link.event_perfno_i
+JOIN part_request_template ON workstep_link.descno_i = part_request_template.event_key AND part_request_template.event_type = 'WS' AND part_request_template.partno IS NOT NULL
+JOIN part ON part.partno = part_request_template.partno
+LEFT JOIN
+            (
+                    SELECT 
+                                part_alternate.partno AS partno
+                                ,part_alternate.altpartno AS altpartno
+                                ,part2.reord_level AS reord_level
+                                ,part2.max_purch AS max_purch
+                                ,part2.alert_qty AS alert_qty
+                    FROM part_alternate
+                    LEFT JOIN 
+                                (
+                                    SELECT 
+                                            part.partno
+                                            ,part.reord_level
+                                            ,part.max_purch
+                                            ,part.alert_qty
+                                    FROM part
+                                ) part2 ON part_alternate.altpartno = part2.partno
+                    WHERE 
+                            (
+                                part2.reord_level &lt;&gt; 0 OR
+                                part2.max_purch &lt;&gt; 0 OR
+                                part2.alert_qty &lt;&gt; 0
+                            )
+            ) part3 ON part.partno = part3.partno 
+WHERE 
+check_type_int.check_intno_i = '@VAR.CHECK@' 
+and (REGEXP_LIKE(msc_mp_revision.revision_no, REPLACE('@VAR.revisionno@', ', ', '|')) OR '@VAR.revisionno@' IS NULL) 
+GROUP BY 
+part_request_template.partno,
+part.measure_unit,
+part.description,
+part.mat_class,
+part.mat_type,
+part.reord_level,
+part.max_purch,
+part.alert_qty,
+part3.altpartno,
+part3.reord_level,
+part3.max_purch,
+part3.alert_qty
+ORDER BY 
+        part_request_template.partno</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : PCF</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Reports_136258914.html">AMOS Reports</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="144219654.html">Функции и конвейерные функции SQL</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : PCF
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on сент. 29, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">create or replace type amosserver_prod.pcf is object(  
+  partno varchar2(50),
+  description varchar2(100),
+  measure_unit varchar2(10),
+  mat_class varchar2(10),
+  is_tool varchar2(5),
+  ata_chapter varchar2(30),
+  total_requested_qty number,
+  A32S_requested_qty number,
+  A330_requested_qty number,
+  A350_requested_qty number,
+  B737_requested_qty number,
+  B777_requested_qty number,
+  RRJ_requested_qty number,
+  stock_svo_incl_alt number,
+  firts_unavaliable_at_due_date varchar2(10),
+  stock_forecast number,
+  total_last_fe number,
+  A32S_last_fe number,
+  A330_total_last_fe number,
+  A350_total_last_fe number,
+  B737_total_last_fe number,
+  B777_total_last_fe number,
+  RRJ_total_last_fe number
+);
+
+create or replace type amosserver_prod.t_pcf is table of amosserver_prod.pcf;
+
+create or replace function amosserver_prod.r266_get_pcf(p_date_from number, p_date_to number) return amosserver_prod.t_pcf
+pipelined 
+as
+begin
+  for i in 
+   (
+    with m as (
+    SELECT
+      DECODE (part_forecast.display_event_type,
+              &#39;GENEVENT&#39;, &#39;Generic Event&#39;,
+              &#39;DOP&#39;, &#39;Pending Document&#39;,
+              &#39;CH&#39;, &#39;Check Pending&#39;,
+              &#39;WO&#39;, &#39;Workorder&#39;,
+              &#39;SRT&#39;, &#39;Single Running Taskcard&#39;,
+              &#39;CM_WOSC&#39;, &#39;CM Workstep&#39;,
+              &#39;EFL&#39;, &#39;Effectivity Link&#39;,
+              &#39;MER&#39;, &#39;Replacement Event&#39;,
+              &#39;TC&#39;, &#39;Taskcard&#39;,
+              &#39;ORDER_DE&#39;, &#39;Order Detail&#39;,
+              part_forecast.display_event_type) as event_type,
+      part_forecast.partno,
+      part_forecast.valid_due_date,
+      part_forecast.requested_qty,
+      part_forecast.measure_unit,
+      part_forecast.total_requested_qty,
+      aircraft.ac_typ,
+      DECODE(forecast.sortitem,5 ,1, 0) as is_last_fe,
+      part_forecast.status
+    FROM
+      amosserver_prod.part_forecast
+    LEFT JOIN
+      amosserver_prod.aircraft ON part_forecast.receiver=aircraft.ac_registr
+    LEFT JOIN
+      amosserver_prod.forecast ON part_forecast.event_perfno_i = forecast.event_perfno_i AND forecast.sortitem = 5
+    WHERE
+      1=1
+      AND part_forecast.valid_due_date BETWEEN p_date_from AND p_date_to
+      AND part_forecast.receiver_type = &#39;AC&#39;
+      AND (part_forecast.display_event_type=&#39;CM_WOSC&#39; AND &#39;N&#39;=&#39;Y&#39;
+           OR part_forecast.display_event_type=&#39;GENEVENT&#39; AND &#39;N&#39;=&#39;Y&#39;
+           OR part_forecast.display_event_type=&#39;ORDER_DE&#39; AND &#39;N&#39;=&#39;Y&#39;
+           OR part_forecast.display_event_type=&#39;SRT&#39; AND &#39;Y&#39;=&#39;Y&#39;
+           OR part_forecast.display_event_type=&#39;WO&#39; AND &#39;Y&#39;=&#39;Y&#39;
+              AND (select wo_header.type from amosserver_prod.wo_header where wo_header.event_perfno_i = part_forecast.event_perfno_i) = &#39;S&#39; 
+           OR part_forecast.display_event_type=&#39;CH&#39; AND &#39;Y&#39;=&#39;Y&#39;
+           OR part_forecast.display_event_type=&#39;TC&#39; AND &#39;Y&#39;=&#39;Y&#39;
+           OR part_forecast.display_event_type=&#39;DOP&#39; AND &#39;Y&#39;=&#39;Y&#39;
+           OR part_forecast.display_event_type=&#39;EFL&#39; AND &#39;Y&#39;=&#39;Y&#39;
+           OR part_forecast.display_event_type=&#39;MER&#39; AND &#39;Y&#39;=&#39;Y&#39;
+           )
+      AND (part_forecast.part_request_part_cond &lt;&gt; &#39;US&#39; OR part_forecast.part_request_part_cond IS NULL)
+      ),
+
+      relevant_parts as (
+        SELECT DISTINCT partno
+        from m
+      ),
+
+      gen_p_alt as (
+        SELECT DISTINCT relevant_parts.partno
+               ,GREATEST(relevant_parts.partno, MAX(relevant_parts_alt.partno)) as max_alt_partno
+        FROM relevant_parts
+        JOIN amosserver_prod.part_alternate ON part_alternate.partno = relevant_parts.partno AND part_alternate.type IN (&#39;A&#39;)
+        JOIN relevant_parts relevant_parts_alt ON part_alternate.altpartno = relevant_parts_alt.partno
+        GROUP BY relevant_parts.partno
+      ),
+
+
+      pf as (
+        SELECT NVL(gen_p_alt.max_alt_partno, m.partno) as partno
+              ,m.partno as original_partno
+              ,gen_p_alt.max_alt_partno
+              ,m.event_type
+              ,m.requested_qty
+              ,m.measure_unit
+              ,m.valid_due_date
+              ,m.ac_typ
+              ,m.is_last_fe
+              ,CASE WHEN m.status = 1 THEN m.valid_due_date ELSE null END as old_unavaliable_at_due_date
+              ,f.min_valid_due_date as unavaliable_at_due_date
+        FROM m
+        LEFT JOIN gen_p_alt ON gen_p_alt.partno = m.partno
+        LEFT JOIN (
+                   SELECT part_forecast.partno,
+                          MIN(part_forecast.valid_due_date) as min_valid_due_date 
+                   FROM amosserver_prod.part_forecast
+                   WHERE 1=1
+                         AND part_forecast.status = 1
+                   GROUP BY part_forecast.partno
+                  ) f ON m.partno = f.partno
+      ),
+
+      pf_sum as (
+        SELECT pf.partno,
+               SUM(pf.requested_qty) as total_requested_qty,
+               SUM(pf.is_last_fe) as total_last_fe,
+               MIN(pf.unavaliable_at_due_date) as firts_unavaliable_at_due_date
+        FROM pf
+        GROUP BY pf.partno
+      ),
+
+      pf_sum_ac_typ as (
+        SELECT pf.partno,
+               SUM(pf.requested_qty) as total_requested_qty,
+               SUM(pf.is_last_fe) as total_last_fe,
+               pf.ac_typ
+        FROM pf
+        GROUP BY pf.partno, pf.ac_typ
+      ),
+
+
+      c_stock_svo_alt as (
+        SELECT SUM(qty) as qty,
+               partno
+        FROM (
+              SELECT consumables.qty as qty,
+                     pf_sum.partno
+              FROM pf_sum
+              JOIN amosserver_prod.consumables on pf_sum.partno = consumables.partno
+              JOIN amosserver_prod.location ON consumables.locationno_i = location.locationno_i 
+              LEFT JOIN amosserver_prod.condition ON consumables.condition = condition.condition
+              WHERE 1=1
+                    /* собственность не учитываю */
+                    --AND (consumables.owner IN (&#39; &#39;, &#39;AFL&#39;) OR consumables.owner IS NULL OR ASCII(consumables.owner)= 49824)
+                    AND location.location_type &lt;&gt; -200
+                    AND (location.station in (&#39;SVO&#39;)
+                         OR
+                         location.station in (&#39;SHRM&#39;) AND location.store NOT IN (&#39;APOBEDA&#39;, &#39;AROSSIYA&#39;)) 
+                    AND consumables.qty &gt; 0
+                    AND COALESCE (consumables.condition, &#39; &#39;) &lt;&gt; &#39;US&#39;
+
+              UNION ALL
+
+              SELECT consumables.qty as qty,
+                     pf_sum.partno
+              FROM pf_sum
+              JOIN amosserver_prod.part_alternate ON pf_sum.partno = part_alternate.partno
+              JOIN amosserver_prod.consumables ON consumables.partno = part_alternate.altpartno
+              JOIN amosserver_prod.location ON consumables.locationno_i = location.locationno_i 
+              LEFT JOIN amosserver_prod.condition ON consumables.condition = condition.condition
+              WHERE 1=1
+                    --AND (consumables.owner IN (&#39; &#39;, &#39;AFL&#39;) OR consumables.owner IS NULL OR ASCII(consumables.owner)= 49824)
+                    AND location.location_type &lt;&gt; -200
+                    AND (location.station in (&#39;SVO&#39;)
+                         OR
+                         location.station in (&#39;SHRM&#39;) AND location.store NOT IN (&#39;APOBEDA&#39;, &#39;AROSSIYA&#39;)
+                        ) 
+                    AND consumables.qty &gt; 0
+                    AND COALESCE (consumables.condition, &#39; &#39;) &lt;&gt; &#39;US&#39;
+              )
+        GROUP BY partno      
+      ),
+
+      r_stock_svo_alt as (
+        SELECT COUNT(psn) as qty,
+               partno
+        FROM (
+              SELECT rotables.psn,
+                     pf_sum.partno
+              FROM pf_sum
+              JOIN amosserver_prod.part ON pf_sum.partno = part.partno
+              JOIN amosserver_prod.rotables on part.partno = rotables.partno
+              JOIN amosserver_prod.location ON rotables.locationno_i = location.locationno_i
+              WHERE 1=1
+                    AND part.mat_class = &#39;R&#39;
+                    AND location.location_type &lt;&gt; -200
+                    AND rotables.condition &lt;&gt; &#39;US&#39;
+                    AND (rotables.partnonew = &#39; &#39; OR  ASCII(rotables.partnonew) = 49824 OR rotables.partnonew IS NULL)
+                    AND (rotables.ac_registr = &#39; &#39; OR rotables.ac_registr = &#39;TRANSF&#39; OR ASCII(rotables.ac_registr) = 49824)
+                    --AND (rotables.owner IN (&#39; &#39;,&#39;AFL&#39;) OR rotables.owner IS NULL)
+                    AND (location.station in (&#39;SVO&#39;) OR location.station in (&#39;SHRM&#39;) AND location.store NOT IN (&#39;APOBEDA&#39;, &#39;AROSSIYA&#39;))
+
+              UNION
+
+              SELECT rotables.psn,
+                     pf_sum.partno
+              FROM pf_sum
+              JOIN amosserver_prod.part ON pf_sum.partno = part.partno
+              JOIN amosserver_prod.part_alternate ON part.partno = part_alternate.partno
+              JOIN amosserver_prod.rotables on part_alternate.altpartno = rotables.partno
+              JOIN amosserver_prod.location ON rotables.locationno_i = location.locationno_i
+              WHERE 1=1
+                    AND part.mat_class = &#39;R&#39;
+                    AND location.location_type &lt;&gt; -200
+                    AND rotables.condition &lt;&gt; &#39;US&#39;
+                    AND (rotables.partnonew = &#39; &#39; OR  ASCII(rotables.partnonew) = 49824 OR rotables.partnonew IS NULL)
+                    AND (rotables.ac_registr = &#39; &#39; OR rotables.ac_registr = &#39;TRANSF&#39; OR ASCII(rotables.ac_registr) = 49824)
+                    --AND (rotables.owner IN (&#39; &#39;,&#39;AFL&#39;) OR rotables.owner IS NULL)
+                    AND (location.station in (&#39;SVO&#39;) OR location.station in (&#39;SHRM&#39;) AND location.store NOT IN (&#39;APOBEDA&#39;, &#39;AROSSIYA&#39;))
+             )     
+        group by partno
+      )
+
+
+        SELECT pf_sum.partno,
+               part.description,
+               part.measure_unit,
+               part.mat_class,
+               DECODE (part.tool, &#39;Y&#39;, &#39;Y&#39;, &#39;N&#39;) as is_tool,
+               part.ata_chapter,
+               ROUND(pf_sum.total_requested_qty, 4) as total_requested_qty,
+               ROUND(NVL(pf_sum_ac_typ_A32S.total_requested_qty, 0), 4) as A32S_requested_qty,
+               ROUND(NVL(pf_sum_ac_typ_A330.total_requested_qty, 0), 4) as A330_requested_qty,
+               ROUND(NVL(pf_sum_ac_typ_A350.total_requested_qty, 0), 4) as A350_requested_qty,
+               ROUND(NVL(pf_sum_ac_typ_B737.total_requested_qty, 0), 4) as B737_requested_qty,
+               ROUND(NVL(pf_sum_ac_typ_B777.total_requested_qty, 0), 4) as B777_requested_qty,
+               ROUND(NVL(pf_sum_ac_typ_RRJ.total_requested_qty, 0), 4) as RRJ_requested_qty,
+               ROUND(COALESCE(c_stock_svo_alt.qty, r_stock_svo_alt.qty, 0), 4) as stock_svo_incl_alt,
+               DECODE(pf_sum.firts_unavaliable_at_due_date, NULL, NULL, TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + pf_sum.firts_unavaliable_at_due_date, &#39;dd.mm.yyyy&#39;)) as firts_unavaliable_at_due_date,
+               ROUND(COALESCE(c_stock_svo_alt.qty, r_stock_svo_alt.qty, 0) - pf_sum.total_requested_qty, 4) as stock_forecast,
+               NVL(pf_sum.total_last_fe, 0) as total_last_fe,
+               NVL(pf_sum_ac_typ_A32S.total_last_fe, 0) as A32S_last_fe,
+               NVL(pf_sum_ac_typ_A330.total_last_fe, 0) as A330_total_last_fe,
+               NVL(pf_sum_ac_typ_A350.total_last_fe, 0) as A350_total_last_fe,
+               NVL(pf_sum_ac_typ_B737.total_last_fe, 0) as B737_total_last_fe,
+               NVL(pf_sum_ac_typ_B777.total_last_fe, 0) as B777_total_last_fe,
+               NVL(pf_sum_ac_typ_RRJ.total_last_fe, 0) as RRJ_total_last_fe
+        FROM pf_sum
+        LEFT JOIN pf_sum_ac_typ pf_sum_ac_typ_A32S ON pf_sum.partno = pf_sum_ac_typ_A32S.partno AND pf_sum_ac_typ_A32S.ac_typ = &#39;A32S&#39;
+        LEFT JOIN pf_sum_ac_typ pf_sum_ac_typ_A330 ON pf_sum.partno = pf_sum_ac_typ_A330.partno AND pf_sum_ac_typ_A330.ac_typ = &#39;A330&#39;
+        LEFT JOIN pf_sum_ac_typ pf_sum_ac_typ_A350 ON pf_sum.partno = pf_sum_ac_typ_A350.partno AND pf_sum_ac_typ_A350.ac_typ = &#39;A350&#39;
+        LEFT JOIN pf_sum_ac_typ pf_sum_ac_typ_B737 ON pf_sum.partno = pf_sum_ac_typ_B737.partno AND pf_sum_ac_typ_B737.ac_typ = &#39;B737&#39;
+        LEFT JOIN pf_sum_ac_typ pf_sum_ac_typ_B777 ON pf_sum.partno = pf_sum_ac_typ_B777.partno AND pf_sum_ac_typ_B777.ac_typ = &#39;B777&#39;
+        LEFT JOIN pf_sum_ac_typ pf_sum_ac_typ_RRJ ON pf_sum.partno = pf_sum_ac_typ_RRJ.partno AND pf_sum_ac_typ_RRJ.ac_typ = &#39;RRJ&#39;
+        JOIN amosserver_prod.part ON part.partno = pf_sum.partno
+        LEFT JOIN c_stock_svo_alt ON pf_sum.partno = c_stock_svo_alt.partno
+        LEFT JOIN r_stock_svo_alt ON pf_sum.partno = r_stock_svo_alt.partno
+        where 1=1
+              --and pf_sum.partno = &#39;08BPA1&#39;
+        order by 1      
+
+  )
+   loop
+    -- возвращаем результат
+    pipe row(amosserver_prod.pcf(
+                                  i.partno,
+                                  i.description,
+                                  i.measure_unit,
+                                  i.mat_class,
+                                  i.is_tool,
+                                  i.ata_chapter,
+                                  i.total_requested_qty,
+                                  i.A32S_requested_qty,
+                                  i.A330_requested_qty,
+                                  i.A350_requested_qty,
+                                  i.B737_requested_qty,
+                                  i.B777_requested_qty,
+                                  i.RRJ_requested_qty,
+                                  i.stock_svo_incl_alt,
+                                  i.firts_unavaliable_at_due_date,
+                                  i.stock_forecast,
+                                  i.total_last_fe,
+                                  i.A32S_last_fe,
+                                  i.A330_total_last_fe,
+                                  i.A350_total_last_fe,
+                                  i.B737_total_last_fe,
+                                  i.B777_total_last_fe,
+                                  i.RRJ_total_last_fe
+                                ));
+  end loop;
+end;</pre>
+</div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

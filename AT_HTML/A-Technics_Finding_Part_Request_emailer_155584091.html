@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : A-Technics_Finding_Part_Request_emailer</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : A-Technics_Finding_Part_Request_emailer
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on февр. 16, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT 
+       part_forecast.partno,
+       part_forecast.part_description,
+       part_forecast.mat_class,
+       part_forecast.part_ata_chapter,
+       part_forecast.requested_qty,
+       (select amosserver_prod.get_stock_incl_alt(part_forecast.partno, &#39;ALL_STATIONS&#39;, &#39;AFL_ONLY_STOCK&#39;) from dual) as stock_incl_alt,
+       part_forecast.measure_unit,
+       part_forecast.receiver as ac_registr,
+       aircraft.ac_typ as ac_typ,
+       part_forecast.event_perfno_i as wo,
+       part_forecast.event_display as event_description,
+       TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + part_forecast.valid_due_date, &#39;dd.mm.yyyy&#39;) as valid_due_date,
+       TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + part_forecast.part_request_created_date, &#39;dd.mm.yyyy&#39;) as part_request_created_date,
+       TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) +  part_forecast.expected_date, &#39;dd.mm.yyyy&#39;) as expected_date,
+       part_forecast.wpno,
+       od.orderno
+FROM part_forecast
+JOIN wo_header ON part_forecast.display_event_key = wo_header.event_perfno_i
+JOIN wp_header ON part_forecast.wpno_i = wp_header.wpno_i 
+LEFT JOIN aircraft ON part_forecast.receiver = aircraft.ac_registr
+LEFT JOIN (SELECT od_detail.partno,
+                                 LISTAGG(od_header.orderno, &#39;, &#39;) WITHIN GROUP (ORDER BY od_header.orderno) as orderno
+                   FROM od_detail
+                   JOIN od_header ON od_detail.orderno_i = od_header.orderno_i AND od_header.ext_state IN (&#39;O&#39;, &#39;PR&#39;)
+                   WHERE 1=1
+                                 AND od_detail.ext_state IN (&#39;O&#39;, &#39;PR&#39;)
+                                 AND od_header.order_type = &#39;P&#39;
+                   GROUP BY od_detail.partno
+                  ) od ON part_forecast.partno = od.partno
+WHERE 1=1
+              AND part_forecast.display_event_type = &#39;WO&#39;
+              AND part_forecast.receiver_type = &#39;AC&#39;
+              AND wo_header.event_type = &#39;W&#39;
+              AND wp_header.maintprov_address = &#39;0011026298&#39;
+              AND SUBSTR(part_forecast.part_ata_chapter, 1, 2) &lt;&gt; &#39;25&#39;</pre>
+</div></div><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

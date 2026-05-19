@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.swiss-as.com/xml/report_2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_2.0 http://www.swiss-as.com/xml/report_2.0.xsd http://www.swiss-as.com/xml/datasource_1.0 http://www.swiss-as.com/xml/datasource_1.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000134</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v2</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="3">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="4">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 34</attribute>
+      <attribute name="size">1000 101</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="7" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Pickslip №</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="8" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.pickslipno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="11" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Booked PN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="12" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text"> @RMX_RMT.booked_pn@</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_RMT.booked_pn@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">BEGINS_WITH</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.booked_pn@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="15" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Booked SN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="16" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text"> @RMX_RMT.booked_sn@</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_RMT.booked_sn@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">BEGINS_WITH</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.booked_sn@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="19" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Booking date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="20" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.booking_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="23" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Owner</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="24" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.owner@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="27" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Receiver</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="28" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.receiver@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="31" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Station to</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="32" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.station_to@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="35" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Store to</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="36" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.store_to@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="39" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">VM</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="40" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.vm@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="43" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Voucherno</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="44" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.voucherno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="47" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Current location</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="48" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.current_location@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="51" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Current store</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="52" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.current_store@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="55" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Current station</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="56" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.current_station@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="59" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Current Owner</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="60" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.current_owner@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="63" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last VM Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="64" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.last_vm_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="67" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last VM</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="68" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.last_vm@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="71" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Voucherno</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="72" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.last_voucherno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="75" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Removal PN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="76" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text"> @RMX_RMT.off_partno@</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_RMT.off_partno@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">BEGINS_WITH</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.off_partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="79" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Removal SN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="80" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text"> @RMX_RMT.off_serialno@</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_RMT.off_serialno@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">BEGINS_WITH</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.off_serialno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="83" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Current location (Removal)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="84" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.current_off_r_location@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="87" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Current station (Removal)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="88" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.current_off_r_station@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="91" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Current store (Removal)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="92" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.current_off_r_store@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="95" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last VM Date (removal)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="96" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.last_vm_date_removal@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="99" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last VM (removal)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="100" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.last_vm_removal@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="103" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Voucherno (removal)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="104" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_RMT.last_voucherno_removal@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">RMX_RMT</attribute>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="VAR" type="PARAMETER_DATASOURCE" version="1.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="STOO" description="" id="store_from"/>
+        <ds:columnDescriptor amosType="STA" description="" id="station_from"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="date_to"/>
+        <ds:columnDescriptor amosType="BOOL" description="" id="hanging"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="date_from"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Store From" id="store_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Station from" id="station_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Date to" id="date_to">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Only hanging rotables" id="hanging">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Date From" id="date_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="RMX_RMT" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pickslip_header.pickslipno as pickslipno" id="pickslipno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pickslip_booked.partno as booked_pn" id="booked_pn"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pickslip_booked.serialno as booked_sn" id="booked_sn"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;   TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (pickslip_header.pickslip_date+729)'DD.MM.YYYY') as booking_date" id="booking_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pickslip_booked.owner as owner" id="owner"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pickslip_header.receiver as receiver" id="receiver"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pickslip_header.station_to as station_to" id="station_to"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pickslip_header.store_to as store_to" id="store_to"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="location.location as current_location" id="current_location"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="location.station as current_station" id="current_station"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="location.store as current_store" id="current_store"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rotables.owner as current_owner" id="current_owner"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h.pickslipseqno_i" id="h.pickslipseqno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h.labelno" id="h.labelno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE WHEN h.vm!='TS' THEN h2.partno ELSE '' END as off_partno" id="off_partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE WHEN h.vm!='TS' THEN h2.serialno ELSE '' END as off_serialno" id="off_serialno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h.vm as vm" id="vm"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h.voucherno as voucherno" id="voucherno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE WHEN h.vm!='TS' THEN off_r_location.location ELSE '' END as current_off_r_location" id="current_off_r_location"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE WHEN h.vm!='TS' THEN off_r_location.station ELSE '' END as current_off_r_station" id="current_off_r_station"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE WHEN h.vm!='TS' THEN off_r_location.store ELSE '' END as current_off_r_store" id="current_off_r_store"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;   TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (history.del_date+729)'DD.MM.YYYY') as last_vm_date" id="last_vm_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h_last_vm.vm_description||' '||'('||h_last_vm.vm||')' as last_vm" id="last_vm"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h_last_vm.voucherno as last_voucherno" id="last_voucherno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;   TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (h_last_vm_removal.del_date+729)'DD.MM.YYYY') as last_vm_date_removal" id="last_vm_date_removal"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h_last_vm_removal.vm_description||' '||'('||h_last_vm_removal.vm||')' as last_vm_removal" id="last_vm_removal"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h_last_vm_removal.voucherno as last_voucherno_removal" id="last_voucherno_removal"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_from@">
+          <ds:object>@VAR.date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_to@">
+          <ds:object>@VAR.date_to@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.station_from@">
+          <ds:object>@VAR.station_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.store_from@">
+          <ds:object>@VAR.store_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.hanging@">
+          <ds:object>@VAR.hanging@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>SELECT DISTINCT pickslip_header.pickslipno as pickslipno,
+	   pickslip_booked.partno as booked_pn,
+	   pickslip_booked.serialno as booked_sn,
+	   TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (pickslip_header.pickslip_date+729), 'DD.MM.YYYY') as booking_date,
+	   pickslip_booked.owner as owner,
+	   pickslip_header.receiver as receiver,
+	   pickslip_header.station_to as station_to,
+	   pickslip_header.store_to as store_to,
+	   location.location as current_location,
+	   location.station as current_station,
+	   location.store as current_store,
+	   rotables.owner as current_owner,
+	   h.pickslipseqno_i,
+	   h.labelno,
+
+	   CASE WHEN h.vm!='TS' THEN h2.partno ELSE '' END as off_partno,
+	   CASE WHEN h.vm!='TS' THEN h2.serialno ELSE '' END as off_serialno,
+	   h.vm_description||' '||'('||h.vm||')' as vm,
+	   h.voucherno as voucherno,
+
+	   CASE WHEN h.vm!='TS' THEN off_r_location.location ELSE '' END as current_off_r_location,
+	   CASE WHEN h.vm!='TS' THEN off_r_location.station ELSE '' END as current_off_r_station,
+	   CASE WHEN h.vm!='TS' THEN off_r_location.store ELSE '' END as current_off_r_store,
+	   TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (h_last_vm.del_date+729), 'DD.MM.YYYY') as last_vm_date,
+	   h_last_vm.vm_description||' '||'('||h_last_vm.vm||')' as last_vm,
+	   h_last_vm.voucherno as last_voucherno,
+
+	   CASE WHEN h.vm!='TS' AND h2.psn IS NOT NULL THEN TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (h_last_vm_removal.del_date+729), 'DD.MM.YYYY') ELSE '' END as last_vm_date_removal,
+	   CASE WHEN h.vm!='TS' AND h2.psn IS NOT NULL THEN h_last_vm_removal.vm_description||' '||'('||h_last_vm_removal.vm||')' ELSE '' END as last_vm_removal,
+	   CASE WHEN h.vm!='TS' AND h2.psn IS NOT NULL THEN h_last_vm_removal.voucherno ELSE '' END as last_voucherno_removal
+
+FROM
+pickslip_header
+LEFT JOIN (
+		   SELECT DISTINCT aircraft.ac_registr as receiver,
+       	          'AIRCRAFT' as type
+		   FROM aircraft 
+           WHERE aircraft.status &lt;&gt; 9 
+           UNION 
+           SELECT costcenter.costcenter as receiver,
+                  'COSTCENTER' as type
+           FROM costcenter 
+           WHERE costcenter.status &lt;&gt; 9 
+                 AND costcenter.material_affected = 'Y'
+		  ) receiver_type ON pickslip_header.receiver=receiver_type.receiver
+LEFT JOIN station_store ON pickslip_header.store_from=station_store.store
+LEFT JOIN pickslip_booked ON pickslip_header.pickslipno=pickslip_booked.pickslipno
+LEFT JOIN rotables ON pickslip_booked.partno=rotables.partno AND pickslip_booked.serialno=rotables.serialno
+LEFT JOIN location ON rotables.locationno_i=location.locationno_i
+LEFT JOIN (
+		   SELECT history.pickslipseqno_i as pickslipseqno_i,
+		   		  history.historyno_i as historyno_i,
+				  history.labelno as labelno,
+				  history.psn as psn,
+				  history.vm as vm,
+				  voucher_mode.description as vm_description,
+				  history.voucherno as voucherno,
+				  MAX (history.historyno_i) OVER (PARTITION BY history.pickslipseqno_i) as max_historyno_i,
+				  history.del_date as del_date
+		   FROM history
+		   LEFT JOIN voucher_mode ON history.vm=voucher_mode.vm
+	   	   WHERE history.labelno != 0
+		  ) h ON pickslip_booked.pickslipseqno_i=h.pickslipseqno_i
+
+LEFT JOIN (SELECT history.labelno as labelno,
+		          history.partno as partno,
+				  history.serialno as serialno,
+				  history.psn as psn,
+				  history.pickslipseqno_i as pickslipseqno_i,
+				  history.historyno_i as historyno_i
+           FROM history
+		   WHERE history.vm='YA'
+		  ) h2 ON h.labelno=h2.labelno
+LEFT JOIN rotables off_rotables ON h2.psn=off_rotables.psn
+LEFT JOIN location off_r_location ON off_rotables.locationno_i=off_r_location.locationno_i
+LEFT JOIN (
+		   SELECT max_h.psn as psn,
+				  max_h.historyno_i as historyno_i,
+      			  max_h.del_date as del_date,
+				  max_h.vm as vm,
+				  max_h.vm_description as vm_description,
+				  max_h.voucherno as voucherno,
+				  max_h.max_historyno_i,
+				  max_h.max_del_date
+		   FROM    (
+				       SELECT history.psn as psn,
+				              history.historyno_i as historyno_i,
+      			              history.del_date as del_date,
+				              history.vm as vm,
+				              voucher_mode.description as vm_description,
+				              history.voucherno as voucherno,
+				              MAX (history.historyno_i) OVER (PARTITION BY history.psn,history.del_date) as max_historyno_i,
+				              MAX (history.del_date) OVER (PARTITION BY history.psn) as max_del_date
+		               FROM history
+		               LEFT JOIN voucher_mode ON history.vm=voucher_mode.vm
+				   ) max_h
+		   WHERE
+				 max_h.del_date=max_h.max_del_date
+                 AND max_h.historyno_i=max_h.max_historyno_i
+		  ) h_last_vm ON h.psn=h_last_vm.psn
+LEFT JOIN (
+		   SELECT max_h_rem.psn as psn,
+				  max_h_rem.historyno_i as historyno_i,
+      			  max_h_rem.del_date as del_date,
+				  max_h_rem.vm as vm,
+				  max_h_rem.vm_description as vm_description,
+				  max_h_rem.voucherno as voucherno,
+				  max_h_rem.max_historyno_i,
+				  max_h_rem.max_del_date
+		   FROM    (
+				       SELECT history.psn as psn,
+				              history.historyno_i as historyno_i,
+      			              history.del_date as del_date,
+				              history.vm as vm,
+				              voucher_mode.description as vm_description,
+				              history.voucherno as voucherno,
+				              MAX (history.historyno_i) OVER (PARTITION BY history.psn,history.del_date) as max_historyno_i,
+				              MAX (history.del_date) OVER (PARTITION BY history.psn) as max_del_date
+		               FROM history
+		               LEFT JOIN voucher_mode ON history.vm=voucher_mode.vm
+				   ) max_h_rem
+		   WHERE
+				 max_h_rem.del_date=max_h_rem.max_del_date
+                 AND max_h_rem.historyno_i=max_h_rem.max_historyno_i
+		  ) h_last_vm_removal ON h2.psn=h_last_vm_removal.psn
+WHERE
+pickslip_header.pickslip_date &gt;='@VAR.date_from@'
+AND pickslip_header.pickslip_date &lt;='@VAR.date_to@'
+AND (REGEXP_LIKE(pickslip_header.station_from, REPLACE('@VAR.station_from@', ', ', '|')) OR '@VAR.station_from@' IS NULL)
+AND (REGEXP_LIKE(station_store.station_storeno_i, REPLACE('@VAR.store_from@', ', ', '|')) OR '@VAR.store_from@' IS NULL)
+AND (
+	 '@VAR.hanging@'='N'
+	 OR
+	 '@VAR.hanging@'='Y' AND (
+	                          location.location IN ('HANGAR', 'TRANSFER')
+	                          AND location.station IN ('SVO', 'SHRM')
+	                          AND h_last_vm.del_date&lt;=@VAR.date_to@-4
+	                          OR
+	                          location.location IN ('AIRCRAFT', 'TREE')
+                              AND h.vm!='TS'
+                              AND h2.psn IS NOT NULL
+                              AND off_r_location.location IN ('HANGAR', 'TRANSFER')
+	                          AND h_last_vm_removal.del_date&lt;=@VAR.date_to@-4
+	                         )
+	)
+AND pickslip_header.status NOT IN (0,1,8,10)
+AND pickslip_booked.qty_booked &gt; 0
+AND pickslip_booked.serialno IS NOT NULL
+AND pickslip_booked.serialno!=' '
+AND h.historyno_i=h.max_historyno_i
+
+ORDER BY booking_date</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

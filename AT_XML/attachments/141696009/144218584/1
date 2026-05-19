@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.swiss-as.com/xml/report_2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_2.0 http://www.swiss-as.com/xml/report_2.0.xsd http://www.swiss-as.com/xml/datasource_1.0 http://www.swiss-as.com/xml/datasource_1.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000049</report_id>
+    <revision_number>0</revision_number>
+    <meta name="code &amp; design">vtsymbal</meta>
+    <meta name="serialization">v2</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="202">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">50</attribute>
+      <attribute name="footer-size">30</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content>
+      <view class="BoxReportView" id="203">
+        <attribute name="name">Box_5</attribute>
+        <attribute name="position">0 0</attribute>
+        <attribute name="size">700 50</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="background-color">FFFFFF</attribute>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+      </view>
+      <view class="ImageReportView" id="204">
+        <attribute name="name">Image_6</attribute>
+        <attribute name="position">6 2</attribute>
+        <attribute name="size">167 46</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="image-source">web://img/Aeroflot_logo.png</attribute>
+        <attribute name="scale-mode">FILL</attribute>
+      </view>
+      <view class="LabelReportView" id="205">
+        <attribute name="name">Label_7</attribute>
+        <attribute name="position">288 16</attribute>
+        <attribute name="size">228 19</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">НЕПОЛНЫЕ СБОРКИ КОМПОНЕНТОВ</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 11</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+      <view class="BoxReportView" id="207">
+        <attribute name="name">Box_9</attribute>
+        <attribute name="position">0 970</attribute>
+        <attribute name="size">700 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="background-color">FFFFFF</attribute>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+      </view>
+      <view class="LabelReportView" id="208">
+        <attribute name="name">Label_10</attribute>
+        <attribute name="position">4 983</attribute>
+        <attribute name="size">443 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@LOGIN_SIGN@ / @FIRSTNAME@ @LASTNAME@              @DATE@ @TIME@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+      <view class="LabelReportView" id="209">
+        <attribute name="name">Label_11</attribute>
+        <attribute name="position">585 983</attribute>
+        <attribute name="size">266 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Page @PAGE_NO@ / @PAGE_COUNT@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="1872">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 60</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="1875" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">EFEFEF</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">№</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="1876" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Missing_Part_WHEELS.num@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="1879" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">EFEFEF</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Part No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="1880" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Missing_Part_WHEELS.r.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="1883" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">EFEFEF</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Serial No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="1884" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Missing_Part_WHEELS.r.serialno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">160</attribute>
+          <view class="LabelReportView" id="1887" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">160 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">EFEFEF</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Description</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="1888" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">160 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 3 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Missing_Part_WHEELS.p.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="1891" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">EFEFEF</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Insp. ?</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="1892" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Missing_Part_WHEELS.insp_stat@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="1895" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">EFEFEF</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Aircraft</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="1896" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Missing_Part_WHEELS.aircraft@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="1899" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">EFEFEF</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Date Install</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="1900" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Missing_Part_WHEELS.date_inst@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">110</attribute>
+          <view class="LabelReportView" id="1903" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">EFEFEF</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Location</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="1904" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Missing_Part_WHEELS.position@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">RAM_Missing_Part_WHEELS</attribute>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="VAR" type="PARAMETER_DATASOURCE" version="1.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="BOOL" description="Inspected rotable?" id="insp"/>
+        <ds:columnDescriptor amosType="PA" description="Part No" id="partno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Inspected" id="insp">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Part No" id="partno">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="RAM_Missing_Part_WHEELS" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Проверка сборок на отсутствующие компоненты</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="row_number() over(ORDER BY r_alt.partnor_alt.serialno) num" id="num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="r.serialno" id="r.serialno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="r.partno" id="r.partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="p.description" id="p.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="r.ac_registr aircraft" id="aircraft"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       decode(r.date_inst&#10;              0&#10;              null&#10;              to_char(to_date('31.12.1971' 'dd.mm.yyyy') + r.date_inst'dd.mm.yyyy')) date_inst" id="date_inst"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="r.location position" id="position"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="p.ata_chapter" id="p.ata_chapter"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;   case when odr.status in ('2''1') then 'NO'&#10;&#9;   else 'YES'&#10;&#9;   end insp_stat" id="insp_stat"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.partno@">
+          <ds:object>@VAR.partno@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.insp@">
+          <ds:object>@VAR.insp@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>select row_number() over(ORDER BY r.partno, r.serialno) num,
+       r.serialno,
+       r.partno,
+       p.description,
+       ac_registr aircraft,
+       decode(r.date_inst,
+              0,
+              null,
+              to_char(to_date('31.12.1971', 'dd.mm.yyyy') + r.date_inst,
+                      'dd.mm.yyyy')) date_inst,
+       case
+         when r.location = ' ' then
+          l.location
+         else
+          r.location
+       end position,
+       p.ata_chapter,
+	   case when odr.status in ('2','1') then 'NO'
+	   else 'YES'
+	   end insp_stat
+  from (select serialno, r.partno
+          from rotables r
+		  join (select tr.tree_type, description, partno
+                                from (select altpartno partno
+                                        from part_alternate pa
+                                       where /* Partnumber */
+ ('@VAR.partno@' is null or
+partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+                                      union
+                                      select partno
+                                        from part
+                                       where /* Partnumber */
+ ('@VAR.partno@' is null or
+partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))) r
+                                join tree_reference tr on r.partno =
+                                                          tr.tree_chapter
+                                join tree_type tt on tr.tree_type =
+                                                     tt.tree_type
+                               where tt.status &lt;&gt; 9
+                                 and tt.type in ('C', 'T')
+                               group by tr.tree_type, description, partno) d on r.partno = d.partno
+         where /* Partnumber */
+ ('@VAR.partno@' is null or
+r.partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+-- 5. А также поиск неполных сборок по альтернативным партам
+union
+        select serialno, r.partno
+          from part_alternate pa
+          join rotables r on pa.altpartno = r.partno
+		  join (select tr.tree_type, description, partno
+                                from (select altpartno partno
+                                        from part_alternate pa
+                                       where /* Partnumber */
+ ('@VAR.partno@' is null or
+partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+                                      union
+                                      select partno
+                                        from part
+                                       where /* Partnumber */
+ ('@VAR.partno@' is null or
+partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))) r
+                                join tree_reference tr on r.partno =
+                                                          tr.tree_chapter
+                                join tree_type tt on tr.tree_type =
+                                                     tt.tree_type
+                               where tt.status &lt;&gt; 9
+                                 and tt.type in ('C', 'T')
+                               group by tr.tree_type, description, partno) d on r.partno = d.partno
+         where /* Partnumber */
+ ('@VAR.partno@' is null or
+pa.partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+        minus (select serialnonew serialno, partnonew partno
+                 from (select pa.altpartno
+               -- 2. Ищу его "ветки"
+                 from tree_reference tr
+               -- 1. Нашла дерево парта
+                 join (select tr.tree_type, description, partno
+                                from (select altpartno partno
+                                        from part_alternate pa
+                                       where /* Partnumber */
+ ('@VAR.partno@' is null or
+partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+                                      union
+                                      select partno
+                                        from part
+                                       where /* Partnumber */
+ ('@VAR.partno@' is null or
+partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))) r
+                                join tree_reference tr on r.partno =
+                                                          tr.tree_chapter
+                                join tree_type tt on tr.tree_type =
+                                                     tt.tree_type
+                               where tt.status &lt;&gt; 9
+                                 and tt.type in ('C', 'T')
+                               group by tr.tree_type, description, partno) d on tr.tree_type =
+                                                                                d.tree_type
+               -- 3. Нахожу альтернативные p/n по каждой "ветке"
+                 join part_alternate pa on tr.tree_chapter = pa.partno
+                where tree_chapter &lt;&gt; d.partno
+                group by pa.altpartno) a
+       -- 4. Выбираю все сборки
+          join (select partno sub_part,
+                             serialnonew,
+                             partnonew,
+                             tree_type,
+                             tree_position
+                        from rotables r
+                        join location l on r.locationno_i = l.locationno_i
+                       where /* Partnumber */
+ ('@VAR.partno@' is null or
+partnonew in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+                         and l.locationno_i = '-4'
+              -- 4.1 И по альтернативным тоже
+             union
+                      select r.partno sub_part,
+                             serialnonew,
+                             partnonew,
+                             tree_type,
+                             tree_position
+                        from part_alternate pa
+                        join rotables r on pa.altpartno = r.partnonew
+                        join location l on r.locationno_i = l.locationno_i
+                       where /* Partnumber */
+ ('@VAR.partno@' is null or
+pa.partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+                         and l.locationno_i = '-4') n on a.altpartno =
+                                                         n.sub_part)) t
+  join part p on t.partno = p.partno
+  join rotables r on t.partno = r.partno
+                 and t.serialno = r.serialno
+  left join location l on r.locationno_i = l.locationno_i
+  left join od_rec_detail odr on odr.recdetailno_i = r.rec_detailno_i
+where /* Inspected */
+(
+nvl('@VAR.insp@', 'N') = 'N' or ('@VAR.insp@' = 'Y' and odr.status not in ('2', '1') )
+)</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

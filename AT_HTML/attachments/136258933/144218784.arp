@@ -1,0 +1,1493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000039</report_id>
+    <revision_number>0</revision_number>
+    <meta name="17-01-2020 vtsymbal">add new ac_typ A350</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="3">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">15</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content>
+      <view class="LabelReportView" id="4">
+        <attribute name="name">Label_11</attribute>
+        <attribute name="position">0 685</attribute>
+        <attribute name="size">500 15</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 30 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">MEL Reporting 2 / Created on @AFL_MEL_CurrentDateTime.f_date@ @AFL_MEL_CurrentDateTime.f_time@UTC</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="5">
+        <attribute name="name">Label_12</attribute>
+        <attribute name="position">500 685</attribute>
+        <attribute name="size">500 15</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 30 0 30</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Page @SYSTEM.PAGE_NO@ of @SYSTEM.PAGE_COUNT@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">RIGHT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>4</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="6">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 29</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">FF0000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@VAR.ac_registr@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 20</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>9</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="ClonerReportView" id="7">
+      <attribute name="name">AC Main Type Cloner</attribute>
+      <attribute name="position">-73 71</attribute>
+      <attribute name="size">1153 349</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_MEL_MainACTyp</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>10</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-73</x_offset>
+        <y_offset>17</y_offset>
+      </anchor>
+    </view>
+    <view class="ClonerReportView" id="8">
+      <attribute name="name">AC Subtype Cloner</attribute>
+      <attribute name="position">-40 130</attribute>
+      <attribute name="size">1099 222</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_MEL_SubACTyp</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>11</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-40</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="9">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 29</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">MEL Reporting 2 - OPS Edition (Maintenance Procedures filtered)</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.v04_show_maint_proc_only@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">0</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">MEL Reporting 2 - OPS Edition</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 20</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="10">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">0 29</attribute>
+      <attribute name="size">1000 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">Based on data in @SYSTEM.AMOS_SERVER@ environment as of @AFL_MEL_CurrentDateTime.f_date@ @AFL_MEL_CurrentDateTime.f_time@UTC</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>9</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="11">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">0 80</attribute>
+      <attribute name="size">500 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">FF8500</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">AC Type:</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 20</attribute>
+      <attribute name="text-align">RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>7</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>73</x_offset>
+        <y_offset>9</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="12">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">500 80</attribute>
+      <attribute name="size">500 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">FF8500</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">@AFL_MEL_MainACTyp.ac_typ.ac_typ@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 20</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>11</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="13">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">0 130</attribute>
+      <attribute name="size">500 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">CCFFFF</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">AC Sub-type:</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 15</attribute>
+      <attribute name="text-align">RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>8</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>40</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="14">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">500 130</attribute>
+      <attribute name="size">500 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">CCFFFF</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">@AFL_MEL_SubACTyp.ac_typ.ac_typ@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 15</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>13</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="15">
+      <attribute name="name">DatasourceTable_10</attribute>
+      <attribute name="position">0 160</attribute>
+      <attribute name="size">1000 100</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">32</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="18" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AC Reg.</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">E6E6E6</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="font-style">BOLD</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="YES">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AFL_MEL_Main.wo_header.ac_registr@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">55</attribute>
+          <view class="LabelReportView" id="22" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">55 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">WO Number</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="23" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">55 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">E6E6E6</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AFL_MEL_Main.wo_header.event_perfno_i@ 
+@AFL_MEL_Main.wo_type@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">250</attribute>
+          <view class="LabelReportView" id="26" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">250 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">WO Desc. 
+(1st step)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="27" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">250 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">E6E6E6</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="font-style">BOLD</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="YES">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AFL_MEL_Main.c_wo_step_text@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP_LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">60</attribute>
+          <view class="LabelReportView" id="30" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">MEL</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="31" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">E6E6E6</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AFL_MEL_Main.wo_header_more.mel_chapter@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">30</attribute>
+          <view class="LabelReportView" id="34" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">MEL
+Cat.</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="35" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text">CDL</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.wo_header.mel_code@</field>
+                    <field id="2">L</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="text">DD</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.wo_header.hil@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="3">
+                <attribute name="background-color">E6E6E6</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AFL_MEL_Main.wo_header.mel_code@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="38" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">WO
+opened</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="39" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">E6E6E6</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AFL_MEL_Main.wo_issue_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="42" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Limit</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="43" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">E6E6E6</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">FFFFBB</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">N</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.limit_color@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="3">
+                <attribute name="background-color">FFC0C0</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">N</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.limit_color@</field>
+                    <field id="2">R</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AFL_MEL_Main.wo_due_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">455</attribute>
+          <view class="LabelReportView" id="46" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">455 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Operations / Maintenance Procedures
+Comments</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="HtmlReportView" id="47" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">455 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">E6E6E6</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="html-content">@AFL_MEL_Main.nef_text@</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@AFL_MEL_Main.is_nef@</field>
+                    <field id="2">Y</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="html-content">&lt;p&gt;@AFL_MEL_Main.limitations_agg_na@&lt;/p&gt;
+
+&lt;p&gt;@AFL_MEL_Main.c_mel_text@&lt;/p&gt;
+
+&lt;p&gt;@AFL_MEL_Main.remarks@&lt;/p&gt;
+
+&lt;p&gt;@AFL_MEL_Main.c_mel_procedures@&lt;/p&gt;
+
+&lt;p&gt;@AFL_MEL_Main.mcc_remarks@&lt;/p&gt;</attribute>
+            <attribute name="scale-images">NO</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">AFL_MEL_Main</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>13</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="48">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">230 57</attribute>
+      <attribute name="size">344 18</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">AC Registr:  @AFL_MEL_CONVERTER.ac_registr@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>49</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>46</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="49">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">4 57</attribute>
+      <attribute name="size">180 18</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">AC Type: @VAR.mult_ac_typ@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>10</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>4</x_offset>
+        <y_offset>3</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="50">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">576 57</attribute>
+      <attribute name="size">180 18</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Sort by:  @AFL_MEL_CONVERTER.sort_by@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>48</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>2</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="51">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">885 57</attribute>
+      <attribute name="size">113 18</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Maint Proc Only:  @AFL_MEL_CONVERTER.maint_proc_only@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>50</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>129</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="mult_ac_typ"/>
+        <ds:columnDescriptor amosType="AC" description="" id="ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v04_show_maint_proc_only"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="sort_order"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="01. AC Type" id="mult_ac_typ">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>A32S&amp;=&amp;A32S;A330&amp;=&amp;A330;A350&amp;=&amp;A350;B737&amp;=&amp;B737;B777&amp;=&amp;B777;RRJ&amp;=&amp;RRJ;ALL&amp;=&amp;All Types;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>ALL</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="02. AC Registr (null=all)" id="ac_registr">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="04. Show items with Maintenance Procedures only" id="v04_show_maint_proc_only">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>Y&amp;=&amp;YES;N&amp;=&amp;NO;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>N</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="03. Sort by" id="sort_order">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>wonum&amp;=&amp;WO Number;melnum&amp;=&amp;MEL Item;mel_date&amp;=&amp;Last Transfer Date;default&amp;=&amp;Default;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>default</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_MEL_CurrentDateTime" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(SYSDATE'MM-DD-YYYY') as f_date" id="f_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;TO_CHAR(SYSDATE'HH24:MI:SS') as f_time" id="f_time"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters/>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT 
+	TO_CHAR(SYSDATE, 'MM.DD.YYYY') as f_date,
+	TO_CHAR(SYSDATE, 'HH24:MI:SS') as f_time
+FROM DUAL
+/*AFL_MEL1*/</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_MEL_MainACTyp" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_typ.ac_typ" id="ac_typ.ac_typ"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.mult_ac_typ@">
+          <ds:object>@VAR.mult_ac_typ@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_registr@">
+          <ds:object>@VAR.ac_registr@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT ac_typ.ac_typ
+FROM ac_typ
+LEFT JOIN aircraft ON aircraft.ac_typ = ac_typ.ac_typ
+WHERE (
+	 (ac_typ.ac_typ = 'A32S' AND (REGEXP_LIKE('A32S', REPLACE('@VAR.mult_ac_typ@', ', ', '|')) OR REGEXP_LIKE('A321', REPLACE('@VAR.mult_ac_typ@', ', ', '|')) OR '@VAR.mult_ac_typ@' = 'ALL'))
+OR 
+	 (ac_typ.ac_typ = 'A330' AND (REGEXP_LIKE('A330', REPLACE('@VAR.mult_ac_typ@', ', ', '|')) OR REGEXP_LIKE('A333', REPLACE('@VAR.mult_ac_typ@', ', ', '|')) OR '@VAR.mult_ac_typ@' = 'ALL'))
+OR 
+               ac_typ.ac_typ = 'A350' AND (REGEXP_LIKE('A350', REPLACE('@VAR.mult_ac_typ@', ', ', '|')) OR '@VAR.mult_ac_typ@' = 'ALL')
+OR 
+	 ac_typ.ac_typ = 'B737' AND (REGEXP_LIKE('B737', REPLACE('@VAR.mult_ac_typ@', ', ', '|')) OR '@VAR.mult_ac_typ@' = 'ALL')
+OR 
+	 ac_typ.ac_typ = 'B777' AND (REGEXP_LIKE('B777', REPLACE('@VAR.mult_ac_typ@', ', ', '|')) OR '@VAR.mult_ac_typ@' = 'ALL')
+OR 
+ 	ac_typ.ac_typ = 'RRJ' AND (REGEXP_LIKE('RRJ', REPLACE('@VAR.mult_ac_typ@', ', ', '|')) OR '@VAR.mult_ac_typ@' = 'ALL')
+              )
+AND (REGEXP_LIKE(aircraft.ac_registr, REPLACE('@VAR.ac_registr@', ', ', '|')) OR '@VAR.ac_registr@' IS NULL)
+GROUP BY ac_typ.ac_typ
+ORDER BY ac_typ.ac_typ
+/*AFL_MEL2*/</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_MEL_SubACTyp" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_typ.ac_typ" id="ac_typ.ac_typ"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_MEL_MainACTyp.ac_typ.ac_typ@">
+          <ds:object>@AFL_MEL_MainACTyp.ac_typ.ac_typ@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_registr@">
+          <ds:object>@VAR.ac_registr@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT
+        ac_typ.ac_typ
+FROM
+        ac_typ 
+WHERE 
+        ac_typ.main_typ = '@AFL_MEL_MainACTyp.ac_typ.ac_typ@' 
+        AND ac_typ.ac_typ IN ('A320', 'A320N', 'A321', 'A321NX', 'A332', 'A333', 'A350', 'B737', 'B777', 'RRJ')
+        AND (
+                  '@VAR.ac_registr@' IS NULL OR ac_typ.ac_typ IN  (
+                                                                                                       SELECT ac_model FROM aircraft WHERE ac_registr = '@VAR.ac_registr@'
+                                                                                                       UNION 
+                                                                                                       SELECT ac_typ FROM aircraft WHERE ac_registr = '@VAR.ac_registr@'
+                                                                                                      )   
+                 )
+/*AFL_MEL3*/</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_MEL_Main" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.ac_registr" id="wo_header.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i" id="wo_header.event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.hil" id="wo_header.hil"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_description.text as c_wo_step_text" id="c_wo_step_text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.mel_code" id="wo_header.mel_code"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (wo_header.issue_date+729)'DD.MM.YYYY') as wo_issue_date" id="wo_issue_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header_more.mel_chapter" id="wo_header_more.mel_chapter"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" CASE WHEN REGEXP_LIKE(wo_header_more.mel_chapter '^25.*70') AND aircraft.ac_typ IN ('A32S''A330')&#10;                         OR REGEXP_LIKE(wo_header_more.mel_chapter '^25.*90') AND aircraft.ac_typ IN ('A350')&#10;                         OR REGEXP_LIKE(wo_header_more.mel_chapter '^25.*10') AND aircraft.ac_typ IN ('B737')&#10;                         OR REGEXP_LIKE(wo_header_more.mel_chapter '^25.*20') AND aircraft.ac_typ IN ('B777')&#10;                         OR REGEXP_LIKE(wo_header_more.mel_chapter 'NEF''i')&#10;             THEN 'Y' ELSE 'N' END as is_nef" id="is_nef"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" CASE WHEN aircraft.ac_typ = 'A32S'&#10;            THEN '&lt;p&gt;MEL:&lt;/p&gt;  &lt;p&gt;Non-Essential Equipment and Furnishings (NEF)&lt;/p&gt;  &lt;p&gt;MEL Remarks:&lt;/p&gt;  &lt;p&gt;25-70-01-A&lt;/p&gt;  &lt;p&gt;May be inoperative damaged or missing provided that item(s) is deferred in accordance with&lt;/p&gt;  &lt;p&gt;AFL NEF program.&lt;/p&gt;'&#10;            WHEN aircraft.ac_typ = 'A350'&#10;            THEN '&lt;p&gt;MEL:&lt;/p&gt;  &lt;p&gt;Non-Essential Equipment and Furnishings (NEF)&lt;/p&gt;  &lt;p&gt;MEL Remarks:&lt;/p&gt;  &lt;p&gt;25-90-01-X&lt;/p&gt;  &lt;p&gt;May be inoperative damaged or missing provided that item(s) is deferred in accordance with&lt;/p&gt;  &lt;p&gt;AFL NEF program.&lt;/p&gt;'&#10;            WHEN aircraft.ac_typ = 'B737'&#10;            THEN '&lt;p&gt;MEL:&lt;/p&gt;  &lt;p&gt;Non-Essential Equipment and Furnishings (NEF)&lt;/p&gt;  &lt;p&gt;MEL Remarks:&lt;/p&gt;  &lt;p&gt;25-10&lt;/p&gt;  &lt;p&gt;May be inoperative damaged or missing provided that item(s) is deferred in accordance with&lt;/p&gt;  &lt;p&gt;AFL NEF program.&lt;/p&gt;'&#10;            WHEN aircraft.ac_typ = 'B777'&#10;            THEN '&lt;p&gt;MEL:&lt;/p&gt;  &lt;p&gt;Non-Essential Equipment and Furnishings (NEF)&lt;/p&gt;  &lt;p&gt;MEL Remarks:&lt;/p&gt;  &lt;p&gt;25-20-01&lt;/p&gt;  &lt;p&gt;May be inoperativedamaged or missing provided that item(s) is deferred in accordance with&lt;/p&gt;  &lt;p&gt;AFL NEF program.&lt;/p&gt;'&#10;            ELSE ''&#10;  END as nef_text" id="nef_text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" DECODE(wo_header.type 'M' 'Maint.' 'P' 'PiRep' 'C' 'Cabin''Unknown') as wo_type" id="wo_type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (wo_transfer.absolute_due_date+729)'DD.MM.YYYY') as wo_due_date" id="wo_due_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" CASE WHEN wo_transfer.absolute_due_date - (TRUNC(SYSDATE) - TO_DATE('31.12.1971' 'dd.mm.yyyy'))  between 0 and 2 THEN 'Y'&#10;            WHEN wo_transfer.absolute_due_date -  (TRUNC(SYSDATE) - TO_DATE('31.12.1971''dd.mm.yyyy')) &lt; 0 THEN 'R'&#10;            ELSE 'W'&#10;  END as limit_color" id="limit_color"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" CASE WHEN mel_detail.mel_detailno_i IS NULL THEN '' ELSE '&lt;b&gt;MEL:&lt;/b&gt;&lt;br /&gt;'||TO_CHAR(mel_tree.mel_text)||' &lt;b&gt;'||DECODE(mel_detail.ops_proc_req||mel_detail.maint_proc_req 'YY' '(O)(M)' 'YN' '(O)' 'NY' '(M)''')||'&lt;/b&gt;' END as c_mel_text" id="c_mel_text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE WHEN ac_lim.event_perfno_i IS NULL THEN '' ELSE ac_lim.limitations_agg END as limitations_agg_na" id="limitations_agg_na"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" CASE WHEN wo_opus.free_text IS NOT NULL THEN TO_CLOB(CONCAT(TO_CLOB('&lt;br /&gt;&lt;b&gt;MCC Comments:&lt;/b&gt;&lt;br /&gt;')TO_CLOB(wo_opus.free_text))) ELSE TO_CLOB('') END as mcc_remarks" id="mcc_remarks"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" CASE WHEN mel_detail.mel_detailno_i IS NOT NULL THEN &#10;CASE WHEN aircraft.ac_typ IN ('A32S' 'A330' 'RRJ') THEN &#10;&#9;&#9;TO_CLOB(CONCAT(TO_CLOB('&lt;b&gt;MEL Remarks:&lt;/b&gt;&lt;br /&gt;') mel_detail.mel_remarks))&#10;&#9;ELSE&#10;&#9;&#9;CASE WHEN mel_procedure.maint_proc_text IS NOT NULL OR mel_procedure.ops_proc_text IS NOT NULL THEN&#10;&#9;&#9;&#9;&#9;TO_CLOB(CONCAT(TO_CLOB('&lt;br /&gt;&lt;b&gt;Procedures:&lt;/b&gt;&lt;br /&gt;') &#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;TO_CLOB('')&#10;&#9;&#9;&#9;&#9;))&#10;&#9;&#9;&#9;ELSE&#10;&#9;&#9;&#9;    TO_CLOB(CONCAT(TO_CLOB('&lt;b&gt;MEL Remarks:&lt;/b&gt;&lt;br /&gt;')mel_detail.mel_remarks))&#10;&#9;&#9;END&#10;&#9;END &#10;ELSE TO_CLOB('')&#10;END&#10;as c_mel_procedures" id="c_mel_procedures"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE WHEN aircraft.ac_typ IN ('B737' 'B777') THEN &#10;&#9;&#9;&#9;&#9;TO_CLOB(CONCAT(TO_CLOB('&lt;b&gt;MEL Remarks:&lt;/b&gt;&lt;br /&gt;')mel_detail.mel_remarks))&#10;&#9;ELSE TO_CLOB('')&#10;END as remarks" id="remarks"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_MEL_SubACTyp.ac_typ.ac_typ@">
+          <ds:object>@AFL_MEL_SubACTyp.ac_typ.ac_typ@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_registr@">
+          <ds:object>@VAR.ac_registr@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v04_show_maint_proc_only@">
+          <ds:object>@VAR.v04_show_maint_proc_only@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.sort_order@">
+          <ds:object>@VAR.sort_order@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT 
+wo_header.ac_registr
+, wo_header.event_perfno_i
+, wo_header.hil
+, wo_text_description.text as c_wo_step_text
+, wo_header.mel_code
+, TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wo_header.issue_date+729), 'DD.MM.YYYY') as wo_issue_date
+, wo_header_more.mel_chapter
+, CASE WHEN REGEXP_LIKE(wo_header_more.mel_chapter, '^25.*70') AND aircraft.ac_typ IN ('A32S','A330')
+                         OR REGEXP_LIKE(wo_header_more.mel_chapter, '^25.*90') AND aircraft.ac_typ IN ('A350')
+                         OR REGEXP_LIKE(wo_header_more.mel_chapter, '^25.*10') AND aircraft.ac_typ IN ('B737')
+                         OR REGEXP_LIKE(wo_header_more.mel_chapter, '^25.*20') AND aircraft.ac_typ IN ('B777')
+                         OR REGEXP_LIKE(wo_header_more.mel_chapter, 'NEF', 'i')
+             THEN 'Y' ELSE 'N' END as is_nef
+, CASE WHEN aircraft.ac_typ IN ('A32S', 'A330')
+            THEN '&lt;p&gt;MEL:&lt;/p&gt;  &lt;p&gt;Non-Essential Equipment and Furnishings (NEF)&lt;/p&gt;  &lt;p&gt;MEL Remarks:&lt;/p&gt;  &lt;p&gt;25-70-01-A&lt;/p&gt;  &lt;p&gt;May be inoperative, damaged or missing provided that item(s) is deferred in accordance with&lt;/p&gt;  &lt;p&gt;AFL NEF program.&lt;/p&gt;'
+            WHEN aircraft.ac_typ = 'A350'
+            THEN '&lt;p&gt;MEL:&lt;/p&gt;  &lt;p&gt;Non-Essential Equipment and Furnishings (NEF)&lt;/p&gt;  &lt;p&gt;MEL Remarks:&lt;/p&gt;  &lt;p&gt;25-90-01-X&lt;/p&gt;  &lt;p&gt;May be inoperative, damaged or missing provided that item(s) is deferred in accordance with&lt;/p&gt;  &lt;p&gt;AFL NEF program.&lt;/p&gt;'
+            WHEN aircraft.ac_typ = 'B737'
+            THEN '&lt;p&gt;MEL:&lt;/p&gt;  &lt;p&gt;Non-Essential Equipment and Furnishings (NEF)&lt;/p&gt;  &lt;p&gt;MEL Remarks:&lt;/p&gt;  &lt;p&gt;25-10&lt;/p&gt;  &lt;p&gt;May be inoperative, damaged or missing provided that item(s) is deferred in accordance with&lt;/p&gt;  &lt;p&gt;AFL NEF program.&lt;/p&gt;'
+            WHEN aircraft.ac_typ = 'B777'
+            THEN '&lt;p&gt;MEL:&lt;/p&gt;  &lt;p&gt;Non-Essential Equipment and Furnishings (NEF)&lt;/p&gt;  &lt;p&gt;MEL Remarks:&lt;/p&gt;  &lt;p&gt;25-20-01&lt;/p&gt;  &lt;p&gt;May be inoperative, damaged or missing provided that item(s) is deferred in accordance with&lt;/p&gt;  &lt;p&gt;AFL NEF program.&lt;/p&gt;'
+            ELSE ''
+  END as nef_text 
+, DECODE(wo_header.type, 'M', 'Maint.', 'P', 'PiRep', 'C', 'Cabin', 'Unknown') as wo_type
+, TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wo_transfer.absolute_due_date+729), 'DD.MM.YYYY') as wo_due_date
+, CASE WHEN wo_transfer.absolute_due_date - (TRUNC(SYSDATE) - TO_DATE('31.12.1971', 'dd.mm.yyyy'))  between 0 and 2 THEN 'Y'
+            WHEN wo_transfer.absolute_due_date -  (TRUNC(SYSDATE) - TO_DATE('31.12.1971', 'dd.mm.yyyy')) &lt; 0 THEN 'R'
+            ELSE 'W'
+  END as limit_color 
+, CASE WHEN mel_detail.mel_detailno_i IS NULL THEN '' ELSE '&lt;b&gt;MEL:&lt;/b&gt;&lt;br /&gt;'||' &lt;b&gt;'||DECODE(mel_detail.ops_proc_req||mel_detail.maint_proc_req, 'YY', '(O)(M)', 'YN', '(O)', 'NY', '(M)', '')||'&lt;/b&gt; '||TO_CHAR(mel_tree.mel_text) END as c_mel_text
+, CASE WHEN ac_lim.event_perfno_i IS NULL THEN '' ELSE ac_lim.limitations_agg END as limitations_agg_na
+, CASE WHEN wo_opus.free_text IS NOT NULL THEN TO_CLOB(CONCAT(TO_CLOB('&lt;br /&gt;&lt;b&gt;Comments:&lt;/b&gt;&lt;br /&gt;'), TO_CLOB(wo_opus.free_text))) ELSE TO_CLOB('') END as mcc_remarks
+, CASE WHEN mel_detail.mel_detailno_i IS NOT NULL THEN 
+CASE WHEN aircraft.ac_typ IN ('A32S', 'A330', 'A350', 'RRJ') THEN 
+		TO_CLOB(CONCAT(TO_CLOB('&lt;b&gt;MEL Remarks:&lt;/b&gt;&lt;br /&gt;'), mel_detail.mel_remarks))
+	ELSE
+		CASE WHEN LENGTH(mel_procedure.maint_proc_text) &gt; 1 OR LENGTH(mel_procedure.ops_proc_text) &gt; 1 THEN
+				TO_CLOB(CONCAT(TO_CLOB('&lt;br /&gt;&lt;b&gt;Procedures:&lt;/b&gt;&lt;br /&gt;'), 								
+					TO_CLOB(
+						CONCAT(
+							CASE WHEN LENGTH(mel_procedure.ops_proc_text) &gt; 1 THEN TO_CLOB(CONCAT(TO_CLOB('&lt;br /&gt;&lt;b&gt;(O)&lt;/b&gt;&lt;br /&gt;'), mel_procedure.ops_proc_text)) ELSE TO_CLOB('') END,
+							CASE WHEN LENGTH(mel_procedure.maint_proc_text) &gt; 1 THEN TO_CLOB(CONCAT(TO_CLOB('&lt;br /&gt;&lt;b&gt;(M)&lt;/b&gt;&lt;br /&gt;'), mel_procedure.maint_proc_text)) ELSE TO_CLOB('') END
+						)
+					)
+				))
+			ELSE
+			    TO_CLOB('')
+		END
+	END 
+ELSE TO_CLOB('')
+END
+as c_mel_procedures,
+CASE WHEN aircraft.ac_typ IN ('B737', 'B777') THEN 
+				TO_CLOB(CONCAT(TO_CLOB('&lt;b&gt;MEL Remarks:&lt;/b&gt;&lt;br /&gt;'), mel_detail.mel_remarks))
+	ELSE TO_CLOB('')
+END as remarks
+FROM 
+wo_header
+LEFT JOIN aircraft ON aircraft.ac_registr = wo_header.ac_registr
+LEFT JOIN workstep_link ON (workstep_link.event_perfno_i = wo_header.event_perfno_i AND workstep_link.sequenceno = 1)
+LEFT JOIN wo_text_description ON wo_text_description.descno_i = workstep_link.descno_i
+LEFT JOIN wo_transfer ON (wo_header.event_perfno_i = wo_transfer.event_perfno_i AND wo_transfer.is_last_transfer = 'Y')
+LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+LEFT JOIN wo_opus ON wo_header.event_perfno_i = wo_opus.event_perfno_i
+LEFT JOIN wo_header_4 on wo_header_4.event_perfno_i = wo_header.event_perfno_i
+LEFT JOIN mel_detail ON mel_detail.mel_detailno_i = wo_header_4.mel_detailno_i
+LEFT JOIN mel_tree ON mel_detail.mel_treeno_i = mel_tree.mel_treeno_i
+LEFT JOIN mel_procedure ON mel_procedure.mel_treeno_i = mel_tree.mel_treeno_i
+LEFT JOIN mel_revision mrm ON mel_tree.melno_i = mrm.melno_i AND (mrm.active='Y' OR NVL(aircraft.ac_typ, 1) != 'RRJ') AND mrm.type='M'
+LEFT JOIN (
+	SELECT
+		limitation_config.configuration_key as event_perfno_i,
+		'&lt;b&gt;WO Downgrades (limitations):&lt;/b&gt;&lt;br /&gt;'||LISTAGG(TO_CHAR(limitation_type.limitation_type)||': '||TO_CHAR(limitation_type.description), '; ') WITHIN GROUP (ORDER BY limitation_type.limitation_type, limitation_type.description)  as limitations_agg
+		FROM
+			limitation_config
+			LEFT JOIN limitation_type ON limitation_type.limitation_typeno_i = limitation_config.limitation_typeno_i
+		WHERE limitation_config.mime_type = 'WO'
+		GROUP BY
+		limitation_type.limitation_type, limitation_type.description, limitation_config.configuration_key
+) ac_lim ON ac_lim.event_perfno_i = wo_header.event_perfno_i
+
+WHERE
+( 
+	(
+		wo_header.mel_code IS NOT NULL
+	)
+	OR
+	(
+		wo_header.mel_code IS NULL 
+		AND wo_header.hil = 'Y'
+		AND wo_opus.free_text IS NOT NULL
+	)
+)
+AND wo_header.state = 'O'
+AND aircraft.status&lt;&gt;9
+AND (aircraft.ac_typ = '@AFL_MEL_SubACTyp.ac_typ.ac_typ@' OR aircraft.ac_model = '@AFL_MEL_SubACTyp.ac_typ.ac_typ@')
+AND wo_header.type != 'S'
+AND (REGEXP_LIKE(aircraft.ac_registr, REPLACE('@VAR.ac_registr@', ', ', '|')) OR '@VAR.ac_registr@' IS NULL)
+
+AND (
+          mel_tree.version = (
+                                            SELECT MAX (mt.version) 
+                                            FROM mel_tree mt                       
+                                            WHERE mel_tree.mel_treeno_i = mt.mel_treeno_i                             
+                                            	AND mel_tree.revision = mt.revision
+                                           )
+          OR mel_tree.version IS NULL
+         )
+AND (
+          mel_tree.revision = (
+                                             SELECT MAX (mt.revision) 
+                                             FROM mel_tree mt 
+                                             WHERE mel_tree.mel_treeno_i = mt.mel_treeno_i 
+                                                           AND mt.revision &lt;= mrm.revision
+                                            ) 
+          OR mel_tree.revision IS NULL
+         )
+AND (
+          mel_detail.version = (
+                                               SELECT MAX (md.version)
+                                               FROM mel_detail md                         
+                                               WHERE mel_detail.mel_detailno_i = md.mel_detailno_i                               
+                                                            AND mel_detail.revision = md.revision
+                                              )
+          OR mel_detail.version IS NULL
+         )
+AND (
+          mel_detail.revision = (
+                                                SELECT MAX (md.revision)                         
+                                                FROM mel_detail md
+                                                WHERE mel_detail.mel_detailno_i = md.mel_detailno_i                               
+                                                             AND md.revision &lt;= mrm.revision
+                                               )
+          OR mel_detail.revision IS NULL
+         )
+AND (
+          mel_procedure.version = (
+                                                       SELECT MAX (mp.version)
+                                                       FROM mel_procedure mp                           	
+                                                       WHERE mel_procedure.mel_treeno_i = mp.mel_treeno_i  
+                                                                     AND mel_procedure.revision = mp.revision
+                                                      )
+          OR mel_procedure.version IS NULL
+         )
+AND (mel_detail.maint_proc_req='Y' AND '@VAR.v04_show_maint_proc_only@'='Y' OR '@VAR.v04_show_maint_proc_only@'='N')
+
+ORDER BY
+CASE WHEN '@VAR.sort_order@' = 'default' THEN wo_header.ac_registr END DESC, 
+CASE WHEN '@VAR.sort_order@' = 'default' THEN is_nef END NULLS FIRST, 
+CASE WHEN '@VAR.sort_order@' = 'default' THEN absolute_due_date END, 
+CASE WHEN '@VAR.sort_order@' = 'default' THEN wo_header.event_perfno_i END DESC, 
+CASE WHEN '@VAR.sort_order@' = 'wonum' THEN wo_header.ac_registr END ASC, 
+CASE WHEN '@VAR.sort_order@' = 'wonum' THEN wo_header.event_perfno_i END DESC,
+CASE WHEN '@VAR.sort_order@' = 'melnum' THEN wo_header_more.mel_chapter END DESC,
+CASE WHEN '@VAR.sort_order@' = 'melnum' THEN wo_header.event_perfno_i END DESC,
+CASE WHEN '@VAR.sort_order@' = 'mel_date' THEN wo_transfer.date_transfer END DESC,
+CASE WHEN '@VAR.sort_order@' = 'mel_date' THEN wo_transfer.transfer_time END DESC,
+CASE WHEN '@VAR.sort_order@' = 'mel_date' THEN wo_header.ac_registr END DESC,
+CASE WHEN '@VAR.sort_order@' = 'mel_date' THEN wo_header.event_perfno_i END DESC
+/*AFL_MEL4*/</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_MEL_CONVERTER" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DECODE ('@VAR.v04_show_maint_proc_only@' 'Y' 'YES' 'N' 'NO''') as ac_registr" id="ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DECODE ('@VAR.sort_order@' 'wonum' 'WO Number' 'melnum' 'MEL Item' 'mel_date' 'Last Transfer Date''') as sort_by" id="sort_by"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DECODE ('@VAR.v04_show_maint_proc_only@' 'Y' 'YES' 'N' 'NO''') as maint_proc_only" id="maint_proc_only"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_registr@">
+          <ds:object>@VAR.ac_registr@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.sort_order@">
+          <ds:object>@VAR.sort_order@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v04_show_maint_proc_only@">
+          <ds:object>@VAR.v04_show_maint_proc_only@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT
+        DECODE ('@VAR.ac_registr@', '', 'ALL', '@VAR.ac_registr@') as ac_registr
+       ,DECODE ('@VAR.sort_order@', 'wonum', 'WO Number', 'melnum', 'MEL Item', 'mel_date', 'Last Transfer Date', '') as sort_by
+       ,DECODE ('@VAR.v04_show_maint_proc_only@', 'Y', 'YES', 'N', 'NO', '') as maint_proc_only
+FROM DUAL</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

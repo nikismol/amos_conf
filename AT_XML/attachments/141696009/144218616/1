@@ -1,0 +1,1172 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.swiss-as.com/xml/report_2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_2.0 http://www.swiss-as.com/xml/report_2.0.xsd http://www.swiss-as.com/xml/datasource_1.0 http://www.swiss-as.com/xml/datasource_1.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000007</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v2</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="45119">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">90</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content>
+      <view class="LabelReportView" id="45120">
+        <attribute name="name">Label_1</attribute>
+        <attribute name="position">800 0</attribute>
+        <attribute name="size">200 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes>
+          <conditional_attribute id="1">
+            <attribute name="text">@AFL_PPCDSP_TIMEDATECONVERT.start_date_f@</attribute>
+            <conditions>
+              <condition class="GenericStyleCondition">
+                <field id="1">@AFL_PPCDSP_TIMEDATECONVERT.start_date_f@</field>
+                <field id="2">@AFL_PPCDSP_TIMEDATECONVERT.end_date_f@</field>
+                <operator negated="NO">EQUALS</operator>
+              </condition>
+            </conditions>
+          </conditional_attribute>
+        </conditional_attributes>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@AFL_PPCDSP_TIMEDATECONVERT.start_date_f@ - @AFL_PPCDSP_TIMEDATECONVERT.end_date_f@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 14</attribute>
+        <attribute name="text-align">RIGHT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+      <view class="LabelReportView" id="45121">
+        <attribute name="name">Label_1</attribute>
+        <attribute name="position">370 0</attribute>
+        <attribute name="size">260 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">План задание на смену № Х ДТО ВС</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 14</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+      <view class="LabelReportView" id="45122">
+        <attribute name="name">Label_3</attribute>
+        <attribute name="position">0 20</attribute>
+        <attribute name="size">1000 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Самолеты типов: @VAR.ac_type@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 14</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>TOP</location>
+          <anchor_view>45121</anchor_view>
+          <anchor_location>BOTTOM</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45123">
+        <attribute name="name">Label_4</attribute>
+        <attribute name="position">370 40</attribute>
+        <attribute name="size">260 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes>
+          <conditional_attribute id="1">
+            <attribute name="text">08:00 - 20:00</attribute>
+            <conditions>
+              <condition class="GenericStyleCondition">
+                <field id="1">@AFL_PPCDSP_TIMEDATECONVERT.start_date_f@</field>
+                <field id="2">@AFL_PPCDSP_TIMEDATECONVERT.end_date_f@</field>
+                <operator negated="NO">EQUALS</operator>
+              </condition>
+            </conditions>
+          </conditional_attribute>
+        </conditional_attributes>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">20:00-08:00</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 14</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>TOP</location>
+          <anchor_view>45122</anchor_view>
+          <anchor_location>BOTTOM</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45124">
+        <attribute name="name">Label_17</attribute>
+        <attribute name="position">0 60</attribute>
+        <attribute name="size">70 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">№ самолета</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+      <view class="LabelReportView" id="45125">
+        <attribute name="name">Label_18</attribute>
+        <attribute name="position">400 60</attribute>
+        <attribute name="size">80 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">Готовн.</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45129</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45126">
+        <attribute name="name">Label_19</attribute>
+        <attribute name="position">70 60</attribute>
+        <attribute name="size">50 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">№ рейса</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45124</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45127">
+        <attribute name="name">Label_20</attribute>
+        <attribute name="position">800 60</attribute>
+        <attribute name="size">150 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">ПУНКТ НАЗНАЧЕНИЯ</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45136</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45128">
+        <attribute name="name">Label_21</attribute>
+        <attribute name="position">270 60</attribute>
+        <attribute name="size">50 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">Прилет по плану</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45130</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45129">
+        <attribute name="name">Label_22</attribute>
+        <attribute name="position">320 60</attribute>
+        <attribute name="size">80 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">Регламент</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45128</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45130">
+        <attribute name="name">Label_23</attribute>
+        <attribute name="position">120 60</attribute>
+        <attribute name="size">150 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">ПУНКТ ВЫЛЕТА</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45126</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="PageBreakView" id="45131">
+        <attribute name="name">PageBreak_24</attribute>
+        <attribute name="position">0 60</attribute>
+        <attribute name="size">700 24</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+      </view>
+      <view class="LabelReportView" id="45132">
+        <attribute name="name">Label_25</attribute>
+        <attribute name="position">950 60</attribute>
+        <attribute name="size">50 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">Вылет по плану</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45127</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45133">
+        <attribute name="name">Label_26</attribute>
+        <attribute name="position">710 60</attribute>
+        <attribute name="size">40 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">Трудоемкость</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">FORCED</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45134</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45134">
+        <attribute name="name">Label_27</attribute>
+        <attribute name="position">680 60</attribute>
+        <attribute name="size">30 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">Служба</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">FORCED</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45135</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45135">
+        <attribute name="name">Label_28</attribute>
+        <attribute name="position">480 60</attribute>
+        <attribute name="size">200 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ, СОСТОЯНИЕ САМОЛЕТА</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45125</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="45136">
+        <attribute name="name">Label_29</attribute>
+        <attribute name="position">750 60</attribute>
+        <attribute name="size">50 30</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <attribute name="text">№ рейса</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>LEFT</location>
+          <anchor_view>45133</anchor_view>
+          <anchor_location>RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="ClonerReportView" id="45137">
+      <attribute name="name">Cloner_1</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 120</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_PPCDSP_ACTYPES</attribute>
+    </view>
+    <view class="ClonerReportView" id="45151">
+      <attribute name="name">Cloner_43</attribute>
+      <attribute name="position">0 20</attribute>
+      <attribute name="size">1000 69</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_PPCDSP_WPS</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>45138</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45138">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 20</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">D0D0D0</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_ACTYPES.act.ac_typ@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>45137</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45139">
+      <attribute name="name">Label_30</attribute>
+      <attribute name="position">0 20</attribute>
+      <attribute name="size">70 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_WPS.a.ac_registr@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>45151</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45140">
+      <attribute name="name">Label_31</attribute>
+      <attribute name="position">400 20</attribute>
+      <attribute name="size">80 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_WPS.end_date@
+@AFL_PPCDSP_WPS.end_time@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45144</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45141">
+      <attribute name="name">Label_32</attribute>
+      <attribute name="position">70 20</attribute>
+      <attribute name="size">50 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_ARR.flightno@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45139</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45142">
+      <attribute name="name">Label_33</attribute>
+      <attribute name="position">800 20</attribute>
+      <attribute name="size">150 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_DEP.station_arr_name@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45150</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45143">
+      <attribute name="name">Label_34</attribute>
+      <attribute name="position">270 20</attribute>
+      <attribute name="size">50 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_ARR.arr_time@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45145</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45144">
+      <attribute name="name">Label_35</attribute>
+      <attribute name="position">320 20</attribute>
+      <attribute name="size">80 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_WPS.wph.description@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45143</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45145">
+      <attribute name="name">Label_36</attribute>
+      <attribute name="position">120 20</attribute>
+      <attribute name="size">150 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_ARR.station_dep_name@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45141</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45146">
+      <attribute name="name">Label_38</attribute>
+      <attribute name="position">950 20</attribute>
+      <attribute name="size">50 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_DEP.dep_time@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45142</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45147">
+      <attribute name="name">Label_39</attribute>
+      <attribute name="position">710 20</attribute>
+      <attribute name="size">40 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_WPS.@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">FORCED</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45148</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45148">
+      <attribute name="name">Label_40</attribute>
+      <attribute name="position">680 20</attribute>
+      <attribute name="size">30 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">BM</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@AFL_PPCDSP_WPS.wph.hidden@</field>
+              <field id="2">H</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">LM</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">FORCED</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45149</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45149">
+      <attribute name="name">Label_41</attribute>
+      <attribute name="position">480 20</attribute>
+      <attribute name="size">200 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_WPS.wph.wpno@, LMCL</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45140</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="45150">
+      <attribute name="name">Label_42</attribute>
+      <attribute name="position">750 20</attribute>
+      <attribute name="size">50 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_PPCDSP_DEP.flightno@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>45147</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="VAR" type="PARAMETER_DATASOURCE" version="1.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="end_d"/>
+        <ds:columnDescriptor amosType="TIME" description="" id="end_t"/>
+        <ds:columnDescriptor amosType="AT" description="" id="ac_type"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="start_d"/>
+        <ds:columnDescriptor amosType="TIME" description="" id="start_t"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="3. Дата окончания периода" id="end_d">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>16381</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="4. Время окончания периода" id="end_t">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>1380</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Типы ВС" id="ac_type">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>B777</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="1. Дата начала периода" id="start_d">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>16381</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="2. Время начала периода" id="start_t">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>1</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="AFL_PPCDSP_TIMEDATECONVERT" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (@VAR.start_d@+729)'DD.MM.YYYY') as start_date_f" id="start_date_f"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (@VAR.end_d@+729)'DD.MM.YYYY') as end_date_f" id="end_date_f"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.start_d@">
+          <ds:object>@VAR.start_d@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.end_d@">
+          <ds:object>@VAR.end_d@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>SELECT 
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.start_d@+729), 'DD.MM.YYYY') as start_date_f,
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.end_d@+729), 'DD.MM.YYYY') as end_date_f
+FROM dual</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="AFL_PPCDSP_ACTYPES" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="act.ac_typ" id="act.ac_typ"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_type@">
+          <ds:object>@VAR.ac_type@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>SELECT act.ac_typ FROM ac_typ act
+WHERE REGEXP_LIKE(act.ac_typ, REPLACE('@VAR.ac_type@', ', ', '|'))</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="AFL_PPCDSP_WPS" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.wpno" id="wph.wpno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.wpno_i" id="wph.wpno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.hidden" id="wph.hidden"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.description" id="wph.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" &#10;TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (wph.start_date+729)'DD.MM.YYYY') as start_date" id="start_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.start_date as ams_start_date" id="ams_start_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;o_char(trunc(sysdate) + wph.start_time/24/60'hh24:mi') as start_time" id="start_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.start_time as ams_start_time" id="ams_start_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (wph.end_date+729)'DD.MM.YYYY') as end_date" id="end_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.end_date as ams_end_date" id="ams_end_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;o_char(trunc(sysdate) + wph.end_time/24/60'hh24:mi') as end_time" id="end_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.end_time as ams_end_time" id="ams_end_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.ac_registr" id="a.ac_registr"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_PPCDSP_ACTYPES.act.ac_typ@">
+          <ds:object>@AFL_PPCDSP_ACTYPES.act.ac_typ@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.start_d@">
+          <ds:object>@VAR.start_d@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.end_t@">
+          <ds:object>@VAR.end_t@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.start_t@">
+          <ds:object>@VAR.start_t@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>SELECT 
+wph.wpno, 
+wph.wpno_i,
+wph.hidden,
+wph.description, 
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wph.start_date+729), 'DD.MM.YYYY') as start_date,
+wph.start_date as ams_start_date,
+TO_CHAR(trunc(sysdate) + wph.start_time/24/60, 'hh24:mi') as start_time,
+wph.start_time as ams_start_time,
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wph.end_date+729), 'DD.MM.YYYY') as end_date,
+wph.end_date as ams_end_date,
+TO_CHAR(trunc(sysdate) + wph.end_time/24/60, 'hh24:mi') as end_time,
+wph.end_time as ams_end_time,
+a.ac_registr
+FROM 
+wp_header wph
+JOIN aircraft a ON wph.ac_registr = a.ac_registr
+JOIN wp_status wpst ON wpst.wp_status_id = wph.wp_status
+WHERE 
+wpst.name NOT IN ('Closed', 'Deleted')
+AND (a.ac_typ = '@AFL_PPCDSP_ACTYPES.act.ac_typ@' OR a.ac_model = '@AFL_PPCDSP_ACTYPES.act.ac_typ@')
+AND (((wph.start_date = @VAR.start_d@) AND (wph.start_time &lt;=@VAR.end_t@)) OR (wph.start_date &lt; @VAR.start_d@))
+AND (((wph.end_date = @VAR.start_d@) AND (wph.end_time &gt;=@VAR.start_t@)) OR (wph.end_date &gt; @VAR.start_d@))</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="AFL_PPCDSP_ARR" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rnum" id="rnum"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DISTINCT&#10;FIRST_VALUE(ac_utilization.leg_number)  OVER (ORDER BY ac_utilization.sched_arrival_date DESCac_utilization.sched_arrival_time DESC) as flightno" id="flightno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;FIRST_VALUE(ac_future_flights.sched_depatrure_airport) OVER (ORDER BY ac_future_flights.sched_arrival_date DESCac_future_flights.sched_arrival_time DESC) as station_dep" id="station_dep"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;TO_CHAR(trunc(sysdate) + FIRST_VALUE(ac_utilization.sched_arrival_time)  OVER (ORDER BY ac_utilization.sched_arrival_date DESC ac_utilization.sched_arrival_time DESC)/24/60'hh24:mi') as arr_time" id="arr_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="arr_date" id="arr_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;FIRST_VALUE(address.name)  OVER (ORDER BY ac_utilization.sched_arrival_date DESCac_utilization.sched_arrival_time DESC) as station_dep_name" id="station_dep_name"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_PPCDSP_WPS.ams_start_date@">
+          <ds:object>@AFL_PPCDSP_WPS.ams_start_date@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_PPCDSP_WPS.ams_start_time@">
+          <ds:object>@AFL_PPCDSP_WPS.ams_start_time@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.start_d@">
+          <ds:object>@VAR.start_d@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.start_t@">
+          <ds:object>@VAR.start_t@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_PPCDSP_WPS.a.ac_registr@">
+          <ds:object>@AFL_PPCDSP_WPS.a.ac_registr@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>SELECT rnum, flightno, station_dep, arr_time, arr_date, station_dep_name FROM
+(SELECT
+rownum as rnum,
+ac_future_flights.flight_number as flightno,
+ac_future_flights.sched_departure_airport as station_dep,
+TO_CHAR(trunc(sysdate) + ac_future_flights.sched_arrival_time/24/60, 'hh24:mi') as arr_time,
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (ac_future_flights.sched_arrival_date+729), 'DD.MM.YYYY') as arr_date,
+address.name as station_dep_name
+FROM ac_future_flights 
+JOIN address ON address.vendor = ac_future_flights.sched_departure_airport
+WHERE ((ac_future_flights.sched_arrival_date&lt;@AFL_PPCDSP_WPS.ams_start_date@) OR (ac_future_flights.sched_arrival_date=@AFL_PPCDSP_WPS.ams_start_date@ AND ac_future_flights.sched_arrival_time&lt;@AFL_PPCDSP_WPS.ams_start_time@))
+        AND ((ac_future_flights.sched_arrival_date&gt;@VAR.start_d@) OR (ac_future_flights.sched_arrival_date=@VAR.start_d@ AND ac_future_flights.sched_arrival_time&gt;@VAR.start_t@))
+                              AND ac_future_flights.ac_registr = '@AFL_PPCDSP_WPS.a.ac_registr@' ORDER BY arr_date DESC, arr_time DESC)
+WHERE rnum=1</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="AFL_PPCDSP_DEP" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rnum" id="rnum"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="flightno" id="flightno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="dep_time" id="dep_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="dep_date" id="dep_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="station_arr_name" id="station_arr_name"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="station_arr" id="station_arr"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_PPCDSP_WPS.ams_end_date@">
+          <ds:object>@AFL_PPCDSP_WPS.ams_end_date@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_PPCDSP_WPS.ams_end_time@">
+          <ds:object>@AFL_PPCDSP_WPS.ams_end_time@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.end_d@">
+          <ds:object>@VAR.end_d@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.end_t@">
+          <ds:object>@VAR.end_t@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_PPCDSP_WPS.a.ac_registr@">
+          <ds:object>@AFL_PPCDSP_WPS.a.ac_registr@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>SELECT rnum, flightno, dep_time, dep_date, station_arr_name, station_arr FROM
+
+(
+SELECT 
+rownum as rnum, 
+ac_future_flights.flight_number as flightno,
+ac_future_flights.sched_arrival_airport as station_arr,
+TO_CHAR(trunc(sysdate) + ac_future_flights.sched_departure_time/24/60, 'hh24:mi') as dep_time,
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (ac_future_flights.sched_departure_date+729), 'DD.MM.YYYY') as dep_date,
+address.name as station_arr_name 
+FROM ac_future_flights 
+JOIN address ON address.vendor = ac_future_flights.sched_arrival_airport
+WHERE (
+   (ac_future_flights.sched_departure_date&gt;@AFL_PPCDSP_WPS.ams_end_date@) OR (
+      ac_future_flights.sched_departure_date=@AFL_PPCDSP_WPS.ams_end_date@ AND ac_future_flights.sched_departure_time&gt;@AFL_PPCDSP_WPS.ams_end_time@
+   )
+)
+AND (
+   (ac_future_flights.sched_departure_date&lt;@VAR.end_d@) OR (
+      ac_future_flights.sched_departure_date=@VAR.end_d@ AND ac_future_flights.sched_departure_time&lt;@VAR.end_t@
+   )
+)
+AND ac_future_flights.ac_registr = '@AFL_PPCDSP_WPS.a.ac_registr@' ORDER BY ac_future_flights.sched_departure_date ASC,  ac_future_flights.sched_departure_time ASC
+)
+
+WHERE rnum=1</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

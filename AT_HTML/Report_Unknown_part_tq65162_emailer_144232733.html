@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Report_Unknown_part_tq65162_emailer</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Report_Unknown_part_tq65162_emailer
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence"> select to_char(wo_header.event_perfno_i),
+       to_char(wo_header.ata_chapter),
+       to_char(part_request_2.partno),
+       to_char(oem_reference.oem_reference_string),
+to_char(aircraft.ac_typ)
+from part_request_2 
+LEFT JOIN allocation_link ON allocation_link.source_key = part_request_2.part_requestno_i 
+LEFT JOIN workstep_link ON part_request_2.event_key = workstep_link.workstep_linkno_i AND part_request_2.event_type = &#39;WSL&#39; 
+LEFT JOIN wo_header ON workstep_link.event_perfno_i = wo_header.event_perfno_i 
+LEFT JOIN part ON part.partno = part_request_2.partno 
+LEFT JOIN oem_reference ON oem_reference.source_pk = part_request_2.part_requestno_i  
+LEFT JOIN aircraft ON aircraft.ac_registr = wo_header.ac_registr
+where part.partno is null 
+      and wo_header.created_date &gt;= FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))-60
+      and wo_header.state = &#39;O&#39; 
+      and wo_header.event_perfno_i &gt;= &#39;0&#39; 
+      and wo_header.Type in (
+         &#39;M&#39;,
+         &#39;P&#39;,
+         &#39;C&#39;,
+         &#39;S&#39;)  
+
+UNION
+
+SELECT 
+&#39;EXP_CHK_OK&#39;,
+NULL,
+NULL,
+NULL,
+NULL
+FROM dual 
+WHERE (
+ SELECT count(1)
+ from part_request_2 
+LEFT JOIN allocation_link ON allocation_link.source_key = part_request_2.part_requestno_i 
+LEFT JOIN workstep_link ON part_request_2.event_key = workstep_link.workstep_linkno_i AND part_request_2.event_type = &#39;WSL&#39; 
+LEFT JOIN wo_header ON workstep_link.event_perfno_i = wo_header.event_perfno_i 
+LEFT JOIN part ON part.partno = part_request_2.partno 
+LEFT JOIN oem_reference ON oem_reference.source_pk = part_request_2.part_requestno_i  
+LEFT JOIN aircraft ON aircraft.ac_registr = wo_header.ac_registr
+where part.partno is null 
+      and wo_header.created_date &gt;= FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))-60
+      and wo_header.state = &#39;O&#39; 
+    and wo_header.event_perfno_i &gt;= &#39;0&#39;
+      and wo_header.Type in (
+         &#39;M&#39;,
+         &#39;P&#39;,
+         &#39;C&#39;,
+         &#39;S&#39;
+      )  
+ 
+      ) = &#39;0&#39;</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

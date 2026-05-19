@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : A-Technics_AFL_Report_Consumption</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : A-Technics_AFL_Report_Consumption
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    history.partno PART_NUMBER,
+    history.serialno SERIAL_NUMBER,
+    history.batchno BATCH_NUMBER,
+    part.description PART_DESCRIPTION,
+    history.owner OWNER,
+    history.ata_chapter ATA_CHAPTER,
+    history.mat_class MAT_CLASS,
+    part.mat_type MAT_TYPE,
+    CASE
+        WHEN history.vm=&#39;T&#39; AND history.voucherno like &#39;T-%&#39; THEN history_text.station
+        ELSE history.station
+    END STATION,
+    CASE
+        WHEN history.vm=&#39;T&#39; AND history.voucherno like &#39;T-%&#39; THEN history_text.store
+        ELSE history.store
+    END STORE,
+    CASE
+        WHEN history.vm=&#39;T&#39; AND history.voucherno like &#39;T-%&#39; THEN history_text.location
+        ELSE history.location
+    END LOCATION,
+    history.vm VOUCHER_MODE,
+    history.voucherno VOUCHER_NUMBER,
+    history.ac_registr AC_REGISTR,
+    history.receiver RECEIVER,
+    TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (history.del_date), &#39;DD.MM.YYYY&#39;) BOOKING_DATE,
+    history.qty QTY,
+    part.measure_unit MEASURE_UNIT,
+    CASE
+        WHEN history.vm=&#39;T&#39; AND history.voucherno like &#39;T-%&#39; THEN history.station
+        ELSE pickslip_header.station_to
+    END STATION_TO,
+    CASE
+        WHEN history.vm=&#39;T&#39; AND history.voucherno like &#39;T-%&#39; THEN history.store
+        ELSE pickslip_header.store_to
+    END STORE_TO,
+    history.average_price SELECTED_PRICE_RUB
+FROM history
+LEFT JOIN (
+    SELECT
+        REGEXP_SUBSTR(history_text.short_text, &#39;:\s*([^:/]+)&#39;, 1, 1, NULL, 1) AS station,
+        REGEXP_SUBSTR(history_text.short_text, &#39;/([^/]+)/&#39;, 1, 1, NULL, 1) AS store,
+        REGEXP_SUBSTR(history_text.short_text, &#39;([^:/]+)$&#39;, 1, 1) AS location,
+        history_text.historyno_i
+    FROM history_text
+    WHERE history_text.short_text LIKE &#39;Previous Location:%&#39;
+) history_text ON history.historyno_i=history_text.historyno_i
+LEFT JOIN part ON history.partno = part.partno
+LEFT JOIN od_detail ON history.od_detailno_i = od_detail.detailno_i
+LEFT JOIN pickslip_booked ON history.pickslipseqno_i = pickslip_booked.pickslipseqno_i
+LEFT JOIN pickslip_header ON pickslip_booked.pickslipno = pickslip_header.pickslipno
+LEFT JOIN project ON pickslip_header.projectno = project.projectno
+LEFT JOIN location ON history.location = location.location AND ( history.store = location.store AND history.station = location.station )
+WHERE (
+    history.del_date between FLOOR(trunc(ADD_MONTHS(SYSDATE, -1), &#39;MM&#39;)-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))
+        and
+        FLOOR(trunc(SYSDATE, &#39;MM&#39;) -1-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))
+    )
+  AND history.station||history.store IN (
+                                         &#39;SVOHANGAR_4&#39;,
+                                         &#39;SVOHANGAR_5&#39;,
+                                         &#39;SVOAT_ACC&#39;,
+                                         &#39;SVOAT_BASE&#39;,
+                                         &#39;SVOAT_CABIN&#39;,
+                                         &#39;SVOAT_FLUID&#39;,
+                                         &#39;SVOAT_WHEEL&#39;,
+                                         &#39;SHRM5010&#39;
+                                        )</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

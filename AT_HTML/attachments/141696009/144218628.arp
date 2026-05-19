@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.swiss-as.com/xml/report_2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_2.0 http://www.swiss-as.com/xml/report_2.0.xsd http://www.swiss-as.com/xml/datasource_1.0 http://www.swiss-as.com/xml/datasource_1.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000024</report_id>
+    <revision_number>0</revision_number>
+    <meta name="author">vtsymbal</meta>
+    <meta name="serialization">v2</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="340">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">60</attribute>
+      <attribute name="footer-size">25</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content>
+      <view class="ImageReportView" id="341">
+        <attribute name="name">Image_1</attribute>
+        <attribute name="position">10 2</attribute>
+        <attribute name="size">194 56</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="image-source">web://img/Aeroflot_logo.png</attribute>
+        <attribute name="scale-mode">FILL</attribute>
+      </view>
+      <view class="LabelReportView" id="342">
+        <attribute name="name">Label_1</attribute>
+        <attribute name="position">545 3</attribute>
+        <attribute name="size">150 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Report Creation Date: @DATE@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+      <view class="LabelReportView" id="343">
+        <attribute name="name">Label_1</attribute>
+        <attribute name="position">605 979</attribute>
+        <attribute name="size">197 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Page @SYSTEM.PAGE_NO@/@SYSTEM.PAGE_COUNT@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="344">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">84 16</attribute>
+      <attribute name="size">516 16</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Открытые заказы в статусе Open / Booked</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 13</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>BOTTOM_LEFT</location>
+        <anchor_view>346</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="ClonerReportView" id="345">
+      <attribute name="name">Cloner_1</attribute>
+      <attribute name="position">84 32</attribute>
+      <attribute name="size">516 124</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">RAM_Open_Orders_Stat_OD_TYP</attribute>
+    </view>
+    <view class="LabelReportView" id="346">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">84 32</attribute>
+      <attribute name="size">516 14</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">E7FFDB</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@RAM_Open_Orders_Stat_OD_TYP.odh.order_type@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>345</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="347">
+      <attribute name="name">DatasourceTable_5</attribute>
+      <attribute name="position">84 46</attribute>
+      <attribute name="size">516 60</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="">
+          <attribute name="width">30</attribute>
+          <view class="LabelReportView" id="350" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E5E5E5</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">№</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="351" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Open_Orders_Stat.num@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="354" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E5E5E5</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">ORDER NO</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="355" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Open_Orders_Stat.orderno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">90</attribute>
+          <view class="LabelReportView" id="358" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">90 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E5E5E5</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">ORDER DATE</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="359" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">90 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Open_Orders_Stat.orderdate@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="362" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E5E5E5</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">STATUS</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="363" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Open_Orders_Stat.status@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="366" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E5E5E5</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">MUTATION</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="367" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Open_Orders_Stat.mutation@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">96</attribute>
+          <view class="LabelReportView" id="370" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">96 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E5E5E5</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">MUTATOR</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="371" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">96 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RAM_Open_Orders_Stat.mutator@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">RAM_Open_Orders_Stat</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>346</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="VAR" type="PARAMETER_DATASOURCE" version="1.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="hod_from"/>
+        <ds:columnDescriptor amosType="NONE" description="" id="text1"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="hod_end"/>
+        <ds:columnDescriptor amosType="NONE" description="" id="text2"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="date_end"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="date_from"/>
+        <ds:columnDescriptor amosType="ORDER" description="" id="ordern"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="04  С.." id="hod_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="00  Дата последнего изменения:" id="text1">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="05  По.." id="hod_end">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="03  Дата заказа:" id="text2">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="02  По.." id="date_end">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="01  С.." id="date_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Номер Заказа" id="ordern">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="RAM_Open_Orders_Stat_OD_TYP" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Order type</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="odh.order_type" id="odh.order_type"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_from@">
+          <ds:object>@VAR.date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_end@">
+          <ds:object>@VAR.date_end@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.hod_from@">
+          <ds:object>@VAR.hod_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.hod_end@">
+          <ds:object>@VAR.hod_end@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ordern@">
+          <ds:object>@VAR.ordern@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ordern_y@">
+          <ds:object>@VAR.ordern_y@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>SELECT odh.order_type
+FROM od_header odh
+WHERE (odh.order_type in ('P')
+	or odh.order_type in ('PX') 
+	or odh.order_type in ('PR')
+	or odh.order_type in ('PU')
+	or odh.order_type in ('L')
+	or odh.order_type in ('LU')
+    or odh.order_type in ('Y')
+	or odh.order_type in ('YU')
+	or odh.order_type in ('R') 
+	or odh.order_type in ('X'))
+   and (odh.state = 'O' and odh.ext_state in ('O', 'B', 'BO'))
+/* Дата последнего изменения */
+ and ('@VAR.date_from@' is null or odh.mutation &gt;= '@VAR.date_from@')
+ and ('@VAR.date_end@' is null or odh.mutation &lt;= '@VAR.date_end@')
+/* Дата ордера */
+ and ('@VAR.hod_from@' is null or odh.orderdate &gt;= '@VAR.hod_from@')
+ and ('@VAR.hod_end@' is null or orderdate &lt;= '@VAR.hod_end@')
+/* Order No */
+and ('@VAR.ordern@' is null or
+odh.orderno in
+ (select trim(substr('@VAR.ordern@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.ordern@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.ordern_y@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.ordern@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.ordern@') -
+              length(replace('@VAR.ordern@', ',', '')) + 1))
+   group by odh.order_type
+   order by odh.order_type</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="RAM_Open_Orders_Stat" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Открытые заказы в статусе Open / Booked</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="row_number() over(ORDER BY mutationorderno) num" id="num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="orderno" id="orderno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="state" id="state"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ext_state" id="ext_state"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       case&#10;         when ext_state = 'O' then&#10;          'OPEN'&#10;         when ext_state in ('B''BO') then&#10;          'BOOKED'&#10;         else&#10;          'NO VALUES'&#10;       end status" id="status"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="order_type" id="order_type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       decode(mutation&#10;                       0&#10;                       null&#10;                       to_char(to_date('31.12.1971' 'dd.mm.yyyy') + mutation'dd.mm.yyyy')) mutation" id="mutation"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="orderdate" id="orderdate"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="mutator" id="mutator"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@RAM_Open_Orders_Stat_OD_TYP.odh.order_type@">
+          <ds:object>@RAM_Open_Orders_Stat_OD_TYP.odh.order_type@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_from@">
+          <ds:object>@VAR.date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_end@">
+          <ds:object>@VAR.date_end@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.hod_from@">
+          <ds:object>@VAR.hod_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.hod_end@">
+          <ds:object>@VAR.hod_end@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ordern@">
+          <ds:object>@VAR.ordern@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ordern_y@">
+          <ds:object>@VAR.ordern_y@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>select row_number() over(ORDER BY mutation, orderno) num,
+       orderno,
+       state,
+       ext_state,
+       case
+         when ext_state = 'O' then
+          'OPEN'
+         when ext_state in ('B', 'BO') then
+          'BOOKED'
+         else
+          'NO VALUES'
+       end status,
+       order_type,
+       decode(mutation,
+                       0,
+                       null,
+                       to_char(to_date('31.12.1971', 'dd.mm.yyyy') + mutation,
+                               'dd.mm.yyyy')) mutation,
+       decode(orderdate,
+                       0,
+                       null,
+                       to_char(to_date('31.12.1971', 'dd.mm.yyyy') + orderdate,
+                               'dd.mm.yyyy')) orderdate,
+       mutator
+  from od_header
+ where order_type = '@RAM_Open_Orders_Stat_OD_TYP.odh.order_type@'
+   and (state = 'O' and ext_state in ('O', 'B', 'BO'))
+/* Дата последнего изменения */
+ and ('@VAR.date_from@' is null or mutation &gt;= '@VAR.date_from@')
+ and ('@VAR.date_end@' is null or mutation &lt;= '@VAR.date_end@')
+/* Дата ордера */
+ and ('@VAR.hod_from@' is null or orderdate &gt;= '@VAR.hod_from@')
+ and ('@VAR.hod_end@' is null or orderdate &lt;= '@VAR.hod_end@')
+/* Order No */
+and ('@VAR.ordern@' is null or
+orderno in
+ (select trim(substr('@VAR.ordern@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.ordern@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.ordern_y@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.ordern@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.ordern@') -
+              length(replace('@VAR.ordern@', ',', '')) + 1))</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

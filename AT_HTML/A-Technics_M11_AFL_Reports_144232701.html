@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : A-Technics_M11_AFL_Reports</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : A-Technics_M11_AFL_Reports
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (h.del_date), &#39;DD.MM.YYYY&#39;) as utc_date,
+    p.description part_description,
+    h.partno partnumber,
+    h.serialno serialnumber,
+    h.batchno batchnumber,
+    p.measure_unit,
+    h.qty quantity,
+    h.mat_class,
+   CASE WHEN h.condition = &#39;S&#39; THEN &#39;SERVICABLE / ИСПРАВНО&#39;
+        WHEN h.condition = &#39;US&#39; THEN &#39;UNSERVICABLE / НЕИСПРАВНО&#39;
+        WHEN h.condition = &#39;OH&#39; THEN &#39;OVERHAULED / КАПИТАЛЬНЫЙ РЕМОНТ&#39;
+        WHEN h.condition = &#39;N&#39; THEN &#39;NEW&#39;
+        WHEN h.condition = &#39;R&#39; THEN &#39;REPAIRED / ТЕКУЩИЙ РЕМОНТ&#39;
+        WHEN h.condition = &#39;IT&#39; THEN &#39;INSPECTED / TEST/ ПРОВЕРЕНО / ИСПЫ&#39;
+        ELSE h.condition
+   END conditions,
+   CASE WHEN h.vm = &#39;AA&#39; THEN &#39;STORE TO A/C&#39;
+        WHEN h.vm = &#39;YE&#39; THEN &#39;INSTALLATION&#39;
+        WHEN h.vm = &#39;BN&#39; THEN &#39;BATCHNO CHANGE&#39;
+        WHEN h.vm = &#39;CS&#39; THEN &#39;CU.LOAN START&#39;
+        WHEN h.vm = &#39;CR&#39; THEN &#39;CANCEL RECEIVING&#39;
+        WHEN h.vm = &#39;I&#39; THEN &#39;INVENT.CORR&#39;
+        WHEN h.vm = &#39;AS&#39; THEN &#39;STORE TO SHOP&#39;
+        ELSE h.vm
+   END operation_type,
+    h.voucherno,
+    h.ac_registr,
+   CASE WHEN h.vm = &#39;CS&#39; THEN adr.name
+   END receivers
+FROM history h
+LEFT JOIN part p ON h.partno = p.partno
+LEFT JOIN address adr ON h.receiver = adr.vendor
+WHERE h.vm IN (
+         &#39;AA&#39;,
+         &#39;YE&#39;,
+         &#39;BN&#39;,
+         &#39;CS&#39;,
+         &#39;CR&#39;,
+         &#39;I&#39;,
+         &#39;AS&#39;
+      )
+  AND
+    (h.del_date between FLOOR(trunc(ADD_MONTHS(SYSDATE, -1), &#39;MM&#39;)-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))
+        and FLOOR(trunc(SYSDATE, &#39;MM&#39;) -1-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))
+        )
+  AND h.station||h.store IN (
+         &#39;SVOHANGAR_4&#39;,
+         &#39;SVOHANGAR_5&#39;,
+         &#39;SVOAT_ACC&#39;,
+         &#39;SVOAT_BASE&#39;,
+         &#39;SVOAT_CABIN&#39;,
+         &#39;SVOAT_FLUID&#39;,
+         &#39;SVOAT_WHEEL&#39;,
+         &#39;SHRM5010&#39;
+      )
+  AND h.qty &lt; 0</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

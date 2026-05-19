@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Проблемах со сканированием Dirty Finger (расписанной рабочей документации – WO/WP)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953709.html">База знаний</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953753.html">Типичные кейсы и способы их разрешения</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Проблемах со сканированием Dirty Finger (расписанной рабочей документации – WO/WP)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 21, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>Для сканирования используется ППО <span>ABBYY</span> <span>Scan</span> <span>Station</span>, скриншот экрана в конце письма.</p><p><br/></p><p><strong>Траблшутинг:</strong></p><p>Открываем <span>BMC</span> и находим АРМ по штрих-коду. Проверяем что она запущена, что пользователь <span>dato</span>-<span>scanstation</span>-3.</p><p><br/></p><p>Звоним в диспетчерскую, уточняем, удобно ли будет проверить работу сканирования сейчас – у них бывают загруженные моменты. Уточняем в чем именно возникла проблема.</p><p><br/></p><p>Через <span>BMC</span> открываем удаленный доступ к ПК, просим пользователя разрешить доступ (<span>Allow</span> <span>full</span> <span>access</span>), пользователя пока не отпускаем.</p><p><br/></p><p>После подключения смотрим состояние АРМ, если <span>Scan</span> <span>Station</span> запущена, просим пользователя положить в сканер документ (они знают в какой, но если что - он находится прямо под монитором АРМ, <span>KODAK</span> <span>i</span>4600) и нажимаем «Сканировать страницы». В строке статуса должно отобразиться состояние сканирования (отсканировано страниц), в области Пакеты появляются отсканированные документы. Если все хорошо, просим пользователя попробовать самостоятельно отсканировать готовый пакет рабочей документации. Если все хорошо, нажать «Отправить». Статус отправки отображается в трее <span>Windows</span> (там же где и часы, поп-апом). Если все хорошо отвечаем по заявке (если была).</p><p><br/></p><p><strong>Типичные проблемы:</strong></p><ol><li><span> </span>Скрыта область «Пакеты»:<br/><ol><li><span style="letter-spacing: 0.0px;">Сканирование проходит, в строке состояния </span><span style="letter-spacing: 0.0px;">Scan</span><span style="letter-spacing: 0.0px;"> </span><span style="letter-spacing: 0.0px;">Station</span><span style="letter-spacing: 0.0px;"> отображаются отканированные страницы, но в основной области программы ничего не видно.</span></li><li><span style="letter-spacing: 0.0px;">Открываем меню «вид» из главного меню, ставил флаг напротив «Показывать пакеты»</span></li></ol></li><li><span> </span>Ошибка драйвера <span>«Can’t open KODAK TWAIN driver»:</span><ol><li><span style="letter-spacing: 0.0px;">Подтверждаем что сканер включен и не запущено другое ППО для сканирования.</span></li><li><span style="letter-spacing: 0.0px;">Закрываем и снова запускаем </span><span style="letter-spacing: 0.0px;">Scan</span><span style="letter-spacing: 0.0px;"> </span><span style="letter-spacing: 0.0px;">Station</span><span style="letter-spacing: 0.0px;">. </span><strong style="letter-spacing: 0.0px;"><em>Важно</em>:</strong><span style="letter-spacing: 0.0px;"> на АРМ установлены </span><span style="letter-spacing: 0.0px;">Scan</span><span style="letter-spacing: 0.0px;"> </span><span style="letter-spacing: 0.0px;">Station</span><span style="letter-spacing: 0.0px;"> и </span><strong style="letter-spacing: 0.0px;">FlexiCapture 12</strong><span style="letter-spacing: 0.0px;">Scan</span><span style="letter-spacing: 0.0px;"> </span><span style="letter-spacing: 0.0px;">Station</span><span style="letter-spacing: 0.0px;">, мы используем </span><strong style="letter-spacing: 0.0px;">просто</strong><span style="letter-spacing: 0.0px;"> </span><strong style="letter-spacing: 0.0px;">Scan </strong><strong style="letter-spacing: 0.0px;">Station</strong><span style="letter-spacing: 0.0px;"> – либо через меню Старт </span><span style="letter-spacing: 0.0px;">Windows </span><span style="letter-spacing: 0.0px;">либо через ярлык на рабочем столе.</span></li></ol></li></ol><p><br/></p><p><strong>Дополнительно:</strong></p><p><strong>АРМ без крайней необходимости не перезагружать. </strong>После перезагрузки <span>dato</span>-<span>scanstation</span>-3 будет удален из локальных администраторов АРМ, соответственно запуск <span>Scan</span> <span>Station</span> будет не возможен. Если у вас есть доступ можно зайти под локальным администратором и добавить пользователя в группу локальных администраторов.</p><p><br/></p><p><strong><u>При возникновении проблем решение которых не возможно собственными силами, пожалуйста звоните мне.</u></strong></p><p><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/144231193/144231196.png" data-image-src="attachments/144231193/144231196.png" data-unresolved-comment-count="0" data-linked-resource-id="144231196" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-9-21_10-37-46.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="144231193" data-linked-resource-container-version="1"></span></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/144231193/144231196.png">image2023-9-21_10-37-46.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

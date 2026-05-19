@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Настройка Transfer Receiving (Export)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-AIM-Configuration_143131870.html">AMOS AIM Configuration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Настройка Transfer Receiving (Export)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on июл. 31, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div id="expander-1745361857" class="expand-container"><div id="expander-control-1745361857" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">AFL</span></div><div id="expander-content-1745361857" class="expand-content"><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">В APN 1404 Main&amp;Traceability</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><ul><li>На вкладке <em><strong>MAIN</strong> </em>необходимо заполнить в соответсвии со скриншотом ниже:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263686/136263850.png" data-image-src="attachments/136263686/136263850.png" data-unresolved-comment-count="0" data-linked-resource-id="136263850" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-5-2_17-46-47.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263686" data-linked-resource-container-version="14"></span></li></ul><ul><li>На вкладке <em><strong>Traceability</strong></em> настроить в соответсвии со скриншотом ниже:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263686/136263851.png" data-image-src="attachments/136263686/136263851.png" data-unresolved-comment-count="0" data-linked-resource-id="136263851" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-5-2_17-47-12.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263686" data-linked-resource-container-version="14"></span></li></ul></div></div><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка селектора в APN 1404</p><div class="confluence-information-macro-body"><ul><li class="auto-cursor-target">В Configuration Detail выбираем подвкладку <strong><em>selector</em></strong> и в окне <strong><em>Export Selector</em></strong> заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263686/143132027.png" data-image-src="attachments/136263686/143132027.png" data-unresolved-comment-count="0" data-linked-resource-id="143132027" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-34-23.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263686" data-linked-resource-container-version="14"></span></li><li class="auto-cursor-target"><p class="auto-cursor-target"><span style="letter-spacing: 0.0px;">Ниже представлен </span><em style="letter-spacing: 0.0px;"><strong>SQL запрос</strong></em><span style="letter-spacing: 0.0px;"> для указания в </span><em style="letter-spacing: 0.0px;"><strong>Selector Options</strong></em><span style="letter-spacing: 0.0px;">:<br/></span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT 
+    concat(&#39;RD.&#39;, od_rec_detail.recdetailno_i)
+FROM od_rec_detail
+JOIN od_rec_header ON od_rec_header.receivingno = od_rec_detail.receivingno
+JOIN od_header ON od_rec_detail.orderno = od_header.orderno
+JOIN history ON od_rec_detail.recdetailno_i = history.recdetailno_i
+LEFT JOIN aim_transfer_history ON od_rec_detail.recdetailno_i = aim_transfer_history.source_key_i /* Transfer history */
+    AND aim_transfer_history.success = &#39;Y&#39; AND aim_transfer_history.source_type = &#39;RD&#39;
+    AND aim_transfer_history.service = &#39;TRANSFER_RECEIVING&#39;
+    AND aim_transfer_history.aim_configno_i IN (&#39;7&#39;)
+    AND aim_transfer_history.source_key_i IS NOT NULL
+WHERE 1=1
+  AND aim_transfer_history.source_key_i IS NULL  /* не выгружались ранее */
+  AND to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + od_rec_detail.created_date &gt;= TRUNC(sysdate - 30)
+  AND (
+      od_header.order_type IN (&#39;P&#39;, &#39;PX&#39;, &#39;PR&#39;, &#39;PU&#39;, &#39;L&#39;, &#39;LU&#39;, &#39;Y&#39;, &#39;YU&#39;, &#39;RC&#39;, &#39;X&#39;, &#39;CP&#39;)
+          OR
+      od_header.order_type IN (&#39;R&#39;) AND od_header.vendor != &#39;CLOSED&#39;
+      ) 
+  AND od_rec_header.awbno NOT IN (&#39;RELEASE REPAIRABLE&#39;, &#39;RELEASE ROTABLE&#39;)
+  AND od_rec_detail.recdetailno_i &gt; 0
+  AND od_rec_detail.status &lt;&gt;  9 /* не сторно */
+  AND NVL(history.higher_partno, CHR(160)) in (CHR(49824), CHR(160)) /*history.higher_partno is null */
+  AND od_rec_detail.recdetailno_i not in (583145, 583143, 583144, 915419, 915420)
+GROUP BY od_rec_detail.recdetailno_i</pre>
+</div></div></li></ul></div></div><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка Transport в APN 1404</p><div class="confluence-information-macro-body"><ul><li>В Configuration Detail выбираем подвкладку <em><strong>transport</strong></em> и в главном окне заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263686/143132029.png" data-image-src="attachments/136263686/143132029.png" data-unresolved-comment-count="0" data-linked-resource-id="143132029" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-37-6.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263686" data-linked-resource-container-version="14"></span></li></ul></div></div></div></div><p><br/></p><div id="expander-602646549" class="expand-container"><div id="expander-control-602646549" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">INTEGR_LC</span></div><div id="expander-content-602646549" class="expand-content"><p><br/></p><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">В APN 1404 Main&amp;Traceability</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><div class="content-wrapper"><ul><li>На вкладке <em><strong>MAIN</strong> </em>необходимо заполнить в соответсвии со скриншотом ниже:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263686/143132030.png" data-image-src="attachments/136263686/143132030.png" data-unresolved-comment-count="0" data-linked-resource-id="143132030" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-39-54.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263686" data-linked-resource-container-version="14"></span></li><li><span style="letter-spacing: 0.0px;">На вкладке </span><em style="letter-spacing: 0.0px;"><strong>Traceability</strong></em><span style="letter-spacing: 0.0px;"> настроить в соответсвии со скриншотом ниже:<br/></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263686/143132031.png" data-image-src="attachments/136263686/143132031.png" data-unresolved-comment-count="0" data-linked-resource-id="143132031" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-40-17.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263686" data-linked-resource-container-version="14"></span></li></ul></div></div></div><p><br/></p><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка селектора в APN 1404</p><div class="confluence-information-macro-body"><div class="content-wrapper"><ul><li class="auto-cursor-target">В Configuration Detail выбираем подвкладку <strong><em>selector</em></strong> и в окне <strong><em>Export Selector</em></strong> заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263686/143132032.png" data-image-src="attachments/136263686/143132032.png" data-unresolved-comment-count="0" data-linked-resource-id="143132032" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-40-39.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263686" data-linked-resource-container-version="14"></span></li><li class="auto-cursor-target"><p class="auto-cursor-target"><span style="letter-spacing: 0.0px;">Ниже представлен </span><em style="letter-spacing: 0.0px;"><strong>SQL запрос</strong></em><span style="letter-spacing: 0.0px;"> для указания в </span><em style="letter-spacing: 0.0px;"><strong>Selector Options</strong></em><span style="letter-spacing: 0.0px;">:<br/></span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">select 
+    concat(&#39;RD.&#39;, dt.recdetailno_i)
+from (
+    select 
+        created_date, 
+        recdetailno_i, 
+        receivingno, 
+        orderno, 
+        status 
+    from od_rec_detail
+    ) dt
+    join (
+        select 
+            awbno, 
+            receivingno 
+        from od_rec_header
+        ) hr on hr.receivingno = dt.receivingno
+    left join /* Transfer history */ (
+        select 
+            hist.source_key_i
+        from aim_transfer_history hist
+        where hist.success = &#39;Y&#39;
+          and hist.source_type = &#39;RD&#39;
+          and hist.service = &#39;TRANSFER_RECEIVING&#39;
+          and hist.aim_configno_i = &#39;810&#39;
+          and hist.source_key_i is not null
+        group by hist.source_key_i
+        ) hist on dt.recdetailno_i = hist.source_key_i
+    join od_header ord on dt.orderno = ord.orderno
+    join history hist2 on dt.recdetailno_i = hist2.recdetailno_i
+where
+    hist.source_key_i is null 
+  and  
+    /* не выгружались ранее */ 
+    dt.created_date &gt; to_date(&#39;14.06.2019&#39;, &#39;dd.mm.yyyy&#39;) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) 
+  and /* созданы после 29.05.2017 */
+    ord.order_type in (&#39;P&#39;, &#39;PX&#39;, &#39;PR&#39;, &#39;PU&#39;, &#39;L&#39;, &#39;LU&#39;, &#39;Y&#39;, &#39;YU&#39;, &#39;R&#39;,  &#39;X&#39;) 
+  and /* тип заказа */ hr.awbno != &#39;RELEASE REPAIRABLE&#39; 
+  and hr.awbno != &#39;RELEASE ROTABLE&#39; 
+  and /* не релиз репирабле */ dt.recdetailno_i &gt; 0 
+  and /* не пустое */
+    /*	dt.created_date = trunc(sysdate)-to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) and   Создана сегодня */
+    dt.status !=  9 
+  and /* не сторно */ /*hist2.higher_partno is null */
+    nvl(hist2.higher_partno, chr(160)) in (chr(49824), chr(160))
+  AND dt.recdetailno_i != 62515 /* buggy rec from aug17 */
+group by dt.recdetailno_i
+
+</pre>
+</div></div><p class="auto-cursor-target"><span style="letter-spacing: 0.0px;"><br/></span></p></li></ul></div></div></div><p><br/></p><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка Transport в APN 1404</p><div class="confluence-information-macro-body"><div class="content-wrapper"><ul><li>В Configuration Detail выбираем подвкладку <em><strong>transport</strong></em> и в главном окне заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263686/143132033.png" data-image-src="attachments/136263686/143132033.png" data-unresolved-comment-count="0" data-linked-resource-id="143132033" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-46-7.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263686" data-linked-resource-container-version="14"></span></li></ul></div></div></div></div></div><p><br/></p>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263839.png">image2023-5-2_15-19-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263840.png">image2023-5-2_15-31-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263841.png">image2023-5-2_15-37-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263842.png">image2023-5-2_17-15-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263849.png">image2023-5-2_17-46-29.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263850.png">image2023-5-2_17-46-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263851.png">image2023-5-2_17-47-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263852.png">image2023-5-2_17-48-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/136263853.png">image2023-5-2_17-49-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/143132026.png">image2023-7-28_18-33-42.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/143132027.png">image2023-7-28_18-34-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/143132029.png">image2023-7-28_18-37-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/143132030.png">image2023-7-28_18-39-54.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/143132031.png">image2023-7-28_18-40-17.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/143132032.png">image2023-7-28_18-40-39.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263686/143132033.png">image2023-7-28_18-46-7.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:07</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

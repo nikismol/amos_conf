@@ -1,0 +1,1145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000423</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="2216">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="2218">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">20 10</attribute>
+      <attribute name="size">330 20</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Складская этикетка / Store Sticker</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 18</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="2219">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">20 30</attribute>
+      <attribute name="size">60 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">P/N</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2218</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="2220">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">20 75</attribute>
+      <attribute name="size">60 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">B/N</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2219</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="2221">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">20 120</attribute>
+      <attribute name="size">30 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">S/N</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2220</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="2222">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">20 165</attribute>
+      <attribute name="size">60 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">NAME</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2221</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="2223">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">20 210</attribute>
+      <attribute name="size">60 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">ТИП ВС</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2222</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4437">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">80 30</attribute>
+      <attribute name="size">250 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2219</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4468">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">80 75</attribute>
+      <attribute name="size">250 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2220</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4469">
+      <attribute name="name">Label_9</attribute>
+      <attribute name="position">80 165</attribute>
+      <attribute name="size">250 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2222</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4470">
+      <attribute name="name">Label_10</attribute>
+      <attribute name="position">50 120</attribute>
+      <attribute name="size">250 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2221</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4471">
+      <attribute name="name">Label_11</attribute>
+      <attribute name="position">20 255</attribute>
+      <attribute name="size">60 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">CT/ST</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2223</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4472">
+      <attribute name="name">Label_12</attribute>
+      <attribute name="position">151 255</attribute>
+      <attribute name="size">30 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">П/Р</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>4476</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>1</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4473">
+      <attribute name="name">Label_13</attribute>
+      <attribute name="position">251 255</attribute>
+      <attribute name="size">30 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">К/В</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>4477</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4474">
+      <attribute name="name">Label_14</attribute>
+      <attribute name="position">80 210</attribute>
+      <attribute name="size">100 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>2222</anchor_view>
+        <anchor_location>BOTTOM_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4475">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">180 210</attribute>
+      <attribute name="size">30 45</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">ДО</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>4474</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4476">
+      <attribute name="name">Label_16</attribute>
+      <attribute name="position">80 255</attribute>
+      <attribute name="size">70 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>4471</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4477">
+      <attribute name="name">Label_17</attribute>
+      <attribute name="position">181 255</attribute>
+      <attribute name="size">70 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>4472</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4478">
+      <attribute name="name">Label_18</attribute>
+      <attribute name="position">281 255</attribute>
+      <attribute name="size">70 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>4473</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4479">
+      <attribute name="name">Label_19</attribute>
+      <attribute name="position">80 65</attribute>
+      <attribute name="size">250 10</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">чертежный номер/part number</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 9</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>4437</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4480">
+      <attribute name="name">Label_20</attribute>
+      <attribute name="position">80 110</attribute>
+      <attribute name="size">250 10</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">номер партии/batch  number</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 9</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>4468</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4481">
+      <attribute name="name">Label_21</attribute>
+      <attribute name="position">50 155</attribute>
+      <attribute name="size">250 10</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">серийный номер/serial number</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 9</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>4470</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4482">
+      <attribute name="name">Label_22</attribute>
+      <attribute name="position">80 200</attribute>
+      <attribute name="size">250 10</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">наименование/description</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 9</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>4469</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4483">
+      <attribute name="name">Label_23</attribute>
+      <attribute name="position">80 245</attribute>
+      <attribute name="size">100 10</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">type of a/c</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 9</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>4474</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="4484">
+      <attribute name="name">Label_24</attribute>
+      <attribute name="position">351 367</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">месторасположение/
+location</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 9</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="4485">
+      <attribute name="name">Label_25</attribute>
+      <attribute name="position">413 243</attribute>
+      <attribute name="size">250 10</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">номер партии/batch  number</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 9</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="4486">
+      <attribute name="name">Label_26</attribute>
+      <attribute name="position">210 215</attribute>
+      <attribute name="size">120 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.display_text@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>4475</anchor_view>
+        <anchor_location>RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="RD" description="" id="rec_detail"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Recevigin Detail" id="rec_detail">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

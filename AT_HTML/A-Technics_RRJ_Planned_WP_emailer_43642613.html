@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : A-Technics_RRJ_Planned_WP_emailer</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : A-Technics_RRJ_Planned_WP_emailer
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified on авг. 22, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-left-sidebar" data-layout="two-left-sidebar">
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Результат запроса возвращает список TQs, обработанных специалистами RAMAX за период с 1 по 22 число</p></div></div></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;">
+ <div class="codeHeader panelHeader pdl hide-border-bottom">
+  <b class="code-title"></b>
+  <span class="collapse-source expand-control" style="display:none;"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Развернуть исходный код</span></span>
+  <span class="collapse-spinner-wrapper"></span>
+ </div>
+ <div class="codeContent panelContent pdl hide-toolbar"> 
+  <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: false; theme: Confluence; collapse: true" data-theme="Confluence">SELECT 
+internal_remarks
+,quotationno_i
+,wp_type
+,drop_locationno_i
+,wpno_i
+,wpno
+,ac_registr
+,ac_typ
+,projectno
+,est_groundtime
+,station
+,start_date
+,start_time
+,arrival_fltno
+,end_date
+,end_time
+,description
+,owner
+,event_id
+,astra_id
+,paperwork_expected
+,paperwork_del_date
+,hangar
+,hidden
+,mutation
+,mutator
+,status
+,mutation_time
+,created_by
+,created_date
+,act_start_date
+,act_start_time
+,act_end_date
+,act_end_time
+,responsible
+,delay
+,non_routine_time
+,engrun
+,ratfunc
+,acweigh
+,ndt_req
+,def_req
+,jack_req
+,change_eng1
+,change_eng2
+,change_apu
+,borr_eng1
+,borr_eng2
+,borr_apu
+,dirty_sequence
+,is_released
+,release_sign
+,release_sign_to
+,closing_date
+,maintprov_address
+,cust_wpno
+,ops_status
+,priority_code
+,remarks
+,amm_reference
+,amm_publication_noi
+,extension_time
+,extension_reason
+,mpno_i
+,mp_revision
+,wp_sequence_config_id
+,sequence_on_assignment
+,wp_status
+,uuid
+,flight_legno_i
+,approvalno_i
+FROM (
+             SELECT * 
+             FROM (
+                           SELECT 2 as head,
+                                          TO_CHAR(wp_header.internal_remarks) as internal_remarks,
+                                          TO_CHAR(wp_header.quotationno_i) as quotationno_i,
+                                          TO_CHAR(wp_header.wp_type) as wp_type,
+                                          TO_CHAR(wp_header.drop_locationno_i) as drop_locationno_i,
+                                          TO_CHAR(wp_header.wpno_i) as wpno_i,
+                                          wp_header.wpno,
+                                          wp_header.ac_registr,
+                                          wp_header.ac_typ,
+                                          wp_header.projectno,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.est_groundtime)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.est_groundtime),60)),'FM00') as est_groundtime,
+                                          wp_header.station,
+                                          TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+wp_header.start_date, 'DD.MM.YYYY') as start_date,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.start_time)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.start_time),60)),'FM00') as start_time,
+                                          wp_header.arrival_fltno,
+                                          TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+wp_header.end_date, 'DD.MM.YYYY') as end_date,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.end_time)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.end_time),60)),'FM00') as end_time,
+                                          wp_header.description,
+                                          wp_header.owner,
+                                          TO_CHAR(wp_header.event_id) as event_id,
+                                          TO_CHAR(wp_header.astra_id) as astra_id,
+                                          TO_CHAR(wp_header.paperwork_expected) as paperwork_expected,
+                                          TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+wp_header.paperwork_del_date, 'DD.MM.YYYY') as paperwork_del_date,
+                                          wp_header.hangar,
+                                          wp_header.hidden,
+                                          TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+wp_header.mutation, 'DD.MM.YYYY') as mutation,
+                                          wp_header.mutator,
+                                          TO_CHAR(wp_header.status) as status,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.mutation_time/1000/60)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.mutation_time/1000/60),60)),'FM00') as mutation_time,
+                                          wp_header.created_by,
+                                          TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+wp_header.created_date, 'DD.MM.YYYY') as created_date,
+                                          TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+wp_header.act_start_date, 'DD.MM.YYYY') as act_start_date,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.act_start_time/1000/60)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.act_start_time/1000/60),60)),'FM00') as act_start_time,
+                                          TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+wp_header.act_end_date, 'DD.MM.YYYY') as act_end_date,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.act_end_time/1000/60)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.act_end_time/1000/60),60)),'FM00') as act_end_time,
+                                          wp_header.responsible,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.delay/1000/60)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.delay/1000/60),60)),'FM00') as delay,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.non_routine_time/1000/60)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.non_routine_time/1000/60),60)),'FM00') as non_routine_time,
+                                          wp_header.engrun,
+                                          wp_header.ratfunc,
+                                          wp_header.acweigh,
+                                          wp_header.ndt_req,
+                                          wp_header.def_req,
+                                          wp_header.jack_req,
+                                          wp_header.change_eng1,
+                                          wp_header.change_eng2,
+                                          wp_header.change_apu,
+                                          wp_header.borr_eng1,
+                                          wp_header.borr_eng2,
+                                          wp_header.borr_apu,
+                                          wp_header.dirty_sequence,
+                                          wp_header.is_released,
+                                          wp_header.release_sign,
+                                          wp_header.release_sign_to,
+                                          TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+wp_header.closing_date, 'DD.MM.YYYY') as closing_date,
+                                          wp_header.maintprov_address,
+                                          wp_header.cust_wpno,
+                                          wp_header.ops_status,
+                                          wp_header.priority_code,
+                                          TO_CHAR(wp_header.remarks) as remarks,
+                                          wp_header.amm_reference,
+                                          TO_CHAR(wp_header.amm_publication_noi) as amm_publication_noi,
+                                          TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.extension_time/1000/60)/60),'FM9900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.extension_time/1000/60),60)),'FM00') as extension_time,
+                                          TO_CHAR(wp_header.extension_reason) as extension_reason,
+                                          TO_CHAR(wp_header.mpno_i) as mpno_i,
+                                          TO_CHAR(wp_header.mp_revision) as mp_revision,
+                                          TO_CHAR(wp_header.wp_sequence_config_id) as wp_sequence_config_id,
+                                          TO_CHAR(wp_header.sequence_on_assignment) as sequence_on_assignment,
+                                          TO_CHAR(wp_header.wp_status) as wp_status,
+                                          wp_header.uuid,
+                                          TO_CHAR(wp_header.flight_legno_i) as flight_legno_i,
+                                          TO_CHAR(wp_header.approvalno_i) as approvalno_i
+                           FROM wp_header
+                           JOIN aircraft ON wp_header.ac_registr = aircraft.ac_registr AND aircraft.ac_typ='RRJ'
+                           WHERE (aircraft.maintenance_provider='0011026298'
+                                           OR aircraft.ac_registr IN (
+                                                                                          '89022',
+                                                                                          '89023',
+                                                                                          '89025',
+                                                                                          '89028',
+                                                                                          '89042',
+                                                                                          '89043',
+                                                                                          '89046',
+                                                                                          '89047',
+                                                                                          '89057',
+                                                                                          '89058',
+                                                                                          '89085',
+                                                                                          '89097',
+                                                                                          '89099',
+                                                                                          '89100',
+                                                                                          '89102',
+                                                                                          '89103',
+                                                                                          '89104',
+                                                                                          '89105',
+                                                                                          '89106',
+                                                                                          '89107',
+                                                                                          '89108',
+                                                                                          '89109',
+                                                                                          '89110',
+                                                                                          '89111',
+                                                                                          '89112',
+                                                                                          '89113',
+                                                                                          '89114',
+                                                                                          '89115',
+                                                                                          '89115',
+                                                                                          '89116')
+                                          )
+                                         AND (wp_header.start_date = trunc(sysdate) - to_date('31.12.1971', 'dd.mm.yyyy')
+                                                    OR wp_header.start_date = trunc(sysdate) - to_date('31.12.1971', 'dd.mm.yyyy') + 1
+                                                    OR wp_header.end_date = trunc(sysdate) - to_date('31.12.1971', 'dd.mm.yyyy')
+                                                    OR wp_header.end_date = trunc(sysdate) - to_date('31.12.1971', 'dd.mm.yyyy') - 1
+                                                    OR wp_header.act_end_date = trunc(sysdate) - to_date('31.12.1971', 'dd.mm.yyyy')
+                                                    OR wp_header.act_end_date = trunc(sysdate) - to_date('31.12.1971', 'dd.mm.yyyy') - 1
+                                                    OR wp_header.act_start_date = trunc(sysdate) - to_date('31.12.1971', 'dd.mm.yyyy')
+                                                    OR wp_header.act_start_date = trunc(sysdate) - to_date('31.12.1971', 'dd.mm.yyyy') + 1)
+
+                           UNION ALL
+
+                           SELECT 1 as head,
+                                          'internal_remarks' as internal_remarks,
+                                          'quotationno_i' as quotationno_i,
+                                          'wp_type' as wp_type,
+                                          'drop_locationno_i' as drop_locationno_i,
+                                          'wpno_i' as wpno_i,
+                                          'wpno' as wpno,
+                                          'ac_registr' as ac_registr,
+                                          'ac_typ' as ac_typ,
+                                          'projectno' as projectno,
+                                          'est_groundtime' as est_groundtime,
+                                          'station' as station,
+                                          'start_date' as start_date,
+                                          'start_time' as start_time,
+                                          'arrival_fltno' as arrival_fltno,
+                                          'end_date' as end_date,
+                                          'end_time' as end_time,
+                                          'description' as description,
+                                          'owner' as owner,
+                                          'event_id' as event_id,
+                                          'astra_id' as astra_id,
+                                          'paperwork_expected' as paperwork_expected,
+                                          'paperwork_del_date' as paperwork_del_date,
+                                          'hangar' as hangar,
+                                          'hidden' as hidden,
+                                          'mutation' as mutation,
+                                          'mutator' as mutator,
+                                          'status' as status,
+                                          'mutation_time' as mutation_time,
+                                          'created_by' as created_by,
+                                          'created_date' as created_date,
+                                          'act_start_date' as act_start_date,
+                                          'act_start_time' as act_start_time,
+                                          'act_end_date' as act_end_date,
+                                          'act_end_time' as act_end_time,
+                                          'responsible' as responsible,
+                                          'delay' as delay,
+                                          'non_routine_time' as non_routine_time,
+                                          'engrun' as engrun,
+                                          'ratfunc' as ratfunc,
+                                          'acweigh' as acweigh,
+                                          'ndt_req' as ndt_req,
+                                          'def_req' as def_req,
+                                          'jack_req' as jack_req,
+                                          'change_eng1' as change_eng1,
+                                          'change_eng2' as change_eng2,
+                                          'change_apu' as change_apu,
+                                          'borr_eng1' as borr_eng1,
+                                          'borr_eng2' as borr_eng2,
+                                          'borr_apu' as borr_apu,
+                                          'dirty_sequence' as dirty_sequence,
+                                          'is_released' as is_released,
+                                          'release_sign' as release_sign,
+                                          'release_sign_to' as release_sign_to,
+                                          'closing_date' as closing_date,
+                                          'maintprov_address' as maintprov_address,
+                                          'cust_wpno' as cust_wpno,
+                                          'ops_status' as ops_status,
+                                          'priority_code' as priority_code,
+                                          'remarks' as remarks,
+                                          'amm_reference' as amm_reference,
+                                          'amm_publication_noi' as amm_publication_noi,
+                                          'extension_time' as extension_time,
+                                          'extension_reason' as extension_reason,
+                                          'mpno_i' as mpno_i,
+                                          'mp_revision' as mp_revision,
+                                          'wp_sequence_config_id' as wp_sequence_config_id,
+                                          'sequence_on_assignment' as sequence_on_assignment,
+                                          'wp_status' as wp_status,
+                                          'uuid' as uuid,
+                                          'flight_legno_i' as flight_legno_i,
+                                          'approvalno_i' as approvalno_i
+                            FROM DUAL
+                            ORDER BY 1 ASC
+                          )
+        )</pre> 
+ </div>
+</div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,3087 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000200</report_id>
+    <revision_number>0</revision_number>
+    <meta name="2019-02-28">Добавлена фильтрация по самолёту</meta>
+    <meta name="author &amp; design">vtsymbal</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="9088">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">35</attribute>
+      <attribute name="footer-size">25</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content>
+      <view class="LabelReportView" id="9089">
+        <attribute name="name">Label_13</attribute>
+        <attribute name="position">0 675</attribute>
+        <attribute name="size">1000 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="background-color">F8F8F8</attribute>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="9090">
+        <attribute name="name">Label_3</attribute>
+        <attribute name="position">891 675</attribute>
+        <attribute name="size">108 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">5E5E5E</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">from RAMAX with</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">Monospaced PLAIN 9</attribute>
+        <attribute name="text-align">LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="9091">
+        <attribute name="name">Label_9</attribute>
+        <attribute name="position">0 0</attribute>
+        <attribute name="size">1000 35</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes>
+          <conditional_attribute id="1">
+            <attribute name="background-color">FDFDD4</attribute>
+            <conditions>
+              <condition class="GenericStyleCondition">
+                <field id="1">@136_DetailedDocStat_ac_or_doc_typ.ac_or_comp_doc@</field>
+                <field id="2">A</field>
+                <operator negated="NO">EQUALS</operator>
+              </condition>
+            </conditions>
+          </conditional_attribute>
+        </conditional_attributes>
+        <attribute name="background-color">ECF8F7</attribute>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <border class="StyledReportBorder">
+          <attribute name="border-top-width">1</attribute>
+          <attribute name="border-top-style">SOLID</attribute>
+          <attribute name="border-top-color">000000</attribute>
+          <attribute name="border-left-width">1</attribute>
+          <attribute name="border-left-style">SOLID</attribute>
+          <attribute name="border-left-color">000000</attribute>
+          <attribute name="border-bottom-width">0</attribute>
+          <attribute name="border-bottom-style">SOLID</attribute>
+          <attribute name="border-bottom-color">000000</attribute>
+          <attribute name="border-right-width">1</attribute>
+          <attribute name="border-right-style">SOLID</attribute>
+          <attribute name="border-right-color">000000</attribute>
+        </border>
+        <attribute name="text">DETAILLED DOCUMENT STATUS</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">Dialog PLAIN 16</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="9092">
+        <attribute name="name">Label_10</attribute>
+        <attribute name="position">0 675</attribute>
+        <attribute name="size">139 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <border class="StyledReportBorder">
+          <attribute name="border-top-width">0</attribute>
+          <attribute name="border-top-style">SOLID</attribute>
+          <attribute name="border-top-color">000000</attribute>
+          <attribute name="border-left-width">0</attribute>
+          <attribute name="border-left-style">SOLID</attribute>
+          <attribute name="border-left-color">000000</attribute>
+          <attribute name="border-bottom-width">0</attribute>
+          <attribute name="border-bottom-style">SOLID</attribute>
+          <attribute name="border-bottom-color">000000</attribute>
+          <attribute name="border-right-width">1</attribute>
+          <attribute name="border-right-style">DASHED</attribute>
+          <attribute name="border-right-color">D5D5D5</attribute>
+        </border>
+        <attribute name="text">@DATE@ @TIME@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">Monospaced PLAIN 12</attribute>
+        <attribute name="text-align">LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="9093">
+        <attribute name="name">Label_11</attribute>
+        <attribute name="position">149 675</attribute>
+        <attribute name="size">309 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Prepared by @FIRSTNAME@ @LASTNAME@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">Monospaced PLAIN 12</attribute>
+        <attribute name="text-align">LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>9092</anchor_view>
+          <anchor_location>TOP_RIGHT</anchor_location>
+          <x_offset>10</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="9094">
+        <attribute name="name">Label_12</attribute>
+        <attribute name="position">591 675</attribute>
+        <attribute name="size">300 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 15</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Page @PAGE_NO@ / @PAGE_COUNT@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">Monospaced PLAIN 12</attribute>
+        <attribute name="text-align">RIGHT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_RIGHT</location>
+          <anchor_view>9090</anchor_view>
+          <anchor_location>TOP_LEFT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="HtmlReportView" id="9095">
+        <attribute name="name">Html_2</attribute>
+        <attribute name="position">973 680</attribute>
+        <attribute name="size">20 15</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="html-content">&lt;p style="text-align:center"&gt;&lt;img height="10" width="10" src="web://img/sh_small.png" /&gt;&lt;/p&gt;</attribute>
+        <attribute name="scale-images">NO</attribute>
+        <anchor>
+          <location>TOP_RIGHT</location>
+          <anchor_view>9090</anchor_view>
+          <anchor_location>TOP_RIGHT</anchor_location>
+          <x_offset>-6</x_offset>
+          <y_offset>5</y_offset>
+        </anchor>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="9096">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">0 27</attribute>
+      <attribute name="size">1000 52</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">YES</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@136_Detailed_doc_grouped.cnt@</field>
+              <field id="2">1</field>
+              <operator negated="NO">IS_SMALLER</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="background-color">F9F8F8</attribute>
+      <attribute name="color">0066FF</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 50 10 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">0</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">No data for this document</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif ITALIC 16</attribute>
+      <attribute name="text-align">BOTTOM_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="ClonerReportView" id="9097">
+      <attribute name="name">Cloner_1</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1044 53</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">136_Detailed_doc_grouped</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+    </view>
+    <view class="DatasourceTableView" id="9098">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 27</attribute>
+      <attribute name="size">1000 73</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@136_DetailedDocStat_ac_or_doc_typ.ac_or_comp_doc@</field>
+              <field id="2">A</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@136_Detailed_doc_grouped.cnt@</field>
+              <field id="2">1</field>
+              <operator negated="NO">IS_SMALLER</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">1</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9101" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Part No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9102" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.a.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9105" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Serial No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9106" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.a.serialno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9109" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Status</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9110" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.status@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9113" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Descrip</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9114" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.p.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9117" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf W/O</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9118" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.wo_num@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9121" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf at H</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9122" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.perf_at_h@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9125" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf at C</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9126" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.perf_at_c@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9129" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf D</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9130" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.absolute_due_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9133" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Next W/O</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9134" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.next_wo@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9137" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Due at H</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9138" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.due_h@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9141" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Due at C</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9142" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.due_c@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9145" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Due at D</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9146" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.due_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9149" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">A/C Type</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9150" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.i.ac_typ@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9153" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Operator</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9154" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.i.operator@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9157" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Curr. Inst.</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9158" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.curr_inst@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9161" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">To Go</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9162" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.togo@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">56</attribute>
+          <view class="LabelReportView" id="9165" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">56 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">AFE8F0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Expected</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9166" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">56 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_component.te.expected_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">136_DetailedDocStat_component</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>9236</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="9167">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 27</attribute>
+      <attribute name="size">1000 73</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@136_DetailedDocStat_ac_or_doc_typ.ac_or_comp_doc@</field>
+              <field id="2">C</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@136_Detailed_doc_grouped.cnt@</field>
+              <field id="2">1</field>
+              <operator negated="NO">IS_SMALLER</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">1</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9170" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Aircraft</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9171" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.a.ac_registr@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9174" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Serial No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9175" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.a.serialno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9178" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Status</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9179" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.status@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9182" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Descrip</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9183" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.a.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9186" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf W/O</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9187" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.wo_num@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9190" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf at H</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9191" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.perf_at_h@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9194" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf at C</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9195" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.perf_at_c@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9198" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf D</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9199" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.absolute_due_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9202" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Next W/O</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9203" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.next_wo@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9206" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Due at H</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9207" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.b.due_h@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9210" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Due at C</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9211" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.b.due_c@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9214" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Due at D</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9215" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.b.due_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9218" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">A/C Type</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9219" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.a.ac_typ@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9222" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Operator</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9223" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.a.operator@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9226" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Remarks</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9227" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.status_remarks@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">59</attribute>
+          <view class="LabelReportView" id="9230" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">To Go</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9231" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">59 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.togo@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">56</attribute>
+          <view class="LabelReportView" id="9234" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">56 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">F8F299</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Expected</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9235" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">56 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@136_DetailedDocStat_aircraft.te.expected_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">136_DetailedDocStat_aircraft</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>9236</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="9236">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">500 27</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 50 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">Doc No: @136_Detailed_doc_grouped.h.docno@    Rev.: @136_Detailed_doc_grouped.h.revision@ / @136_Detailed_doc_grouped.h.doc_type@*</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>9097</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="9237">
+      <attribute name="name">Label_14</attribute>
+      <attribute name="position">800 0</attribute>
+      <attribute name="size">200 27</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">part`s on this document</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 16</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>9238</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="9238">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">500 0</attribute>
+      <attribute name="size">300 27</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 5</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">0</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">@136_Detailed_doc_grouped.cnt@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif ITALIC 28</attribute>
+      <attribute name="text-align">RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>9236</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="SERIALNO" description="Serial Number / &quot;Серийный номер&quot;" id="serial"/>
+        <ds:columnDescriptor amosType="PA" description="Part Number / &quot;Партийный номер&quot;" id="part"/>
+        <ds:columnDescriptor amosType="AC_INT" description="Aircraft / &quot;Самолёт&quot;" id="aircraft"/>
+        <ds:columnDescriptor amosType="DO" description="Document / &quot;Документ&quot;" id="doc"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Serial No" id="serial">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Part No" id="part">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Аircraft" id="aircraft">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Document" id="doc">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="136_Detailed_doc_grouped" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Document grouped</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h.docno_i" id="h.docno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h.docno" id="h.docno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h.revision" id="h.revision"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="count(r.psn) cnt" id="cnt"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="h.doc_type" id="h.doc_type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when w_off_logic &gt; 0 then '*' else ' ' end w_off_logic" id="w_off_logic"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.doc@">
+          <ds:object>@VAR.doc@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.part@">
+          <ds:object>@VAR.part@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.serial@">
+          <ds:object>@VAR.serial@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.aircraft@">
+          <ds:object>@VAR.aircraft@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select h.docno_i, h.docno, h.revision, count(psn) cnt, h.doc_type
+      , case when w_off_logic &gt; 0 then '*' else ' ' end w_off_logic
+  from doc_header h
+  left join (  
+                select docno_i, partno, serialno, psn, ac_registr
+                  from (
+                         select 'PNCHANGED'
+                              , r.psn
+                              , partno
+                              , r.serialno
+                              , e.event_key_parent docno_i
+                              , r.ac_registr
+                           from rotables r
+                           join wo_header h on r.psn = h.psn
+                           join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+                           left join aircraft a on r.ac_registr = a.ac_registr
+                          where e.event_key_parent in (
+                                                       select ref_docno_i
+                                                         from doc_signoff_tree
+                                                        where docno_i = ref_docno_i
+                                                          and docno_i = '@VAR.doc@'
+                                                      )
+                            and (a.status &lt;&gt; 9 or a.status is null)
+                            and e.event_type = 'DOC_EFF'
+                            and e.pending_status = 0
+                            and not exists (
+                                            select 1
+                                              from event_effectivity_mapping map
+                                             where map.event_key_parent = e.event_key_parent
+                                               and map.event_type = 'EFL'
+                                               and map.psn = h.psn
+                                           )
+                  union
+                         select 'ROTNOTINSYSTEM'
+                              , h.psn
+                              , h.partno
+                              , h.serialno
+                              , l.event_key docno_i
+                              , h.ac_registr
+                           from history h
+                           join event_effectivity_parts p on h.partno = p.partno
+                           join event_effectivity e on p.effectivityno_i = e.effectivityno_i
+                           join event_effectivity_link l on e.effectivityno_i = l.effectivityno_i
+                          where l.event_type = 'DO'
+                            and h.ac_registr &lt;&gt; ' '
+                            and vm &lt;&gt; 'AD'
+                            and historyno_i in (
+                                                 select max(historyno_i)
+                                                   from history
+                                                  where psn in (
+                                                                 select distinct psn
+                                                                   from wo_header
+                                                                   join wo_event_link on wo_header.event_perfno_i = wo_event_link.event_perfno_i
+                                                                  where psn is not null
+                                                                    and event_key_parent in (
+                                                                                              select ref_docno_i
+                                                                                                from doc_signoff_tree
+                                                                                               where docno_i = ref_docno_i
+                                                                                                 and docno_i = '@VAR.doc@'
+                                                                                             )
+                                                                    and wo_event_link.event_type = 'DOC_EFF'
+                                                                    and pending_status = 0
+                                                                    and not exists (
+                                                                                     select rotables.psn
+                                                                                       from rotables
+                                                                                      where rotables.psn = wo_header.psn
+                                                                                   )
+                                                               )
+                                                                  group by history.psn
+                                               )
+                            and l.event_key = '@VAR.doc@'
+                          union
+                           (
+                             select 'PNNOTMODIFIED'
+                                  , r.psn
+                                  , partno
+                                  , r.serialno
+                                  , e.event_key_parent docno_i
+                                  , r.ac_registr
+                               from rotables r
+                               left join aircraft a on r.ac_registr = a.ac_registr
+                               join wo_header h on r.psn = h.psn
+                               join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+                              where (a.status &lt;&gt; 9 or a.status is null)
+                                and e.event_type = 'DOC_EFF'
+                                and e.event_key_parent = '@VAR.doc@'
+                                and e.pending_status = 0
+                            union
+                             select 'PNNOTMODIFIED'
+                                  , r.psn
+                                  , partno
+                                  , r.serialno
+                                  , m.event_key_parent docno_i
+                                  , r.ac_registr
+                               from rotables r
+                               left join aircraft a on r.ac_registr = a.ac_registr
+                               join event_effectivity_mapping m on r.psn = m.psn
+                              where (a.status &lt;&gt; 9 or a.status is null)
+                                and event_type = 'EFL'
+                                and event_key_parent = '@VAR.doc@'
+                           )
+                          union
+                           select 'AIRCRAFT'
+                                , a.aircraftno_i psn
+                                , a.ac_registr 
+                                , a.serialno
+                                , docno_i
+                                , e.ac_registr
+                            from doc_header d
+                            join event_effectivity_mapping e on d.docno_i = e.event_key_parent
+                            join aircraft a on e.ac_registr = a.ac_registr
+                           where e.event_type = 'EFL'
+                             and ac_or_comp_doc = 'A'
+                             and docno_i = '@VAR.doc@'
+                       )x
+                 where /* doc's that's superseded */
+                   not exists (select doc_replacement.docno_i
+                                 from doc_replacement
+                                where x.docno_i = doc_replacement.docno_i
+                                  and replacement_code = 'SB')
+                 group by psn, partno, serialno, docno_i, ac_registr
+             ) a on h.docno_i = a.docno_i
+  left join aircraft b on a.ac_registr = b.ac_registr
+/* 2019-01-17
+   write-off logic */
+  left join ( select count(docno_i) w_off_logic, docno_i
+                from doc_signoff_tree
+               where docno_i = ref_docno_i
+               group by docno_i ) o on a.docno_i = o.docno_i
+ where /* Doc No */
+  (h.docno_i is null or h.docno_i in ('@VAR.doc@'))
+/* Part No */
+  and ('@VAR.part@' is null or
+      partno  in
+        (select trim(substr('@VAR.part@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.part@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.part@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.part@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.part@') -
+              length(replace('@VAR.part@', ',', '')) + 1))
+    /* Serial No */
+  and ('@VAR.serial@' is null or
+      a.serialno  in
+        (select trim(substr('@VAR.serial@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.serial@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.serial@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.serial@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.serial@') -
+              length(replace('@VAR.serial@', ',', '')) + 1))
+    /* Aircraft's */
+   and ('@VAR.aircraft@' is null or
+        aircraftno_i in
+          (select trim(substr('@VAR.aircraft@' || ',',
+                        decode(level,
+                             1,
+                             0,
+                             instr('@VAR.aircraft@' || ',', ',', 1, level - 1) + 2),
+                        instr('@VAR.aircraft@' || ',', ',', 1, level) -
+                        decode(level,
+                             1,
+                             1,
+                             instr('@VAR.aircraft@' || ',', ',', 1, level - 1) + 2)))
+       from dual
+     connect by level &lt;= length('@VAR.aircraft@') -
+              length(replace('@VAR.aircraft@', ',', '')) + 1))
+ group by h.docno_i, h.docno, h.revision, h.doc_type, w_off_logic
+ order by h.docno</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="136_DetailedDocStat_ac_or_doc_typ" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Aircraft or Component doc</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="docno" id="docno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_or_comp_doc" id="ac_or_comp_doc"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@136_Detailed_doc_grouped.h.docno_i@">
+          <ds:object>@136_Detailed_doc_grouped.h.docno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select docno, ac_or_comp_doc
+  from doc_header d
+  where /* Doc No */
+    docno_i in ('@136_Detailed_doc_grouped.h.docno_i@')</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="136_DetailedDocStat_component" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Status for component`s only</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.docno" id="a.docno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.partno" id="a.partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.serialno" id="a.serialno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.psn" id="a.psn"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when y.event_status = 'W' then 'See prev. Docstatus'&#10;           when y.event_status = 'R' then 'Repetitive'&#10;           when y.event_status = 'U' then 'Cancelled'&#10;           when y.event_status = 'M' then 'Taskcard Controlled'&#10;           when y.event_status = ' ' then 'Not Applicable'&#10;           when y.event_status = 'J' then 'Rejected by Operator'&#10;           when y.event_status = '!' then 'Unknown'&#10;           when y.event_status = '-' then 'Not Assigned'&#10;           when y.event_status = 'T' then 'Terminated by third party'&#10;           when y.event_status = 'N' then 'Not Applicable'&#10;           when y.event_status = 'O' then 'Open'&#10;           when y.event_status = 'Z' then 'Superseded'&#10;           when y.event_status = 'F' then 'Ex Factory'&#10;           when y.event_status = 'G' then 'Term.Action open'&#10;           when y.event_status = 'C' then 'Closed' &#10;            else y.event_status end status" id="status"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="p.description" id="p.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="e.event_perfno_i wo_num" id="wo_num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" case when fh.due_at &gt; 0 &#10;       then trunc(fh.due_at/60 0) || ':'  || trunc(( mod(fh.due_at/60 1) * (60/100) ) * 1000) &#10;       else null end perf_at_h" id="perf_at_h"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" case when fc.due_at &gt; 0 &#10;       then trunc(fc.due_at0)&#10;       else null end perf_at_c" id="perf_at_c"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="absolute_due_date" id="absolute_due_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.docno_i" id="a.docno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when y.event_status = 'C' then null&#10;           when y.event_status = 'O' then y.event_perfno_i &#10;       else null end next_wo" id="next_wo"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="due_h" id="due_h"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="due_c" id="due_c"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when hierarchy = 'N' then y.due_date&#10;       else null end due_date" id="due_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="i.ac_typ" id="i.ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="i.operator" id="i.operator"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when r.date_inst &gt; 0 then i.ac_registr || ' Position: ' || r.location &#10;        else 'Not installed (' || l.station || ' / ' || l.store || ' / ' || l.location || ' Owner: ' || r.owner || ')' end curr_inst" id="curr_inst"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" case when y.due_date is not null then to_date(y.due_date'dd.mm.yyyy') - trunc(sysdate)&#10;        end togo" id="togo"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="te.expected_date" id="te.expected_date"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@136_Detailed_doc_grouped.h.docno_i@">
+          <ds:object>@136_Detailed_doc_grouped.h.docno_i@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.part@">
+          <ds:object>@VAR.part@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.serial@">
+          <ds:object>@VAR.serial@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.aircraft@">
+          <ds:object>@VAR.aircraft@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select a.docno
+     , a.partno
+     , a.serialno, a.psn
+     , case when n.event_status = 'W' then 'See prev. Docstatus'
+           when n.event_status = 'R' then 'Repetitive'
+           when n.event_status = 'U' then 'Cancelled'
+           when n.event_status = 'M' then 'Taskcard Controlled'
+           when n.event_status = ' ' then 'Not Applicable'
+           when n.event_status is null then 'Not Applicable'
+           when n.event_status = 'J' then 'Rejected by Operator'
+           when n.event_status = '!' then 'Unknown'
+           when n.event_status = '-' then 'Not Assigned'
+           when n.event_status = 'T' then 'Terminated by third party'
+           when n.event_status = 'N' then 'Not Assigned'
+           when n.event_status = 'O' then 'Open'
+           when n.event_status = 'Z' then 'Superseded'
+           when n.event_status = 'F' then 'Ex Factory'
+           when n.event_status = 'G' then 'Term.Action open'
+           when n.event_status = 'C' then 'Closed' 
+            else n.event_status end status
+    , p.description
+    , case when e.type &lt;&gt; 'PD' and hierarchy = 'N' then e.event_perfno_i
+            else null end wo_num
+    , case when u.due_h &lt;&gt; ' ' and hierarchy = 'N'
+       then u.due_h
+       else null end perf_at_h 
+    , case when u.due_c &gt; 0 and hierarchy = 'N'
+       then u.due_c
+       else null end perf_at_c
+    , case when hierarchy = 'N' then absolute_due_date
+       else null end absolute_due_date
+    , a.docno_i
+    , case when y.event_status = 'C' then null
+           when y.event_status &lt;&gt; 'C' and hierarchy = 'N' then y.event_perfno_i 
+       else null end next_wo
+    , case when hierarchy = 'N' then y.due_h
+       else null end due_h
+    , case when hierarchy = 'N' then y.due_c
+       else null end due_c
+    , case when hierarchy = 'N' then y.due_date
+       else null end due_date
+    , i.ac_typ
+    , i.operator
+    , case when r.date_inst &gt; 0 then i.ac_registr || ' Position: ' || r.location
+           when orderno &lt;&gt; ' ' then 'Not installed ( ' || orderno || ' )'
+        else 'Not installed (' || l.station || ' / ' || l.store || ' / ' || l.location || ' Owner: ' || r.owner || ')' end curr_inst
+    , case when togo &gt; 0 then togo || '/' || te.dimension 
+        else null end togo
+    , te.expected_date
+ from (  select docno_i, docno, partno, serialno, psn, revision, ac_registr, doc_type
+   from 
+(
+ select 'PNCHANGED'
+      , r.psn
+      , partno
+      , r.serialno
+      , ''
+      , r.ac_registr
+      , e.event_key_parent
+   from rotables r
+   join wo_header h on r.psn = h.psn
+   join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+   left join aircraft a on r.ac_registr = a.ac_registr
+  where e.event_key_parent in (
+                                select ref_docno_i
+                                  from doc_signoff_tree
+                                 where docno_i = ref_docno_i
+                                   and docno_i = '@136_Detailed_doc_grouped.h.docno_i@'
+                              )
+    and (a.status &lt;&gt; 9 or a.status is null)
+    and e.event_type = 'DOC_EFF'
+    and e.pending_status = 0
+    and not exists (
+                     select 1
+                       from event_effectivity_mapping map
+                      where map.event_key_parent = e.event_key_parent
+                        and map.event_type = 'EFL'
+                        and map.psn = h.psn
+                   )
+union
+ select 'ROTNOTINSYSTEM'
+      , h.psn
+      , h.partno
+      , h.serialno
+      , 'Voucher-Mode: ' || vm
+      , h.ac_registr
+      , l.event_key
+   from history h
+   join event_effectivity_parts p on h.partno = p.partno
+   join event_effectivity e on p.effectivityno_i = e.effectivityno_i
+   join event_effectivity_link l on e.effectivityno_i = l.effectivityno_i
+  where l.event_type = 'DO'
+    and h.ac_registr &lt;&gt; ' '
+    and vm &lt;&gt; 'AD'
+    and historyno_i in (
+                         select max(historyno_i)
+                           from history
+                          where psn in (
+                                                 select distinct psn
+                                                   from wo_header
+                                                   join wo_event_link on wo_header.event_perfno_i = wo_event_link.event_perfno_i
+                                                  where psn is not null
+                                                    and event_key_parent in (
+                                                                              select ref_docno_i
+                                                                                from doc_signoff_tree
+                                                                               where docno_i = ref_docno_i
+                                                                                 and docno_i = '@136_Detailed_doc_grouped.h.docno_i@'
+                                                                            )
+                                                    and wo_event_link.event_type = 'DOC_EFF'
+                                                    and pending_status = 0
+                                                    and not exists (
+                                                                     select rotables.psn
+                                                                       from rotables
+                                                                      where rotables.psn = wo_header.psn
+                                                                   )
+                                       )
+                          group by history.psn
+                       )
+    and l.event_key = '@136_Detailed_doc_grouped.h.docno_i@'
+union
+(
+ select 'PNNOTMODIFIED'
+      , r.psn
+      , partno
+      , r.serialno
+      , ''
+      , r.ac_registr
+      , e.event_key_parent
+   from rotables r
+   left join aircraft a on r.ac_registr = a.ac_registr
+   join wo_header h on r.psn = h.psn
+   join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+  where (a.status &lt;&gt; 9 or a.status is null)
+    and e.event_type = 'DOC_EFF'
+    and e.event_key_parent = '@136_Detailed_doc_grouped.h.docno_i@'
+    and e.pending_status = 0
+union
+ select 'PNNOTMODIFIED'
+      , r.psn
+      , partno
+      , r.serialno
+      , ''
+      , r.ac_registr
+      , m.event_key_parent
+   from rotables r
+   left join aircraft a on r.ac_registr = a.ac_registr
+   join event_effectivity_mapping m on r.psn = m.psn
+  where (a.status &lt;&gt; 9 or a.status is null)
+    and event_type = 'EFL'
+    and event_key_parent = '@136_Detailed_doc_grouped.h.docno_i@'
+)
+)x
+ join doc_header d on event_key_parent = docno_i
+where /* doc's that's superseded */
+     not exists (select doc_replacement.docno_i
+                        from doc_replacement
+                       where x.event_key_parent = doc_replacement.docno_i
+                         and replacement_code = 'SB')
+    and ac_or_comp_doc = 'C'
+group by psn, partno, serialno, ac_registr, docno_i, docno, revision, doc_type
+      ) a
+ /* part's status */
+    left join ( select to_number( row_number() over(partition by r.psn order by w_off_logic desc
+                     , b.lev
+                     , decode(event_status,'O', 1, ' ', 2, 'U', 3, 'Z', 4, 'J', 5, 'M', 6, 'F', 7, 'T', 8, 'C', 9)) ) num 
+                 , b.lev
+                 , b.docno_i
+                 , r.psn
+                 , pid
+                 , docno
+                 , revision
+                 , IsLea
+                 , root
+                 , w_off_logic
+                 , event_status
+                 , case when (
+                               select count(doc_signoff_tree.ref_docno_i)
+                                 from doc_signoff_tree
+                                where doc_signoff_tree.docno_i = b.docno_i
+                                  and doc_signoff_tree.docno_i &lt;&gt; doc_signoff_tree.ref_docno_i
+                             ) &gt; 1 then 'Y'
+                    else 'N' end hierarchy
+             from
+              ( select level lev, id docno_i, pid, docno, revision, connect_by_isleaf IsLea, connect_by_root docno_i root, w_off_logic
+                  from ( /* иерархия документов */
+                        select a.id
+                             , case when a.id = a.pid then null
+                                else a.pid end pid
+                             , h.docno_i
+                             , h.docno
+                             , revision
+                             , w_off_logic
+                          from ( /* 1. документа-родителя нет в ref_docno_i, при условии что у него есть дочерние документы, иначе docno_i = ref_docno_i */
+                                select distinct t.docno_i id
+                                              , case when (select count(doc_signoff_tree.ref_docno_i) cnt
+                                                             from doc_signoff_tree
+                                                            where t.docno_i = doc_signoff_tree.ref_docno_i) &gt; 0
+                                                 then t.docno_i else null end pid
+                                              , docno
+                                  from doc_signoff_tree t
+                                  join doc_header d on t.docno_i = d.docno_i
+                                    union
+                                select ref_docno_i id, t.docno_i pid, docno
+                                  from doc_signoff_tree t
+                                  join doc_header d on t.ref_docno_i = d.docno_i
+                                ) a
+                        join doc_header h on a.id = h.docno_i
+                    /* 2. document write-off logic */
+                        left join ( select case when count(docno_i) &gt; '0' then 'Y'
+                                            else 'N' end w_off_logic
+                                         , docno_i
+                                      from doc_signoff_tree
+                                     where docno_i = ref_docno_i
+                                     group by docno_i) o on h.docno_i = o.docno_i
+                        where not exists (select doc_replacement.docno_i
+                                            from doc_replacement
+                                           where h.docno_i = doc_replacement.docno_i
+                                             and replacement_code = 'SB')
+                          and ac_or_comp_doc = 'C'
+                ) i
+                 start with id = '@136_Detailed_doc_grouped.h.docno_i@'
+                 connect by prior i.id = i.pid
+                order siblings by i.id, revision 
+        ) b
+        left join (select event_status, psn, docno_i
+                     from (
+                            select case when event_status = 'N' and event_status_single = 'N'
+                                          then ' '
+                                         else event_status end event_status
+                                , psn
+                                , event_key_parent docno_i
+                             from event_effectivity_mapping
+                             where event_type = 'EFL'                   
+                           union
+                            select event_status, psn, event_key_parent docno_i
+                              from wo_event_link e
+                              join wo_header h on e.event_perfno_i = h.event_perfno_i
+                             where e.event_type = 'DOC_EFF'
+                               and pending_status = 0
+                          )x 
+                    group by event_status, psn, docno_i
+                   ) r on b.docno_i = r.docno_i
+    ) n on a.docno_i = n.root and a.psn = n.psn and num = 1
+  /* due'шники */
+     left join (select case when h.type &lt;&gt; 'PD' then q.event_perfno_i
+                           else null end event_perfno_i
+                , case when fh &gt; 0 then trunc(fh/60, 0) || ':'  || trunc(( mod(fh/60, 1) * (60/100) ) * 100, 0) 
+                                    else null end due_h
+                 , case when fc &gt; 0 then trunc(fc, 0)
+                                    else null end due_c
+                 , case when fd &gt;= '1491308' then 'UNDEFINED'
+                                    else to_char(to_date('31.12.1971', 'dd.mm.yyyy') + fd, 'dd.mm.yyyy') end due_date
+                 , event_key_root
+                 , psn
+                 , event_key
+                 , event_status
+             from
+            (
+                select event_perfno_i, fh, fc, fd
+                  from ( select event_perfno_i
+                              , counter_defno_i
+                              , due_at
+                          from
+                             (
+                                select wt.event_perfno_i
+                                     , due_at
+                                     , counter_defno_i
+                                  from wo_event_link e
+                                  join wo_header h on e.event_perfno_i = h.event_perfno_i
+                                  join wo_transfer wt on h.event_perfno_i = wt.event_perfno_i
+                                  join wo_transfer_dimension wd on wt.event_transferno_i = wd.event_transferno_i
+                                  join counter u on wd.counterno_i = u.counterno_i
+                                  join counter_template ct on u.counter_templateno_i = ct.counter_templateno_i
+                                 where is_last_transfer = 'Y'
+                                   and pending_status = 0
+                                   and counter_defno_i in (1, 2)
+                                   and event_key_root = '@136_Detailed_doc_grouped.h.docno_i@'
+                                   union
+                                select wt.event_perfno_i
+                                     , absolute_due_date due_at
+                                     , counter_defno_i
+                                  from wo_event_link e
+                                  join wo_header h on e.event_perfno_i = h.event_perfno_i
+                                  join wo_transfer wt on h.event_perfno_i = wt.event_perfno_i
+                                  join wo_transfer_dimension wd on wt.event_transferno_i = wd.event_transferno_i
+                                  join counter u on wd.counterno_i = u.counterno_i
+                                  join counter_template ct on u.counter_templateno_i = ct.counter_templateno_i
+                                 where is_last_transfer = 'Y'
+                                   and pending_status = 0
+                                   and counter_defno_i = 3
+                                   and event_key_root = '@136_Detailed_doc_grouped.h.docno_i@'
+                             ) f
+                       ) x
+                 pivot (avg(due_at) for counter_defno_i in (1 as fh, 2 as fc, 3 as fd)) d
+             ) q 
+             join wo_event_link e on q.event_perfno_i = e.event_perfno_i
+             join wo_header h on e.event_perfno_i = h.event_perfno_i 
+             where fd &gt;= trunc(sysdate - to_date('31.12.1971', 'dd.mm.yyyy'))
+               ) y on a.psn = y.psn and y.event_key_root = a.docno_i  
+   left join rotables r on a.psn = r.psn
+   left join part p on r.partno = p.partno
+  /* wo number */
+   left join (select dense_rank() over(partition by psn order by decode(h.type, 'S', 1, 'PD', 2)) num
+                    , max(e.event_perfno_i) event_perfno_i, event_status, h.type, psn, e.event_key, e.event_key_root
+                 from wo_event_link e
+                 join wo_header h on h.event_perfno_i = e.event_perfno_i
+                where e.event_type = 'DOC_EFF'
+                  and pending_status &lt; 0 /* историческая запись */
+                  and event_status &lt;&gt; 'N'
+                group by event_status, h.type, psn, e.event_key, e.event_key_root
+               ) e on a.psn = e.psn and e.event_key_root = a.docno_i and e.num = 1
+  /* Performed */
+    left join (select uu.event_perfno_i
+                    , case when fh &gt; 0 then trunc(fh/60, 0) || ':'  || trunc(( mod(fh/60, 1) * (60/100) ) * 100, 0) 
+                                         else null end due_h
+                    , case when fc &gt; 0 then trunc(fc, 0)
+                                         else null end due_c
+                    , case when fd &gt;= '1491308' then 'UNDEFINED'
+                                                  else to_char(to_date('31.12.1971', 'dd.mm.yyyy') + fd, 'dd.mm.yyyy') end absolute_due_date
+                    , psn
+                    , event_key_root
+                    , revision 
+                 from (
+                       select event_perfno_i, fh, fc, fd
+                         from ( select event_perfno_i
+                                     , counter_defno_i
+                                     , due_at
+                                  from (
+                                        select wt.event_perfno_i
+                                             , due_at
+                                             , counter_defno_i
+                                          from wo_event_link e
+                                          join wo_header h on e.event_perfno_i = h.event_perfno_i
+                                          join wo_transfer wt on h.event_perfno_i = wt.event_perfno_i
+                                          join wo_transfer_dimension wd on wt.event_transferno_i = wd.event_transferno_i
+                                          join counter u on wd.counterno_i = u.counterno_i
+                                          join counter_template ct on u.counter_templateno_i = ct.counter_templateno_i
+                                         where is_last_transfer = 'Y'
+                                           and transfer_type = 'R'
+                                           and counter_defno_i in (1, 2)
+                                           and event_key_root = '@136_Detailed_doc_grouped.h.docno_i@'
+                                           and pending_status = (select min(a.pending_status)
+                                                                   from wo_event_link a
+                                                                   join wo_header b on a.event_perfno_i = b.event_perfno_i
+                                                                  where b.psn = h.psn
+                                                                    and a.event_key_root = e.event_key_root
+                                                                  group by b.psn)
+                                           union
+                                        select wt.event_perfno_i
+                                             , absolute_due_date due_at
+                                             , counter_defno_i
+                                          from wo_event_link e
+                                          join wo_header h on e.event_perfno_i = h.event_perfno_i
+                                          join wo_transfer wt on h.event_perfno_i = wt.event_perfno_i
+                                          join wo_transfer_dimension wd on wt.event_transferno_i = wd.event_transferno_i
+                                          join counter u on wd.counterno_i = u.counterno_i
+                                          join counter_template ct on u.counter_templateno_i = ct.counter_templateno_i
+                                         where is_last_transfer = 'Y'
+                                           and transfer_type = 'R'
+                                           and counter_defno_i = 3
+                                           and event_key_root = '@136_Detailed_doc_grouped.h.docno_i@'
+                                           and pending_status = (select min(a.pending_status)
+                                                                   from wo_event_link a
+                                                                   join wo_header b on a.event_perfno_i = b.event_perfno_i
+                                                                  where b.psn = h.psn
+                                                                    and a.event_key_root = e.event_key_root
+                                                                  group by b.psn)
+                                       ) f
+                              ) x
+                        pivot (avg(due_at) for counter_defno_i in (1 as fh, 2 as fc, 3 as fd)) d
+                      ) uu
+                 join wo_event_link e on uu.event_perfno_i = e.event_perfno_i
+                 join wo_header h on e.event_perfno_i = h.event_perfno_i and event_status &lt;&gt; 'N'
+              ) u on a.psn = u.psn and a.docno_i = u.event_key_root
+   left join aircraft i on r.ac_registr = i.ac_registr
+   left join location l on r.locationno_i = l.locationno_i
+  /* Search togo &amp; expected */
+   left join ( select event_key_parent
+                    , f.partno
+                    , f.serialno
+                    , f.ac_registr
+                    , f.ac_typ
+                    , case when dimension = 'H' then trunc(f.togo/60, 0) || ':'  || trunc(( mod(f.togo/60, 1) * (60/100) ) * 100, 0)
+                           when dimension = 'D' then to_char(trunc(f.togo / 60 / 24, 0))
+                           when dimension = 'C' then to_char(trunc(f.togo, 0))
+                       end togo
+                    , f.dimension
+                    , case when expected_date &gt;= 1491308 then null
+                        else to_char(to_date('31.12.1971', 'dd.mm.yyyy') + expected_date, 'dd.mm.yyyy') 
+                      end expected_date
+                 from wo_event_link e
+                 join forecast f on e.event_perfno_i = f.event_perfno_i
+                 join aircraft a on f.ac_registr = a.ac_registr and a.ac_typ = f.ac_typ
+                where e.event_type = 'DOC_EFF'
+                  and e.planable_status = 0 ) te on a.docno_i = te.event_key_parent and a.partno = te.partno
+      and a.serialno = te.serialno and i.ac_registr = te.ac_registr
+   where /* Doc No */
+     a.docno_i in ('@136_Detailed_doc_grouped.h.docno_i@')
+  /* Part No */
+     and ('@VAR.part@' is null or
+          a.partno  in
+            (select trim(substr('@VAR.part@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.part@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.part@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.part@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.part@') -
+              length(replace('@VAR.part@', ',', '')) + 1))
+    /* Serial No */
+   and ('@VAR.serial@' is null or
+      a.serialno in
+        (select trim(substr('@VAR.serial@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.serial@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.serial@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.serial@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.serial@') -
+              length(replace('@VAR.serial@', ',', '')) + 1))
+    /* Aircraft's */
+     and ('@VAR.aircraft@' is null or
+        aircraftno_i in
+          (select trim(substr('@VAR.aircraft@' || ',',
+                        decode(level,
+                             1,
+                             0,
+                             instr('@VAR.aircraft@' || ',', ',', 1, level - 1) + 2),
+                        instr('@VAR.aircraft@' || ',', ',', 1, level) -
+                        decode(level,
+                             1,
+                             1,
+                             instr('@VAR.aircraft@' || ',', ',', 1, level - 1) + 2)))
+       from dual
+     connect by level &lt;= length('@VAR.aircraft@') -
+              length(replace('@VAR.aircraft@', ',', '')) + 1))
+order by a.serialno, a.partno</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="136_DetailedDocStat_aircraft" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Status for AC only</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="doc_type" id="doc_type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="d.revision" id="d.revision"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="d.docno" id="d.docno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="d.docno_i" id="d.docno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.ac_registr" id="a.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.serialno" id="a.serialno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when e.event_status = 'W' then 'See prev. Docstatus'&#10;           when e.event_status = 'R' then 'Repetitive'&#10;           when e.event_status = 'U' then 'Cancelled'&#10;           when e.event_status = 'M' then 'Taskcard Controlled'&#10;           when e.event_status = ' ' then 'Not Applicable'&#10;           when e.event_status = 'J' then 'Rejected by Operator'&#10;           when e.event_status = '!' then 'Unknown'&#10;           when e.event_status = '-' then 'Not Assigned'&#10;           when e.event_status = 'T' then 'Terminated by third party'&#10;           when e.event_status = 'N' then 'Not Applicable'&#10;           when e.event_status = 'O' then 'Open'&#10;           when e.event_status = 'Z' then 'Superseded'&#10;           when e.event_status = 'F' then 'Ex Factory'&#10;           when e.event_status = 'G' then 'Term.Action open'&#10;           when e.event_status = 'C' then 'Closed' &#10;            else e.event_status end status" id="status"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.description" id="a.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when y.event_perfno_i &gt; 0 and y.type &lt;&gt; 'PD' then y.event_perfno_i&#10;        else null end wo_num" id="wo_num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" case when fh.due_at &gt; 0 &#10;       then trunc(fh.due_at/60 0) || ':'  || trunc(( mod(fh.due_at/60 1) * (60/100) ) * 1000) &#10;       else null end perf_at_h" id="perf_at_h"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" case when fc.due_at &gt; 0 &#10;       then trunc(fc.due_at0)&#10;       else null end perf_at_c" id="perf_at_c"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="absolute_due_date" id="absolute_due_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when w.event_status = 'C' then null&#10;           when w.event_status = 'O' and y.type &lt;&gt; 'PD' then w.event_perfno_i &#10;       else null end next_wo" id="next_wo"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="b.due_h" id="b.due_h"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="b.due_c" id="b.due_c"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="b.due_date" id="b.due_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.ac_typ" id="a.ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.operator" id="a.operator"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="status_remarks" id="status_remarks"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when togo &gt; 0 then togo || '/' || te.dimension &#10;        else null end togo" id="togo"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="te.expected_date" id="te.expected_date"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@136_Detailed_doc_grouped.h.docno_i@">
+          <ds:object>@136_Detailed_doc_grouped.h.docno_i@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.aircraft@">
+          <ds:object>@VAR.aircraft@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select doc_type
+    , d.revision
+    , d.docno
+    , d.docno_i
+    , a.ac_registr
+    , a.serialno
+    , case when e.event_status = 'W' then 'See prev. Docstatus'
+           when e.event_status = 'R' then 'Repetitive'
+           when e.event_status = 'U' then 'Cancelled'
+           when e.event_status = 'M' then 'Taskcard Controlled'
+           when e.event_status = ' ' then 'Not Applicable'
+           when e.event_status = 'J' then 'Rejected by Operator'
+           when e.event_status = '!' then 'Unknown'
+           when e.event_status = '-' then 'Not Assigned'
+           when e.event_status = 'T' then 'Terminated by third party'
+           when e.event_status = 'N' then 'Not Applicable'
+           when e.event_status = 'O' then 'Open'
+           when e.event_status = 'Z' then 'Superseded'
+           when e.event_status = 'F' then 'Ex Factory'
+           when e.event_status = 'G' then 'Term.Action open'
+           when e.event_status = 'C' then 'Closed' 
+            else e.event_status end status
+    , a.description
+    , case when y.event_perfno_i &gt; 0 and y.type &lt;&gt; 'PD' then y.event_perfno_i
+        else null end wo_num
+    , case when u.due_h &lt;&gt; ' ' then u.due_h
+       else null end perf_at_h 
+    , case when u.due_c &gt; 0 then u.due_c
+       else null end perf_at_c
+    , absolute_due_date
+    , case when b.event_status = 'C' then null
+           when b.event_status &lt;&gt; 'C' then b.event_perfno_i 
+       else null end next_wo
+    , b.due_h
+    , b.due_c
+    , b.due_date
+    , a.ac_typ
+    , a.operator
+    , status_remarks
+    , case when togo &gt; 0 then togo || '/' || te.dimension 
+        else null end togo
+    , te.expected_date
+    from doc_header d
+    join event_effectivity_mapping e on d.docno_i = e.event_key_parent and event_type = 'EFL'
+    left join wo_event_link l on e.event_perfno_i = l.event_perfno_i
+    join aircraft a on e.ac_registr = a.ac_registr
+  /* wo number */
+    left join (select max(e.event_perfno_i) event_perfno_i, event_key, event_key_root, ac_registr, event_status, h.type
+                 from wo_event_link e
+                 join wo_header h on h.event_perfno_i = e.event_perfno_i
+                where e.event_type = 'DOC_EFF'
+                  and pending_status &lt; 0 /* историческая запись */
+                and (event_status &lt;&gt; 'N' or h.type &lt;&gt; 'PD') 
+                group by event_key, event_key_root, ac_registr, event_status, h.type
+              ) y on a.ac_registr = y.ac_registr and docno_i = y.event_key_root
+  /* Performed */
+   left join (select uu.event_perfno_i
+                    , case when fh &gt; 0 then trunc(fh/60, 0) || ':'  || trunc(( mod(fh/60, 1) * (60/100) ) * 100, 0) 
+                                         else null end due_h
+                    , case when fc &gt; 0 then trunc(fc, 0)
+                                         else null end due_c
+                    , case when fd &gt;= '1491308' then 'UNDEFINED'
+                                                  else to_char(to_date('31.12.1971', 'dd.mm.yyyy') + fd, 'dd.mm.yyyy') end absolute_due_date
+                    , ac_registr
+                    , event_key_root
+                    , revision 
+                 from (
+                       select event_perfno_i, fh, fc, fd
+                         from ( select event_perfno_i
+                                     , counter_defno_i
+                                     , due_at
+                                  from (
+                                        select wt.event_perfno_i
+                                             , due_at
+                                             , counter_defno_i
+                                          from wo_event_link e
+                                          join wo_header h on e.event_perfno_i = h.event_perfno_i
+                                          join wo_transfer wt on h.event_perfno_i = wt.event_perfno_i
+                                          join wo_transfer_dimension wd on wt.event_transferno_i = wd.event_transferno_i
+                                          join counter u on wd.counterno_i = u.counterno_i
+                                          join counter_template ct on u.counter_templateno_i = ct.counter_templateno_i
+                                         where is_last_transfer = 'Y'
+                                           and transfer_type = 'R'
+                                           and counter_defno_i in (1, 2)
+                                           and event_key_root = '@136_Detailed_doc_grouped.h.docno_i@'
+                                           and pending_status = (select min(a.pending_status)
+                                                                   from wo_event_link a
+                                                                   join wo_header b on a.event_perfno_i = b.event_perfno_i
+                                                                  where b.ac_registr = h.ac_registr
+                                                                    and a.event_key_root = e.event_key_root
+                                                                  group by b.ac_registr)
+                                           union
+                                        select wt.event_perfno_i
+                                             , absolute_due_date due_at
+                                             , counter_defno_i
+                                          from wo_event_link e
+                                          join wo_header h on e.event_perfno_i = h.event_perfno_i
+                                          join wo_transfer wt on h.event_perfno_i = wt.event_perfno_i
+                                          join wo_transfer_dimension wd on wt.event_transferno_i = wd.event_transferno_i
+                                          join counter u on wd.counterno_i = u.counterno_i
+                                          join counter_template ct on u.counter_templateno_i = ct.counter_templateno_i
+                                         where is_last_transfer = 'Y'
+                                           and transfer_type = 'R'
+                                           and counter_defno_i = 3
+                                           and event_key_root = '@136_Detailed_doc_grouped.h.docno_i@'
+                                           and pending_status = (select min(a.pending_status)
+                                                                   from wo_event_link a
+                                                                   join wo_header b on a.event_perfno_i = b.event_perfno_i
+                                                                  where b.ac_registr = h.ac_registr
+                                                                    and a.event_key_root = e.event_key_root
+                                                                  group by b.ac_registr)
+                                       ) f
+                              ) x
+                        pivot (avg(due_at) for counter_defno_i in (1 as fh, 2 as fc, 3 as fd)) d
+                      ) uu
+                 join wo_event_link e on uu.event_perfno_i = e.event_perfno_i
+                 join wo_header h on e.event_perfno_i = h.event_perfno_i and event_status &lt;&gt; 'N'
+              ) u on a.ac_registr = u.ac_registr and d.docno_i = u.event_key_root
+      /* due'шники */
+     left join (select case when h.type &lt;&gt; 'PD' then q.event_perfno_i
+                           else null end event_perfno_i
+                , case when fh &gt; 0 then trunc(fh/60, 0) || ':'  || trunc(( mod(fh/60, 1) * (60/100) ) * 100, 0) 
+                                    else null end due_h
+                 , case when fc &gt; 0 then trunc(fc, 0)
+                                    else null end due_c
+                 , case when fd &gt;= '1491308' then 'UNDEFINED'
+                                    else to_char(to_date('31.12.1971', 'dd.mm.yyyy') + fd, 'dd.mm.yyyy') end due_date
+                 , event_key_root
+                 , ac_registr
+                 , event_key
+                 , event_status
+             from
+            (
+                select event_perfno_i, fh, fc, fd
+                  from ( select event_perfno_i
+                              , counter_defno_i
+                              , due_at
+                          from
+                             (
+                                select wt.event_perfno_i
+                                     , due_at
+                                     , counter_defno_i
+                                  from wo_event_link e
+                                  join wo_header h on e.event_perfno_i = h.event_perfno_i
+                                  join wo_transfer wt on h.event_perfno_i = wt.event_perfno_i
+                                  join wo_transfer_dimension wd on wt.event_transferno_i = wd.event_transferno_i
+                                  join counter u on wd.counterno_i = u.counterno_i
+                                  join counter_template ct on u.counter_templateno_i = ct.counter_templateno_i
+                                 where is_last_transfer = 'Y'
+                                   and pending_status = 0
+                                   and counter_defno_i in (1, 2)
+                                   and event_key_root = '@136_Detailed_doc_grouped.h.docno_i@'
+                                   union
+                                select wt.event_perfno_i
+                                     , absolute_due_date due_at
+                                     , counter_defno_i
+                                  from wo_event_link e
+                                  join wo_header h on e.event_perfno_i = h.event_perfno_i
+                                  join wo_transfer wt on h.event_perfno_i = wt.event_perfno_i
+                                  join wo_transfer_dimension wd on wt.event_transferno_i = wd.event_transferno_i
+                                  join counter u on wd.counterno_i = u.counterno_i
+                                  join counter_template ct on u.counter_templateno_i = ct.counter_templateno_i
+                                 where is_last_transfer = 'Y'
+                                   and pending_status = 0
+                                   and counter_defno_i = 3
+                                   and event_key_root = '@136_Detailed_doc_grouped.h.docno_i@'
+                             ) f
+                       ) x
+                 pivot (avg(due_at) for counter_defno_i in (1 as fh, 2 as fc, 3 as fd)) d
+             ) q 
+             join wo_event_link e on q.event_perfno_i = e.event_perfno_i
+             join wo_header h on e.event_perfno_i = h.event_perfno_i 
+             where fd &gt;= trunc(sysdate - to_date('31.12.1971', 'dd.mm.yyyy'))
+               ) b on a.ac_registr = b.ac_registr and b.event_key_root = d.docno_i  
+  /* Search togo &amp; expected */
+   left join ( select event_key_parent
+                    , a.serialno
+                    , f.ac_registr
+                    , f.ac_typ
+                    , case when dimension = 'H' then trunc(f.togo/60, 0) || ':'  || trunc(( mod(f.togo/60, 1) * (60/100) ) * 100, 0)
+                           when dimension = 'D' then to_char(trunc(f.togo / 60 / 24, 0))
+                           when dimension = 'C' then to_char(trunc(f.togo, 0))
+                       end togo
+                    , f.dimension
+                    , case when expected_date &gt;= 1491308 then null
+                        else to_char(to_date('31.12.1971', 'dd.mm.yyyy') + expected_date, 'dd.mm.yyyy') 
+                      end expected_date
+                 from wo_event_link e
+                 join forecast f on e.event_perfno_i = f.event_perfno_i
+                 join aircraft a on f.ac_registr = a.ac_registr and a.ac_typ = f.ac_typ
+                where e.event_type = 'DOC_EFF'
+                 and f.event_type = 'D'
+                 and e.planable_status = 0
+              ) te on d.docno_i = te.event_key_parent and a.ac_registr = te.ac_registr and a.serialno = te.serialno
+   where /* Doc No */
+         docno_i in ('@136_Detailed_doc_grouped.h.docno_i@')
+   /* doc's that's superseded */
+     and not exists (select doc_replacement.docno_i
+                       from doc_replacement
+                      where d.docno_i = doc_replacement.docno_i
+                        and replacement_code = 'SB')
+     and ac_or_comp_doc = 'A'
+     /* Aircraft's */
+     and ('@VAR.aircraft@' is null or
+        a.aircraftno_i in
+          (select trim(substr('@VAR.aircraft@' || ',',
+                        decode(level,
+                             1,
+                             0,
+                             instr('@VAR.aircraft@' || ',', ',', 1, level - 1) + 2),
+                        instr('@VAR.aircraft@' || ',', ',', 1, level) -
+                        decode(level,
+                             1,
+                             1,
+                             instr('@VAR.aircraft@' || ',', ',', 1, level - 1) + 2)))
+       from dual
+     connect by level &lt;= length('@VAR.aircraft@') -
+              length(replace('@VAR.aircraft@', ',', '')) + 1))
+   order by d.docno, d.revision, a.ac_registr</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

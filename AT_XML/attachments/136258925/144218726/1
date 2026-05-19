@@ -1,0 +1,1596 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000248</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="40">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="41">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">33 26</attribute>
+      <attribute name="size">631 29</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Отчет по суточной смене первой линии техподдержки AMOS @RMX_SHIFT_DATES.shift_start@ - @RMX_SHIFT_DATES.shift_finish@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="42">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">32 106</attribute>
+      <attribute name="size">631 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Заявки отработанные сменой (за выбранный период)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>78</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-1</x_offset>
+        <y_offset>31</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="43">
+      <attribute name="name">DatasourceTable_3</attribute>
+      <attribute name="position">32 156</attribute>
+      <attribute name="size">631 56</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">32</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">1</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="46" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">id</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="47" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_TQ.tech_query.queryno_i@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">180</attribute>
+          <view class="LabelReportView" id="50" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">180 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Название</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="51" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">180 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_TQ.tech_query.headline@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="54" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Выполненное действие</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="55" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_TQ.status@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="58" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Приоритет заявки</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="59" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_TQ.tech_query.priority@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">231</attribute>
+          <view class="LabelReportView" id="62" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">231 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Статус заявки(на момент выгрузки отчета):</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="63" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">231 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Назначена на(группа/пользователь) :  @RMX_TQ.tech_query.assigned_to_group@  /  @RMX_TQ.tech_query.assigned_to@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">RMX_TQ</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>42</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="64">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">32 419</attribute>
+      <attribute name="size">631 19</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Открытые срочные задачи:</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>75</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="65">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">32 503</attribute>
+      <attribute name="size">631 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">5. -</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.task_5@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">5. @VAR.task_5@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="66">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">32 455</attribute>
+      <attribute name="size">631 14</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">2. -</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.task_2@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">2. @VAR.task_2@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>67</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="67">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">32 438</attribute>
+      <attribute name="size">631 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">1. -</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.task_1@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">1. @VAR.task_1@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>64</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="68">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">32 212</attribute>
+      <attribute name="size">370 74</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 3</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Зафиксировано новых/переназначенных заявок в APN:869 на группы ТП (за выбранный период)-   @RMX_TQ_COUNT.all_count_tq@ (из них с высоким приоритетом -  @RMX_TQ_HIGH_COUNT.count_tq_high@)
+Из них закрыто -  @rmx_tq_close_counter.close_count_tq@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>43</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="69">
+      <attribute name="name">Label_12</attribute>
+      <attribute name="position">32 286</attribute>
+      <attribute name="size">286 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 3</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Зафиксировано заявок по эл.почте - @VAR.email_issues@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">TOP_RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>68</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="70">
+      <attribute name="name">Label_13</attribute>
+      <attribute name="position">32 316</attribute>
+      <attribute name="size">286 42</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 3</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Зафиксировано заявок по телефону - @VAR.phone_issues@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">TOP_RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>69</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="71">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">318 286</attribute>
+      <attribute name="size">345 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 1 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Комментарий: @VAR.email_comments@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>69</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="72">
+      <attribute name="name">Label_16</attribute>
+      <attribute name="position">318 316</attribute>
+      <attribute name="size">345 43</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 1 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Комментарий: @VAR.phone_comments@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>70</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="73">
+      <attribute name="name">Label_17</attribute>
+      <attribute name="position">32 358</attribute>
+      <attribute name="size">286 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 3</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Зафикисировано сбоев интеграции - @VAR.integr_issues@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">TOP_RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>70</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="74">
+      <attribute name="name">Label_18</attribute>
+      <attribute name="position">318 359</attribute>
+      <attribute name="size">345 29</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 1 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Комментарий: @VAR.integr_comments@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>73</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>1</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="75">
+      <attribute name="name">Label_19</attribute>
+      <attribute name="position">32 388</attribute>
+      <attribute name="size">286 31</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 3</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Зафиксировано сбоев в работе AMOS - @VAR.amos_issues@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">TOP_RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>73</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="76">
+      <attribute name="name">Label_20</attribute>
+      <attribute name="position">318 388</attribute>
+      <attribute name="size">345 31</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 1 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Комментарий: @VAR.amos_comments@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>73</anchor_view>
+        <anchor_location>BOTTOM_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="77">
+      <attribute name="name">Label_21</attribute>
+      <attribute name="position">402 212</attribute>
+      <attribute name="size">261 74</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 1 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Комментарий: @VAR.tq_comments@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>68</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="78">
+      <attribute name="name">Label_23</attribute>
+      <attribute name="position">33 55</attribute>
+      <attribute name="size">631 20</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Смену сдал: @SYSTEM.FIRSTNAME@ @SYSTEM.LASTNAME@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>41</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="79">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">32 469</attribute>
+      <attribute name="size">631 16</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">3. -</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.task_3@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">3. @VAR.task_3@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>66</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="80">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">32 485</attribute>
+      <attribute name="size">631 18</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">4. -</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.task_4@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">4. @VAR.task_4@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>79</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="phone_comments"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="task_4"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="Укажите дату начала смены" id="DATE_FROM"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="task_5"/>
+        <ds:columnDescriptor amosType="NONE" description="" id="high_prio_tasks"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="task_2"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="task_3"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="integr_comments"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="task_1"/>
+        <ds:columnDescriptor amosType="INT" description="" id="amos_issues"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="amos_comments"/>
+        <ds:columnDescriptor amosType="INT" description="" id="phone_issues"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="email_comments"/>
+        <ds:columnDescriptor amosType="INT" description="" id="integr_issues"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="Выберите ФИО (сменный сотрудник)" id="SIGN"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="tq_comments"/>
+        <ds:columnDescriptor amosType="INT" description="" id="email_issues"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="Укажите дату окончания смены" id="DATE_TO"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="f1. Комментарий к заявка мо телефону:" id="phone_comments">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="c4. Задача 4" id="task_4">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="2.Дата начала смены" id="DATE_FROM">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="c5. Задача 5" id="task_5">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="c.Открытые срочные задачи:" id="high_prio_tasks">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="c2. Задача 2" id="task_2">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="c3. Задача 3" id="task_3">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="g.1 Комментарий к сбоям по интеграии:" id="integr_comments">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="c1. Задача 1" id="task_1">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="h. Сбоев в работе AMOS:" id="amos_issues">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>0</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="h1. Комментарий к сбоям AMOS" id="amos_comments">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="f. Заявок по телефону:" id="phone_issues">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>0</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="e1. Комментарий к заявкам по email:" id="email_comments">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="g. Сбоев в интеграции:" id="integr_issues">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>0</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="1.Login Sign смены" id="SIGN">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>-&amp;=&amp;-;VRYBIN&amp;=&amp;Рыбин Владислав;FEDOSEEN&amp;=&amp;Федосеенко Сергей;PASECHNI&amp;=&amp;Пасечник Максим;LABUSHEV&amp;=&amp;Лабушев Алексей;DILINA&amp;=&amp;Ильина Дарья;DPOTAP&amp;=&amp;Потапкин Дмитрий;EFAZUL&amp;=&amp;Фазульянов Егор;NFILIP&amp;=&amp;Филипенков Никита;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="d. Комментарий к заявкам в APN:869" id="tq_comments">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="e. Заявок по email:" id="email_issues">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>0</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="3.Дата окончания смены" id="DATE_TO">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="RMX_TQ" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DISTINCT&#10;        tech_query.queryno_i" id="tech_query.queryno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="tech_query.headline" id="tech_query.headline"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="tech_query.assigned_to_group" id="tech_query.assigned_to_group"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="tech_query.assigned_to" id="tech_query.assigned_to"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       CASE WHEN tech_query.status='3' THEN 'Closed'&#10;            WHEN tech_query.status='2'&#10;                 AND tech_query.assigned_to_group NOT IN ('1.ДИС''2.SUPPORT_2' '3.SUPPORT_3' '4.ИНТЕГРАЦИЯ' '5.ОЗМ_SAP')&#10;                 AND tech_query.assigned_to_group IS NOT NULL&#10;            THEN 'Waiting for feedback'&#10;&#9;&#9;&#9;WHEN tech_query.status='2'&#10;                 AND (tech_query.assigned_to_group IN ('1.ДИС''2.SUPPORT_2' '3.SUPPORT_3' '4.ИНТЕГРАЦИЯ''5.ОЗМ_SAP') OR assigned_to_group IS NULL)&#10;            THEN 'Assigned to '||tech_query.assigned_to_group&#10;            ELSE ''&#10;        END as status" id="status"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="tech_query.priority" id="tech_query.priority"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="tech_query_note.mutator" id="tech_query_note.mutator"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_FROM@">
+          <ds:object>@VAR.DATE_FROM@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_TO@">
+          <ds:object>@VAR.DATE_TO@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.SIGN@">
+          <ds:object>@VAR.SIGN@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT 
+        DISTINCT
+        tech_query.queryno_i,
+        tech_query.headline,
+        tech_query.assigned_to_group,
+tech_query.assigned_to,
+        CASE  		
+            WHEN tech_query_note.note_type='R' and tech_query_note.note like ('%Deassigned from group 1.ДИС%') or tech_query_note.note like ('%Reassigned from group 1.ДИС%' )  
+                THEN 'Заявка перенаправлена с группы 1.ДИС (отработана)' 		
+            WHEN tech_query_note.note_type='R' and tech_query_note.note like ('%Deassigned from group 2.SUPPORT_2%') or tech_query_note.note like ('%Reassigned from group 2.SUPPORT_2%' ) 
+                THEN 'Заявка перенаправлена с группы 2.SUPPORT_2 (отработана)' 		
+            WHEN tech_query_note.note_type='R' and tech_query_note.note like ('%Deassigned from group 3.SUPPORT_3%') or tech_query_note.note like ('%Reassigned from group 3.SUPPORT_3%' ) 
+                THEN 'Заявка перенаправлена с группы 3.SUPPORT_3 (отработана)'  		
+            WHEN tech_query_note.note_type='O' THEN 'Заявка открыта (переоткрыта)' 		
+            WHEN tech_query_note.note_type='P' THEN 'В заявку внесена Note' 		
+            WHEN tech_query_note.note_type='C' THEN 'Заявка закрыта'  		
+            WHEN tech_query.status='9' THEN 'Заявка удалена' 
+            WHEN tech_query_note.note_type = 'R' and tech_query_note.note like ('%assigned the query to himself/herself%')
+                THEN    'Assigned the query to himself/herself'
+            WHEN tech_query_note.note_type='R' and tech_query_note.note like ('%Assigned to group 2.SUPPORT_2%')
+                or tech_query_note.note like ('%to 2.SUPPORT_2%')
+                Then 'Заявка назначена на группу 2.Support_2'
+            WHEN tech_query_note.note_type='R' and tech_query_note.note like ('%Assigned to group 3.SUPPORT_3%')
+                or tech_query_note.note like ('%to 3.SUPPORT_3%')
+                Then 'Заявка назначена на группу 3.Support_3'
+            WHEN tech_query_note.note_type='R' and tech_query_note.note like ('%Assigned to group 4.ИНТЕГРАЦИЯ%')
+                or tech_query_note.note like ('%to 4.ИНТЕГРАЦИЯ%')
+                Then 'Заявка назначена на группу 4.ИНТЕГРАЦИЯ'
+            WHEN tech_query_note.note_type='R' and tech_query_note.note like ('%Assigned to%') 
+				or tech_query_note.note_type='R' and tech_query_note.note like ('%Reassigned from group%') 
+                Then 'Заявка перенаправлена не на группу техподдержки'
+
+            ELSE 'Другое действие'        
+            END as status,
+    tech_query.priority,
+    tech_query_note.mutator
+FROM 
+        tech_query
+            LEFT JOIN
+                    tech_query_note ON tech_query_note.queryno_i = tech_query.queryno_i
+            
+WHERE (
+(((@VAR.DATE_FROM@)&lt;=(tech_query.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query.created_date)))
+and tech_query.assigned_to_group IN ('1.ДИС','2.SUPPORT_2','3.SUPPORT_3','4.ИНТЕГРАЦИЯ') and tech_query.mutator in ('@VAR.SIGN@')
+)
+
+or (tech_query_note.note like ('%1.ДИС%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+
+and tech_query_note.mutator in ('@VAR.SIGN@'))
+
+or (tech_query_note.note like ('%2.SUPPORT_2%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query_note.mutator in ('@VAR.SIGN@'))
+
+or (tech_query_note.note like ('%3.SUPPORT_3%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query_note.mutator in ('@VAR.SIGN@'))
+
+or (tech_query_note.note like ('%4.ИНТЕГРАЦИЯ%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query_note.mutator in ('@VAR.SIGN@'))
+
+or ((((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query_note.mutator in ('@VAR.SIGN@'))
+
+ORDER BY tech_query.queryno_i asc</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="RMX_TQ_COUNT" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="count(*) as all_count_tq" id="all_count_tq"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_FROM@">
+          <ds:object>@VAR.DATE_FROM@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_TO@">
+          <ds:object>@VAR.DATE_TO@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select  count(*) as all_count_tq
+from
+(SELECT 
+        DISTINCT
+        tech_query.queryno_i 
+FROM 
+        tech_query
+            LEFT JOIN
+                    tech_query_note ON tech_query_note.queryno_i = tech_query.queryno_i
+            
+WHERE (
+ (((@VAR.DATE_FROM@)&lt;=(tech_query.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query.created_date)))
+and tech_query.assigned_to_group IN ('1.ДИС','2.SUPPORT_2', '3.SUPPORT_3', '4.ИНТЕГРАЦИЯ'))
+
+or (tech_query_note.note like ('%to%1.ДИС%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+)
+or (tech_query_note.note like ('%to%2.SUPPORT_2%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+)
+or (tech_query_note.note like ('%to%3.SUPPORT_3%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+)
+or (tech_query_note.note like ('%to%4.ИНТЕГРАЦИЯ%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+)
+
+
+ORDER BY tech_query.queryno_i asc)</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="RMX_SHIFT_DATES" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (@VAR.shift_start@+729)'DD.MM.YYYY') as shift_start" id="shift_start"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (@VAR.shift_finish@+729)'DD.MM.YYYY') as shift_finish" id="shift_finish"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_FROM@">
+          <ds:object>@VAR.DATE_FROM@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_TO@">
+          <ds:object>@VAR.DATE_TO@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT 
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.DATE_FROM@+729), 'DD.MM.YYYY') as shift_start,
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.DATE_TO@+729), 'DD.MM.YYYY') as shift_finish
+FROM DUAL</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="RMX_TQ_HIGH_COUNT" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="count(*) as count_tq_high" id="count_tq_high"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_FROM@">
+          <ds:object>@VAR.DATE_FROM@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_TO@">
+          <ds:object>@VAR.DATE_TO@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select count(*) as count_tq_high
+from
+(SELECT 
+        DISTINCT
+        tech_query.queryno_i 
+FROM 
+        tech_query
+            LEFT JOIN
+                    tech_query_note ON tech_query_note.queryno_i = tech_query.queryno_i
+            
+WHERE (
+(((@VAR.DATE_FROM@)&lt;=(tech_query.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query.created_date)))
+and tech_query.assigned_to_group IN ('1.ДИС','2.SUPPORT_2', '3.SUPPORT_3', '4.ИНТЕГРАЦИЯ') and tech_query.priority = 'HIGH'
+)
+
+or (tech_query_note.note like ('%to%1.ДИС%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query.priority = 'HIGH')
+
+or (tech_query_note.note like ('%to%2.SUPPORT_2%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query.priority = 'HIGH')
+
+or (tech_query_note.note like ('%to%3.SUPPORT_3%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query.priority = 'HIGH')
+
+or (tech_query_note.note like ('%to%4.ИНТЕГРАЦИЯ%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query.priority = 'HIGH'))</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="rmx_tq_close_counter" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="count(*) as close_count_tq" id="close_count_tq"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_FROM@">
+          <ds:object>@VAR.DATE_FROM@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.DATE_TO@">
+          <ds:object>@VAR.DATE_TO@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select  count(*) as close_count_tq
+from
+(SELECT 
+        DISTINCT
+        tech_query.queryno_i 
+FROM 
+        tech_query
+            LEFT JOIN
+                    tech_query_note ON tech_query_note.queryno_i = tech_query.queryno_i
+            
+WHERE (
+(((@VAR.DATE_FROM@)&lt;=(tech_query.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query.created_date)))
+and tech_query.assigned_to_group IN ('1.ДИС','2.SUPPORT_2', '3.SUPPORT_3', '4.ИНТЕГРАЦИЯ') and tech_query.status = '3')
+
+or (tech_query_note.note like ('%to%1.ДИС%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query.status = '3')
+
+or (tech_query_note.note like ('%to%2.SUPPORT_2%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query.status = '3')
+
+or (tech_query_note.note like ('%to%3.SUPPORT_3%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query.status = '3')
+
+or (tech_query_note.note like ('%to%4.ИНТЕГРАЦИЯ%') 
+and (((@VAR.DATE_FROM@)&lt;=(tech_query_note.created_date))
+and ((@VAR.DATE_TO@)&gt;=(tech_query_note.created_date)))
+and tech_query.status = '3'))
+</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

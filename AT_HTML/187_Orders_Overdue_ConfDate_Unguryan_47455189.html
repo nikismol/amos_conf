@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : 187_Orders_Overdue_ConfDate_Unguryan</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : 187_Orders_Overdue_ConfDate_Unguryan
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on сент. 29, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Рассылка настроена в рамках TQ 42521.</p><p>Деактивирована</p><p><strong>Результат</strong>: Осуществляется автоматическая отправка отчета &quot;187_Orders_Overdue_ConfDate_Unguryan&quot;.</p><p><strong>Разработчик</strong><span>:  Иваненко Владимир Андреевич.</span></p></div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT 
+     od_header.orderno AS OrderNumber
+     ,od_header.ext_state AS OrderStatus
+     ,od_header.created_by AS Creator
+     ,sign.lastname||&#39; &#39;||sign.firstname AS Name
+     ,od_header.ext_orderno AS ExternalOrderNumber
+     ,od_detail.posno AS PositionNumber
+     ,od_detail.ext_state AS DetailState
+     ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (od_header.orderdate), &#39;DD.MM.YYYY&#39;)  AS OrderDate
+     ,od_header.vendor AS VendorAddress
+     ,address.name AS VendorName
+     ,od_detail.partno AS PartNumber
+     ,od_detail.serialno AS SerialNumber
+     ,od_detail.labelno AS LabelNumber
+     ,part.description AS PartDescription
+     ,od_detail.qty AS QTY
+     ,od_detail.backorder AS BACKORDER
+     ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (od_detail.target_date), &#39;DD.MM.YYYY&#39;) AS TargetDate
+     ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (od_detail.confirmed_date), &#39;DD.MM.YYYY&#39;) AS ConfirmedDate
+FROM od_header
+LEFT JOIN od_detail ON od_header.orderno_i = od_detail.orderno_i
+LEFT JOIN part ON od_detail.partno = part.partno
+LEFT JOIN address ON od_header.vendor = address.vendor
+LEFT JOIN sh_detail ON od_detail.detailno_i = sh_detail.od_detailno_i
+LEFT JOIN sh_header ON sh_detail.shipmentno_i = sh_header.shipmentno_i
+LEFT JOIN part_special ON part.partno =  part_special.partno
+LEFT JOIN sign ON od_header.created_by = sign.user_sign
+WHERE TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (GREATEST(od_detail.target_date, od_detail.confirmed_date)), &#39;DD.MM.YYYY&#39;) &lt; TO_DATE(sysdate)
+  AND od_detail.ext_state = &#39;O&#39;
+  AND od_header.order_type = &#39;P&#39;
+  AND od_detail.confirmed_date IS NOT NULL 
+  AND TO_CHAR(ADD_MONTHS(SYSDATE, -1), &#39;MM.YYYY (month)&#39;) = TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + od_detail.confirmed_date, &#39;MM.YYYY (month)&#39;)
+  AND od_detail.confirmed_date &lt;&gt; &#39;0&#39; 
+  AND part_special.special IN  (&#39;PR012&#39;, &#39;PR001&#39;)
+  AND NVL(sh_header.shipmentno_i, 1) = 1
+ORDER BY od_detail.confirmed_date DESC, od_header.orderno</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

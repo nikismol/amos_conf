@@ -1,0 +1,1376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000396</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="3">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="4">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 97</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">30</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="7" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Event/Description</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="8" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.event@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="11" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AC Type</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="12" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.ac_typ@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="15" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AC Reg</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="16" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.aircraft@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="19" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="20" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.AH@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="23" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AC</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="24" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.AC@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="27" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">To Go</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="28" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.Togo@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="31" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Interval</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="32" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.interval@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="35" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Expected</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="36" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.Expected_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="39" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Due At</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="40" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.Due_at@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="43" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">PN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="44" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.PN@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="47" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">SN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="48" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.SN@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="51" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">TAH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="52" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.TAH@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">250</attribute>
+          <view class="LabelReportView" id="55" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">250 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">TAC</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="56" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">250 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO.TAC@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">INFO</attribute>
+    </view>
+    <view class="LabelReportView" id="57">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">0 151</attribute>
+      <attribute name="size">207 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Alternates</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 14</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>4</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>54</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="58">
+      <attribute name="name">DatasourceTable_2</attribute>
+      <attribute name="position">0 176</attribute>
+      <attribute name="size">415 39</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="61" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">PN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="62" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO_ALT.PN@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="65" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">SN</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="66" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO_ALT.SN@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="69" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">TAH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="70" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO_ALT.altTAC.TAH@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">115</attribute>
+          <view class="LabelReportView" id="73" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">115 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">TAC</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="74" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">115 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@INFO_ALT.altTAC.TAC@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">INFO_ALT</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>57</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="MPA" description="" id="MP"/>
+        <ds:columnDescriptor amosType="PA" description="" id="PN"/>
+        <ds:columnDescriptor amosType="TCREQLIH" description="" id="TC"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Maintenance Program" id="MP">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="PN" id="PN">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Taskcard" id="TC">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="INFO" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="forecast.event_display AS event" id="event"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="forecast.ac_typ AS ac_typ" id="ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="forecast.ac_registr AS aircraft" id="aircraft"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="counter_h.value AS AH" id="AH"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="counter_c.value AS AC" id="AC"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE &#10;                WHEN forecast.dimension = 'D' THEN TO_CHAR(TRUNC(TO_NUMBER((forecast.togo)/60)/24)) ||' D'&#10;                WHEN forecast.dimension = 'C' THEN TO_CHAR(TO_NUMBER(forecast.togo))||' C'&#10;                ELSE  TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(forecast.togo)/60)'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(forecast.togo)60))'FM00') ||' H' END AS Togo" id="Togo"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE &#10;&#9;&#9;&#9;&#9;WHEN forecast.dimension = 'D' THEN TO_CHAR(TO_DATE('01.01.1970' 'dd.Mm.yyyy') + (forecast.absolute_due_at_ac+729) 'dd.Mm.yyyy')&#10;&#9;&#9;&#9;&#9;WHEN forecast.dimension = 'C' THEN TO_CHAR(TO_NUMBER(forecast.absolute_due_at_ac))||' C'&#10;&#9;&#9;&#9;&#9;ELSE TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(forecast.absolute_due_at_ac)/60)'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(forecast.absolute_due_at_ac)60))'FM00') ||' H' &#10;&#9;&#9; END AS Due_at" id="Due_at"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (expected_date+729)'DD.MM.YYYY') Expected_date" id="Expected_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="tc_interval.interval AS interval" id="interval"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rot.PN AS PN" id="PN"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rot.SN AS SN" id="SN"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rot.TAH AS TAH" id="TAH"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rot.TAC AS TAC" id="TAC"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AMOS_VERSION@">
+          <ds:object>@AMOS_VERSION@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.PN@">
+          <ds:object>@VAR.PN@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.TC@">
+          <ds:object>@VAR.TC@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.MP@">
+          <ds:object>@VAR.MP@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT  
+forecast.event_display AS event
+,forecast.ac_typ AS ac_typ
+,forecast.ac_registr AS aircraft
+,counter_h.value AS AH
+,counter_c.value AS AC
+		,CASE 
+                WHEN forecast.dimension = 'D' THEN TO_CHAR(TRUNC(TO_NUMBER((forecast.togo)/60)/24)) ||' D'
+                WHEN forecast.dimension = 'C' THEN TO_CHAR(TO_NUMBER(forecast.togo))||' C'
+                ELSE  TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(forecast.togo)/60),'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(forecast.togo),60)),'FM00') ||' H' END AS Togo
+		,CASE 
+				WHEN (forecast.dimension = 'D' AND forecast.absolute_due_at_ac = 2147483647) THEN 'Unlimited'
+				WHEN forecast.dimension = 'D' THEN TO_CHAR(TO_DATE('01.01.1970', 'dd.Mm.yyyy') + (forecast.absolute_due_at_ac+729), 'dd.Mm.yyyy')
+				WHEN forecast.dimension = 'C' THEN TO_CHAR(TO_NUMBER(forecast.absolute_due_at_ac))||' C'
+				ELSE TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(forecast.absolute_due_at_ac)/60),'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(forecast.absolute_due_at_ac),60)),'FM00') ||' H' 
+		 END AS Due_at
+		,TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (expected_date+729), 'DD.MM.YYYY') Expected_date 
+,tc_interval.interval AS interval
+,rot.PN AS PN
+,rot.SN AS SN
+,rot.TAH AS TAH
+,rot.TAC AS TAC
+FROM forecast
+JOIN wo_event_link ON forecast.event_perfno_i = wo_event_link.event_perfno_i AND wo_event_link.pending_status = '0' AND wo_event_link.event_status = 'O'
+JOIN msc_requirement_tc_link ON wo_event_link.event_key_parent = msc_requirement_tc_link.req_linkno_i AND (wo_event_link.event_type = 'TCEFFLI' AND '@AMOS_VERSION@' LIKE '19.12%' OR wo_event_link.event_type = 'MET' AND '@AMOS_VERSION@' NOT LIKE '19.12%') AND wo_event_link.pending_status = 0 
+JOIN msc_taskcard_version ON msc_requirement_tc_link.taskcard_verno_i_mri = msc_taskcard_version.taskcard_verno_i
+JOIN msc_taskcard ON msc_taskcard_version.taskcardno_i=msc_taskcard.taskcardno_i 
+JOIN msc_maintenance_program ON msc_taskcard.mpno_i=msc_maintenance_program.mpno_i 
+JOIN aircraft ON forecast.ac_registr = aircraft.ac_registr
+JOIN (
+        SELECT 
+            aircraft.aircraftno_i AS aircraftno_i
+            ,TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter.life_value)/60),'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(counter.life_value),60)),'FM00') AS value
+        FROM aircraft 
+        JOIN counter ON aircraft.aircraftno_i = counter.ref_key AND counter.ref_type = 'AC_INT'
+        JOIN counter_template ON counter.counter_templateno_i = counter_template.counter_templateno_i 
+        JOIN counter_definition counter_definition_h ON counter_template.counter_defno_i = counter_definition_h.counter_defno_i AND counter_definition_h.counter_defno_i =1 ) counter_h ON aircraft.aircraftno_i = counter_h.aircraftno_i
+JOIN (
+        SELECT 
+            aircraft.aircraftno_i AS aircraftno_i
+           ,counter.life_value AS value
+        FROM aircraft 
+        JOIN counter ON aircraft.aircraftno_i = counter.ref_key AND counter.ref_type = 'AC_INT'
+        JOIN counter_template ON counter.counter_templateno_i = counter_template.counter_templateno_i 
+        JOIN counter_definition counter_definition_c ON counter_template.counter_defno_i = counter_definition_c.counter_defno_i AND counter_definition_c.counter_defno_i =2)counter_c ON aircraft.aircraftno_i = counter_c.aircraftno_i
+LEFT JOIN (SELECT treq_time_requirement.event_key as event_key,
+                                  LISTAGG ('I:'
+                                                    ||treq_interval.amount_interval
+                                                    ||' '
+                                                    ||CASE WHEN treq_interval.counter_defno_i='1' THEN 'FH '
+                                                                   WHEN treq_interval.counter_defno_i='2' THEN 'FC '
+                                                                   WHEN treq_interval.counter_defno_i='3' AND treq_interval.unit IS NULL AND treq_interval.accuracy IS NULL THEN 'DY '
+                                                                   WHEN treq_interval.counter_defno_i='3' AND treq_interval.unit='D' THEN 'DY '
+                                                                   WHEN treq_interval.counter_defno_i='3' AND treq_interval.unit='H' THEN 'HRS '
+                                                                   WHEN treq_interval.counter_defno_i='3' AND treq_interval.unit='MT' THEN 'MO '
+                                                                   WHEN treq_interval.counter_defno_i='3' AND treq_interval.unit='YR' THEN 'YE '
+                                                                   WHEN treq_interval.counter_defno_i='101' THEN 'AH '
+                                                                   WHEN treq_interval.counter_defno_i='102' THEN 'AC '
+                                                                   ELSE '' 
+                                                          END, CHR(10)
+                                                      ) WITHIN GROUP (ORDER BY treq_interval.amount_interval) as interval
+                    FROM
+                    treq_time_requirement
+                    LEFT JOIN treq_interval_group ON treq_time_requirement.timerequirementno_i=treq_interval_group.timerequirementno_i
+                    LEFT JOIN treq_interval ON treq_interval_group.interval_groupno_i=treq_interval.interval_groupno_i
+                    LEFT JOIN counter_definition ON treq_interval.counter_defno_i=counter_definition.counter_defno_i
+                    WHERE treq_time_requirement.status='0'
+                                   AND treq_interval.dimension_type='I'
+                                   AND treq_time_requirement.event_type = 'TCREV' 
+                                   AND treq_time_requirement.type = 'OP'
+                    GROUP BY treq_time_requirement.event_key
+                   ) tc_interval ON msc_taskcard_version.taskcard_verno_i=tc_interval.event_key
+JOIN (
+SELECT DISTINCT
+rotables.partno AS PN
+,rotables.serialno AS SN
+,rotables.ac_registr AS aircraft
+,tac.TAH AS TAH
+,tac.TAC AS TAC
+FROM rotables
+LEFT JOIN (
+SELECT rotables.psn,
+(TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter_value_m_h.life_value-counter_h.life_value_on+counter_h.life_value)/60),'FM999999999900')) || ':' ||
+TO_CHAR(TRUNC(MOD(TO_NUMBER(counter_value_m_h.life_value-counter_h.life_value_on+counter_h.life_value),60)),'FM00') ||' H') as TAH,
+(TO_NUMBER(counter_value_m_c.life_value-counter_c.life_value_on+counter_c.life_value)||' C') as TAC,
+                                (TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter_value_m_h.life_value-counter_h.life_value_on)/60),'FM999999999900')) || ':' ||
+                                TO_CHAR(TRUNC(MOD(TO_NUMBER(counter_value_m_h.life_value-counter_h.life_value_on),60)),'FM00') ||' H') as TSI,
+                                (TO_NUMBER(counter_value_m_c.life_value-counter_c.life_value_on)||' C') as CSI
+FROM
+rotables
+LEFT JOIN (SELECT
+				DISTINCT (counter.ref_key),
+				counter.counterno_i,
+				counter.is_unknown AS is_unknown,
+				counter.master_counterno_i,
+				max_counter_value.on_counter_valueno_i,
+				counter_definition.code,
+				NVL(max_counter_value.life_value, 0) as life_value,
+				NVL(counter_value_on.life_value, 0) as life_value_on
+		   FROM 
+				counter
+		   		LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+		   		LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+		   		LEFT JOIN (SELECT
+					  			counter_value.counter_valueno_i as counter_valueno_i,
+					  			counter_value.counterno_i as counterno_i,
+					  			counter_value.on_counter_valueno_i,
+                                                                                                                  MAX (counter_value.readout_date*86400000+counter_value.readout_time) OVER (PARTITION BY counter_value.counterno_i)  as max_readout,
+                                                                                                                  counter_value.readout_date*86400000+counter_value.readout_time as readout,
+					  			counter_value.life_value as life_value,
+					  			counter_definition.counter_defno_i
+				 		   FROM
+					  			counter_value
+				 		   LEFT JOIN counter ON counter_value.counterno_i=counter.counterno_i
+				 		   LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+				 		   LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				 		   WHERE
+								counter_definition.counter_defno_i='1'
+                                                                                                                AND counter_value.on_counter_valueno_i IS NOT NULL
+				 		   ORDER BY
+					            counter_value.counterno_i
+						  ) max_counter_value ON counter.counterno_i=max_counter_value.counterno_i
+				LEFT JOIN counter_value counter_value_on ON max_counter_value.on_counter_valueno_i=counter_value_on.counter_valueno_i
+		   		WHERE
+					 counter.ref_type='RO'
+			   		 AND counter_definition.counter_defno_i='1'
+					 AND max_counter_value.readout=max_counter_value.max_readout
+		  ) counter_h ON rotables.psn=counter_h.ref_key 
+		  
+LEFT JOIN counter counter_m_h ON counter_h.master_counterno_i=counter_m_h.counterno_i
+LEFT JOIN (SELECT 
+				max_counter_value.counterno_i as counterno_i,
+				max_counter_value.counter_valueno_i as counter_valueno_i,
+			    NVL(max_counter_value.life_value, 0) as life_value
+		   FROM (SELECT
+					  counter_value.counter_valueno_i as counter_valueno_i,
+					  counter_value.counterno_i as counterno_i,
+                                                                        MAX (counter_value.readout_date*86400000+counter_value.readout_time) OVER (PARTITION BY counter_value.counterno_i)  as max_readout,
+                                                                        counter_value.readout_date*86400000+counter_value.readout_time as readout,
+					  counter_value.life_value as life_value,
+					  counter_definition.counter_defno_i
+				 FROM
+				 	  counter_value
+				 LEFT JOIN counter ON counter_value.counterno_i=counter.counterno_i
+				 LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+				 LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				 WHERE counter_definition.counter_defno_i='1'
+					   AND counter_value.readout_ref_type!='LB'
+				 ORDER BY
+					  counter_value.counterno_i
+				) max_counter_value
+		   WHERE
+				max_counter_value.readout=max_counter_value.max_readout
+		  ) counter_value_m_h ON counter_m_h.counterno_i=counter_value_m_h.counterno_i
+LEFT JOIN (SELECT
+				DISTINCT (counter.ref_key),
+				counter.counterno_i,
+				counter.is_unknown AS is_unknown,
+				counter.master_counterno_i,
+				max_counter_value.on_counter_valueno_i,
+				counter_definition.code,
+				NVL(max_counter_value.life_value, 0) as life_value,
+				NVL(counter_value_on.life_value, 0) as life_value_on
+		   FROM 
+				counter
+		   		LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+		   		LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+		   		LEFT JOIN (SELECT
+					  			counter_value.counter_valueno_i as counter_valueno_i,
+					  			counter_value.counterno_i as counterno_i,
+								counter_value.on_counter_valueno_i,
+                                                                                                                  MAX (counter_value.readout_date*86400000+counter_value.readout_time) OVER (PARTITION BY counter_value.counterno_i)  as max_readout,
+                                                                                                                  counter_value.readout_date*86400000+counter_value.readout_time as readout,
+					  			counter_value.life_value as life_value,
+					  			counter_definition.counter_defno_i
+				 		   FROM
+					  			counter_value
+				 		   LEFT JOIN counter ON counter_value.counterno_i=counter.counterno_i
+				 		   LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+				 		   LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				 		   WHERE
+								counter_definition.counter_defno_i='2'
+                                                                                                                AND counter_value.on_counter_valueno_i IS NOT NULL
+				 		   ORDER BY
+					            counter_value.counterno_i
+						  ) max_counter_value ON counter.counterno_i=max_counter_value.counterno_i
+
+LEFT JOIN counter_value counter_value_on ON max_counter_value.on_counter_valueno_i=counter_value_on.counter_valueno_i
+		   		WHERE
+					 counter.ref_type='RO'
+			   	            AND counter_definition.counter_defno_i='2'
+					 AND max_counter_value.readout=max_counter_value.max_readout
+		  ) counter_c ON rotables.psn=counter_c.ref_key 		  
+LEFT JOIN counter counter_m_c ON counter_c.master_counterno_i=counter_m_c.counterno_i	  
+LEFT JOIN (SELECT 
+				max_counter_value.counterno_i as counterno_i,
+				max_counter_value.counter_valueno_i as counter_valueno_i,
+			    NVL(max_counter_value.life_value, 0) as life_value
+		   FROM (SELECT
+					  counter_value.counter_valueno_i as counter_valueno_i,
+					  counter_value.counterno_i as counterno_i,
+                                                                        MAX (counter_value.readout_date*86400000+counter_value.readout_time) OVER (PARTITION BY counter_value.counterno_i)  as max_readout,
+                                                                        counter_value.readout_date*86400000+counter_value.readout_time as readout,
+					  counter_value.life_value as life_value,
+					  counter_definition.counter_defno_i
+				 FROM
+				 	  counter_value
+				 LEFT JOIN counter ON counter_value.counterno_i=counter.counterno_i
+				 LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+				 LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				 WHERE counter_definition.counter_defno_i='2'
+					   AND counter_value.readout_ref_type!='LB'
+				 ORDER BY
+					  counter_value.counterno_i
+				) max_counter_value
+		   WHERE
+				max_counter_value.readout=max_counter_value.max_readout
+		  ) counter_value_m_c ON counter_m_c.counterno_i=counter_value_m_c.counterno_i
+) tac ON tac.psn=rotables.psn
+WHERE rotables.condition != 'US'
+AND rotables.partno = '@VAR.PN@'
+) rot ON forecast.ac_registr = rot.aircraft
+WHERE 
+forecast.event_type IN ('Q', 'QR')
+AND msc_requirement_tc_link.req_link_headerno_i = '@VAR.TC@'
+AND msc_maintenance_program.mpno_i = '@VAR.MP@'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="INFO_ALT" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part_alternate.partno" id="part_alternate.partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part_alternate.altpartno" id="part_alternate.altpartno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="'&lt;-&gt;' way" id="way"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rotables.partno AS PN" id="PN"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rotables.serialno AS SN" id="SN"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="altTAC.TAH" id="altTAC.TAH"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="altTAC.TAC" id="altTAC.TAC"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.PN@">
+          <ds:object>@VAR.PN@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT 
+	 part_alternate.partno
+	,part_alternate.altpartno
+	,'&lt;-&gt;' way
+,rotables.partno AS PN
+,rotables.serialno AS SN
+,altTAC.TAH
+,altTAC.TAC
+FROM 	( 
+			SELECT 	a.partno
+					,a.altpartno
+			FROM part_alternate a
+			JOIN part_alternate b ON a.altpartno = b.partno 
+								  AND b.altpartno = a.partno
+			WHERE b.partno IS NOT NULL
+		) part_alternate
+JOIN rotables ON part_alternate.altpartno = rotables.partno
+LEFT JOIN (
+SELECT rotables.psn,
+rotables.partno AS pn,
+rotables.serialno AS sn,
+(TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter_value_m_h.life_value-counter_h.life_value_on+counter_h.life_value)/60),'FM999999999900')) || ':' ||
+TO_CHAR(TRUNC(MOD(TO_NUMBER(counter_value_m_h.life_value-counter_h.life_value_on+counter_h.life_value),60)),'FM00') ||' H') as TAH,
+(TO_NUMBER(counter_value_m_c.life_value-counter_c.life_value_on+counter_c.life_value)||' C') as TAC,
+                                (TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter_value_m_h.life_value-counter_h.life_value_on)/60),'FM999999999900')) || ':' ||
+                                TO_CHAR(TRUNC(MOD(TO_NUMBER(counter_value_m_h.life_value-counter_h.life_value_on),60)),'FM00') ||' H') as TSI,
+                                (TO_NUMBER(counter_value_m_c.life_value-counter_c.life_value_on)||' C') as CSI
+FROM
+rotables
+LEFT JOIN (SELECT
+				DISTINCT (counter.ref_key),
+				counter.counterno_i,
+				counter.is_unknown AS is_unknown,
+				counter.master_counterno_i,
+				max_counter_value.on_counter_valueno_i,
+				counter_definition.code,
+				NVL(max_counter_value.life_value, 0) as life_value,
+				NVL(counter_value_on.life_value, 0) as life_value_on
+		   FROM 
+				counter
+		   		LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+		   		LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+		   		LEFT JOIN (SELECT
+					  			counter_value.counter_valueno_i as counter_valueno_i,
+					  			counter_value.counterno_i as counterno_i,
+					  			counter_value.on_counter_valueno_i,
+                                                                                                                  MAX (counter_value.readout_date*86400000+counter_value.readout_time) OVER (PARTITION BY counter_value.counterno_i)  as max_readout,
+                                                                                                                  counter_value.readout_date*86400000+counter_value.readout_time as readout,
+					  			counter_value.life_value as life_value,
+					  			counter_definition.counter_defno_i
+				 		   FROM
+					  			counter_value
+				 		   LEFT JOIN counter ON counter_value.counterno_i=counter.counterno_i
+				 		   LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+				 		   LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				 		   WHERE
+								counter_definition.counter_defno_i='1'
+                                                                                                                AND counter_value.on_counter_valueno_i IS NOT NULL
+				 		   ORDER BY
+					            counter_value.counterno_i
+						  ) max_counter_value ON counter.counterno_i=max_counter_value.counterno_i
+				LEFT JOIN counter_value counter_value_on ON max_counter_value.on_counter_valueno_i=counter_value_on.counter_valueno_i
+		   		WHERE
+					 counter.ref_type='RO'
+			   		 AND counter_definition.counter_defno_i='1'
+					 AND max_counter_value.readout=max_counter_value.max_readout
+		  ) counter_h ON rotables.psn=counter_h.ref_key 
+		  
+LEFT JOIN counter counter_m_h ON counter_h.master_counterno_i=counter_m_h.counterno_i
+LEFT JOIN (SELECT 
+				max_counter_value.counterno_i as counterno_i,
+				max_counter_value.counter_valueno_i as counter_valueno_i,
+			    NVL(max_counter_value.life_value, 0) as life_value
+		   FROM (SELECT
+					  counter_value.counter_valueno_i as counter_valueno_i,
+					  counter_value.counterno_i as counterno_i,
+                                                                        MAX (counter_value.readout_date*86400000+counter_value.readout_time) OVER (PARTITION BY counter_value.counterno_i)  as max_readout,
+                                                                        counter_value.readout_date*86400000+counter_value.readout_time as readout,
+					  counter_value.life_value as life_value,
+					  counter_definition.counter_defno_i
+				 FROM
+				 	  counter_value
+				 LEFT JOIN counter ON counter_value.counterno_i=counter.counterno_i
+				 LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+				 LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				 WHERE counter_definition.counter_defno_i='1'
+					   AND counter_value.readout_ref_type!='LB'
+				 ORDER BY
+					  counter_value.counterno_i
+				) max_counter_value
+		   WHERE
+				max_counter_value.readout=max_counter_value.max_readout
+		  ) counter_value_m_h ON counter_m_h.counterno_i=counter_value_m_h.counterno_i
+LEFT JOIN (SELECT
+				DISTINCT (counter.ref_key),
+				counter.counterno_i,
+				counter.is_unknown AS is_unknown,
+				counter.master_counterno_i,
+				max_counter_value.on_counter_valueno_i,
+				counter_definition.code,
+				NVL(max_counter_value.life_value, 0) as life_value,
+				NVL(counter_value_on.life_value, 0) as life_value_on
+		   FROM 
+				counter
+		   		LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+		   		LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+		   		LEFT JOIN (SELECT
+					  			counter_value.counter_valueno_i as counter_valueno_i,
+					  			counter_value.counterno_i as counterno_i,
+								counter_value.on_counter_valueno_i,
+                                                                                                                  MAX (counter_value.readout_date*86400000+counter_value.readout_time) OVER (PARTITION BY counter_value.counterno_i)  as max_readout,
+                                                                                                                  counter_value.readout_date*86400000+counter_value.readout_time as readout,
+					  			counter_value.life_value as life_value,
+					  			counter_definition.counter_defno_i
+				 		   FROM
+					  			counter_value
+				 		   LEFT JOIN counter ON counter_value.counterno_i=counter.counterno_i
+				 		   LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+				 		   LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				 		   WHERE
+								counter_definition.counter_defno_i='2'
+                                                                                                                AND counter_value.on_counter_valueno_i IS NOT NULL
+				 		   ORDER BY
+					            counter_value.counterno_i
+						  ) max_counter_value ON counter.counterno_i=max_counter_value.counterno_i
+
+LEFT JOIN counter_value counter_value_on ON max_counter_value.on_counter_valueno_i=counter_value_on.counter_valueno_i
+		   		WHERE
+					 counter.ref_type='RO'
+			   	            AND counter_definition.counter_defno_i='2'
+					 AND max_counter_value.readout=max_counter_value.max_readout
+		  ) counter_c ON rotables.psn=counter_c.ref_key 		  
+LEFT JOIN counter counter_m_c ON counter_c.master_counterno_i=counter_m_c.counterno_i	  
+LEFT JOIN (SELECT 
+				max_counter_value.counterno_i as counterno_i,
+				max_counter_value.counter_valueno_i as counter_valueno_i,
+			    NVL(max_counter_value.life_value, 0) as life_value
+		   FROM (SELECT
+					  counter_value.counter_valueno_i as counter_valueno_i,
+					  counter_value.counterno_i as counterno_i,
+                                                                        MAX (counter_value.readout_date*86400000+counter_value.readout_time) OVER (PARTITION BY counter_value.counterno_i)  as max_readout,
+                                                                        counter_value.readout_date*86400000+counter_value.readout_time as readout,
+					  counter_value.life_value as life_value,
+					  counter_definition.counter_defno_i
+				 FROM
+				 	  counter_value
+				 LEFT JOIN counter ON counter_value.counterno_i=counter.counterno_i
+				 LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+				 LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				 WHERE counter_definition.counter_defno_i='2'
+					   AND counter_value.readout_ref_type!='LB'
+				 ORDER BY
+					  counter_value.counterno_i
+				) max_counter_value
+		   WHERE
+				max_counter_value.readout=max_counter_value.max_readout
+		  ) counter_value_m_c ON counter_m_c.counterno_i=counter_value_m_c.counterno_i
+) altTAC ON altTAC.psn=rotables.psn
+WHERE 
+rotables.condition != 'US'
+AND part_alternate.partno = '@VAR.PN@'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

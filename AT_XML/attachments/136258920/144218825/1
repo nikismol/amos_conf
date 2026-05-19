@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000245</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="3">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="4">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">1 0</attribute>
+      <attribute name="size">700 65</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">AFL Report for Partno : @VAR.pns@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 16</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="DatasourceTableView" id="5">
+      <attribute name="name">DatasourceTable_3</attribute>
+      <attribute name="position">0 65</attribute>
+      <attribute name="size">701 212</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="8" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">PARTNO</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="9" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_PNs_With_mfg_date.pns.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="12" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">SERIALNO</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="13" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_PNs_With_mfg_date.pns.serialno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="16" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">CONDITION</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="17" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_PNs_With_mfg_date.pns.condition@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="20" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">MFG DATE</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="21" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_PNs_With_mfg_date.pns.mfg_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="24" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">REQUIREMENT</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="25" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_PNs_With_mfg_date.pns.requirement@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="28" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">LAST OH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="29" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_PNs_With_mfg_date.pns.last_oh@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">101</attribute>
+          <view class="LabelReportView" id="32" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">101 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">EXPECTED DATE</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="33" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">101 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_PNs_With_mfg_date.pns.due@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">RMX_PNs_With_mfg_date</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>4</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>-1</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="PA" description="" id="pns"/>
+        <ds:columnDescriptor amosType="BOOL" description="" id="alt"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Part Number" id="pns">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Отобразить alt. part number" id="alt">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="RMX_PNs_With_mfg_date" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pns.partno" id="pns.partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pns.serialno" id="pns.serialno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pns.mfg_date" id="pns.mfg_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pns.last_oh" id="pns.last_oh"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pns.requirement" id="pns.requirement"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pns.due" id="pns.due"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="pns.condition" id="pns.condition"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.pns@">
+          <ds:object>@VAR.pns@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.alt@">
+          <ds:object>@VAR.alt@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>
+select pns.partno,
+       pns.serialno,
+       pns.mfg_date,
+       pns.last_oh,
+       pns.requirement,
+       pns.due,
+       pns.condition
+from(
+(select distinct rotables.partno,
+       rotables.serialno,
+       CASE 
+            WHEN rotables.mfg_unknown = 'Y' THEN 'UNKNOWN'
+            WHEN rotables.mfg_date = '0' THEN 'UNKNOWN'
+            ELSE to_char(to_date('01.01.1970', 'dd.mm.yyyy') + (rotables.mfg_date + 729),'dd.mm.yyyy') 
+        END as mfg_date, 
+        CASE 
+            WHEN rotables.oh_at_date_unknown = 'Y' AND rotables.oh_at_date IN ('0','1') THEN 'UNKNOWN'
+             WHEN rotables.oh_at_date_unknown = ' ' OR rotables.oh_at_date = '0' THEN to_char(to_date('01.01.1970', 'dd.mm.yyyy') + (rotables.mfg_date + 729),'dd.mm.yyyy')
+            ELSE to_char(to_date('01.01.1970', 'dd.mm.yyyy') + (rotables.oh_at_date + 729),'dd.mm.yyyy')
+        END as last_oh,
+        fo.requirement,
+        rotables.condition,
+        due
+from rotables
+left join wo_header on rotables.psn = wo_header.psn
+left join wo_event_link on wo_header.event_perfno_i = wo_event_link.event_perfno_i
+left join part_requirement on wo_event_link.event_key_parent = part_requirement.part_requirementno_i
+LEFT JOIN (
+           select listagg ( 
+             CASE 
+                WHEN fo.dimension = 'SD' THEN TO_CHAR(TO_DATE('01.01.1970', 'dd.Mm.yyyy') + (fo.absolute_due_at_ac+729), 'dd.Mm.yyyy')
+                WHEN fo.dimension = 'H' THEN TO_CHAR(FLOOR (TO_NUMBER(fo.relative_due_at)/60))||':'
+                  ||CASE WHEN (TO_CHAR(MOD(TO_NUMBER(fo.relative_due_at), 60)))&lt;10
+                         THEN '0'||(TO_CHAR(MOD(TO_NUMBER(fo.relative_due_at), 60)))
+                         ELSE (TO_CHAR(MOD(TO_NUMBER(fo.relative_due_at), 60)))
+                    END
+                 
+                WHEN fo.dimension = 'D' THEN TO_CHAR(TO_DATE('01.01.1970', 'dd.Mm.yyyy') + (fo.absolute_due_at_ac+729), 'dd.Mm.yyyy')
+                WHEN fo.dimension = 'AC' THEN TO_CHAR(TO_NUMBER (fo.relative_due_at))
+                WHEN fo.dimension = 'C' THEN TO_CHAR(TO_NUMBER(fo.relative_due_at))
+                ELSE TO_CHAR(TO_NUMBER(fo.absolute_due_at_ac))
+                END
+                , ', ') within group (order by dimension) due,
+                fo.psn,
+                fo.requirement
+           from (
+           select distinct fo.psn,
+                  fo.absolute_due_at_ac,
+                  fo.relative_due_at,
+                  fo.dimension,
+                  fo.requirement
+           from forecast fo
+           where fo.event_type IS NOT NULL
+             and fo.event_type &lt;&gt;'V'
+             and fo.expected_date &lt; 1491308
+           ) fo
+           group by psn, fo.requirement) fo ON rotables.psn = fo.psn
+WHERE rotables.psn = wo_header.psn
+      AND wo_event_link.pending_status &gt;= 0
+      AND rotables.partno = '@VAR.pns@'
+      AND wo_event_link.event_type='MEP')
+UNION
+(select distinct rotables.partno,
+       rotables.serialno,
+       CASE 
+            WHEN rotables.mfg_unknown = 'Y' THEN 'UNKNOWN'
+            ELSE to_char(to_date('01.01.1970', 'dd.mm.yyyy') + (rotables.mfg_date + 729),'dd.mm.yyyy') 
+        END as mfg_date, 
+        CASE 
+            WHEN rotables.oh_at_date_unknown = 'Y' AND rotables.oh_at_date IN ('0','1') THEN 'UNKNOWN'
+            WHEN rotables.oh_at_date = '0' AND rotables.mfg_date = '0' THEN 'UNKNOWN'
+            WHEN rotables.oh_at_date_unknown = ' ' OR rotables.oh_at_date = '0' THEN to_char(to_date('01.01.1970', 'dd.mm.yyyy') + (rotables.mfg_date + 729),'dd.mm.yyyy')
+            ELSE to_char(to_date('01.01.1970', 'dd.mm.yyyy') + (rotables.oh_at_date + 729),'dd.mm.yyyy')
+        END as last_oh,
+        fo.requirement,
+        rotables.condition,
+        due
+FROM part_alternate alt
+LEFT JOIN rotables ON alt.altpartno = rotables.partno
+left join wo_header on rotables.psn = wo_header.psn
+left join wo_event_link on wo_header.event_perfno_i = wo_event_link.event_perfno_i
+/* due_ate*/
+LEFT JOIN (
+           select listagg ( 
+             CASE 
+                WHEN fo.dimension = 'SD' THEN TO_CHAR(TO_DATE('01.01.1970', 'dd.Mm.yyyy') + (fo.absolute_due_at_ac+729), 'dd.Mm.yyyy')
+                WHEN fo.dimension = 'H' THEN TO_CHAR(FLOOR (TO_NUMBER(fo.relative_due_at)/60))||':'
+                  ||CASE WHEN (TO_CHAR(MOD(TO_NUMBER(fo.relative_due_at), 60)))&lt;10
+                         THEN '0'||(TO_CHAR(MOD(TO_NUMBER(fo.relative_due_at), 60)))
+                         ELSE (TO_CHAR(MOD(TO_NUMBER(fo.relative_due_at), 60)))
+                    END
+                 
+                WHEN fo.dimension = 'D' THEN TO_CHAR(TO_DATE('01.01.1970', 'dd.Mm.yyyy') + (fo.absolute_due_at_ac+729), 'dd.Mm.yyyy')
+                WHEN fo.dimension = 'AC' THEN TO_CHAR(TO_NUMBER (fo.relative_due_at))
+                WHEN fo.dimension = 'C' THEN TO_CHAR(TO_NUMBER(fo.relative_due_at))
+                ELSE TO_CHAR(TO_NUMBER(fo.absolute_due_at_ac))
+                END
+                , ', ') within group (order by dimension) due,
+                fo.psn,
+                fo.requirement
+           from (
+           select distinct fo.psn,
+                  fo.absolute_due_at_ac,
+                  fo.relative_due_at,
+                  fo.dimension,
+                  fo.requirement
+           from forecast fo
+           where fo.event_type IS NOT NULL
+             and fo.event_type &lt;&gt;'V'
+             and fo.expected_date &lt; 1491308
+           ) fo
+           group by psn, fo.requirement) fo ON rotables.psn = fo.psn 
+WHERE rotables.psn = wo_header.psn
+      AND wo_event_link.pending_status &gt;= 0
+      AND alt.partno = '@VAR.pns@'
+      AND wo_event_link.event_type='MEP'
+      AND '@VAR.alt@' = 'Y')
+) pns
+order by partno, serialno</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Передача OPUS FREE TEXT в СКООг</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953709.html">База знаний</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="60437284.html">Частные разработки</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="81959917.html">Интеграции на уровне представлений СУБД</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Передача OPUS FREE TEXT в СКООг
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Белых Александр Петрович</span>, last modified by <span class='editor'> Филипенков Никита Константинович</span> on сент. 29, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>Передача данных введенных ИОО вручную в поле Free Text для OPUS в WO, схема должна быть относительно статична.</p><p>Аборин Дмитрий Александрович <a href="attachments/81959920/81959921.msg" data-linked-resource-id="81959921" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="RE  Поле  free text  в составе сообщения об отложенном дефекте.msg" data-linked-resource-content-type="application/vnd.ms-outlook" data-linked-resource-container-id="81959920" data-linked-resource-container-version="4">RE Поле free text в составе сообщения об отложенном дефекте.msg</a> Mon 10:27 AM 415 Кбайт</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>DDL</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">CREATE VIEW AMOSSERVER_PROD.SKOOG_WO_FREE_TEXT
+AS SELECT
+woh.event_perfno_i as task_id
+, wo_opus.free_text as opus_free_text
+FROM
+wo_header woh
+LEFT JOIN wo_opus ON wo_opus.event_perfno_i = woh.event_perfno_i;
+
+GRANT SELECT ON AMOSSERVER_PROD.SKOOG_WO_FREE_TEXT TO AMOS_IL_USER;
+
+CREATE SYNONYM AMOS_IL_USER.SKOOG_WO_FREE_TEXT FOR AMOSSERVER_PROD.SKOOG_WO_FREE_TEXT;</pre>
+</div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>TEST SQL</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT * 
+FROM AMOS_IL_USER.SKOOG_WO_FREE_TEXT 
+WHERE opus_free_text IS NOT NULL;
+--MUST SHOW RESULTS, NO ERRORS. ERRORS OR EMPTY - VERIFY AMOS WO_OPUS SCHEMA CHANGES</pre>
+</div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/81959920/81959921.msg">RE  Поле  free text  в составе сообщения об отложенном дефекте.msg</a> (application/vnd.ms-outlook)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

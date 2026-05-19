@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : 203_IFE_System_INOP_B777</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : 203_IFE_System_INOP_B777
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT  
+        TO_CHAR(wo_header.event_perfno_i) AS WO
+        ,TO_CHAR(wo_header.ac_registr) AS AC_Registr
+        ,TO_CHAR(aircraft.ac_typ) AS AC_Type
+        ,CASE  WHEN wo_header.type = &#39;C&#39; THEN &#39;Cabin&#39;
+                       WHEN wo_header.type = &#39;P&#39; THEN &#39;Pirep&#39; 
+                       WHEN wo_header.type = &#39;M&#39; THEN &#39;Maintenance&#39;
+                       ELSE &#39;&#39; END AS WO_Type
+        ,CASE WHEN wo_header.mel_code IS NULL 
+                     AND wo_header.hil = &#39;Y&#39;
+                     AND wo_opus.free_text IS NOT NULL THEN &#39;Y&#39; ELSE &#39;&#39; END AS DD
+        ,wo_header.issue_sign AS Issue_Sign
+        ,to_char(to_date(&#39;01.01.1970&#39;, &#39;dd.mm.yyyy&#39;) + ( wo_header.issue_date+729),&#39;dd.mm.yyyy&#39;) AS Issue_Date 
+        ,to_char(to_date(&#39;01.01.1970&#39;, &#39;dd.mm.yyyy&#39;) + ( wo_header.closing_date+729),&#39;dd.mm.yyyy&#39;) AS Closing_Date
+        ,wo_header.ata_chapter AS ATA
+        ,wo_header.mel_code AS MEL
+        ,wo_header.state AS WO_State
+        ,part_req.pn AS Req_Parts
+        ,dblink.ref AS Refs
+        ,wo.step_text
+        ,wo.action_text
+FROM (
+
+            SELECT  DISTINCT
+                    wo_header.event_perfno_i AS event_perfno_i
+                    ,LISTAGG (TO_CHAR(TO_DATE(&#39;01.01.1970&#39;, &#39;DD.MM.YYYY&#39;) + (wo_text_description.created_date+729), &#39;DD.MM.YYYY&#39;)||
+                                                                                                    CASE WHEN wo_text_description.text IS NOT NULL 
+                                                                                                    THEN &#39;: &#39;||TO_CHAR(wo_text_description.text)||&#39;.&#39; ELSE &#39;&#39; END, CHR(10)||CHR(10))
+                    WITHIN GROUP (ORDER BY workstep_link.sequenceno) as step_text
+                    ,LISTAGG (TO_CHAR(TO_DATE(&#39;01.01.1970&#39;, &#39;DD.MM.YYYY&#39;) + (wo_text_action.action_date+729), &#39;DD.MM.YYYY&#39;)||
+                                                                                                    CASE WHEN wo_text_action.text IS NOT NULL 
+                                                                                                    THEN &#39;: &#39;||TO_CHAR(wo_text_action.text)||&#39;.&#39; ELSE &#39;&#39; END, CHR(10)||CHR(10))
+                    WITHIN GROUP (ORDER BY workstep_link.sequenceno) as action_text
+            FROM
+                    wo_header
+            LEFT JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+            LEFT JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+            LEFT JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+            LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+            LEFT JOIN wo_text_action ON workstep_link.workstep_linkno_i=wo_text_action.workstep_linkno_i
+            WHERE
+                   TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + (wo_header.issue_date), &#39;dd.mm.yyyy&#39;) &gt;= SYSDATE-14
+                    AND wo_header.type IN (&#39;M&#39;, &#39;C&#39;, &#39;P&#39;)
+                    AND (
+                               wo_header.ata_chapter LIKE (&#39;44%&#39;) AND aircraft.ac_typ = &#39;B777&#39;
+          		AND (
+					REGEXP_LIKE (wo_text_description.text, &#39;(\sIFE|WIFI|WI-FI|WI FI|MOVIE|MOVIES|MUSIC|VIDEO)&#39;,&#39;i&#39;)
+					OR
+					REGEXP_LIKE (wo_text_description.text_html, &#39;(\sIFE|WIFI|WI-FI|WI FI|MOVIE|MOVIES|MUSIC|VIDEO)&#39;,&#39;i&#39;)
+					OR
+					REGEXP_LIKE (wo_text_description.header, &#39;(\sIFE|WIFI|WI-FI|WI FI|MOVIE|MOVIES|MUSIC|VIDEO)&#39;,&#39;i&#39;)
+					OR 
+					REGEXP_LIKE (wo_text_action.text, &#39;(\sIFE|WIFI|WI-FI|WI FI|MOVIE|MOVIES|MUSIC|VIDEO)&#39;,&#39;i&#39;)
+			       )
+                        )
+	GROUP BY  wo_header.event_perfno_i
+    ) wo 
+LEFT JOIN wo_header ON wo.event_perfno_i = wo_header.event_perfno_i
+LEFT JOIN aircraft ON wo_header.ac_registr = aircraft.ac_registr
+LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+LEFT JOIN wo_opus ON wo_header.event_perfno_i = wo_opus.event_perfno_i    
+LEFT JOIN   (                   
+                                SELECT wo_header.event_perfno_i as event_perfno_i,
+                                LISTAGG (CASE WHEN LENGTH(part.description) + LENGTH(part_request_2.partno) &lt;= 48
+                                                           THEN part.description||&#39; &#39;||part_request_2.partno||&#39; - &#39;||TO_NUMBER(part_request_2.qty)||&#39;ea&#39;
+                                                           ELSE SUBSTR(part.description, 1, 42)||&#39;...&#39;||&#39; &#39;||part_request_2.partno||&#39; - &#39;||TO_NUMBER(part_request_2.qty)||&#39;ea&#39;
+                                                           END, CHR(10)
+                                        ) WITHIN GROUP (ORDER BY part_request_2.part_requestno_i) as pn
+                   FROM wo_header
+                   JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr AND aircraft.ac_typ IN (&#39;A32S&#39;, &#39;A330&#39;, &#39;B737&#39;,&#39;B777&#39;)
+                   JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i and wo_header.state=&#39;O&#39; AND wo_header.type NOT IN (&#39;S&#39;, &#39;T&#39;, &#39;PD&#39;)
+                   JOIN part_request_2 ON workstep_link.workstep_linkno_i=part_request_2.event_key
+                   LEFT JOIN part ON part_request_2.partno=part.partno
+                   WHERE part_request_2.event_type = &#39;WSL&#39;
+                   GROUP BY wo_header.event_perfno_i
+            ) part_req ON wo_header.event_perfno_i=part_req.event_perfno_i
+LEFT JOIN   ( 
+                SELECT
+                dbl.event_perfno_i
+                ,LISTAGG (dbl.ref_type||&#39; &#39;||dbl.description, CHR(10)) WITHIN GROUP (ORDER BY dbl.ref_type) as ref  
+                FROM (
+                        SELECT
+                                workstep_link.event_perfno_i,
+                                db_link.description,
+                                db_link.ref_type
+                        FROM workstep_link
+                        JOIN db_link ON TO_CHAR(workstep_link.descno_i) = TO_CHAR(db_link.source_pk) AND db_link.source_type=&#39;WS&#39; 
+                        
+                        UNION
+
+                        SELECT
+                                wo_header.event_perfno_i,
+                                db_link.description,
+                                db_link.ref_type
+                        FROM wo_header
+                        JOIN db_link ON TO_CHAR(wo_header.event_perfno_i) = TO_CHAR(db_link.source_pk) AND db_link.source_type=&#39;WO&#39; 
+                    ) dbl
+                GROUP BY dbl.event_perfno_i
+            ) dblink ON wo_header.event_perfno_i = dblink.event_perfno_i</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

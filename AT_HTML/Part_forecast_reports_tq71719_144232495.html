@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Part_forecast_reports_tq71719</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Reports_43642559.html">Reports</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Part_forecast_reports_tq71719
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on сент. 28, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Task Action</td><td class="confluenceTd">DatasourceExporterTask</td></tr><tr><td class="confluenceTd">Source Type</td><td class="confluenceTd">Plain SQL</td></tr><tr><td class="confluenceTd">Output format</td><td class="confluenceTd">excel 2007</td></tr><tr><td class="confluenceTd">Store in folder</td><td class="confluenceTd">\\msk\afl\ДУЗД\КПП</td></tr><tr><td class="confluenceTd">Filenames</td><td class="confluenceTd">part_forecast_reports</td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(23,43,77);text-decoration: none;">Scheduling | Rec. pattern | Hourly</span></td><td colspan="1" class="confluenceTd">06:00</td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+      DECODE (part_forecast.display_event_type,
+                        &#39;GENEVENT&#39;, &#39;Generic Event&#39;,
+                        &#39;DOP&#39;, &#39;Pending Document&#39;,
+                        &#39;CH&#39;, &#39;Check Pending&#39;,
+                        &#39;WO&#39;, &#39;Workorder&#39;,
+                        &#39;SRT&#39;, &#39;Single Running Taskcard&#39;,
+                        &#39;CM_WOSC&#39;, &#39;CM Workstep&#39;,
+                        &#39;EFL&#39;, &#39;Effectivity Link&#39;,
+                        &#39;MER&#39;, &#39;Replacement Event&#39;,
+                        &#39;TC&#39;, &#39;Taskcard&#39;,
+                        &#39;ORDER_DE&#39;, &#39;Order Detail&#39;,
+                        part_forecast.display_event_type) as event_type
+      ,part_forecast.event_display as event
+      ,part_forecast.receiver as receiver
+      ,CASE WHEN REGEXP_LIKE(part_forecast.partno, &#39;^[0-9]+$&#39;) THEN chr(39)||part_forecast.partno ELSE part_forecast.partno END as partno
+      ,part.mat_class
+      ,part_forecast.part_description as part_description
+      ,part_forecast.part_special_types as special_types
+      ,DECODE (part_forecast.status,
+                         0, &#39;Not calculated&#39;,
+                         1, &#39;Unavailable&#39;, 
+                         2, &#39;Ordered&#39;,
+                         3, &#39;Ordered and Linked&#39;, 
+                         4, &#39;Needs Transfer&#39;, 
+                         5, &#39;In Transfer&#39;, 
+                         6, &#39;Available&#39;,
+                         7, &#39;On Station&#39;, 
+                         8, &#39;Externally Provisioned&#39;,
+                         9, &#39;Part Request Fulfilled&#39;,
+                         10, &#39;Calculation Error&#39;,
+                         20, &#39;Available Partly Linked&#39;,
+                         30, &#39;Available Linked&#39;
+      )
+      ,CASE WHEN SUBSTR(special_flags, 3,1)=&#39;Y&#39; THEN &#39;Y&#39; ELSE &#39;&#39; END as is_DD_wo
+      ,CASE WHEN SUBSTR(special_flags, 4,1)=&#39;Y&#39; THEN &#39;Y&#39; ELSE &#39;&#39; END as is_MEL_wo
+      ,CASE WHEN SUBSTR(special_flags, 10,1)=&#39;Y&#39; THEN &#39;Y&#39; ELSE &#39;&#39; END as is_cannibalized_wo
+      ,CASE WHEN SUBSTR(special_flags, 11,1)=&#39;Y&#39; THEN &#39;Y&#39; ELSE &#39;&#39; END as is_AOG_wo
+      ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + part_forecast.expected_date, &#39;DD.MM.YYYY&#39;) as due_date
+      ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + part_forecast.planned_date, &#39;DD.MM.YYYY&#39;) as planned_date
+      ,TO_NUMBER(part_forecast.requested_qty) as requested_qty
+      ,part_forecast.measure_unit as measure_unit
+      ,TO_NUMBER(part_forecast.total_requested_qty) as total_requested_qty
+      ,TO_NUMBER(part_forecast.accessable_system_qty) as accessable_system_qty
+      ,TO_NUMBER(part_forecast.accessable_station_qty) as accessable_station_qty
+      ,TO_NUMBER(part_forecast.total_reserved_order_qty) as total_reserved_order_qty
+      ,TO_NUMBER(part_forecast.total_confirmed_order_qty) as total_confirmed_order_qty
+      ,TO_NUMBER(part_forecast.total_order_qty) as total_order_qty
+      ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + part_forecast.best_order_date, &#39;DD.MM.YYYY&#39;) as delivery_date
+      ,part_forecast.wpno as workpackage
+FROM part_forecast
+LEFT JOIN aircraft ON part_forecast.receiver=aircraft.ac_registr
+LEFT JOIN part on part_forecast.partno = part.partno
+WHERE (part_forecast.part_request_part_cond &lt;&gt; &#39;US&#39; OR part_forecast.part_request_part_cond IS NULL)
+    AND part_forecast.receiver_type = &#39;AC&#39;
+    AND (
+            part_forecast.expected_date &lt;= FLOOR(TRUNC(ADD_MONTHS(sysdate, 6), &#39;dd&#39;)-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))
+            OR part_forecast.planned_date &lt;= FLOOR(TRUNC(ADD_MONTHS(sysdate, 6), &#39;dd&#39;)-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))
+        )</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

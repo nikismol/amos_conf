@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : SQL check forecast</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="163776303.html">Схемы UML АМОС</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Check-UML_163783937.html">Check UML</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : SQL check forecast
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on июл. 11, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-warning"><span class="aui-icon aui-icon-small aui-iconfont-error confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Данный SQL запрос не доработан и выложен для ознакомления с таблицами</p></div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    r.event_perfno_i,
+    r.event_type,
+    r.event,
+    r.event_display,
+    &#39;s&#39; sched_unsched,
+    r.mevt_headerno_i,
+    r.unique_key2,
+    r.ac_registr,
+    r.ac_typ,
+    cast(null as integer) psn,
+    null partno,
+    null serialno,
+    &#39; &#39; ac_location,
+    cast(null as integer) removal_psn,
+    cast(null as integer) removal_event_perfno_i,
+    r.executable,
+    r.remarks,
+    r.revision_status,
+    r.revision_number,
+    r.next_revision_status,
+    r.next_revision_number,
+    r.event_key_parent,
+    r.taskcard_cp_seq_code,
+    r.sortitem,
+    r.prio,
+    null requirement,
+    r.wpno_i,
+    r.date_planned,
+    r.planned_time,
+    r.sequence,
+    r.planner_relevant,
+    r.workorderno_display,
+    r.pickslipno,
+	CASE
+	    WHEN r.pending_status &gt;= 0 THEN r.part_req_state_temp
+		ELSE lag(r.part_req_state_temp, r.pending_status) over(partition by mevt_headerno_i ORDER BY pending_status)
+	END part_req_state,
+	r.part_req_calc_status,
+	null part_req_status, /* копаться надо в part_forecast */
+	r.est_mh,
+	r.est_mhrs_linked,
+	r.est_groundtime,
+	&#39;N&#39; feedback_req,
+	r.work_type,
+	NULL pool_ac,
+	station,
+	cast(null as integer) outdated_since_date,
+	cast(null as integer) outdated_since_time,
+	null project_number,
+	special_flags, /* 17 и 28 пункты не понятны */
+	NULL calculation_status
+FROM
+    (
+    SELECT
+        wo_event_link.event_perfno_i,
+        CASE
+            WHEN wo_event_link.taskcard_type = &#39;B&#39; AND wo_event_link.pending_status = 0 THEN &#39;T&#39;
+	        WHEN wo_event_link.taskcard_type = &#39;B&#39; AND wo_event_link.pending_status &gt; 0 THEN &#39;TR&#39;
+	        WHEN wo_event_link.taskcard_type in (&#39;O&#39;, &#39;S&#39;) and wo_event_link.pending_status = 0 THEN &#39;Q&#39;
+	        WHEN wo_event_link.taskcard_type in (&#39;O&#39;, &#39;S&#39;) and wo_event_link.pending_status &gt; 0 THEN &#39;QR&#39;
+            WHEN wo_event_link.event_type = &#39;CHTI&#39; and wo_event_link.pending_status = 0 THEN &#39;C&#39;
+            WHEN wo_event_link.event_type = &#39;CHTI&#39; and wo_event_link.pending_status &gt; 0 THEN &#39;CR&#39;
+	    END event_type,
+	    check_type_int.internal_check  as event,
+	    trim(substr(trim(wo_event_link.event_display
+	                         ||CASE
+	                             when wo_event_link.pending_status = 0 then &#39;&#39;
+	                             else &#39;(&#39; || cast(wo_event_link.pending_status as varchar2(10)) || &#39;)&#39;
+	                             END),1, 120)
+	    ) event_display,
+        wo_event_link.mevt_headerno_i,
+        wo_event_link.event_key_parent unique_key2,
+        wo_header.ac_registr,
+        aircraft.ac_typ,
+        CASE
+            WHEN wo_event_link.event_type=&#39;TCEFFLI&#39; THEN wo_header.executable
+            WHEN wo_event_link.event_type=&#39;CHTI&#39; THEN &#39;N&#39;
+        END AS executable,
+        WO_REMARKS.text AS remarks,
+        CASE
+            WHEN wo_event_link.event_type=&#39;TCEFFLI&#39; THEN wo_event_link.revision_status
+            WHEN wo_event_link.event_type=&#39;CHTI&#39; THEN null /* не уверен*/
+        END revision_status ,
+        wo_event_link.revision revision_number,
+        CASE
+            WHEN wo_event_link.event_type=&#39;TCEFFLI&#39; THEN wo_event_link.next_revision_status
+            WHEN wo_event_link.event_type=&#39;CHTI&#39; THEN null /* не уверен*/
+        END next_revision_status,
+        wo_event_link.next_revision next_revision_number,
+        wo_event_link.event_key_parent,
+        null taskcard_cp_seq_code,
+        wo_event_link.pending_status sortitem,
+        wo_header.prio,
+        wp_assignment.wpno_i,
+        coalesce(wp_header.start_date, 0) date_planned,
+        coalesce(wp_header.start_time, 0) planned_time,
+        (
+            SELECT
+                to_char(seqno_i)
+            FROM (
+                SELECT
+                    wp_sequence.seqno_i,
+                    row_number () over(partition by wp_sequence.wpno_i, wp_sequence.event_perfno_i order BY wp_sequence.wp_sequence_id desc) rn
+	            FROM AMOSSERVER_PROD.wp_sequence
+	            WHERE wp_sequence.event_perfno_i = wo_event_link.event_perfno_i
+	              AND wp_sequence.wpno_i = wp_assignment.wpno_i
+	              AND wp_sequence.status = 0) t
+                WHERE rn = 1
+            ) AS SEQUENCE,
+        CASE
+            WHEN wo_event_link.taskcard_type = &#39;B&#39; THEN &#39;N&#39;
+            ELSE &#39;Y&#39;
+        END planner_relevant,
+        wo_header.workorderno_display,
+        coalesce(cast(pcsl.pickslipno as varchar2(12)), &#39;&#39;) pickslipno,
+        CASE
+            WHEN wo_event_link.pending_status &gt;= 0 THEN (
+            SELECT
+                CASE
+                    WHEN count(1) = 0 THEN 0
+                    WHEN count(1) = SUM(CASE WHEN part_special.special IS NOT NULL THEN 1 ELSE 0 END) THEN 1
+                    ELSE 2
+	            END
+            FROM AMOSSERVER_PROD.part_forecast
+                LEFT JOIN  AMOSSERVER_PROD.part_special ON part_forecast.partno = part_special.partno AND part_special.special = &#39;NO_PCF&#39;
+            WHERE part_forecast.event_perfno_i = wo_event_link.event_perfno_i
+            )
+            ELSE NULL
+		END part_req_state_temp,
+		CASE
+		    WHEN EXISTS (
+		    SELECT 1
+		    FROM AMOSSERVER_PROD.part_forecast
+		    WHERE part_forecast.event_perfno_i = wo_event_link.event_perfno_i AND part_forecast.status = 10
+		    ) THEN &#39;N&#39;
+		    ELSE &#39;O&#39;
+		END part_req_calc_status,
+        wo_event_link.pending_status,
+        coalesce(
+                (
+                SELECT
+                    sum(coalesce(rm_resource_requirement.total_hours, 0)) total_min
+                FROM AMOSSERVER_PROD.rm_resource_request
+                    JOIN AMOSSERVER_PROD.rm_resource_requirement ON rm_resource_requirement.resource_request_noi = rm_resource_request.resource_request_noi
+			        JOIN AMOSSERVER_PROD.rm_resource_type ON rm_resource_type.resource_type_no_i = rm_resource_requirement.resource_type_noi
+			        JOIN AMOSSERVER_PROD.rm_resource_constraint ON rm_resource_constraint.resource_requirement_noi = rm_resource_requirement.resource_requirement_noi
+			        JOIN AMOSSERVER_PROD.rm_property_type ON rm_property_type.property_type_no_i = rm_resource_constraint.property_type_no_i
+			        JOIN AMOSSERVER_PROD.workstep_link ON workstep_link.descno_i = rm_resource_request.request_owner_amos_key AND rm_resource_request.request_owner_amos_type = &#39;WS&#39;
+		        WHERE rm_resource_type.resource_type_id = &#39;STAFF&#39;
+		          AND rm_property_type.property_type_id in (&#39;SKILL&#39;, &#39;SCOPE&#39;)
+		          AND coalesce(rm_resource_requirement.status, 0) = 0
+		          AND workstep_link.event_perfno_i = wo_event_link.event_perfno_i
+		        GROUP BY workstep_link.event_perfno_i), 0) est_mh,
+	    CASE
+	        WHEN wo_event_link.taskcard_type = &#39;B&#39; THEN 0
+            ELSE coalesce(
+                    (
+                    SELECT
+                        SUM(rrq.TOTAL_HOURS)
+                    FROM wo_event_link wel
+                        JOIN wo_header woh ON wel.event_perfno_i=woh.event_perfno_i
+                        JOIN requirement_link rl ON wel.EFFECTIVITY_LINKNO_I=rl.target and rl.target_mimetype = &#39;EFL&#39;
+                        JOIN msc_requirement_tc_link mrtc ON rl.source=mrtc.REQ_LINKNO_I AND rl.SOURCE_MIMETYPE=&#39;TCREQLI&#39;
+                        JOIN wo_event_link welt ON mrtc.req_linkno_i=welt.event_key_parent
+                        JOIN wo_header woht ON welt.event_perfno_i=woht.EVENT_PERFNO_I and woh.AC_REGISTR=woht.AC_REGISTR
+                        JOIN workstep_link ON woht.EVENT_PERFNO_I=workstep_link.EVENT_PERFNO_I
+                        JOIN AMOSSERVER_PROD.rm_resource_request rr ON rr.request_owner_amos_key = workstep_link.DESCNO_I  AND rr.request_owner_amos_type = &#39;WS&#39;
+					    JOIN AMOSSERVER_PROD.rm_resource_requirement rrq ON rrq.resource_request_noi = rr.resource_request_noi AND coalesce(rrq.status, 0) = 0
+					    JOIN AMOSSERVER_PROD.rm_resource_type rt ON rt.resource_type_no_i = rrq.resource_type_noi AND rt.resource_type_id = &#39;STAFF&#39;
+					    JOIN AMOSSERVER_PROD.rm_resource_constraint rrc ON rrc.resource_requirement_noi = rrq.resource_requirement_noi
+					    JOIN AMOSSERVER_PROD.rm_property_type rmt ON rmt.property_type_no_i = rrc.property_type_no_i AND rmt.property_type_id in (&#39;SKILL&#39;, &#39;SCOPE&#39;)
+                    WHERE
+                        wel.event_perfno_i=wo_event_link.event_perfno_i
+                      AND wel.event_type = &#39;CHTI&#39;
+                      AND wel.pending_status &gt;= 0
+                      AND wel.planable_status = 0
+                      AND welt.event_type = &#39;TCEFFLI&#39;
+                      AND welt.pending_status=0
+                      AND welt.planable_status=0), 0)
+	    END est_mhrs_linked,
+	    wo_header.est_groundtime,
+	    (
+	    SELECT
+	        min(rm_resource_constraint.char_value)
+		FROM AMOSSERVER_PROD.rm_resource_request
+		JOIN AMOSSERVER_PROD.rm_resource_requirement ON rm_resource_requirement.resource_request_noi = rm_resource_request.resource_request_noi
+		JOIN AMOSSERVER_PROD.rm_resource_type ON rm_resource_type.resource_type_no_i = rm_resource_requirement.resource_type_noi
+		JOIN AMOSSERVER_PROD.rm_resource_constraint ON rm_resource_constraint.resource_requirement_noi = rm_resource_requirement.resource_requirement_noi
+		JOIN AMOSSERVER_PROD.rm_property_type ON rm_property_type.property_type_no_i = rm_resource_constraint.property_type_no_i
+		JOIN AMOSSERVER_PROD.workstep_link ON workstep_link.descno_i = rm_resource_request.request_owner_amos_key AND rm_resource_request.request_owner_amos_type = &#39;WS&#39;
+		WHERE rm_resource_type.resource_type_id = &#39;FACILITY&#39;
+		  AND rm_property_type.property_type_id in (&#39;FAC_HOMEBASE&#39;)
+		  AND coalesce(rm_resource_requirement.status, 0) = 0
+		  AND workstep_link.event_perfno_i = wo_event_link.event_perfno_i
+		) station,
+        &#39;&gt;N  &#39;
+            ||
+        CASE
+            WHEN wo_event_link.taskcard_type = &#39;B&#39; THEN &#39;T&#39;
+            WHEN wo_event_link.event_type = &#39;CHTI&#39; THEN &#39;C&#39;
+            ELSE &#39;Q&#39;
+        END
+            ||
+        CASE
+            WHEN wo_event_link.event_type = &#39;CHTI&#39;THEN wo_event_link.event_status
+            ELSE &#39;R&#39;
+        END
+            ||
+        CASE
+            WHEN WO_HEADER.PRINTED = 0 OR WO_HEADER.PRINTED_BY IS NULL OR WO_HEADER.PRINTED_BY LIKE &#39;SYSTEM&#39; THEN &#39;N&#39;
+            ELSE &#39;Y&#39;
+        END
+            ||
+        &#39;-&#39;
+            ||
+        CASE
+            WHEN WO_HEADER.closing_date IS NOT NULL THEN &#39;N&#39;
+            ELSE &#39;Y&#39;
+        END
+            ||
+        &#39;-&#39;
+            ||
+        CASE WHEN WO_HEADER_CRX.AOG_RISK = &#39;Y&#39; THEN &#39;Y&#39; ELSE &#39; &#39; END
+            ||
+        CASE
+            WHEN wo_event_link.event_type = &#39;CHTI&#39; THEN &#39;  N&#39;
+            ELSE &#39;T N&#39;
+        END
+            ||
+        CASE
+            WHEN
+                EXISTS (
+                  SELECT
+                      1
+                  FROM AMOSSERVER_PROD.rm_resource_request
+                      JOIN AMOSSERVER_PROD.rm_resource_requirement ON rm_resource_requirement.resource_request_noi = rm_resource_request.resource_request_noi
+                      JOIN AMOSSERVER_PROD.rm_resource_type on rm_resource_type.resource_type_no_i = rm_resource_requirement.resource_type_noi
+                      JOIN AMOSSERVER_PROD.workstep_link ON workstep_link.descno_i = rm_resource_request.request_owner_amos_key AND rm_resource_request.request_owner_amos_type = &#39;WS&#39;
+                  WHERE rm_resource_type.resource_type_id = &#39;HANGAR&#39;
+                    AND coalesce(rm_resource_requirement.status, 0) = 0
+                    AND workstep_link.event_perfno_i = WO_EVENT_LINK.event_perfno_i) THEN &#39;Y&#39;
+            ELSE &#39;-&#39;
+        END
+            ||
+        CASE wp_header.events_collection_status WHEN 0 THEN &#39;N&#39;
+            WHEN 2 THEN &#39;K&#39;
+            ELSE &#39;-&#39;
+        END
+            ||
+        &#39; &#39;
+            ||
+        CASE
+            WHEN coalesce(
+                    (
+                    SELECT
+                        coalesce(count(db_link.linkno_i), 0)
+                    FROM db_link
+                        JOIN workstep_link wl ON wl.WORKSTEP_LINKNO_I=db_link .SOURCE_PK AND db_link.SOURCE_TYPE=&#39;WS&#39;
+                    WHERE wl.EVENT_PERFNO_I=WO_EVENT_LINK.EVENT_PERFNO_I), 0) &gt; 0 THEN &#39;Y&#39;
+            ELSE &#39;N&#39;
+        END
+            ||
+        &#39; &#39;
+            ||
+        CASE
+            WHEN coalesce((
+                SELECT
+                    count(recno)
+                FROM WO_REMARKS
+                WHERE wo_remarks.event_perfno_i=wo_event_link.EVENT_PERFNO_I
+                              ),0)&gt;0 THEN &#39;Y&#39;
+            ELSE &#39;N&#39;
+        END
+            ||
+        &#39;YF NNNN &#39;
+            ||
+--         &#39;Y&#39;
+        CASE
+            WHEN coalesce((SELECT count(WO_REFERENCE.REFERENCENO)
+                           FROM wo_reference
+                           WHERE wo_reference.event_perfno_i = wo_event_link.event_perfno_i),0) = 0 THEN &#39;N&#39;
+            ELSE &#39;Y&#39;
+        END
+            ||
+        &#39;-&#39;
+            ||
+        nvl(wo_header_4.event_classification, &#39; &#39;)
+
+            ||
+        decode(
+                (
+                SELECT
+                    min(tq.status)
+                FROM AMOSSERVER_PROD.TECH_QUERY tq
+                WHERE tq.status IN (2, 4)
+                  AND tq.ref_type = &#39;MET&#39;
+                  AND tq.ref_key = CAST(wo_event_link.event_perfno_i AS varchar2(20))), NULL, &#39;-&#39;,
+                2, &#39;O&#39;,
+                3, &#39;C&#39;,
+                4, &#39;O&#39;,
+                &#39;I&#39;)
+            ||
+        &#39; - N&#39;
+            ||
+        substr(wo_header.TYPE, 1, 1)
+            ||
+        &#39;N1NN&#39;
+            ||
+        CASE
+            WHEN wo_event_link.event_type = &#39;CHTI&#39; THEN &#39;-&#39;
+            ELSE wo_event_link.taskcard_type
+        END
+	        ||
+        &#39;NNY NNNNNNNNN    &lt;&#39; AS special_flags,
+    CASE
+        WHEN coalesce((SELECT
+              coalesce(count(rm_resource_constraint.char_value),0)
+                FROM AMOSSERVER_PROD.rm_resource_request
+                    JOIN AMOSSERVER_PROD.rm_resource_requirement ON rm_resource_requirement.resource_request_noi = rm_resource_request.resource_request_noi
+			        JOIN AMOSSERVER_PROD.rm_resource_type ON rm_resource_type.resource_type_no_i = rm_resource_requirement.resource_type_noi
+			        JOIN AMOSSERVER_PROD.rm_resource_constraint ON rm_resource_constraint.resource_requirement_noi = rm_resource_requirement.resource_requirement_noi
+			        JOIN AMOSSERVER_PROD.rm_property_type ON rm_property_type.property_type_no_i = rm_resource_constraint.property_type_no_i
+			        JOIN AMOSSERVER_PROD.workstep_link ON workstep_link.descno_i = rm_resource_request.request_owner_amos_key AND rm_resource_request.request_owner_amos_type = &#39;WS&#39;
+		        WHERE rm_resource_type.resource_type_id = &#39;STAFF&#39;
+		          AND rm_property_type.property_type_id in (&#39;SKILL&#39;, &#39;SCOPE&#39;)
+		          AND coalesce(rm_resource_requirement.status, 0) = 0
+		          AND workstep_link.event_perfno_i = wo_event_link.event_perfno_i
+		        GROUP BY workstep_link.event_perfno_i),0)&gt;0 THEN &#39;?&#39;
+        ELSE &#39; &#39;
+    END work_type
+    FROM AMOSSERVER_PROD.wo_event_link
+        JOIN check_type_int ON wo_event_link.event_key_root=check_type_int.checkno_i
+        JOIN AMOSSERVER_PROD.WO_HEADER ON wo_event_link.EVENT_PERFNO_I = WO_HEADER.EVENT_PERFNO_I
+        LEFT JOIN AMOSSERVER_PROD.WO_HEADER_CRX ON WO_HEADER.EVENT_PERFNO_I = WO_HEADER_CRX.EVENT_PERFNO_I
+        LEFT JOIN AMOSSERVER_PROD.wo_header_4 ON wo_header_4.event_perfno_i = wo_header.event_perfno_i
+        JOIN AMOSSERVER_PROD.AIRCRAFT ON WO_HEADER.AC_REGISTR = AIRCRAFT.AC_REGISTR AND AIRCRAFT.STATUS = 0
+        JOIN AMOSSERVER_PROD.mevt_header ON mevt_header.mevt_headerno_i = wo_event_link.mevt_headerno_i
+        LEFT JOIN (
+        SELECT
+            workstep_link.event_perfno_i,
+            min(cast(pickslip_detail.pickslipno as integer)) pickslipno
+		FROM AMOSSERVER_PROD.part_request_2
+		    JOIN AMOSSERVER_PROD.pickslip_detail ON part_request_2.part_requestno_i = pickslip_detail.part_requestno_i
+		    JOIN AMOSSERVER_PROD.workstep_link ON part_request_2.event_key = workstep_link.workstep_linkno_i AND part_request_2.event_type = &#39;WSL&#39;
+		GROUP BY workstep_link.event_perfno_i
+		) pcsl ON pcsl.EVENT_PERFNO_I = wo_event_link.EVENT_PERFNO_I
+        LEFT JOIN AMOSSERVER_PROD.WO_REMARKS ON WO_REMARKS.recno = 1 AND WO_REMARKS.EVENT_PERFNO_I = wo_event_link.EVENT_PERFNO_I
+        LEFT JOIN AMOSSERVER_PROD.wp_assignment ON wp_assignment.event_perfno_i = wo_header.event_perfno_i
+        LEFT JOIN AMOSSERVER_PROD.wp_header ON wp_header.wpno_i = wp_assignment.wpno_i
+    WHERE 1 = 1
+	  /* Только check-и */
+      AND wo_event_link.event_type = &#39;CHTI&#39;
+--         AND WO_EVENT_LINK.CREATED_DATE&gt;19000
+	  /* Только планируемые события ТО */
+	  AND wo_event_link.PENDING_STATUS = 0
+	  AND wo_event_link.PLANABLE_STATUS = 0
+    ) r</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

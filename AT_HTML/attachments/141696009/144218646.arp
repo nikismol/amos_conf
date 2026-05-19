@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.swiss-as.com/xml/report_2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_2.0 http://www.swiss-as.com/xml/report_2.0.xsd http://www.swiss-as.com/xml/datasource_1.0 http://www.swiss-as.com/xml/datasource_1.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000083</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v2</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="460205">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="ClonerReportView" id="460206">
+      <attribute name="name">Cloner_1</attribute>
+      <attribute name="position">-18 7</attribute>
+      <attribute name="size">1032 205</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">WO-ADHOC_CL</attribute>
+    </view>
+    <view class="DatasourceTableView" id="460207">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 26</attribute>
+      <attribute name="size">1000 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460210" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">ac_typ</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460211" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.ac_typ@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460214" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">ata_chapter</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460215" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.woh.ata_chapter@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460218" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">ac_registr</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460219" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.woh.ac_registr@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">30</attribute>
+          <view class="LabelReportView" id="460222" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">JIC_DESCR</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460223" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.JIC_DESCR@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">30</attribute>
+          <view class="LabelReportView" id="460226" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">JIC_num</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460227" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.JIC_num@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">30</attribute>
+          <view class="LabelReportView" id="460230" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">wo_num</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460231" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.wo_num@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">30</attribute>
+          <view class="LabelReportView" id="460234" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">wo_status</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460235" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">30 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.wo_status@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460238" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">wo_actiont</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460239" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.wo_action_text@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460242" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">wo_descr</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460243" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.wo_descr@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460246" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">action_st</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460247" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.action_status@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="460250" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">damage</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460251" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.damage@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">60</attribute>
+          <view class="LabelReportView" id="460254" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">doc_type</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460255" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.doc_type@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460258" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">docno</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460259" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.docno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460262" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">due_date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460263" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.due_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="460266" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">interval</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460267" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.interval@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">60</attribute>
+          <view class="LabelReportView" id="460270" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">treshold</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460271" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.threshold@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="460274" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">issue</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="460275" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO-ADHOC_DS.issuer@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">WO-ADHOC_DS</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>460206</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>18</x_offset>
+        <y_offset>19</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="VAR" type="PARAMETER_DATASOURCE" version="1.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="ac_type"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Тип ВС:" id="ac_type">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>A330&amp;=&amp;AIRBUS 330 SERIAL TYPE;B737&amp;=&amp;BOEING 737 SERIAL TYPE;B777&amp;=&amp;BOEING 777 SERIAL TYPE;RRJ&amp;=&amp;RRJ(SSJ) FAMILY TYPE;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="WO-ADHOC_DS" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="woh.event_perfno_i wo_num" id="wo_num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       CASE&#10;         WHEN struc_damage IN ('Y''N') THEN&#10;          struc_damage&#10;         ELSE&#10;          'N'&#10;       END damage" id="damage"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="docno" id="docno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="doc_type" id="doc_type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="task.taskcardno JIC_num" id="JIC_num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       CASE&#10;         WHEN LENGTH(rev_title) &gt; 250 then&#10;          SUBSTR(rev_title 1250) || ' [..]'&#10;         ELSE&#10;          rev_title&#10;       END JIC_DESCR" id="JIC_DESCR"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       case&#10;         when r.code = 'H' then&#10;          'Before: ' || r.due_at || ' ' || 'Flight Hours'&#10;         when r.code = 'C' then&#10;          'Before: ' || r.due_at || ' ' || 'Flight Cycles'&#10;         when r.code = 'D' then&#10;          'Before: ' ||&#10;          to_char(to_date('31.12.1971' 'dd.mm.yyyy') + r.due_at'dd.mm.yyyy')&#10;         when r.code = 'AH' then&#10;          'Before: ' || r.due_at || ' ' || 'APU Hours'&#10;         when r.code = 'AC' then&#10;          'Before: ' || r.due_at || ' ' || 'APU Cycles'&#10;         else&#10;          ' '&#10;       end threshold" id="threshold"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       case&#10;         when r.code = 'H' then&#10;          'Interval: ' || amount_interval || ' ' || 'Flight Hours'&#10;         when r.code = 'C' then&#10;          'Interval: ' || amount_interval || ' ' || 'Flight Cycles'&#10;         when r.code = 'D' then&#10;          'Interval: ' || amount_interval || ' ' ||&#10;          'Days (Calendar DaysAccuracy: Day)'&#10;         when r.code = 'AH' then&#10;          'Interval: ' || amount_interval || ' ' || 'APU Hours'&#10;         when r.code = 'AC' then&#10;          'Interval: ' || amount_interval || ' ' || 'APU Cycles'&#10;         else&#10;          ' '&#10;       end interval" id="interval"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_typ" id="ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="woh.ac_registr" id="woh.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE WHEN state = 'O' THEN 'Open'&#10;&#9;   WHEN state = 'V' THEN 'Inactive'&#10;&#9;   WHEN state = 'C' THEN 'Closed'&#10;&#9;   ELSE 'UNK.'&#10;&#9;   END wo_status" id="wo_status"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       CASE&#10;         WHEN absolute_due_date IS NULL THEN&#10;          decode(woh.issue_date&#10;                 0&#10;                 null&#10;                 to_char(to_date('31.12.1971' 'dd.mm.yyyy') + woh.issue_date&#10;                         'dd.mm.yyyy'))&#10;         ELSE&#10;          decode(absolute_due_date&#10;                 0&#10;                 null&#10;                 to_char(to_date('31.12.1971' 'dd.mm.yyyy') +&#10;                         absolute_due_date'dd.mm.yyyy'))&#10;       END due_date" id="due_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       CASE WHEN LENGTH(d.text) &gt; 150 THEN SUBSTR(d.text 1150) || ' [..]'&#10;       ELSE d.text&#10;&#9;     END wo_descr" id="wo_descr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;       CASE WHEN LENGTH(TO_CHAR(ta.text)) &gt; 250 THEN SUBSTR(UPPER(ta.text) 1250) || ' [..]'&#10;&#9;     ELSE TO_CHAR(ta.text)&#10;&#9;     END wo_action_text" id="wo_action_text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="CASE WHEN workstep_state = 'C' THEN 'CLOSED'&#10;&#9;   ELSE 'In progress..'&#10;&#9;   END action_status" id="action_status"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="woh.created_by issuer" id="issuer"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="woh.ata_chapter" id="woh.ata_chapter"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@WO-ADHOC_CL.ac_registr@">
+          <ds:object>@WO-ADHOC_CL.ac_registr@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>SELECT woh.event_perfno_i wo_num,
+       CASE
+         WHEN struc_damage IN ('Y', 'N') THEN
+          struc_damage
+         ELSE
+          'N'
+       END damage,
+       docno,
+       doc_type,
+       task.taskcardno JIC_num,
+       CASE
+         WHEN LENGTH(rev_title) &gt; 250 then
+          SUBSTR(rev_title, 1, 250) || ' [..]'
+         ELSE
+          rev_title
+       END JIC_DESCR,
+       case
+         when r.code = 'H' then
+          'Before: ' || r.due_at || ' ' || 'Flight Hours'
+         when r.code = 'C' then
+          'Before: ' || r.due_at || ' ' || 'Flight Cycles'
+         when r.code = 'D' then
+          'Before: ' ||
+          to_char(to_date('31.12.1971', 'dd.mm.yyyy') + r.due_at,
+                  'dd.mm.yyyy')
+         when r.code = 'AH' then
+          'Before: ' || r.due_at || ' ' || 'APU Hours'
+         when r.code = 'AC' then
+          'Before: ' || r.due_at || ' ' || 'APU Cycles'
+         else
+          ' '
+       end threshold,
+       case
+         when r.code = 'H' then
+          'Interval: ' || amount_interval || ' ' || 'Flight Hours'
+         when r.code = 'C' then
+          'Interval: ' || amount_interval || ' ' || 'Flight Cycles'
+         when r.code = 'D' then
+          'Interval: ' || amount_interval || ' ' ||
+          'Days (Calendar Days, Accuracy: Day)'
+         when r.code = 'AH' then
+          'Interval: ' || amount_interval || ' ' || 'APU Hours'
+         when r.code = 'AC' then
+          'Interval: ' || amount_interval || ' ' || 'APU Cycles'
+         else
+          ' '
+       end interval,
+       ac_typ,
+       woh.ac_registr,
+	   CASE WHEN state = 'O' THEN 'Open'
+	   WHEN state = 'V' THEN 'Inactive'
+	   WHEN state = 'C' THEN 'Closed'
+	   ELSE 'UNK.'
+	   END wo_status,
+       CASE
+         WHEN absolute_due_date IS NULL THEN
+          decode(woh.issue_date,
+                 0,
+                 null,
+                 to_char(to_date('31.12.1971', 'dd.mm.yyyy') + woh.issue_date,
+                         'dd.mm.yyyy'))
+         ELSE
+          decode(absolute_due_date,
+                 0,
+                 null,
+                 to_char(to_date('31.12.1971', 'dd.mm.yyyy') +
+                         absolute_due_date,
+                         'dd.mm.yyyy'))
+       END due_date,
+       CASE WHEN LENGTH(d.text) &gt; 150 THEN SUBSTR(d.text, 1, 150) || ' [..]'
+       ELSE d.text
+	     END wo_descr,
+       CASE WHEN LENGTH(TO_CHAR(ta.text)) &gt; 250 THEN SUBSTR(UPPER(ta.text), 1, 250) || ' [..]'
+	     ELSE TO_CHAR(ta.text)
+	     END wo_action_text,
+	   CASE WHEN workstep_state = 'C' THEN 'CLOSED'
+	   ELSE 'In progress..'
+	   END action_status,
+       woh.created_by issuer,
+       woh.ata_chapter
+  FROM 
+  /* Ищу Workorder'a */ 
+  wo_header woh
+  /* с дескрипшеном */ 
+  LEFT JOIN wo_header_more m ON woh.event_perfno_i = m.event_perfno_i
+  LEFT JOIN (SELECT MAX(source_pk) source_pk, destination_key, source_type
+          FROM db_link
+         GROUP BY destination_key, source_type) dbl ON to_char(woh.event_perfno_i) =
+                                                       dbl.destination_key
+  LEFT JOIN msc_taskcard_version task_v on source_pk = taskcard_verno_i
+                                       AND source_type = 'TCLS'
+	/* и Jic Hoc'ами если есть */
+  LEFT JOIN msc_taskcard task ON task_v.taskcardno_i = task.taskcardno_i
+  LEFT JOIN treq_time_requirement ttr on taskcard_verno_i = event_key
+                                     and ttr.event_type = 'TCREV'
+  /* а если всё же есть беру инфу по тайм рекъюрментам (intervals, threshold)  */
+  LEFT JOIN (SELECT ttr.timerequirementno_i,
+                    CASE
+                      WHEN a.code &lt;&gt; null THEN
+                       a.code
+                      ELSE
+                       b.code
+                    END code,
+                    due_at,
+                    amount_interval
+               FROM (SELECT counter_defno_i, timerequirementno_i
+                       FROM treq_interval_group tig
+                       JOIN treq_interval ti ON tig.interval_groupno_i =
+                                                ti.interval_groupno_i
+                      GROUP BY timerequirementno_i, counter_defno_i) ttr
+               LEFT JOIN (SELECT timerequirementno_i,
+                                ti.counter_defno_i num,
+                                code,
+                                due_at
+                           FROM treq_interval_group tig
+                           JOIN treq_interval ti ON tig.interval_groupno_i =
+                                                    ti.interval_groupno_i
+                           JOIN counter_definition cd ON ti.counter_defno_i =
+                                                         cd.counter_defno_i
+                          WHERE dimension_type = 'B') a ON ttr.counter_defno_i =
+                                                           a.num
+                                                       AND ttr.timerequirementno_i =
+                                                           a.timerequirementno_i
+               LEFT JOIN (SELECT timerequirementno_i,
+                                ti.counter_defno_i num,
+                                code,
+                                amount_interval
+                           FROM treq_interval_group tig
+                           JOIN treq_interval ti ON tig.interval_groupno_i =
+                                                    ti.interval_groupno_i
+                           JOIN counter_definition cd ON ti.counter_defno_i =
+                                                         cd.counter_defno_i
+                          WHERE dimension_type = 'I') b ON ttr.counter_defno_i =
+                                                           b.num
+                                                       AND ttr.timerequirementno_i =
+                                                           b.timerequirementno_i) r ON ttr.timerequirementno_i =
+                                                                                       r.timerequirementno_i
+  JOIN aircraft a ON woh.ac_registr = a.ac_registr
+  LEFT JOIN (SELECT MAX(event_transferno_i) event_transferno_i,
+                    event_perfno_i
+               FROM wo_transfer
+              GROUP BY event_perfno_i) wot ON woh.event_perfno_i =
+                                              wot.event_perfno_i
+	/* due_date or issue_date */
+  LEFT JOIN wo_transfer wt ON wot.event_transferno_i =
+                              wt.event_transferno_i
+	/* выполняю поиск по описаниям экшенов */
+  JOIN workstep_link s ON woh.event_perfno_i = s.event_perfno_i
+  JOIN wo_text_description d ON s.descno_i = d.descno_i
+  JOIN (SELECT to_char(text) text, workstep_linkno_i
+          FROM wo_text_action) ta ON s.workstep_linkno_i = ta.workstep_linkno_i
+  LEFT JOIN wo_event_link woe_l ON woh.event_perfno_i = woe_l.event_perfno_i
+  LEFT JOIN doc_header dh ON event_key_root = docno_i 
+ WHERE a.ac_registr='@WO-ADHOC_CL.ac_registr@' and 
+woh.type in ('M', 'P', 'C')
+ AND ((ta.text LIKE '%REPAIR%' OR ta.text LIKE '%INSPECTION%' OR ta.text LIKE '%INTERVAL%' OR ta.text LIKE '%REPETITIVE%' 
+		OR ta.text LIKE '%ОСМОТР%' OR ta.text LIKE '%ИНСПЕКЦИЯ%' OR ta.text LIKE '%РЕМОНТ%' OR ta.text LIKE '%ПОВРЕЖДЕНИЕ%'
+		OR ta.text LIKE '%ЧЕКАНКА%' OR ta.text LIKE '%ВМЯТИНА%' OR ta.text LIKE '%ТРЕЩИНА%' OR ta.text LIKE '%ВЫРАБОТКА%'
+	   ) OR (d.text LIKE '%REPAIR%' OR d.text LIKE '%INSPECTION%' OR d.text LIKE '%INTERVAL%' OR d.text LIKE '%REPETITIVE%' 
+		OR d.text LIKE '%ОСМОТР%' OR d.text LIKE '%ИНСПЕКЦИЯ%' OR d.text LIKE '%РЕМОНТ%' OR d.text LIKE '%ПОВРЕЖДЕНИЕ%'
+		OR d.text LIKE '%ЧЕКАНКА%' OR d.text LIKE '%ВМЯТИНА%' OR d.text LIKE '%ТРЕЩИНА%' OR d.text LIKE '%ВЫРАБОТКА%') )</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="WO-ADHOC_CL" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="distinct ac_registr" id="ac_registr"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_type@">
+          <ds:object>@VAR.ac_type@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>Select distinct ac_registr
+from aircraft 
+where ac_typ='@VAR.ac_type@'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

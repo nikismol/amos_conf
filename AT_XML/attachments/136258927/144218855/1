@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000291</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="5">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="ClonerReportView" id="6">
+      <attribute name="name">Cloner_1</attribute>
+      <attribute name="position">-183 40</attribute>
+      <attribute name="size">1395 247</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_REL_MAIN</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>11</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-183</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="ClonerReportView" id="7">
+      <attribute name="name">Cloner_13</attribute>
+      <attribute name="position">200 41</attribute>
+      <attribute name="size">800 83</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_REL_Data</attribute>
+      <attribute name="tiling-mode">FULL_WIDTH</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>17</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>-1</y_offset>
+      </anchor>
+    </view>
+    <view class="ClonerReportView" id="8">
+      <attribute name="name">Cloner_2</attribute>
+      <attribute name="position">200 0</attribute>
+      <attribute name="size">801 40</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_REL_QUARTERS</attribute>
+      <attribute name="tiling-mode">FULL_WIDTH</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>14</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="9">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">200 0</attribute>
+      <attribute name="size">144 40</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="width">2</attribute>
+          <conditions/>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_REL_QUARTERS.field_title@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>8</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="10">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">0 42</attribute>
+      <attribute name="size">50 80</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_REL_MAIN.ac_group@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>6</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>183</x_offset>
+        <y_offset>2</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="11">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">50 40</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">AC_GROUP</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="12">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">50 0</attribute>
+      <attribute name="size">50 40</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">PARTNO</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>11</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="13">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">100 0</attribute>
+      <attribute name="size">50 40</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">DESCRIPTION</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>12</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="14">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">150 0</attribute>
+      <attribute name="size">50 40</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">ATA</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>13</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="15">
+      <attribute name="name">Label_9</attribute>
+      <attribute name="position">50 42</attribute>
+      <attribute name="size">50 80</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_REL_MAIN.partno@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>10</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="16">
+      <attribute name="name">Label_10</attribute>
+      <attribute name="position">100 42</attribute>
+      <attribute name="size">50 80</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_REL_MAIN.description@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>15</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="17">
+      <attribute name="name">Label_11</attribute>
+      <attribute name="position">150 42</attribute>
+      <attribute name="size">50 80</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_REL_MAIN.ata@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>16</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="18">
+      <attribute name="name">Label_12</attribute>
+      <attribute name="position">200 42</attribute>
+      <attribute name="size">144 80</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="size">2</attribute>
+          <conditions/>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_REL_Data.value@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>7</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>1</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v02_quarter_end"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v01_quarter_start"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v04_ac_group"/>
+        <ds:columnDescriptor amosType="PA" description="" id="v03_partno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="02. Quarter END (incl)" id="v02_quarter_end">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>01.07.2017&amp;=&amp;Q3 2017;01.10.2017&amp;=&amp;Q4 2017;01.01.2018&amp;=&amp;Q1 2018;01.04.2018&amp;=&amp;Q2 2018;01.07.2018&amp;=&amp;Q3 2018;01.10.2018&amp;=&amp;Q4 2018;01.01.2019&amp;=&amp;Q1 2019;01.04.2019&amp;=&amp;Q2 2019;01.07.2019&amp;=&amp;Q3 2019;01.10.2019&amp;=&amp;Q4 2019;01.01.2020&amp;=&amp;Q1 2020;01.04.2020&amp;=&amp;Q2 2020;</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="01. Period Start" id="v01_quarter_start">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>01.07.2017&amp;=&amp;Q3 2017;01.10.2017&amp;=&amp;Q4 2017;01.01.2018&amp;=&amp;Q1 2018;01.04.2018&amp;=&amp;Q2 2018;01.07.2018&amp;=&amp;Q3 2018;01.10.2018&amp;=&amp;Q4 2018;01.01.2019&amp;=&amp;Q1 2019;01.04.2019&amp;=&amp;Q2 2019;01.07.2019&amp;=&amp;Q3 2019;01.10.2019&amp;=&amp;Q4 2019;01.01.2020&amp;=&amp;Q1 2020;01.04.2020&amp;=&amp;Q2 2020;</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="04. A/C Reliability Group" id="v04_ac_group">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>RRJ-95B new&amp;=&amp;RRJ-95B new;RRJ-95B ALL&amp;=&amp;RRJ-95B ALL;B777&amp;=&amp;B777;A330&amp;=&amp;A330;A3302&amp;=&amp;A3302;A3303&amp;=&amp;A3303;A319&amp;=&amp;A319;B737&amp;=&amp;B737;A320 Family ALL&amp;=&amp;A320 Family ALL;A320&amp;=&amp;A320;A321&amp;=&amp;A321;ALL&amp;=&amp;ALL;ИВС&amp;=&amp;ИВС;B737 AT&amp;=&amp;B737 AT;B737 VDT&amp;=&amp;B737 VDT;A350&amp;=&amp;A350;</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="03. Partno" id="v03_partno">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_REL_MAIN" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_group" id="ac_group"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="partno" id="partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="description" id="description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ata" id="ata"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v03_partno@">
+          <ds:object>@VAR.v03_partno@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v04_ac_group@">
+          <ds:object>@VAR.v04_ac_group@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT DISTINCT
+          ac_group
+         ,partno
+         ,description
+         ,ata
+FROM RAMAX_READ_ONLY.RMX_TMP_DATA_UPLOAD rel
+WHERE EXTRACT (MONTH FROM TO_DATE(TO_CHAR(TO_DATE(period_start,'MM.DD.YY'), 'MM.DD.YYYY'))) IN (1, 4, 7, 10)
+             AND (REGEXP_LIKE(rel.partno, REPLACE('@VAR.v03_partno@', ', ', '|')) OR '@VAR.v03_partno@' IS NULL)
+             AND rel.ac_group='@VAR.v04_ac_group@'
+ORDER BY partno</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_REL_QUARTERS" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="f.title" id="f.title"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             'Q'||TO_CHAR(p.q'Q')||' '||EXTRACT(YEAR FROM p.q) as qrt" id="qrt"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="f.n" id="f.n"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             'Q'||TO_CHAR(p.q'Q')||' '||EXTRACT(YEAR FROM p.q)||' '||CHR(10)||f.title as field_title" id="field_title"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="EXTRACT(YEAR FROM p.q) as y" id="y"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v01_quarter_start@">
+          <ds:object>@VAR.v01_quarter_start@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v02_quarter_end@">
+          <ds:object>@VAR.v02_quarter_end@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT f.title,
+             'Q'||TO_CHAR(p.q,'Q')||' '||EXTRACT(YEAR FROM p.q) as qrt,
+             f.n,
+             'Q'||TO_CHAR(p.q,'Q')||' '||EXTRACT(YEAR FROM p.q)||' '||CHR(10)||f.title as field_title,
+             EXTRACT(YEAR FROM p.q) as y
+FROM (
+             SELECT 'unit_hours' as title, 1 as n FROM DUAL
+             UNION SELECT 'us_rem' as title, 2 as n FROM DUAL
+             UNION SELECT 'rate_us_rem' as title,3 as n FROM DUAL
+             UNION SELECT 'failures' as title, 4 as n FROM DUAL
+             UNION SELECT 'rate_fail' as title, 5 as n FROM DUAL
+             UNION SELECT 'no_fault' as title, 6 as n FROM DUAL
+             UNION SELECT 'mtbur' as title, 7 as n FROM DUAL
+             UNION SELECT 'mttur' as title, 8 as n FROM DUAL
+             UNION SELECT 'mtbf' as title, 9 as n FROM DUAL
+             UNION SELECT 'nff_rate' as title, 10 as n FROM DUAL
+             ORDER by n
+            ) f
+JOIN (
+          SELECT t.p as q
+          FROM (
+                       SELECT beg_date + LEVEL - 1 as p
+                       FROM (
+                                    SELECT TO_DATE('@VAR.v01_quarter_start@', 'dd.mm.yyyy') beg_date,
+                                                 TO_DATE('@VAR.v02_quarter_end@', 'dd.mm.yyyy') end_date
+                                    FROM dual
+                                   )
+                       CONNECT BY LEVEL &lt;= end_date - beg_date + 1
+                      ) t
+          WHERE EXTRACT (MONTH FROM t.p) IN (1, 4, 7, 10)
+                       AND t.p=TRUNC(t.p, 'MONTH')
+         ) p ON 1=1
+ORDER BY n, 1, y, qrt</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_REL_Data" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="l.qrt" id="l.qrt"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             TO_CHAR(TO_DATE(l.quarter_start_date 'dd.mm.yyyy')'dd.mm.yy') as quarter_start_date" id="quarter_start_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="l.title_no" id="l.title_no"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="l.yr" id="l.yr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="l.title" id="l.title"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rel_combined.value as value" id="value"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v01_quarter_start@">
+          <ds:object>@VAR.v01_quarter_start@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v02_quarter_end@">
+          <ds:object>@VAR.v02_quarter_end@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_REL_MAIN.partno@">
+          <ds:object>@AFL_REL_MAIN.partno@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_REL_MAIN.ac_group@">
+          <ds:object>@AFL_REL_MAIN.ac_group@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_REL_MAIN.ata@">
+          <ds:object>@AFL_REL_MAIN.ata@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT l.qrt,
+             TO_CHAR(TO_DATE(l.quarter_start_date, 'dd.mm.yyyy'), 'dd.mm.yy') as quarter_start_date,
+             l.title_no,
+             l.yr,
+             l.title,
+             rel_combined.value as value
+FROM (
+             SELECT f.title,
+                          'Q'||TO_CHAR(p.q,'Q')||' '||EXTRACT(YEAR FROM p.q) as qrt,
+                          p.q as quarter_start_date,
+                          f.n as title_no,
+                          EXTRACT(YEAR FROM p.q) as yr
+             FROM (
+                          SELECT 'unit_hours' as title, 1 as n FROM DUAL
+                          UNION SELECT 'us_rem' as title, 2 as n FROM DUAL
+                          UNION SELECT 'rate_us_rem' as title,3 as n FROM DUAL
+                          UNION SELECT 'failures' as title, 4 as n FROM DUAL
+                          UNION SELECT 'rate_fail' as title, 5 as n FROM DUAL
+                          UNION SELECT 'no_fault' as title, 6 as n FROM DUAL
+                          UNION SELECT 'mtbur' as title, 7 as n FROM DUAL
+                          UNION SELECT 'mttur' as title, 8 as n FROM DUAL
+                          UNION SELECT 'mtbf' as title, 9 as n FROM DUAL
+                          UNION SELECT 'nff_rate' as title, 10 as n FROM DUAL
+                          ORDER by n
+                         ) f
+             JOIN (
+                       SELECT t.p as q
+                       FROM (
+                                    SELECT beg_date + LEVEL - 1 as p
+                                    FROM (
+                                                 SELECT TO_DATE('@VAR.v01_quarter_start@', 'dd.mm.yyyy') beg_date,
+                                                              TO_DATE('@VAR.v02_quarter_end@', 'dd.mm.yyyy') end_date
+                                                 FROM dual)
+                                    CONNECT BY LEVEL &lt;= end_date - beg_date + 1
+                                   ) t
+                       WHERE EXTRACT (MONTH FROM t.p) IN (1, 4, 7, 10)
+                                     AND t.p=TRUNC(t.p, 'MONTH')
+                      ) p ON 1=1
+            ) l
+LEFT JOIN (
+                                SELECT  rel.period_start as quarter_start_date, rel.unit_hours as value,     1 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.us_rem as value,           2 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.rate_us_rem as value,  3 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.failures as value,          4 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.rate_fail as value,          5 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.no_fault as value,         6 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.mtbur as value,            7 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.mttur as value,             8 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.mtbf as value,              9 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                   UNION SELECT  rel.period_start as quarter_start_date, rel.nff_rate as value,         10 as title_no FROM ramax_read_only.rmx_tmp_data_upload rel WHERE rel.partno = '@AFL_REL_MAIN.partno@'
+                                                                                                                                                                                                                                                                                        AND rel.ac_group = '@AFL_REL_MAIN.ac_group@'
+                                                                                                                                                                                                                                                                                        AND rel.ata = '@AFL_REL_MAIN.ata@'
+                  ) rel_combined ON l.title_no=rel_combined.title_no AND TO_DATE(l.quarter_start_date, 'dd.mm.yyyy')=TO_DATE(rel_combined.quarter_start_date, 'dd.mm.yyyy')
+ORDER BY title_no, yr, qrt</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

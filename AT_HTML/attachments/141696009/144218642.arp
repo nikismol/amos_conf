@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.swiss-as.com/xml/report_2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_2.0 http://www.swiss-as.com/xml/report_2.0.xsd http://www.swiss-as.com/xml/datasource_1.0 http://www.swiss-as.com/xml/datasource_1.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000009</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v2</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="3">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="4">
+      <attribute name="name">DatasourceTable_2</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 88</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">30</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="7" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Part Number</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="8" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">90</attribute>
+          <view class="LabelReportView" id="11" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">90 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Serial-/Batch Number</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="12" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">90 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.serialno_batchno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">90</attribute>
+          <view class="LabelReportView" id="15" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">90 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Supplier / Vendor</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="16" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">90 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.vendor@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="19" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Mat. Class</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="20" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.mat_class@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="23" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Owner</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="24" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.owner@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">60</attribute>
+          <view class="LabelReportView" id="27" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Station</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="28" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.station@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">55</attribute>
+          <view class="LabelReportView" id="31" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">55 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Store</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="32" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">55 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.store@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="35" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Location</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="36" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.location@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">60</attribute>
+          <view class="LabelReportView" id="39" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Condition</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="40" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.condition@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">62</attribute>
+          <view class="LabelReportView" id="43" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">62 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Rec_detail</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="44" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">62 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.recdetailno_i@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">33</attribute>
+          <view class="LabelReportView" id="47" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">33 30</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">E3E3E3</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Qty</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="48" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">33 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@PHY_Unload_To_SAP.qty@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">PHY_Unload_To_SAP</attribute>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="VAR" type="PARAMETER_DATASOURCE" version="1.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="AD" description="&quot;Owner&quot;/&quot;Собственник&quot;" id="owner"/>
+        <ds:columnDescriptor amosType="COND" description="&quot;Condition&quot;/&quot;Состояние компонентов&quot;" id="condition"/>
+        <ds:columnDescriptor amosType="BOOL" description="" id="usp"/>
+        <ds:columnDescriptor amosType="STA" description="&quot;Station&quot;/&quot;Станция&quot;" id="station"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="ownerlist"/>
+        <ds:columnDescriptor amosType="LOO" description="&quot;Location&quot;/&quot;Локация&quot;" id="location"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="sploc"/>
+        <ds:columnDescriptor amosType="STOO" description="&quot;Store&quot;/&quot;Склад&quot;" id="store"/>
+        <ds:columnDescriptor amosType="MATCL" description="&quot;Material Class&quot;/&quot;Класс материала&quot;" id="matclass"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="tool"/>
+        <ds:columnDescriptor amosType="PA" description="&quot;Partnumber&quot;/&quot;Партийный номер&quot;" id="partno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Собственник" id="owner">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Состояние компонентов" id="condition">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Show US Parts" id="usp">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Станция" id="station">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Owner" id="ownerlist">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>2&amp;=&amp;All material;1&amp;=&amp;Owned Material;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Локация" id="location">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Special Location" id="sploc">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>1&amp;=&amp;NONE;2&amp;=&amp;Hangar Only;3&amp;=&amp;Outgoing Only;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Склад" id="store">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Класс материала" id="matclass">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Tool" id="tool">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>'Y', 'N'&amp;=&amp;--- Выбрать ---;'Y'&amp;=&amp;True;'N'&amp;=&amp;False;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Партийный номер" id="partno">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="PHY_Unload_To_SAP" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Physical Stock Unload to SAP</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="row_number() over(ORDER BY partno serialno_batchnorecdetailno_i) num" id="num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="partno" id="partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="serialno_batchno" id="serialno_batchno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="vendor" id="vendor"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="mat_class" id="mat_class"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="owner" id="owner"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="station" id="station"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="store" id="store"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="location" id="location"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="condition" id="condition"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="recdetailno_i" id="recdetailno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;   round(qty2) qty" id="qty"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.station@">
+          <ds:object>@VAR.station@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.store@">
+          <ds:object>@VAR.store@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.location@">
+          <ds:object>@VAR.location@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.partno@">
+          <ds:object>@VAR.partno@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.condition@">
+          <ds:object>@VAR.condition@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.matclass@">
+          <ds:object>@VAR.matclass@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.owner@">
+          <ds:object>@VAR.owner@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ownerlist@">
+          <ds:object>@VAR.ownerlist@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.tool@">
+          <ds:object>@VAR.tool@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.sploc@">
+          <ds:object>@VAR.sploc@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.usp@">
+          <ds:object>@VAR.usp@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>select row_number() over(ORDER BY partno, serialno_batchno, recdetailno_i) num,
+	   partno,
+	   serialno_batchno,
+	   vendor,
+	   mat_class,
+	   owner,
+	   station,
+	   store,
+	   location,
+	   condition,
+	   recdetailno_i,
+	   qty
+from (select p.partno,
+	   r.serialno serialno_batchno,
+	   p.vendor,
+	   p.mat_class,
+	   r.owner,
+	   l.station,
+	   l.store,
+	   l.location,
+	   r.condition,
+	   r.rec_detailno_i	recdetailno_i,
+	   1 qty
+from part p
+join rotables r on p.partno = r.partno
+join location l on r.locationno_i = l.locationno_i
+left join station_store s on s.station = l.station and s.store = l.store
+left join address a on r.owner = a.vendor
+where l.location_type not in ('-3', '-107')
+		  and r.locationno_i &lt;&gt; '-4'
+		  and p.mat_class = 'R'
+	  and r.condition &lt;&gt; 'US'
+      and (
+         r.outgoing_detailno_i is null
+         or r.locationno_i &lt;&gt; -200
+      )
+      and r.partnonew = ' '
+      and (
+         r.ac_registr = ' '
+         or r.ac_registr = 'TRANSF'
+      )
+ /* Station*/
+ and ('@VAR.station@' is null or
+ l.station in
+ (select trim(substr('@VAR.station@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.station@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.station@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.station@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.station@') -
+              length(replace('@VAR.station@', ',', '')) + 1))
+ /* Store*/
+ and ('@VAR.store@' is null or
+ l.store in
+ (select trim(substr('@VAR.store@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.store@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.store@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.store@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.store@') -
+              length(replace('@VAR.store@', ',', '')) + 1))
+/* Location */
+ and (to_char('@VAR.location@') is null or l.locationno_i in ('@VAR.location@'))
+/* Partnumber */
+ and ('@VAR.partno@' is null or
+ p.partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+/* Condition */
+ and ('@VAR.condition@' is null or
+ r.condition in
+ (select trim(substr('@VAR.condition@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.condition@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.condition@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.condition@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.condition@') -
+              length(replace('@VAR.condition@', ',', '')) + 1))
+/* Material Class */
+ and ('@VAR.matclass@' is null or
+ mat_class in
+ (select trim(substr('@VAR.matclass@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.matclass@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.matclass@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.matclass@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.matclass@') -
+              length(replace('@VAR.matclass@', ',', '')) + 1))
+/* Owner */
+ and (to_char('@VAR.owner@') is null or a.address_i in ('@VAR.owner@'))
+/* Owner list */
+and (
+nvl(@VAR.ownerlist@, 2) = 2 or (@VAR.ownerlist@ = 1 and r.owner = 'AFL')
+)
+/* Tool */
+and p.tool in (@VAR.tool@)
+/* Special Location */
+and (
+nvl(@VAR.sploc@, 1) = 1 or (@VAR.sploc@ = 2 and location_type = -5) or (@VAR.sploc@ = 3 and location_type = -200)
+)
+/* US Parts */
+and (
+nvl('@VAR.usp@', 'Y') = 'Y' or ('@VAR.usp@' = 'N' and r.condition &lt;&gt; 'US')
+)
+union
+select p.partno,
+	c.batchno serialno_batchno,
+	p.vendor,
+	p.mat_class,
+	c.owner,
+	l.station,
+	l.store,
+	l.location,
+	c.condition,
+	c.recdetailno_i	recdetailno_i,
+	c.qty
+from part p
+join consumables c on p.partno = c.partno
+join location l on c.locationno_i = l.locationno_i
+left join station_store s on s.station = l.station and s.store = l.store
+left join address a on c.owner = a.vendor
+where c.qty &gt; 0
+      AND p.mat_class &lt;&gt; 'R'
+ /* Station*/
+ and ('@VAR.station@' is null or
+ l.station in
+ (select trim(substr('@VAR.station@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.station@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.station@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.station@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.station@') -
+              length(replace('@VAR.station@', ',', '')) + 1))
+  /* Store*/
+ and ('@VAR.store@' is null or
+ l.store in
+ (select trim(substr('@VAR.store@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.store@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.store@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.store@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.store@') -
+              length(replace('@VAR.store@', ',', '')) + 1))
+/* Location */
+ and (to_char('@VAR.location@') is null or l.locationno_i in ('@VAR.location@'))
+/* Partnumber */
+ and ('@VAR.partno@' is null or
+ p.partno in
+ (select trim(substr('@VAR.partno@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.partno@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.partno@') -
+              length(replace('@VAR.partno@', ',', '')) + 1))
+/* Condition */
+ and ('@VAR.condition@' is null or
+ c.condition in
+ (select trim(substr('@VAR.condition@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.condition@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.condition@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.condition@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.condition@') -
+              length(replace('@VAR.condition@', ',', '')) + 1))
+/* Material Class */
+ and ('@VAR.matclass@' is null or
+ mat_class in
+ (select trim(substr('@VAR.matclass@' || ',',
+                      decode(level,
+                             1,
+                             0,
+                             instr('@VAR.matclass@' || ',', ',', 1, level - 1) + 2),
+                      instr('@VAR.matclass@' || ',', ',', 1, level) -
+                      decode(level,
+                             1,
+                             1,
+                             instr('@VAR.matclass@' || ',', ',', 1, level - 1) + 2)))
+     from dual
+   connect by level &lt;= length('@VAR.matclass@') -
+              length(replace('@VAR.matclass@', ',', '')) + 1))
+/* Owner */
+ and (to_char('@VAR.owner@') is null or a.address_i in ('@VAR.owner@'))
+/* Owner list */
+and (
+nvl(@VAR.ownerlist@, 2) = 2 or (@VAR.ownerlist@ = 1 and c.owner = 'AFL')
+)
+/* Tool */
+and p.tool in (@VAR.tool@)
+/* Special Location */
+and (
+nvl(@VAR.sploc@, 1) = 1 or (@VAR.sploc@ = 2 and location_type = -5) or (@VAR.sploc@ = 3 and location_type = -200)
+)
+/* US Parts */
+and (
+nvl('@VAR.usp@', 'Y') = 'Y' or ('@VAR.usp@' = 'N' and c.condition &lt;&gt; 'US')
+)
+) xxx</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

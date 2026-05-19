@@ -1,0 +1,772 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000240</report_id>
+    <revision_number>0</revision_number>
+    <meta name="15-01-2020">add new ac_typ A350</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="80344">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="80345">
+      <attribute name="name">DatasourceTable_2</attribute>
+      <attribute name="position">1 50</attribute>
+      <attribute name="size">699 93</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="80348" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AC</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="80349" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_LM_T_Check_counter_by_ac.acreg@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">200</attribute>
+          <view class="LabelReportView" id="80352" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">200 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">T-check (&lt;=@VAR.thr@ min)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="80353" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">200 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_LM_T_Check_counter_by_ac.t_check@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">200</attribute>
+          <view class="LabelReportView" id="80356" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">200 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AA, SHP, BD Check (&gt;@VAR.thr@ min)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="80357" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">200 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_LM_T_Check_counter_by_ac.l_check@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">199</attribute>
+          <view class="LabelReportView" id="80360" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">199 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Total</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="80361" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">199 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_LM_T_Check_counter_by_ac.all_checks@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">AT_LM_T_Check_counter_by_ac</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80362</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>1</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="80362">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">A-Technics Report for AC Type: @VAR.ac_typ@ (@AFL_LM_T_Check_dates.f_start_date@ - @AFL_LM_T_Check_dates.f_end_date@)
+Threshold: @VAR.thr@ minutes</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 16</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="80363">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">1 143</attribute>
+      <attribute name="size">700 50</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">YES</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.start_date@</field>
+              <field id="2">@VAR.end_date@</field>
+              <operator negated="NO">IS_BIGGER</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">FF0033</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Report period START date is after report period END date.  Please correct dates (reverse?) and try again.</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 15</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80345</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="80364">
+      <attribute name="name">Label_9</attribute>
+      <attribute name="position">351 193</attribute>
+      <attribute name="size">350 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 5</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@AT_LM_T_Check_totals.all_checks@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80363</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="80365">
+      <attribute name="name">Label_10</attribute>
+      <attribute name="position">351 227</attribute>
+      <attribute name="size">350 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 5</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@AT_LM_T_Check_totals.l_check@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80366</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="80366">
+      <attribute name="name">Label_11</attribute>
+      <attribute name="position">351 210</attribute>
+      <attribute name="size">350 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 5</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@AT_LM_T_Check_totals.t_check@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80364</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="80367">
+      <attribute name="name">Label_14</attribute>
+      <attribute name="position">1 210</attribute>
+      <attribute name="size">350 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 5</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Total T-check:</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80368</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="80368">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">1 193</attribute>
+      <attribute name="size">350 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 5</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">TOTAL:</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80363</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="80369">
+      <attribute name="name">Label_16</attribute>
+      <attribute name="position">1 227</attribute>
+      <attribute name="size">350 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 5</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Total AA, SHP, BD Check:</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">RIGHT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80367</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="end_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="ac_typ"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="start_date"/>
+        <ds:columnDescriptor amosType="RIGHTALI" description="" id="thr"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Дата окончания периода" id="end_date">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Тип ВС" id="ac_typ">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>RRJ</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>A320&amp;=&amp;A320;A321&amp;=&amp;A321;A332&amp;=&amp;A332;A333&amp;=&amp;A333;A350&amp;=&amp;A350;B737&amp;=&amp;B737;B777&amp;=&amp;B777;RRJ&amp;=&amp;RRJ;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Дата начала периода" id="start_date">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Порог, минут" id="thr">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>130.0</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_LM_T_Check_dates" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('01/01/1970' 'DD/MM/YYYY') + (@VAR.start_date@+729)'DD/MM/YYYY') as f_start_date" id="f_start_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;TO_CHAR(TO_DATE('01/01/1970' 'DD/MM/YYYY') + (@VAR.end_date@+729)'DD/MM/YYYY') as f_end_date" id="f_end_date"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.start_date@">
+          <ds:object>@VAR.start_date@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.end_date@">
+          <ds:object>@VAR.end_date@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT
+	TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.start_date@+729), 'DD.MM.YYYY') as f_start_date,
+	TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.end_date@+729), 'DD.MM.YYYY') as f_end_date
+FROM dual</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AT_LM_T_Check_counter_by_ac" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>for A-Technics</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="acreg" id="acreg"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="t_check" id="t_check"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="l_check" id="l_check"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="all_checks" id="all_checks"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.thr@">
+          <ds:object>@VAR.thr@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.start_date@">
+          <ds:object>@VAR.start_date@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.end_date@">
+          <ds:object>@VAR.end_date@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_typ@">
+          <ds:object>@VAR.ac_typ@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT  
+	acreg,
+	t_check,
+	l_check,
+	all_checks
+FROM (  
+  SELECT
+    layover_legs.acreg as acreg,
+    count(CASE WHEN layover_legs.layover_time &lt;= @VAR.thr@ THEN 1 END) OVER (PARTITION BY layover_legs.acreg) as t_check,
+    count(CASE WHEN layover_legs.layover_time &gt;  @VAR.thr@ THEN 1 END) OVER (PARTITION BY layover_legs.acreg) as l_check,
+    count(*) OVER (PARTITION BY layover_legs.acreg) as all_checks    
+  FROM
+  (
+    SELECT
+      acu_a.ac_registr as acreg,
+      acu_a.validity as arr_date,
+      acu_a.arrival_time as arr_time,
+      acu_a.departure||'-'||acu_a.arrival||'&gt;&gt;'||acu_d.departure||'-'||acu_d.arrival as route,
+      acu_a.legno_i as a_legno_i, 
+      acu_d.legno_i as d_legno_i,
+      (acu_d.departure_date - acu_a.validity)*24*60 + (acu_d.departure_time - acu_a.arrival_time) as layover_time,
+      ROW_NUMBER() OVER (PARTITION BY acu_a.legno_i ORDER BY acu_d.departure_date ASC, acu_d.departure_time ASC) AS rnum
+    FROM ac_utilization acu_a
+    LEFT JOIN ac_utilization acu_d ON acu_d.ac_registr = acu_a.ac_registr AND acu_d.departure='SVO' AND ((acu_d.departure_date &gt; acu_a.validity) OR (acu_d.departure_date = acu_a.validity AND acu_d.departure_time &gt; acu_a.arrival_time))
+	LEFT JOIN aircraft a ON a.ac_registr = acu_a.ac_registr
+    WHERE acu_a.arrival = 'SVO'
+      AND (acu_a.validity &gt;= @VAR.start_date@ AND acu_a.validity &lt;= @VAR.end_date@)
+	  AND (a.ac_typ = '@VAR.ac_typ@' OR a.ac_model = '@VAR.ac_typ@')
+                 AND (
+                            a.ac_registr = '89115' AND (acu_a.validity &gt;= 17163)
+                            OR a.ac_registr = '89116' AND (acu_a.validity &gt;= 17163)
+                            OR a.ac_registr = '89114' AND (acu_a.validity &gt;= 17165)
+                            OR a.ac_registr = '89023' AND (acu_a.validity &gt;= 17177)       
+                            OR a.ac_registr = '89047' AND (acu_a.validity &gt;= 17181)
+                            OR a.ac_registr = '89112' AND (acu_a.validity &gt;= 17182)
+                            OR a.ac_registr = '89113' AND (acu_a.validity &gt;= 17190)
+                            OR a.ac_registr = '89057' AND (acu_a.validity &gt;= 17203)
+                            OR a.ac_registr = '89111' AND (acu_a.validity &gt;= 17203)
+                            OR a.ac_registr = '89108' AND (acu_a.validity &gt;= 17216)
+                            OR a.ac_registr = '89109' AND (acu_a.validity &gt;= 17223)
+                            OR a.ac_registr = '89110' AND (acu_a.validity &gt;= 17224)
+	             OR a.ac_registr = '89025' AND (acu_a.validity &gt;= 17226)
+	             OR a.ac_registr = '89107' AND (acu_a.validity &gt;= 17232) AND (acu_a.departure_time &gt;= 810)
+                            OR a.ac_registr = '89106' AND (acu_a.validity &gt;= 17240) AND (acu_a.departure_time &gt;= 820)
+                            OR a.ac_registr = '89028' AND (acu_a.validity &gt;= 17246) AND (acu_a.departure_time &gt;= 870)
+		OR a.ac_registr = '89105' AND (acu_a.validity &gt;= 17252) AND (acu_a.departure_time &gt;= 660)
+		OR a.ac_registr = '89097' AND (acu_a.validity &gt;= 17261) AND (acu_a.departure_time &gt;= 480)
+		OR a.ac_registr = '89043' AND (acu_a.validity &gt;= 17261) AND (acu_a.departure_time &gt;= 870)
+		OR a.ac_registr = '89103' AND (acu_a.validity &gt;= 17273) AND (acu_a.departure_time &gt;= 810)
+		OR a.ac_registr = '89102' AND (acu_a.validity &gt;= 17280) AND (acu_a.departure_time &gt;= 750)
+		OR a.ac_registr = '89104' AND (acu_a.validity &gt;= 17287) AND (acu_a.departure_time &gt;= 860)
+		OR a.ac_registr = '89042' AND (acu_a.validity &gt;= 17294) AND (acu_a.departure_time &gt;= 780)
+		OR a.ac_registr = '89099' AND (acu_a.validity &gt;= 17303) AND (acu_a.departure_time &gt;= 765)
+		OR a.ac_registr = '89022' AND (acu_a.validity &gt;= 17323) AND (acu_a.departure_time &gt;= 690)
+		OR a.ac_registr = '89046' AND (acu_a.validity &gt;= 17325) AND (acu_a.departure_time &gt;= 930)
+		OR a.ac_registr = '89100' AND (acu_a.validity &gt;= 17329) AND (acu_a.departure_time &gt;= 560)
+		OR a.ac_registr = '89017' AND (acu_a.validity &gt;= 17337) AND (acu_a.departure_time &gt;= 590)
+		OR a.ac_registr = '89065' AND (acu_a.validity &gt;= 17345) AND (acu_a.departure_time &gt;= 810)
+		OR a.ac_registr = '89062' AND (acu_a.validity &gt;= 17352) AND (acu_a.departure_time &gt;= 480)
+		OR a.ac_registr = '89045' AND (acu_a.validity &gt;= 17357) AND (acu_a.departure_time &gt;= 630)
+		OR a.ac_registr = '89064' AND (acu_a.validity &gt;= 17366) AND (acu_a.departure_time &gt;= 660)
+                           ) 
+  ) layover_legs
+  WHERE layover_legs.rnum = 1 AND layover_legs.d_legno_i IS NOT NULL
+) layover_count
+GROUP BY layover_count.acreg, layover_count.t_check, layover_count.l_check, layover_count.all_checks
+ORDER BY acreg</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AT_LM_T_Check_totals" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>for A_technics</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="t_check" id="t_check"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="l_check" id="l_check"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="all_checks" id="all_checks"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.thr@">
+          <ds:object>@VAR.thr@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.start_date@">
+          <ds:object>@VAR.start_date@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.end_date@">
+          <ds:object>@VAR.end_date@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_typ@">
+          <ds:object>@VAR.ac_typ@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT
+	t_check,
+	l_check,
+	all_checks
+FROM (  
+  SELECT
+    count(CASE WHEN layover_legs.layover_time &lt;= @VAR.thr@ THEN 1 END) as t_check,
+    count(CASE WHEN layover_legs.layover_time &gt;  @VAR.thr@ THEN 1 END) as l_check,
+    count(*) as all_checks    
+  FROM
+  (
+    SELECT
+	  acu_d.legno_i as d_legno_i,
+      (acu_d.departure_date - acu_a.validity)*24*60 + (acu_d.departure_time - acu_a.arrival_time) as layover_time,
+      ROW_NUMBER() OVER (PARTITION BY acu_a.legno_i ORDER BY acu_d.departure_date ASC, acu_d.departure_time ASC) AS rnum
+    FROM ac_utilization acu_a
+    LEFT JOIN ac_utilization acu_d ON acu_d.ac_registr = acu_a.ac_registr AND acu_d.departure='SVO' AND ((acu_d.departure_date &gt; acu_a.validity) OR (acu_d.departure_date = acu_a.validity AND acu_d.departure_time &gt; acu_a.arrival_time))
+	LEFT JOIN aircraft a ON a.ac_registr = acu_a.ac_registr
+    WHERE acu_a.arrival = 'SVO'
+      AND (acu_a.validity &gt;= @VAR.start_date@ AND acu_a.validity &lt;= @VAR.end_date@)
+	  AND (a.ac_typ = '@VAR.ac_typ@' OR a.ac_model = '@VAR.ac_typ@')
+                 AND (
+                            a.ac_registr = '89115' AND (acu_a.validity &gt;= 17163)
+                            OR a.ac_registr = '89116' AND (acu_a.validity &gt;= 17163)
+                            OR a.ac_registr = '89114' AND (acu_a.validity &gt;= 17165)
+                            OR a.ac_registr = '89023' AND (acu_a.validity &gt;= 17177)       
+                            OR a.ac_registr = '89047' AND (acu_a.validity &gt;= 17181)
+                            OR a.ac_registr = '89112' AND (acu_a.validity &gt;= 17182)
+                            OR a.ac_registr = '89113' AND (acu_a.validity &gt;= 17190)
+                            OR a.ac_registr = '89057' AND (acu_a.validity &gt;= 17203)
+                            OR a.ac_registr = '89111' AND (acu_a.validity &gt;= 17203)
+                            OR a.ac_registr = '89108' AND (acu_a.validity &gt;= 17216)
+                            OR a.ac_registr = '89109' AND (acu_a.validity &gt;= 17223)
+                            OR a.ac_registr = '89110' AND (acu_a.validity &gt;= 17224)
+	             OR a.ac_registr = '89025' AND (acu_a.validity &gt;= 17226)
+	             OR a.ac_registr = '89107' AND (acu_a.validity &gt;= 17232) AND (acu_a.departure_time &gt;= 810)
+                            OR a.ac_registr = '89106' AND (acu_a.validity &gt;= 17240) AND (acu_a.departure_time &gt;= 820)
+                            OR a.ac_registr = '89028' AND (acu_a.validity &gt;= 17246) AND (acu_a.departure_time &gt;= 870)
+		OR a.ac_registr = '89105' AND (acu_a.validity &gt;= 17252) AND (acu_a.departure_time &gt;= 660)
+		OR a.ac_registr = '89097' AND (acu_a.validity &gt;= 17261) AND (acu_a.departure_time &gt;= 480)
+		OR a.ac_registr = '89043' AND (acu_a.validity &gt;= 17261) AND (acu_a.departure_time &gt;= 870)
+		OR a.ac_registr = '89103' AND (acu_a.validity &gt;= 17273) AND (acu_a.departure_time &gt;= 810)
+		OR a.ac_registr = '89102' AND (acu_a.validity &gt;= 17280) AND (acu_a.departure_time &gt;= 750)
+		OR a.ac_registr = '89104' AND (acu_a.validity &gt;= 17287) AND (acu_a.departure_time &gt;= 860)
+		OR a.ac_registr = '89042' AND (acu_a.validity &gt;= 17294) AND (acu_a.departure_time &gt;= 780)
+		OR a.ac_registr = '89099' AND (acu_a.validity &gt;= 17303) AND (acu_a.departure_time &gt;= 765)
+		OR a.ac_registr = '89022' AND (acu_a.validity &gt;= 17323) AND (acu_a.departure_time &gt;= 690)
+		OR a.ac_registr = '89046' AND (acu_a.validity &gt;= 17325) AND (acu_a.departure_time &gt;= 930)
+		OR a.ac_registr = '89100' AND (acu_a.validity &gt;= 17329) AND (acu_a.departure_time &gt;= 560)
+		OR a.ac_registr = '89017' AND (acu_a.validity &gt;= 17337) AND (acu_a.departure_time &gt;= 590)
+		OR a.ac_registr = '89065' AND (acu_a.validity &gt;= 17345) AND (acu_a.departure_time &gt;= 810)
+		OR a.ac_registr = '89062' AND (acu_a.validity &gt;= 17352) AND (acu_a.departure_time &gt;= 480)
+		OR a.ac_registr = '89045' AND (acu_a.validity &gt;= 17357) AND (acu_a.departure_time &gt;= 630)
+		OR a.ac_registr = '89064' AND (acu_a.validity &gt;= 17366) AND (acu_a.departure_time &gt;= 660)
+                           ) 
+  ) layover_legs
+  WHERE layover_legs.rnum = 1 AND layover_legs.d_legno_i IS NOT NULL
+) layover_count
+GROUP BY layover_count.t_check, layover_count.l_check, layover_count.all_checks</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

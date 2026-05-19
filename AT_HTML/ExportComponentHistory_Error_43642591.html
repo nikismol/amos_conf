@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : ExportComponentHistory_Error</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Emailer_43642557.html">Emailer</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : ExportComponentHistory_Error
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified by <span class='editor'> Филипенков Никита Константинович</span> on сент. 28, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="table-wrap"><table class="confluenceTable"><colgroup><col style="width: 232.0px;"/><col style="width: 297.0px;"/></colgroup><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Task Action</td><td class="confluenceTd">DatasourceExporterTask</td></tr><tr><td class="confluenceTd">Source Type</td><td class="confluenceTd">Plain SQL</td></tr><tr><td colspan="1" class="confluenceTd">Include Columns Header</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">Output format</td><td class="confluenceTd">Log only</td></tr><tr><td colspan="1" class="confluenceTd">Workflow </td><td colspan="1" class="confluenceTd">12 | ExportComponentHistory_ErrorEmailer</td></tr><tr><td colspan="1" class="confluenceTd">Scheduling | Rec. pattern | Cron </td><td colspan="1" class="confluenceTd">0 0,30 * * * ? *</td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><strong>Результат</strong>: Информирует о том, что интерфейс SAP отработал с ошибками/предупреждениями. </p></div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    DECODE(scheduler_log.status,
+        &#39;1&#39;, &#39;INTERFACE_WARNING&#39;,
+        &#39;2&#39;, &#39;INTERFACE_ERROR&#39;,
+        &#39;7&#39;, &#39;INTERFACE_PARALLEL_EXECUTION&#39;,
+        &#39;6&#39;, &#39;EXECUTING&#39;,
+        &#39;0&#39;, &#39;SUCCESS&#39;)  /*6,0 for information only, not selected*/ as state,
+    scheduler_conf.name,
+    scheduler_log.status,
+    scheduler_log.log_text
+FROM scheduler_log
+LEFT JOIN scheduler_conf ON scheduler_conf.scheduler_confno_i = scheduler_log.scheduler_confno_i
+WHERE scheduler_log.mutation*(24*60*60*1000)+scheduler_log.mutation_time &gt;= FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))*(24*60*60*1000) + TO_CHAR(SYSTIMESTAMP, &#39;SSSSS&#39;)*1000-30*60*1000
+  AND scheduler_log.scheduler_confno_i IN (
+                                           2002,
+                                           /*ExportComponentHistory*/ 2003,
+                                           /*ExportAircraft*/ 6404,
+                                           /*TransferPartDefition*/ 6402,
+                                           /*TransferShipment*/ 2004,
+                                           /*TransferOrder*/ 2005 /*TransferReceiving*/)
+  AND scheduler_log.status !=0
+  AND scheduler_log.status !=7
+  AND scheduler_log.status !=6</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

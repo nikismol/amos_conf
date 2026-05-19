@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Корректировка регистрационных номер ВС</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953709.html">База знаний</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953753.html">Типичные кейсы и способы их разрешения</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Корректировка регистрационных номер ВС
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on авг. 24, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<ol><li>Направить список регистрационных номеров ВС коллегам из <em><strong>ИНТЕГРО</strong></em> в группу Skype, для проверки наличие бортов в справочниках ММ.</li><li>Заблаговременно проверяем с помощью <em><strong>SQL</strong></em><span> запросов</span> в БД <span>AMOS</span> <span>PROD следующие данные:</span><ol><li><p class="auto-cursor-target">Проверить данные о будущих рейсы</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT *
+FROM ac_future_flights
+WHERE ac_registr IN (&#39;73159&#39;, &#39;73127&#39;, &#39;73768&#39;, &#39;73715&#39;)</pre>
+</div></div></li><li><p class="auto-cursor-target">Проверить данные о задержках рейсов</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT * 
+FROM delay_cnl_import
+WHERE ac_registr IN (&#39;73159&#39;, &#39;73127&#39;, &#39;73768&#39;, &#39;73715&#39;)</pre>
+</div></div></li><li><p class="auto-cursor-target">Проверить данные об Event-ах</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT *
+FROM moc_daily_conseq
+WHERE ac_registr IN (&#39;73159&#39;, &#39;73127&#39;, &#39;73768&#39;, &#39;73715&#39;)</pre>
+</div></div><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT *
+FROM moc_daily_records
+WHERE ac_registr IN (&#39;73159&#39;, &#39;73127&#39;, &#39;73768&#39;, &#39;73715&#39;)</pre>
+</div></div></li><li><p class="auto-cursor-target">Проверить данные о TQ</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT * 
+FROM tech_query 
+WHERE ref_key in (&#39;73159&#39;, &#39;73127&#39;, &#39;73768&#39;, &#39;73715&#39;)</pre>
+</div></div></li></ol></li><li><p class="auto-cursor-target">Отправить 3 уведомления в <em><strong>APN 5 Messanger</strong></em>. В 21:00 (за 20 минут до начала работ выставить уведомление, за 10 мин и за 2 мин до начала работ) в <span>AMOS</span> <span>PROD</span> (параметры на скриншоте, текст сообщения в примечании):<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/144215485/144219586.png" data-image-src="attachments/144215485/144219586.png" data-unresolved-comment-count="0" data-linked-resource-id="144219586" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-8-24_14-23-34.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="144215485" data-linked-resource-container-version="2"></span> </p><div class="confluence-information-macro confluence-information-macro-note"><p class="title">Текст уведомлений</p><span class="aui-icon aui-icon-small aui-iconfont-warning confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p style="">Уважаемые Коллеги!</p><p style=""><br/>Через 20 минут (21:20 МСК 01.04.2022) на сервере AMOS PROD запланировано проведение работ по смене бортовых номеров:<br/> <br/>VQ-BMX --&gt; 73159<br/>VQ-BWE --&gt; 73127<br/>VP-BFG --&gt; 73768<br/>VP-BEW --&gt; 73715<br/> <br/>Продолжительность: 30 минут (AMOS PROD будет недоступен)</p><p style="">Пожалуйста сохраните все изменения.</p><p style=""> _____________________________________________________________________<br/>Dear Colleagues!</p><p style=""><br/></p><p style=""><span>In 20 minutes (18:20 UTC 01.04.2022) on the AMOS PROD server scheduled technical work - change of the AC registration numbers:  </span></p><p style=""><span> </span></p><p style=""><span>VQ-BMX --&gt; 73159<br/>VQ-BWE --&gt; 73127<br/>VP-BFG --&gt; 73768<br/>VP-BEW --&gt; 73715<br/> <br/>Duration: up to 30 minutes (AMOS PROD will be unavailable) Please save all your work.  </span></p><p style=""><span> </span></p><p style="">Best Wishes,</p></div></div></li><li><span style="color: rgb(0,0,0);text-decoration: none;">В</span><em><strong><span style="color: rgb(0,0,0);text-decoration: none;"> 21:10 </span></strong></em><span style="color: rgb(0,0,0);text-decoration: none;">отключить</span><span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;">интерфейсы</span><span style="color: rgb(0,0,0);text-decoration: none;"> </span><span style="color: rgb(0,0,0);text-decoration: none;">в</span><span style="color: rgb(0,0,0);text-decoration: none;"> <span><em><strong>APN 1404</strong></em>:</span></span><ol><li><span style="color: rgb(0,0,0);text-decoration: none;"><span> TRANSFER FUTURE FLIGHTS</span></span></li><li><span style="color: rgb(0,0,0);text-decoration: none;"><span> TRANSFER EXECUTED FLIGHTS</span></span></li><li><span style="color: rgb(0,0,0);text-decoration: none;"><span> TRANSFER DELAYS AND CANCELLATIONS<br/></span></span></li></ol></li><li>Повторно проверить отсутствие записей в БД с помощью <em><strong>SQL</strong></em><span> запроса</span> описанному в пункте 2.<ol><li><p>В случае выявления записей в таблицах по <em><strong>«новым»</strong></em> регистрационным ВС на которые будет производиться замена .<br/>Удалить по уникальному ключу <span>AC</span>_<span>REG</span> все записи до начала работ (предварительно сохранив из таблицы в БД).</p></li></ol></li><li>В <em><strong>21:20</strong> </em>отключить пользователей от ИС <span>AMOS</span> <span>PROD</span> в <em><strong>APN 10</strong></em> (скриншот последовательности ниже).<span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/144215485/144219597.png" data-image-src="attachments/144215485/144219597.png" data-unresolved-comment-count="0" data-linked-resource-id="144219597" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-8-24_14-37-12.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="144215485" data-linked-resource-container-version="2"></span></li><li>Коллеги из <em><strong>ДБА</strong></em> создадут точку восстановления, когда в <em><strong>APN 7</strong></em> разорвутся все сессии у пользователей.</li><li><p class="auto-cursor-target">После создания точки восстановления. Открыть <strong><em>APN 254</em></strong> и заменить заменяющееся значение по умолчанию <em><strong>«Vendor Code» </strong></em>на<span><em><strong> «Aircraft Registration»</strong></em>.<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/144215485/144219598.png" data-image-src="attachments/144215485/144219598.png" data-unresolved-comment-count="0" data-linked-resource-id="144219598" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-8-24_14-39-47.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="144215485" data-linked-resource-container-version="2"></span><br/></span></p><div class="confluence-information-macro confluence-information-macro-warning"><span class="aui-icon aui-icon-small aui-iconfont-error confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Важно: checkbox «do not update tables containing *hist* <em><strong>не должен стоять</strong></em> (не будут заменены исторические значения).</p></div></div><p class="auto-cursor-target"><span><br/></span></p></li><li>Заменить значения запланированных БН.</li><li>По завершению корректировки проверить наличие новых БН в <em><strong>APN 308</strong></em>.</li><li>Запустить интерфейсы (отключенные в пункте 4).</li><li>Просить удалить точку восстановления коллег из <em><strong>ДБА</strong></em>.</li><li><span style="letter-spacing: 0.0px;">Запускаем пользователей:</span><ol><li><span style="letter-spacing: 0.0px;">Удалить </span><em style="letter-spacing: 0.0px;"><strong>«0»</strong></em><span style="letter-spacing: 0.0px;"> из поля лимит сессий</span></li><li><span style="letter-spacing: 0.0px;">Убрать </span><span style="letter-spacing: 0.0px;">checkbox «Limit max. Amount of online users to»</span></li><li><span style="letter-spacing: 0.0px;">Нажать кнопку <em><strong>Save</strong></em></span></li><li><span style="letter-spacing: 0.0px;">Проверить активные сессии в <em><strong>APN 7</strong></em> (online Users)</span></li></ol></li><li>Проверить корректность отработки очередей и возможное кол-во зависших сообщений FF, EF, Delays (APN2606, APN992).</li><li>Направить ответ по email о завершении работ.</li></ol></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/144215485/144219586.png">image2023-8-24_14-23-34.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/144215485/144219597.png">image2023-8-24_14-37-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/144215485/144219598.png">image2023-8-24_14-39-47.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

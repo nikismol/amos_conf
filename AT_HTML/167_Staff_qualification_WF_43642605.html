@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : 167_Staff_qualification_WF</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : 167_Staff_qualification_WF
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified by <span class='editor'> Филипенков Никита Константинович</span> on сент. 28, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Task Action</td><td class="confluenceTd">DatasourceExporterTask</td></tr><tr><td class="confluenceTd">Source Type</td><td class="confluenceTd">Plain SQL</td></tr><tr><td class="confluenceTd">Output format</td><td class="confluenceTd">Log only</td></tr><tr><td colspan="1" class="confluenceTd">Workflow</td><td colspan="1" class="confluenceTd">12 | 167_Staff_qualification_WF</td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p><span style="color: rgb(51,51,51);">Рассылка настроена в рамках TQ 33029.</span></p><p><strong>Результат</strong>: Отчет для руководства ДПЛГ с информацией из APN 551:<br/>     1. список сотрудников, имеющих выбранную квалификацию - issue date, expire date <br/>     2. список сотрудников записанных на курс с выбранной квалификацией, старт курса.</p><p>Рассылка выполняется, если у сотрудника заканчивается спецификация (Expire Date) типа CAD_TRAINING.</p><p><strong>Разработчик:</strong> Иваненко Владимир Андреевич.</p></div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT 
+		sign.user_sign AS Sign,
+		sign.firstname||&#39; &#39;||sign.lastname AS Name,
+        staff_pqs_class.pqs_class_id||&#39;/&#39;||staff_pqs_type.type_label AS Qualification,
+        to_char(to_date(&#39;01.01.1970&#39;, &#39;dd.mm.yyyy&#39;) + (staff_pqs_qualification.issue_date+729)) Issue_Date,
+       	to_char(to_date(&#39;01.01.1970&#39;, &#39;dd.mm.yyyy&#39;) + (staff_pqs_qualification.expiry_date+729)) Expire_Date
+FROM staff_pqs_qualification
+		LEFT JOIN staff_pqs_type ON staff_pqs_qualification.pqs_type_no_i = staff_pqs_type.pqs_type_no_i
+		LEFT JOIN staff_pqs_class ON staff_pqs_type.pqs_class_no_i = staff_pqs_class.pqs_class_no_i 
+		LEFT JOIN sign ON staff_pqs_qualification.employee_no_i = sign.employee_no_i 
+WHERE 
+ staff_pqs_class.pqs_class_id = &#39;CAD_TRAINING&#39;
+AND
+staff_pqs_qualification.expiry_date = FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))+30
+
+UNION 
+
+SELECT &#39;EXP_CHK_OK&#39;,
+		NULL,
+       	NULL,
+	   	NULL,
+		NULL
+FROM dual 
+WHERE (
+         SELECT count(1) 
+         FROM staff_pqs_qualification
+		LEFT JOIN staff_pqs_type ON staff_pqs_qualification.pqs_type_no_i = staff_pqs_type.pqs_type_no_i
+		LEFT JOIN staff_pqs_class ON staff_pqs_type.pqs_class_no_i = staff_pqs_class.pqs_class_no_i 
+		LEFT JOIN sign ON staff_pqs_qualification.employee_no_i = sign.employee_no_i 
+WHERE 
+ staff_pqs_class.pqs_class_id = &#39;CAD_TRAINING&#39;
+AND
+staff_pqs_qualification.expiry_date = FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))+30
+      )= &#39;0&#39; 
+ORDER BY 4</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : 269_Data_Bank_Exporter_tq72091</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : 269_Data_Bank_Exporter_tq72091
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT value
+  FROM (
+SELECT
+               CASE WHEN wo_count &gt; 1
+                         THEN event_perfno_i||chr(TO_NUMBER(wo_num - 1 + ascii(&#39;a&#39;)))
+                         ELSE event_perfno_i
+               END as event_perfno_i,
+               ws_date, 
+               ac_registr,
+               ac_typ,
+               ac_model, 
+               wo_text,
+               OBNAR,
+               ata_chapter, 
+               removal_text,
+               partno,
+               serialno,
+               TSN,
+               tbi,
+               narab,
+               tah,
+               tac, 
+               additional_field_1,
+               additional_field_2,
+               wo,wo_month,max_month_wo,
+               CASE WHEN max_month_wo = wo AND NVL(max_h_serialno_wo, 0) = NVL(h_serialno, 0) THEN DECODE(aircraft_type, &#39;A32S&#39;, &#39;A320&#39;, aircraft_type) || &#39;_&#39; ||trim(wo_month) ELSE NULL END as row_delimeter
+FROM (
+SELECT  
+	&#39;2801&#39;||TO_CHAR(SUBSTR(wo_header.event_perfno_i, -6)) as event_perfno_i,
+	TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (workstep_link.workstep_date), &#39;DD.MM.YYYY&#39;) as ws_date,
+	substr(wo_header.ac_registr,1,5) as ac_registr,
+	DECODE (aircraft.ac_typ,
+                    	 &#39;A32S&#39;, &#39;A2&#39;,
+                    	 &#39;B737&#39;, &#39;Б3&#39;,
+                    	 &#39;A330&#39;, &#39;А3&#39;,
+                     	&#39;A350&#39;, &#39;А5&#39;,
+                     	&#39;B777&#39;, &#39;Б7&#39;,
+                     	&#39;RRJ&#39;, &#39;59&#39;,
+                                 &#39;&#39;) as ac_typ,
+	DECODE (aircraft.ac_model,
+                     	&#39;A320&#39;, &#39;00&#39;,
+                    	 &#39;A321&#39;, &#39;21&#39;,
+                     	&#39;A320N&#39;, &#39;00&#39;,
+                     	&#39;A321NX&#39;, &#39;21&#39;,
+                     	&#39;B738&#39;, &#39;800&#39;,
+                     	&#39;A333&#39;, &#39;00&#39;,
+                     	&#39;A359&#39;, &#39;00&#39;,
+                    	&#39;B77W&#39;, &#39;00&#39;,
+                    	 &#39;RRJ95B&#39;, &#39;00&#39;,
+                                 &#39;&#39;) as ac_model, 
+	TRIM(REPLACE(SUBSTR(wtd.text,1,250), CHR(10), &#39; &#39;)) as wo_text,
+	CASE 
+            	WHEN wo_header.type= &#39;M&#39; THEN &#39;10&#39;
+           	 WHEN wo_header.type IN (&#39;C&#39;, &#39;P&#39;) THEN &#39;20&#39;
+            	ELSE &#39;&#39;
+	END OBNAR,
+	SUBSTR(replace(wo_header.ata_chapter, &#39;-&#39;, &#39;&#39;), 1, 4) as ata_chapter, 
+              TRIM(
+                        REPLACE(
+                                         SUBSTR(
+                                                        CASE WHEN history.confirmed In (&#39;Y&#39;, &#39;N&#39;)
+                                                                  THEN COALESCE(fh.action_performed,
+                                                                                                 cm_text.manual_repair_text,
+                                                                                                 history_short_text.text
+                                                                                                )
+                                                                  ELSE COALESCE(
+                                                                                               history_short_text.text,
+                                                                                               wta_removal.text,
+                                                                                               DECODE(wta.text, NULL, &#39;-&#39;, wta.text)
+                                                                                              )
+                                                        END, 0, 150
+                                                       ), CHR(10), &#39; &#39;
+                                         )
+                        ) as removal_text,
+	CASE 
+            	WHEN history.partno IS NULL THEN &#39;-&#39;
+            	ELSE substr(history.partno,1,20)
+	END   partno,
+	CASE 
+            	WHEN history.serialno IS NULL THEN &#39;-&#39;
+            	ELSE substr(history.serialno,1,20) 
+	END  serialno,
+	CASE 
+            	WHEN history.tsn_unknown=&#39;Y&#39; or history.msn is null  THEN &#39;-&#39; 
+            	ELSE TO_CHAR(TO_NUMBER(CEIL(history.msn/60)))
+	END  TSN,
+	CASE 
+            	WHEN history.mbi IS NULL THEN &#39;-&#39;
+           	 WHEN history.mbi=0 THEN &#39;-&#39; 
+            	ELSE TO_CHAR(TO_NUMBER(CEIL(history.mbi/60)))
+	END tbi,
+	CASE 
+         	WHEN history.partno IS NULL THEN &#39;-&#39;
+          	ELSE &#39;1&#39;
+	END   narab,
+	CASE WHEN wo_header.issue_tac IS NOT NULL THEN TO_CHAR(TO_NUMBER(wo_header.issue_tac))
+                        ELSE (SELECT DECODE (MAX(ac_utilization.tac), null, &#39;-&#39;, TO_CHAR(TO_NUMBER(MAX(ac_utilization.tac))))
+                                   FROM ac_utilization
+                                   WHERE 1=1
+                                                  AND ac_utilization.ac_registr = wo_header.ac_registr
+                                                  AND ac_utilization.recno&gt;0
+                                                  AND (ac_utilization.validity * 24 * 60 + ac_utilization.arrival_time) &lt;=  (wo_header.issue_date * 24 * 60 + NVL(wo_header.issue_time, 0))
+                                     )
+              END as tac,
+	CASE WHEN wo_header.issue_tah IS NOT NULL THEN TO_CHAR(TO_NUMBER(CEIL(wo_header.issue_tah)))
+                        ELSE (SELECT DECODE (MAX(ac_utilization.tah), null, &#39;-&#39;, TO_CHAR(TO_NUMBER(CEIL(MAX(ac_utilization.tah)/60))))
+                                   FROM ac_utilization
+                                   WHERE 1=1
+                                                  AND ac_utilization.ac_registr = wo_header.ac_registr
+                                                  AND ac_utilization.recno&gt;0
+                                                  AND (ac_utilization.validity * 24 * 60 + ac_utilization.arrival_time) &lt;=  (wo_header.issue_date * 24 * 60 + NVL(wo_header.issue_time, 0))
+                                     )
+              END as tah, 
+              &#39;-&#39; as additional_field_1,
+              &#39;-&#39; as additional_field_2,
+              aircraft.ac_typ as aircraft_type,
+              wo_header.event_perfno_i as wo,
+              TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + wo_header.issue_date, &#39;Month&#39;, &#39;NLS_DATE_LANGUAGE = english&#39;) as wo_month,
+              TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + wo_header.issue_date, &#39;MM&#39;) as wo_month_digit,
+              MAX(wo_header.event_perfno_i) OVER (PARTITION BY aircraft.ac_typ, TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + wo_header.issue_date, &#39;mm&#39;)) as max_month_wo,
+              history.serialno as h_serialno,
+              MAX(history.serialno) OVER (PARTITION BY aircraft.ac_typ, aircraft.ac_typ, TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + wo_header.issue_date, &#39;mm&#39;), wo_header.event_perfno_i) as max_h_serialno_wo,
+              ROW_NUMBER() OVER (PARTITION BY wo_header.event_perfno_i ORDER BY history.serialno) as wo_num,
+              COUNT(1) OVER (PARTITION BY wo_header.event_perfno_i) as wo_count
+FROM wo_header
+JOIN aircraft ON aircraft.ac_registr=wo_header.ac_registr AND aircraft.operator=&#39;AFL&#39; AND aircraft.status &lt;&gt; &#39;9&#39;
+JOIN address ON aircraft.auth_address_i=address.address_i AND address.vendor = &#39;ФАВТ&#39; AND address.status &lt;&gt; 9 
+JOIN  workstep_link ON wo_header.event_perfno_i= workstep_link.event_perfno_i AND workstep_link.sequenceno=1
+JOIN (
+          SELECT wo_text_description.descno_i,
+                        DBMS_lob.substr(wo_text_description.text,2000,1) as text
+          FROM wo_text_description                   
+         ) wtd ON workstep_link.descno_i=wtd.descno_i
+LEFT JOIN (
+                    SELECT wo_text_action.workstep_linkno_i,
+                                  DBMS_lob.substr(wo_text_action.text,2000,1) as text,
+                                  MIN(wo_text_action.actionno_i) OVER (PARTITION BY wo_text_action.workstep_linkno_i) as min_actionno_i,
+                                  wo_text_action.actionno_i    
+                    FROM wo_text_action
+                   ) wta ON wta.workstep_linkno_i = workstep_link.workstep_linkno_i AND wta.min_actionno_i = wta.actionno_i
+LEFT JOIN history ON wo_header.event_perfno_i=history.event_perfno_i AND history.vm = &#39;YA&#39; AND history.label_start = &#39;Y&#39;
+LEFT JOIN (
+                   SELECT failure_history.historyno_i,
+                                 DBMS_lob.substr(failure_history.action_performed,2000,1) as action_performed
+                   FROM failure_history 
+                  ) fh ON history.historyno_i = fh.historyno_i
+LEFT JOIN (
+                    SELECT od_detail.detailno_i,
+                                  od_header.orderno,
+                                  od_detail.partno,
+                                  od_detail.serialno,
+                                  DBMS_lob.substr(cm_project_partition.manual_repair_text,2000,1) as manual_repair_text
+                    FROM od_header
+                    JOIN od_detail ON od_detail.orderno_i = od_header.orderno_i
+                    JOIN cm_project_partition ON cm_project_partition.mime_type_primary = od_detail.detailno_i AND cm_project_partition.mime_type = &#39;ORDER_DE&#39;
+                    WHERE cm_project_partition.manual_repair_text IS NOT NULL 
+                   ) cm_text ON history.orderno = cm_text.orderno AND history.partno = cm_text.partno AND history.serialno = cm_text.serialno
+LEFT  JOIN (
+                     SELECT history_text.historyno_i,
+                                   LISTAGG (history_text.short_text, &#39; &#39;) WITHIN GROUP (ORDER BY history_text.recno) as text
+                     FROM history_text
+                     GROUP BY historyno_i
+                    ) history_short_text ON history.historyno_i = history_short_text.historyno_i
+LEFT JOIN (
+                   SELECT wo_part_on_off.event_perfno_i,
+                                 wo_part_on_off.labelno,
+                                 DBMS_lob.substr(wo_text_action.text,2000,1) as text,
+                                 wo_part_on_off.partno,
+                                 wo_part_on_off.serialno
+                   FROM wo_part_on_off
+                   JOIN wo_text_action ON wo_part_on_off.actionno_i = wo_text_action.actionno_i
+                 ) wta_removal ON history.event_perfno_i = wta_removal.event_perfno_i AND history.labelno = wta_removal.labelno AND wta_removal.partno = history.partno AND history.serialno = wta_removal.serialno
+WHERE 1=1
+	AND wo_header.type IN (&#39;C&#39;, &#39;M&#39;, &#39;P&#39;)
+              AND wo_header.issue_date BETWEEN ADD_MONTHS(TRUNC(SYSDATE, &#39;MON&#39;), - 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;)
+                                                                                   AND TRUNC(SYSDATE, &#39;MON&#39;) - 1 -  to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;)
+	AND (
+		(aircraft.ac_typ IN (&#39;A32S&#39;) and aircraft.ac_model  IN (&#39;A320&#39;, &#39;A320N&#39;)
+                                	AND (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|42|44|45|46|47|49|50|51|52|53|54|55|56|57|60|61|70|71|72|73|74|75|76|77|78|79|80)&#39;)
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21-00|21-20|21-50|22-00|23-00|23-61|23-71|24-00|24-92|25-00|25-13|25-20|25-23|25-26|25-28)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(25-29|25-30|25-40|25-45|25-52|25-53|25-54|25-55|25-60|25-66|25-67|25-71|26-00|26-20|27-00|28-00)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(28-25|29-00|30-00|30-20|30-40|30-70|31-00|31-35|31-36|32-00|32-40|33-00|33-20|34-00|34-21|35-00|35-23)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(35-30|35-31|35-32|36-00|38-00|38-30|38-32|44-00|46-00|47-00|49-00|49-11|49-40|49-90|50-00|51-00|51-75)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(52-00|52-10|52-20|52-31|52-32|52-33|52-40|52-81|52-82|53-00|53-11|53-20|53-22|53-25|53-35|53-40|53-41|53-42)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(53-46|53-50|54-00|54-51|54-54|54-55|54-57|55-00|55-10|55-20|55-30|55-40|56-00|56-10|57-00|57-20|57-30|57-40)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(57-42|57-50|57-52|57-55|57-60|57-70|70-00|71-00|71-10|71-70|72-00|72-40|73-00|74-00|75-00|76-00|77-00|78-00)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(78-30|79-00|79-20|80-00)&#39;))
+			)
+		)
+	OR 
+		(aircraft.ac_typ IN (&#39;A32S&#39;) and aircraft.ac_model IN (&#39;A321&#39;, &#39;A321NX&#39;)
+			AND (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|42|44|45|46|47|49|50|51|52|53|54|55|56|57|60|61|70|71|72|73|74|75|76|77|78|79|80)&#39;)
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21-00|22-00|23-00|23-61|23-71|24-00|25-00|25-13|25-20|25-23|25-26|25-28|25-29|25-30|25-31|25-45|25-52|25-53|25-54)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(25-55|25-60|25-64|25-66|25-67|25-71|26-00|27-00|28-00|28-25|28-27|29-00|30-00|31-00|31-35|31-36|32-00|32-40|33-00)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(33-20|34-00|34-21|35-00|35-30|35-32|36-00|38-00|38-30|38-32|44-00|46-00|49-00|49-90|50-00|51-00|51-75|52-00|52-13|52-41)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(52-82|53-00|53-10|53-11|53-15|53-21|53-22|53-35|53-55|54-00|54-50|55-00|55-12|56-00|57-00|57-41|57-42|57-43|57-55|71-00|72-00)&#39;))
+			AND  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(73-00|74-00|75-00|76-00|77-00|78-00|79-00|80-00)&#39;))
+			)
+		)
+	OR  
+		(aircraft.ac_typ IN (&#39;A330&#39;)
+			AND (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|42|44|45|46|47|49|50|51|52|53|54|55|56|57|60|61|70|71|72|73|74|75|76|77|78|79|80)&#39;)
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21-00|22-00|23-00|23-61|23-71|24-00|25-00|25-10|25-20|25-23|25-26|25-27|25-28|25-30|25-40|25-45|25-51|25-53|25-60)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(25-73|26-00|27-00|28-00|29-00|30-00|31-00|31-30|31-33|31-36|32-00|32-40|32-41|32-42|32-49|33-00|34-00|35-00|35-30|35-31)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(35-32|36-00|38-00|38-32|45-40|45-41|46-00|49-00|50-00|51-00|51-75|52-00|53-00|54-00|54-50|55-00|56-00|57-00|57-50|70-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(71-00|72-00|73-00|74-00|75-00|76-00|77-00|78-00|79-00|80-00)&#39;))
+			)
+		)
+	OR
+		(aircraft.ac_typ IN (&#39;A350&#39;) 
+			AND (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|42|44|45|46|47|49|50|51|52|53|54|55|56|57|60|61|70|71|72|73|74|75|76|77|78|79|80)&#39;)
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21-00|22-00|23-00|23-71|24-00|25-00|25-20|25-13|25-23|25-26|25-28|25-30|25-40|25-51|25-60|25-66|25-71|26-00|27-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(28-00|29-00|30-00|31-00|32-00|32-41|33-00|34-00|35-00|35-30|35-32|36-00|38-00|38-32|42-00|44-00|44-21|45-00|46-00|47-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(49-00|49-90|50-00|50-13|51-00|51-75|52-00|52-10|52-32|52-33|52-40|53-00|53-32|53-35|54-00|55-00|56-00|57-00|70-00|71-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(72-00|73-00|74-00|75-00|76-00|77-00|78-00|79-00|80-00)&#39;))
+			)
+		)
+	OR
+		(aircraft.ac_typ IN (&#39;B737&#39;) 
+			AND (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|42|44|45|46|47|49|50|51|52|53|54|55|56|57|60|61|70|71|72|73|74|75|76|77|78|79|80)&#39;)
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21-00|22-00|23-00|23-61|23-71|24-00|25-00|25-21|25-24|25-27|25-52|25-64|26-00|27-00|28-00|29-00|30-00|31-31|31-33)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(32-00|32-41|32-45|33-00|33-14|34-00|35-00|35-22|35-31|36-00|38-00|38-31|44-00|46-00|49-00|50-00|51-00|51-05|51-21|52-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(53-00|54-00|54-53|55-00|55-10|56-00|57-00|70-00|71-00|72-00|73-00|74-00|75-00|75-21|76-00|77-00|78-00|79-00|80-00)&#39;))
+			)
+		)
+	OR
+		(aircraft.ac_typ IN (&#39;B777&#39;) 
+			AND (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|42|44|45|46|47|49|50|51|52|53|54|55|56|57|60|61|70|71|72|73|74|75|76|77|78|79|80)&#39;)
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21-00|22-00|23-00|23-61|23-71|24-00|25-00|25-21|25-24|25-27|25-28|25-41|25-52|25-53|25-62|25-64|25-66|26-00|27-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(28-00|29-00|30-00|31-00|31-31|32-00|32-45|33-00|34-00|35-00|35-31|36-00|37-00|38-00|38-31|44-00|49-00|51-00|51-21|52-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(52-53|53-00|54-00|54-51|55-00|55-18|56-00|57-00|57-05|57-15|57-41|57-51|71-00|72-00|73-00|74-00|75-00|76-00|77-00|78-00|79-00|80-00)&#39;))
+			)
+		)
+	OR
+		(aircraft.ac_typ IN (&#39;RRJ&#39;)
+			AND (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21|22|23|24|25|26|27|28|29|30|31|32|33|34|35|36|37|38|42|44|45|46|47|49|50|51|52|53|54|55|56|57|60|61|70|71|72|73|74|75|76|77|78|79|80)&#39;)
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(21-00-00|22-00-00|23-00-00|24-00-00|25-00-00|26-00-00|27-00-00|28-00-00|29-00-00|30-00-00|31-00-00|32-00-00|32-43-00|33-00-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(34-00-00|35-00-00|36-00-00|38-00-00|44-00-00|46-00-00|47-00-00|49-00-00|50-00-00|51-00-00|52-00-00|53-00-00|54-00-00|55-00-00)&#39;))
+			and  not (REGEXP_LIKE(wo_header.ata_chapter,&#39;^(56-00-00|57-00-00|70-00-00|71-00-00|72-00-00|73-00-00|74-00-00|75-00-00|76-00-00|77-00-00|78-00-00|79-00-00|80-00-00)&#39;))
+			)
+		)
+	)
+ORDER BY ac_typ, wo_month_digit, wo_header.event_perfno_i, h_serialno
+       )
+     )    
+   unpivot
+   (
+     VALUE FOR tp IN (event_perfno_i,
+                      ws_date, 
+                      ac_registr,
+                      ac_typ,
+                      ac_model, 
+                      wo_text,
+                      OBNAR,
+                      ata_chapter, 
+                      removal_text,
+                      partno,
+                      serialno,
+                      TSN,
+                      tbi,
+                      narab,
+                      tah,
+                      tac,
+                      additional_field_1,
+                      additional_field_2,
+                      row_delimeter
+                     )
+   )</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

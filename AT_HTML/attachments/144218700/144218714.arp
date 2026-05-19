@@ -1,0 +1,1176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000306</report_id>
+    <revision_number>0</revision_number>
+    <meta name="author &amp; design">vtsymbal</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="5623">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">35</attribute>
+      <attribute name="footer-size">25</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content>
+      <view class="LabelReportView" id="5624">
+        <attribute name="name">Label_1</attribute>
+        <attribute name="position">0 0</attribute>
+        <attribute name="size">700 35</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="background-color">A6DDA5</attribute>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <border class="StyledReportBorder">
+          <attribute name="border-top-width">1</attribute>
+          <attribute name="border-top-style">SOLID</attribute>
+          <attribute name="border-top-color">3B473B</attribute>
+          <attribute name="border-left-width">1</attribute>
+          <attribute name="border-left-style">SOLID</attribute>
+          <attribute name="border-left-color">3B473B</attribute>
+          <attribute name="border-bottom-width">0</attribute>
+          <attribute name="border-bottom-style">SOLID</attribute>
+          <attribute name="border-bottom-color">3B473B</attribute>
+          <attribute name="border-right-width">1</attribute>
+          <attribute name="border-right-style">SOLID</attribute>
+          <attribute name="border-right-color">3B473B</attribute>
+        </border>
+        <attribute name="text">Выполнение работ по промывке ГВТ</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">Monospaced PLAIN 13</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">FORCED</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="5625">
+        <attribute name="name">Label_3</attribute>
+        <attribute name="position">0 975</attribute>
+        <attribute name="size">295 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">505050</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 10 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Page @PAGE_NO@ / @PAGE_COUNT@       @DATE@  @TIME@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">Monospaced PLAIN 10</attribute>
+        <attribute name="text-align">LEFT</attribute>
+        <attribute name="line-break">FORCED</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="5626">
+        <attribute name="name">Label_4</attribute>
+        <attribute name="position">295 975</attribute>
+        <attribute name="size">405 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">505050</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 10</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Report prepared by: @LASTNAME@ @FIRSTNAME@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">Monospaced PLAIN 10</attribute>
+        <attribute name="text-align">RIGHT</attribute>
+        <attribute name="line-break">FORCED</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>5625</anchor_view>
+          <anchor_location>TOP_RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="5627">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">445 0</attribute>
+      <attribute name="size">255 15</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">YES</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.date_from@</field>
+              <field id="2"/>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.date_to@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="background-color">EEEEEE</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 7 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">FFFFFF</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">3B473B</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">3B473B</attribute>
+      </border>
+      <attribute name="text">с @191_DateFormatForHeader.date_from@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">Monospaced PLAIN 9</attribute>
+      <attribute name="text-align">BOTTOM_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5629</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5628">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">445 0</attribute>
+      <attribute name="size">255 15</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">YES</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.date_from@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.date_to@</field>
+              <field id="2"/>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="background-color">EEEEEE</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 7 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">FFFFFF</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">3B473B</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">3B473B</attribute>
+      </border>
+      <attribute name="text">по @191_DateFormatForHeader.date_to@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">Monospaced PLAIN 9</attribute>
+      <attribute name="text-align">BOTTOM_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5627</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5629">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">445 0</attribute>
+      <attribute name="size">255 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.date_from@</field>
+              <field id="2"/>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.date_to@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="text">-- не задан --</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.date_from@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.date_to@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="background-color">EEEEEE</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 7 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">FFFFFF</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">3B473B</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">3B473B</attribute>
+      </border>
+      <attribute name="text">@191_DateFormatForHeader.date_from@ -  @191_DateFormatForHeader.date_to@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">Monospaced PLAIN 9</attribute>
+      <attribute name="text-align">BOTTOM_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5632</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5630">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">55 0</attribute>
+      <attribute name="size">295 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">-- не выбран --</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ac_typ@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="background-color">EEEEEE</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">FFFFFF</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">3B473B</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">FFFFFF</attribute>
+      </border>
+      <attribute name="text">@VAR.ac_typ@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">Monospaced PLAIN 9</attribute>
+      <attribute name="text-align">BOTTOM_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5631</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5631">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">55 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">EEEEEE</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">FFFFFF</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">3B473B</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">3B473B</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">Тип ВС:</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">FORCED</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="5632">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">350 0</attribute>
+      <attribute name="size">95 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">EEEEEE</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 10 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">1</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">FFFFFF</attribute>
+        <attribute name="border-left-width">0</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">3B473B</attribute>
+        <attribute name="border-bottom-width">1</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">3B473B</attribute>
+        <attribute name="border-right-width">0</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">Период выгрузки:</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">FORCED</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5630</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="5633">
+      <attribute name="name">DatasourceTable_6</attribute>
+      <attribute name="position">0 24</attribute>
+      <attribute name="size">700 52</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="5636" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Тип ВС</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5637" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.ac_typ@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="5640" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Part No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5641" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">120</attribute>
+          <view class="LabelReportView" id="5644" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">120 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Description</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5645" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">120 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="5648" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Serial No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5649" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.serialno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="5652" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf W/O</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5653" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.wo_num@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">60</attribute>
+          <view class="LabelReportView" id="5656" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf at H</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5657" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.closing_tah@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">60</attribute>
+          <view class="LabelReportView" id="5660" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf at C</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5661" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.closing_tac@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="5664" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Perf Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5665" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.closing_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">120</attribute>
+          <view class="LabelReportView" id="5668" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">120 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">DBCFC7</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Curr. Installed</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="5669" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">120 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@191_CompleteJobWithGasEngine.curr_install@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">191_CompleteJobWithGasEngine</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5631</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>9</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="AT" description="AC Type / &quot;Тип ВС&quot;" id="ac_typ"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="date to / &quot;дата окончания&quot;" id="date_to"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="date from / &quot;дата начала&quot;" id="date_from"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Тип ВС" id="ac_typ">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Дата окончания" id="date_to">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Дата начала" id="date_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="191_DateFormatForHeader" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Date conversion for report header</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="to_char(to_date('31.12.1971' 'dd.mm.yyyy') + @VAR.date_from@'dd.Mon.yyyy') date_from" id="date_from"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" to_char(to_date('31.12.1971' 'dd.mm.yyyy') + @VAR.date_to@'dd.Mon.yyyy') date_to" id="date_to"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_from@">
+          <ds:object>@VAR.date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_to@">
+          <ds:object>@VAR.date_to@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select case when @VAR.date_from@ &lt;&gt; 0 
+             then to_char(to_date('31.12.1971', 'dd.mm.yyyy') + @VAR.date_from@, 'dd.Mon.yyyy')
+       else null 
+        end date_from
+     , case when @VAR.date_to@ &lt;&gt; 0
+             then to_char(to_date('31.12.1971', 'dd.mm.yyyy') + @VAR.date_to@, 'dd.Mon.yyyy') 
+       else null 
+        end date_to
+from dual</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="191_CompleteJobWithGasEngine" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>main data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_typ" id="ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="partno" id="partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="description" id="description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="serialno" id="serialno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_num" id="wo_num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="document" id="document"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="closing_tah" id="closing_tah"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="closing_tac" id="closing_tac"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="closing_date" id="closing_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="curr_install" id="curr_install"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AMOS_VERSION@">
+          <ds:object>@AMOS_VERSION@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_typ@">
+          <ds:object>@VAR.ac_typ@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_from@">
+          <ds:object>@VAR.date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_to@">
+          <ds:object>@VAR.date_to@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select ac_typ
+     , partno
+     , description
+     , serialno
+     , wo_num
+     , document
+     , closing_tah
+     , closing_tac
+     , closing_date
+     , curr_install
+ from
+    (
+     select a.ac_typ
+         , h.comp_partno partno
+         , p.description
+         , h.comp_serialno serialno
+         , h.event_perfno_i wo_num
+         , event_name document
+         , case when release_tah &gt; 0 
+                then trunc(release_tah/60, 0) || ':'  || trunc(( mod(release_tah/60, 1) * (60/100) ) * 100, 0) 
+           else null
+           end closing_tah
+         , case when release_tac &gt; 0 
+                then trunc(release_tac, 0)
+           else null 
+            end closing_tac
+         , to_char(to_date('31.12.1971', 'dd.mm.yyyy') + closing_date, 'dd.mm.yyyy') closing_date
+         , h.ac_registr || ' Position: ' || ac_position curr_install
+         , closing_date date_for_sort
+         , h.ac_registr
+      from wo_header h
+      join aircraft a on h.ac_registr = a.ac_registr
+      left join rotables r on h.psn = r.psn
+      left join part p on h.comp_partno = p.partno
+        /* Documents Search */
+      join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+                          and (e.event_type = 'DOC_EFF' and '@AMOS_VERSION@' like '19.12%' or e.event_type = 'MED' and '@AMOS_VERSION@' not like '19.12%')
+     where h.state = 'C'
+       and ( event_name like '%A20-72-0543%'
+          or event_name like '%A30-72-0089-ITEM%'
+          or event_name like '%B3-72-0067%'
+          or event_name like '%R95-72-0244%'
+          or event_name like '%R95-72-0448%'
+          or event_name like '%R95-72-0537%'
+          or event_name like '%R95-72-0645%' )
+       /* AC Type */
+      and ('@VAR.ac_typ@' is null or
+             a.ac_typ in
+             (select trim(substr('@VAR.ac_typ@' || ',',
+                                  decode(level,
+                                         1,
+                                         0,
+                                         instr('@VAR.ac_typ@' || ',', ',', 1, level - 1) + 2),
+                                  instr('@VAR.ac_typ@' || ',', ',', 1, level) -
+                                  decode(level,
+                                         1,
+                                         1,
+                                         instr('@VAR.ac_typ@' || ',', ',', 1, level - 1) + 2)))
+                 from dual
+               connect by level &lt;= length('@VAR.ac_typ@') -
+                          length(replace('@VAR.ac_typ@', ',', '')) + 1))
+       /* Period Date From */
+    and ('@VAR.date_from@' is null or '@VAR.date_from@' &lt;= closing_date)
+       /* Period Date To */
+    and ('@VAR.date_to@' is null or '@VAR.date_to@' &gt;= closing_date)
+  union
+ select distinct 
+         a.ac_typ
+       , i.partno
+       , p.description
+       , i.serialno
+       , e.event_perfno_i wo_num
+       , e.event_name
+       , case when release_tah &gt; 0 
+              then trunc(release_tah/60, 0) || ':'  || trunc(( mod(release_tah/60, 1) * (60/100) ) * 100, 0) 
+              else null
+          end perf_tah
+       , release_tac perf_tac
+       , to_char(to_date('31.12.1971', 'dd.mm.yyyy') + absolute_due_date, 'dd.mm.yyyy') perf_date
+       , h.ac_registr || 
+                      case when i.location &lt;&gt; ' '
+                           then ' Position: ' || i.location 
+                           else ' Position: - '
+          end curr_install
+       , absolute_due_date
+       , h.ac_registr
+    from wo_event_link e
+    join msc_requirement_tc_link tc on e.event_key_parent = tc.req_linkno_i
+    join msc_operator_rev_req req on tc.req_linkno_i = req.req_linkno_i
+    join wo_header h on e.event_perfno_i = h.event_perfno_i
+    join aircraft a on ( 
+                        h.ac_registr = a.ac_registr
+                         or (
+                               h.ac_registr IS NULL
+                               and a.ac_registr = 'COMP'
+                            )
+                       ) 
+    left join wo_transfer t on t.event_perfno_i = e.event_perfno_i 
+                           and t.transfer_type = 'R' 
+                           and t.is_last_transfer = 'Y'
+    left join wo_transfer_dimension d on d.event_transferno_i = t.event_transferno_i
+    left join counter c on d.counterno_i = c.counterno_i
+    left join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+    left join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i
+    join (
+          select taskcardno
+                     , title
+                     , case when title like '%LEFT%' then 'LH'
+                            when title like '%RIGHT%' then 'RH'
+                       end position_code
+                  from msc_taskcard s
+                 where s.taskcardno in ('72-001-00/01', '72-001-00/02')
+         ) s on e.event_name = s.taskcardno
+    left join (
+               select rank() over(partition by h.ac_registr, i.description order by del_date desc) rnk
+                    , h.ac_registr 
+                    , h.partno
+                    , p.description 
+                    , h.serialno 
+                    , del_date 
+                    , h.location
+                    , case when i.description like '%LH%' then 'LH'
+                           when i.description like '%RH%' then 'RH'
+                      end position_code
+                 from history h
+                 join part p on h.partno = p.partno
+                 join part_special ps on ps.partno = p.partno 
+                                     and ps.special like '%ENGINE%'
+                 join position i on h.location = i.position
+                                and (i.description like '%LH%' or i.description like '%RH%')
+                where vm = 'YE'
+              ) i on h.ac_registr = i.ac_registr 
+                 and s.position_code = i.position_code 
+                 and rnk = 1
+    left join part p on i.partno = p.partno
+   where (e.event_type = 'TCEFFLI' and '@AMOS_VERSION@' like '19.12%' or e.event_type = 'MET' and '@AMOS_VERSION@' not like '19.12%')
+     and tc.type in ('B', 'S', 'O', 'R', 'D', 'T', 'C')
+     and ( e.pending_status &gt;= 0
+          or (
+              (
+               floor (
+                      c.readout_date + ((c.readout_time / 60000 + (d.due_at) - ( floor (c.life_value) ) ) / 1440)
+                     ) &gt; 0
+                 and cd.code = 'D'
+              )
+             )
+          )
+     and e.pending_status &lt;= 0  
+     and state = 'C'
+     and event_name in ( '72-001-00/01'
+                       , '72-001-00/02' )
+     and /* AC Type */
+      ('@VAR.ac_typ@' is null or
+             a.ac_typ in
+             (select trim(substr('@VAR.ac_typ@' || ',',
+                                  decode(level,
+                                         1,
+                                         0,
+                                         instr('@VAR.ac_typ@' || ',', ',', 1, level - 1) + 2),
+                                  instr('@VAR.ac_typ@' || ',', ',', 1, level) -
+                                  decode(level,
+                                         1,
+                                         1,
+                                         instr('@VAR.ac_typ@' || ',', ',', 1, level - 1) + 2)))
+                 from dual
+               connect by level &lt;= length('@VAR.ac_typ@') -
+                          length(replace('@VAR.ac_typ@', ',', '')) + 1))
+       /* Period Date From */
+    and ('@VAR.date_from@' is null or '@VAR.date_from@' &lt;= absolute_due_date)
+       /* Period Date To */
+    and ('@VAR.date_to@' is null or '@VAR.date_to@' &gt;= absolute_due_date)
+    ) x
+order by ac_typ
+    , ac_registr
+    , date_for_sort desc</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

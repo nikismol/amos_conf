@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : CAD_Daily_WO_emailer</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : CAD_Daily_WO_emailer
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT wo_a.event_perfno_i as workorder,
+             wo_a.state,
+             wo_a.wo_type,
+             wo_a.ata_chapter,
+             wo_a.ac_typ as ac_type,
+             wo_a.ac_registr,
+             wo_a.created_date,
+             wo_a.created_time,
+             DECODE(wo_text_description.header,NULL, NULL, wo_text_description.header||CHR(10))
+             ||wo_text_description.text||CHR(10)
+             ||wo_text_description.text_html as wo_description,
+             wo_a.action_text
+FROM (
+             SELECT wo.event_perfno_i,
+                          wo.state,
+                          DECODE(wo.type, &#39;C&#39;, &#39;Cabin&#39;, &#39;P&#39;, &#39;Pirep&#39;, &#39;M&#39;, &#39;Maintenance&#39;, &#39;&#39;) as wo_type,
+                          wo.ata_chapter,
+                          wo.ac_typ,
+                          wo.ac_registr,
+                          wo.created_date,
+                          wo.created_time,
+                          RTRIM(
+                                      XMLAGG(
+                                                       XMLELEMENT(E,wo_text_action.text, CHR(10) ).EXTRACT(&#39;//text()&#39;)
+                                                                                ORDER BY workstep_link.sequenceno, wo_text_action.actionno_i
+                                                      ).GetClobVal(), CHR(10)
+                                     ) as action_text
+             FROM (
+                          SELECT wo_header.event_perfno_i,
+                                       wo_header.state,
+                                       wo_header.type,
+                                       aircraft.ac_typ,
+                                       wo_header.ac_registr,
+                                       wo_header.ata_chapter,
+                                       TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + bohi_changes.changes_date, &#39;dd.mm.yyyy&#39;) as created_date,
+                                       TO_CHAR(trunc(sysdate) + bohi_changes.changes_time/24/60, &#39;hh24:mi&#39;) as created_time
+                          FROM wo_header
+                          JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+                          JOIN bohi_version ON bohi_version.primkey=wo_header.event_perfno_i AND bohi_version.mime_type = &#39;WO&#39;
+                          JOIN bohi_changes ON bohi_version.versionno_i=bohi_changes.versionno_i AND bohi_changes.action LIKE &#39;%Manually entered W/O with Workorder 2%&#39;
+                          WHERE 1=1
+                                        AND wo_header.created_date&gt;=FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))-1
+                                        AND wo_header.state&lt;&gt;&#39;V&#39;
+                                        AND bohi_changes.changes_date*(24*60)++bohi_changes.changes_time&gt;= FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))*(24*60) + TO_CHAR(SYSTIMESTAMP, &#39;SSSSS&#39;)/60 - 24*60
+                                        AND wo_header.type IN (&#39;P&#39;,&#39;C&#39;,&#39;M&#39;)
+                         ) wo
+             LEFT JOIN workstep_link ON wo.event_perfno_i=workstep_link.event_perfno_i
+             LEFT JOIN wo_text_action ON wo_text_action.workstep_linkno_i=workstep_link.workstep_linkno_i
+             GROUP BY wo.event_perfno_i,
+                                wo.state,
+                                wo.ac_registr,
+                                wo.created_date,
+                                wo.created_time,
+                                wo.ac_typ,
+                                wo.type,
+                                wo.ata_chapter
+           ) wo_a
+LEFT JOIN workstep_link ON wo_a.event_perfno_i=workstep_link.event_perfno_i AND workstep_link.sequenceno=1
+LEFT JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+ORDER BY 5, 6, 1</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

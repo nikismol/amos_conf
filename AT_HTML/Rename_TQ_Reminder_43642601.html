@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Rename_TQ_Reminder</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Reports_43642559.html">Reports</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Rename_TQ_Reminder
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified by <span class='editor'> Филипенков Никита Константинович</span> on сент. 28, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Task Action</td><td class="confluenceTd">DatasourceExporterTask</td></tr><tr><td class="confluenceTd">Source Type</td><td class="confluenceTd">Plain SQL</td></tr><tr><td class="confluenceTd">Output format</td><td class="confluenceTd">excel 2007</td></tr><tr><td colspan="1" class="confluenceTd">Send via Email</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td colspan="1" class="confluenceTd">Email Subject </td><td colspan="1" class="confluenceTd">Переименовать некорректные заголовки TQ</td></tr><tr><td colspan="1" class="confluenceTd">Sender Address</td><td colspan="1" class="confluenceTd"><a class="external-link" href="mailto:amos-mail@aeroflot.ru" rel="nofollow">amos-mail@aeroflot.ru</a></td></tr><tr><td colspan="1" class="confluenceTd">Receiver Address</td><td colspan="1" class="confluenceTd"><a class="external-link" href="mailto:amos.support@ramax.ru" rel="nofollow">amos.support@ramax.ru</a></td></tr><tr><td class="confluenceTd">Store in folder</td><td class="confluenceTd">\\<a class="external-link" href="http://msk.aeroflot.ru" rel="nofollow">msk.aeroflot.ru</a>\amos\PROD\WEB_DRIVE\Rename_TQ_Reminder</td></tr><tr><td class="confluenceTd">Filenames</td><td class="confluenceTd">Rename_TQ_Reminder</td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(23,43,77);text-decoration: none;">Scheduling | Rec. pattern | Monthly</span></td><td colspan="1" class="confluenceTd"><p>Day of the Month: 22</p><p>Run Every: 1</p></td></tr></tbody></table></div><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT * FROM 
+(
+SELECT
+to_number(queryno_i),
+headline,
+TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (created_date), &#39;DD.MM.YYYY&#39;) CREATED_DATE_1,
+issued_by_group,
+issued_by,
+priority,
+CASE WHEN (status!=3) THEN &#39;В работе&#39; ELSE TO_CHAR(TO_DATE(&#39;31/12/1971&#39;, &#39;DD/MM/YYYY&#39;) + (mutation), &#39;DD/MM/YYYY&#39;) END AS CLOSURE_DATE
+FROM tech_query
+WHERE
+queryno_i IN
+(
+SELECT distinct queryno_i FROM tech_query_note WHERE created_by IN
+(
+&#39;FEDOSEEN&#39;,
+&#39;PASECHNI&#39;,
+&#39;LABUSHEV&#39;,
+&#39;IVANENKO&#39;,
+&#39;VRYBIN&#39;,
+&#39;NFILIP&#39;,
+&#39;AZORIKOV&#39;,
+&#39;ABELYKH&#39; ,
+&#39;AKHAMZIN&#39;,
+&#39;AVOLKOVA&#39;,
+&#39;DENISP&#39; ,
+&#39;GKOROLEV&#39;,
+&#39;SATDINOV&#39;,
+&#39;SKISELEV&#39;,
+&#39;SKOROLEV&#39;,
+&#39;VTSYMBAL&#39;,
+&#39;EFROLOVA&#39;,
+&#39;IKOKORIN&#39;,
+&#39;SIROTKIN&#39;
+)
+)
+ORDER BY queryno_i
+)
+WHERE CREATED_DATE_1 &gt;= (to_date(sysdate)-21)</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

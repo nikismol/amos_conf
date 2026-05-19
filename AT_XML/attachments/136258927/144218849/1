@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000319</report_id>
+    <revision_number>0</revision_number>
+    <meta name="15-01-2020 vtsymbal">add new ac_typ A350</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="19828">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="19829">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 25</attribute>
+      <attribute name="size">1000 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="19832" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AC Reg</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19833" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_INFO.wo_header.ac_registr@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="19836" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">AC Type</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19837" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_INFO.aircraft.ac_typ@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="19840" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">WO Number</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19841" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_INFO.wo_header.event_perfno_i@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="19844" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">WO Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19845" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_INFO.issue_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="19848" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Mutation Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19849" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_INFO.mutation_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="19852" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">ATA</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19853" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_INFO.wo_header.ata_chapter@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="19856" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">State</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19857" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_INFO.wo_header.state@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">300</attribute>
+          <view class="LabelReportView" id="19860" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">300 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">WO Content</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="19861" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">300 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_INFO.content@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">WO_INFO</attribute>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="AC" description="" id="AC_REG"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="issue_date_to"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="STATE"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="AC_TYP"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="issue_date_from"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="2.AC Registr" id="AC_REG">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="4.WO Date To" id="issue_date_to">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="3.WO State" id="STATE">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>OPEN</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>OPEN&amp;=&amp;OPEN;CLOSED&amp;=&amp;CLOSED;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="1.AC Type" id="AC_TYP">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>A32S&amp;=&amp;A32S;A330&amp;=&amp;A330;A350&amp;=&amp;A350;RRJ&amp;=&amp;RRJ;B737&amp;=&amp;B737;B777&amp;=&amp;B777;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="4.WO Date From" id="issue_date_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="WO_INFO" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.ac_registr" id="wo_header.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="aircraft.ac_typ" id="aircraft.ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i" id="wo_header.event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="to_char(to_date('01.01.1970' 'dd.mm.yyyy') + ( wo_header.issue_date+729)'dd.mm.yyyy') as issue_date" id="issue_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="to_char(to_date('01.01.1970' 'dd.mm.yyyy') + ( wo_header.mutation+729)'dd.mm.yyyy') as mutation_date" id="mutation_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.ata_chapter" id="wo_header.ata_chapter"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.state" id="wo_header.state"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="desc_text.ws_text||' ; '||act_text.wa_text AS content" id="content"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.STATE@">
+          <ds:object>@VAR.STATE@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.AC_TYP@">
+          <ds:object>@VAR.AC_TYP@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.AC_REG@">
+          <ds:object>@VAR.AC_REG@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.issue_date_from@">
+          <ds:object>@VAR.issue_date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.issue_date_to@">
+          <ds:object>@VAR.issue_date_to@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT   
+	  wo_header.ac_registr
+                ,aircraft.ac_typ
+                ,wo_header.event_perfno_i
+                ,to_char(to_date('01.01.1970', 'dd.mm.yyyy') + ( wo_header.issue_date+729),'dd.mm.yyyy') as issue_date 
+                ,to_char(to_date('01.01.1970', 'dd.mm.yyyy') + ( wo_header.mutation+729),'dd.mm.yyyy') as mutation_date
+                ,wo_header.ata_chapter
+                ,wo_header.state
+                ,desc_text.ws_text||' ; '||act_text.wa_text AS content
+FROM wo_header
+LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+LEFT JOIN aircraft ON wo_header.ac_registr = aircraft.ac_registr
+LEFT JOIN 	(
+				SELECT workstep_link.event_perfno_i as event_perfno_i,
+				RTRIM(XMLAGG(XMLELEMENT(E, wo_text_action.text, ';').EXTRACT('//text()') ORDER BY workstep_link.sequenceno).GetClobVal(), CHR(10)) as wa_text
+				FROM workstep_link
+				LEFT JOIN wo_text_action ON workstep_link.workstep_linkno_i = wo_text_action.workstep_linkno_i
+				GROUP BY workstep_link.event_perfno_i
+			) act_text ON wo_header.event_perfno_i = act_text.event_perfno_i
+LEFT JOIN 	(
+				SELECT workstep_link.event_perfno_i as event_perfno_i,
+				RTRIM(XMLAGG(XMLELEMENT(E, wo_text_description.text, ';').EXTRACT('//text()') ORDER BY workstep_link.sequenceno).GetClobVal(), CHR(10)) as ws_text
+				FROM workstep_link
+				LEFT JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+				GROUP BY workstep_link.event_perfno_i
+			) desc_text ON wo_header.event_perfno_i = desc_text.event_perfno_i
+WHERE
+wo_header.issue_date IS NOT NULL
+AND 
+(
+(wo_header.state = 'C' AND '@VAR.STATE@' = 'CLOSED') OR 
+(wo_header.state = 'O' AND '@VAR.STATE@' = 'OPEN')
+)
+AND 
+(
+(aircraft.ac_typ = 'A32S' AND '@VAR.AC_TYP@' = 'A32S') OR
+(aircraft.ac_typ = 'A330' AND '@VAR.AC_TYP@' = 'A330') OR
+(aircraft.ac_typ = 'RRJ' AND '@VAR.AC_TYP@' = 'RRJ') OR
+(aircraft.ac_typ = 'B737' AND '@VAR.AC_TYP@' = 'B737') OR
+(aircraft.ac_typ = 'B777' AND '@VAR.AC_TYP@' = 'B777') OR
+/* 15-01-2020 
+    vtsymbal add new ac_typ A350
+ */
+(aircraft.ac_typ = 'A350' AND '@VAR.AC_TYP@' = 'A350')
+)
+AND NVL(wo_header_more.struc_damage, 'N') &lt;&gt; 'Y'
+AND (REGEXP_LIKE( wo_header.ac_registr, REPLACE('@VAR.AC_REG@', ', ', '|')) OR '@VAR.AC_REG@' IS NULL)
+AND (wo_header.issue_date &gt;= '@VAR.issue_date_from@' OR '@VAR.issue_date_from@' IS NULL)
+AND (wo_header.issue_date &lt;= '@VAR.issue_date_to@' OR '@VAR.issue_date_to@' IS NULL) 
+AND 
+(
+wo_header.ata_chapter LIKE '05%' OR 
+wo_header.ata_chapter LIKE '27%' OR
+wo_header.ata_chapter LIKE '51%' OR
+wo_header.ata_chapter LIKE '52%' OR
+wo_header.ata_chapter LIKE '53%' OR
+wo_header.ata_chapter LIKE '54%' OR
+wo_header.ata_chapter LIKE '55%' OR
+wo_header.ata_chapter LIKE '57%' OR
+wo_header.ata_chapter LIKE '71%' OR
+wo_header.ata_chapter LIKE '78%' 
+)
+AND 
+(
+    (
+act_text.wa_text LIKE '%147BB%'
+OR act_text.wa_text LIKE '%147CB%'
+OR act_text.wa_text LIKE '%147EB%'
+OR act_text.wa_text LIKE '%147FB%'
+OR act_text.wa_text LIKE '%148BB%'
+OR act_text.wa_text LIKE '%148FB%'
+OR act_text.wa_text LIKE '%171AL%'
+OR act_text.wa_text LIKE '%191BB%'
+OR act_text.wa_text LIKE '%191DT%'
+OR act_text.wa_text LIKE '%191EB%'
+OR act_text.wa_text LIKE '%191ET%'
+OR act_text.wa_text LIKE '%191GB%'
+OR act_text.wa_text LIKE '%191HB%'
+OR act_text.wa_text LIKE '%191JB%'
+OR act_text.wa_text LIKE '%147AB%'
+OR act_text.wa_text LIKE '%191KB%'
+OR act_text.wa_text LIKE '%191LB%'
+OR act_text.wa_text LIKE '%192AB%'
+OR act_text.wa_text LIKE '%192AT%'
+OR act_text.wa_text LIKE '%192BT%'
+OR act_text.wa_text LIKE '%192DT%'
+OR act_text.wa_text LIKE '%192EB%'
+OR act_text.wa_text LIKE '%192ET%'
+OR act_text.wa_text LIKE '%192FB%'
+OR act_text.wa_text LIKE '%192KB%'
+OR act_text.wa_text LIKE '%192LB%'
+OR act_text.wa_text LIKE '%192MB%'
+OR act_text.wa_text LIKE '%193AB%'
+OR act_text.wa_text LIKE '%193BB%'
+OR act_text.wa_text LIKE '%194AB%'
+OR act_text.wa_text LIKE '%194BB%'
+OR act_text.wa_text LIKE '%195AB%'
+OR act_text.wa_text LIKE '%196AB%'
+OR act_text.wa_text LIKE '%197AB%'
+OR act_text.wa_text LIKE '%197BB%'
+OR act_text.wa_text LIKE '%197GB%'
+OR act_text.wa_text LIKE '%198BB%'
+OR act_text.wa_text LIKE '%198GB%'
+OR act_text.wa_text LIKE '%314AR%'
+OR act_text.wa_text LIKE '%315AR%'
+OR act_text.wa_text LIKE '%316AR%'
+OR act_text.wa_text LIKE '%317AL%'
+OR act_text.wa_text LIKE '%331AB%'
+OR act_text.wa_text LIKE '%331BB%'
+OR act_text.wa_text LIKE '%341AB%'
+OR act_text.wa_text LIKE '%413AL%'
+OR act_text.wa_text LIKE '%413BL%'
+OR act_text.wa_text LIKE '%413CL%'
+OR act_text.wa_text LIKE '%413CR%'
+OR act_text.wa_text LIKE '%413DL%'
+OR act_text.wa_text LIKE '%413DT%'
+OR act_text.wa_text LIKE '%414AR%'
+OR act_text.wa_text LIKE '%414CR%'
+OR act_text.wa_text LIKE '%414FR%'
+OR act_text.wa_text LIKE '%423AL%'
+OR act_text.wa_text LIKE '%423CL%'
+OR act_text.wa_text LIKE '%423CR%'
+OR act_text.wa_text LIKE '%423DL%'
+OR act_text.wa_text LIKE '%423DT%'
+OR act_text.wa_text LIKE '%423FL%'
+OR act_text.wa_text LIKE '%424AR%'
+OR act_text.wa_text LIKE '%424CR%'
+OR act_text.wa_text LIKE '%447AL%'
+OR act_text.wa_text LIKE '%473AL%'
+OR act_text.wa_text LIKE '%473AR%'
+OR act_text.wa_text LIKE '%473BL%'
+OR act_text.wa_text LIKE '%475CL%'
+OR act_text.wa_text LIKE '%482AL%'
+OR act_text.wa_text LIKE '%483AR%'
+OR act_text.wa_text LIKE '%483BL%'
+OR act_text.wa_text LIKE '%522UB%'
+OR act_text.wa_text LIKE '%531AB%'
+OR act_text.wa_text LIKE '%532AB%'
+OR act_text.wa_text LIKE '%533AB%'
+OR act_text.wa_text LIKE '%540HB%'
+OR act_text.wa_text LIKE '%540JB%'
+OR act_text.wa_text LIKE '%540KB%'
+OR act_text.wa_text LIKE '%540LB%'
+OR act_text.wa_text LIKE '%540QB%'
+OR act_text.wa_text LIKE '%640JB%'
+OR act_text.wa_text LIKE '%640KB%'
+OR act_text.wa_text LIKE '%631CB%'
+OR act_text.wa_text LIKE '%633AL%'
+OR act_text.wa_text LIKE '%633AR%'
+OR act_text.wa_text LIKE '%635CB%'
+OR act_text.wa_text LIKE '%640HB%'
+OR act_text.wa_text LIKE '%640QB%'
+OR act_text.wa_text LIKE '%675KB%'
+OR act_text.wa_text LIKE '%675LB%'
+OR act_text.wa_text LIKE '%675MB%'
+OR act_text.wa_text LIKE '%ABRASION%'
+OR act_text.wa_text LIKE '%BIRD%'
+OR act_text.wa_text LIKE '%BURN%'
+OR act_text.wa_text LIKE '%CHAFING%'
+OR act_text.wa_text LIKE '%CORROSION%'
+OR act_text.wa_text LIKE '%CRACK%'
+OR act_text.wa_text LIKE '%CREASE%'
+OR act_text.wa_text LIKE '%DAMAGE%'
+OR act_text.wa_text LIKE '%DELAM%'
+OR act_text.wa_text LIKE '%DENT%'
+OR act_text.wa_text LIKE '%DISBOND%'
+OR act_text.wa_text LIKE '%DOUBLER%'
+OR act_text.wa_text LIKE '%EROSION%'
+OR act_text.wa_text LIKE '%FRETTING%'
+OR act_text.wa_text LIKE '%GOUGE%'
+OR act_text.wa_text LIKE '%HOLE%'
+OR act_text.wa_text LIKE '%INGRES%'
+OR act_text.wa_text LIKE '%NICK%'
+OR act_text.wa_text LIKE '%PERFORATION%'
+OR act_text.wa_text LIKE '%RDAS%'
+OR act_text.wa_text LIKE '%REPAIR%'
+OR act_text.wa_text LIKE '%REWORK%'
+OR act_text.wa_text LIKE '%SCRATCH%'
+OR act_text.wa_text LIKE '%STRIKE%'
+    )
+    OR
+    (
+desc_text.ws_text LIKE '%147BB%'
+OR desc_text.ws_text LIKE '%147CB%'
+OR desc_text.ws_text LIKE '%147EB%'
+OR desc_text.ws_text LIKE '%147FB%'
+OR desc_text.ws_text LIKE '%148BB%'
+OR desc_text.ws_text LIKE '%148FB%'
+OR desc_text.ws_text LIKE '%171AL%'
+OR desc_text.ws_text LIKE '%191BB%'
+OR desc_text.ws_text LIKE '%191DT%'
+OR desc_text.ws_text LIKE '%191EB%'
+OR desc_text.ws_text LIKE '%191ET%'
+OR desc_text.ws_text LIKE '%191GB%'
+OR desc_text.ws_text LIKE '%191HB%'
+OR desc_text.ws_text LIKE '%191JB%'
+OR desc_text.ws_text LIKE '%147AB%'
+OR desc_text.ws_text LIKE '%191KB%'
+OR desc_text.ws_text LIKE '%191LB%'
+OR desc_text.ws_text LIKE '%192AB%'
+OR desc_text.ws_text LIKE '%192AT%'
+OR desc_text.ws_text LIKE '%192BT%'
+OR desc_text.ws_text LIKE '%192DT%'
+OR desc_text.ws_text LIKE '%192EB%'
+OR desc_text.ws_text LIKE '%192ET%'
+OR desc_text.ws_text LIKE '%192FB%'
+OR desc_text.ws_text LIKE '%192KB%'
+OR desc_text.ws_text LIKE '%192LB%'
+OR desc_text.ws_text LIKE '%192MB%'
+OR desc_text.ws_text LIKE '%193AB%'
+OR desc_text.ws_text LIKE '%193BB%'
+OR desc_text.ws_text LIKE '%194AB%'
+OR desc_text.ws_text LIKE '%194BB%'
+OR desc_text.ws_text LIKE '%195AB%'
+OR desc_text.ws_text LIKE '%196AB%'
+OR desc_text.ws_text LIKE '%197AB%'
+OR desc_text.ws_text LIKE '%197BB%'
+OR desc_text.ws_text LIKE '%197GB%'
+OR desc_text.ws_text LIKE '%198BB%'
+OR desc_text.ws_text LIKE '%198GB%'
+OR desc_text.ws_text LIKE '%314AR%'
+OR desc_text.ws_text LIKE '%315AR%'
+OR desc_text.ws_text LIKE '%316AR%'
+OR desc_text.ws_text LIKE '%317AL%'
+OR desc_text.ws_text LIKE '%331AB%'
+OR desc_text.ws_text LIKE '%331BB%'
+OR desc_text.ws_text LIKE '%341AB%'
+OR desc_text.ws_text LIKE '%413AL%'
+OR desc_text.ws_text LIKE '%413BL%'
+OR desc_text.ws_text LIKE '%413CL%'
+OR desc_text.ws_text LIKE '%413CR%'
+OR desc_text.ws_text LIKE '%413DL%'
+OR desc_text.ws_text LIKE '%413DT%'
+OR desc_text.ws_text LIKE '%414AR%'
+OR desc_text.ws_text LIKE '%414CR%'
+OR desc_text.ws_text LIKE '%414FR%'
+OR desc_text.ws_text LIKE '%423AL%'
+OR desc_text.ws_text LIKE '%423CL%'
+OR desc_text.ws_text LIKE '%423CR%'
+OR desc_text.ws_text LIKE '%423DL%'
+OR desc_text.ws_text LIKE '%423DT%'
+OR desc_text.ws_text LIKE '%423FL%'
+OR desc_text.ws_text LIKE '%424AR%'
+OR desc_text.ws_text LIKE '%424CR%'
+OR desc_text.ws_text LIKE '%447AL%'
+OR desc_text.ws_text LIKE '%473AL%'
+OR desc_text.ws_text LIKE '%473AR%'
+OR desc_text.ws_text LIKE '%473BL%'
+OR desc_text.ws_text LIKE '%475CL%'
+OR desc_text.ws_text LIKE '%482AL%'
+OR desc_text.ws_text LIKE '%483AR%'
+OR desc_text.ws_text LIKE '%483BL%'
+OR desc_text.ws_text LIKE '%522UB%'
+OR desc_text.ws_text LIKE '%531AB%'
+OR desc_text.ws_text LIKE '%532AB%'
+OR desc_text.ws_text LIKE '%533AB%'
+OR desc_text.ws_text LIKE '%540HB%'
+OR desc_text.ws_text LIKE '%540JB%'
+OR desc_text.ws_text LIKE '%540KB%'
+OR desc_text.ws_text LIKE '%540LB%'
+OR desc_text.ws_text LIKE '%540QB%'
+OR desc_text.ws_text LIKE '%640JB%'
+OR desc_text.ws_text LIKE '%640KB%'
+OR desc_text.ws_text LIKE '%631CB%'
+OR desc_text.ws_text LIKE '%633AL%'
+OR desc_text.ws_text LIKE '%633AR%'
+OR desc_text.ws_text LIKE '%635CB%'
+OR desc_text.ws_text LIKE '%640HB%'
+OR desc_text.ws_text LIKE '%640QB%'
+OR desc_text.ws_text LIKE '%675KB%'
+OR desc_text.ws_text LIKE '%675LB%'
+OR desc_text.ws_text LIKE '%675MB%'
+OR desc_text.ws_text LIKE '%ABRASION%'
+OR desc_text.ws_text LIKE '%BIRD%'
+OR desc_text.ws_text LIKE '%BURN%'
+OR desc_text.ws_text LIKE '%CHAFING%'
+OR desc_text.ws_text LIKE '%CORROSION%'
+OR desc_text.ws_text LIKE '%CRACK%'
+OR desc_text.ws_text LIKE '%CREASE%'
+OR desc_text.ws_text LIKE '%DAMAGE%'
+OR desc_text.ws_text LIKE '%DELAM%'
+OR desc_text.ws_text LIKE '%DENT%'
+OR desc_text.ws_text LIKE '%DISBOND%'
+OR desc_text.ws_text LIKE '%DOUBLER%'
+OR desc_text.ws_text LIKE '%EROSION%'
+OR desc_text.ws_text LIKE '%FRETTING%'
+OR desc_text.ws_text LIKE '%GOUGE%'
+OR desc_text.ws_text LIKE '%HOLE%'
+OR desc_text.ws_text LIKE '%INGRES%'
+OR desc_text.ws_text LIKE '%NICK%'
+OR desc_text.ws_text LIKE '%PERFORATION%'
+OR desc_text.ws_text LIKE '%RDAS%'
+OR desc_text.ws_text LIKE '%REPAIR%'
+OR desc_text.ws_text LIKE '%REWORK%'
+OR desc_text.ws_text LIKE '%SCRATCH%'
+OR desc_text.ws_text LIKE '%STRIKE%'
+    )
+)</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000210</report_id>
+    <revision_number>0</revision_number>
+    <meta name="15-01-2020 vtsymbal">add new ac_typ A350</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="224">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="ClonerReportView" id="225">
+      <attribute name="name">Cloner_1</attribute>
+      <attribute name="position">90 279</attribute>
+      <attribute name="size">858 89</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">IFE_PERIOD</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>239</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-38</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="226">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">0 81</attribute>
+      <attribute name="size">1000 23</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">CCCCCC</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Анализ работоспособности IFE на бортах ВС типа @VAR.ac_type@ за период с @date_conv.date_from@ по @date_conv.date_to@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 14</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="227">
+      <attribute name="name">Label_9</attribute>
+      <attribute name="position">0 104</attribute>
+      <attribute name="size">1000 36</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">CCCCCC</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Отчет сформирован в системе: @SYSTEM.AMOS_SERVER@
+Дата формирования отчета: @SYSTEM.DATE@ @SYSTEM.TIME@ (UTC, Москва: UTC +3ч).</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">TOP</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>226</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="228">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">128 279</attribute>
+      <attribute name="size">80 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">CCCCCC</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@IFE_PERIOD.rdates@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>225</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>38</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="229">
+      <attribute name="name">Label_16</attribute>
+      <attribute name="position">388 279</attribute>
+      <attribute name="size">180 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">0</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@IFE_AC_COUNT.AC_COUNT@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@IFE_AC_COUNT.AC_COUNT@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>230</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="230">
+      <attribute name="name">Label_17</attribute>
+      <attribute name="position">208 279</attribute>
+      <attribute name="size">180 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">0</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@IFE_COUNT_WO_ALL.WO_COUNT@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@IFE_COUNT_WO_ALL.WO_COUNT@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>228</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="231">
+      <attribute name="name">Label_18</attribute>
+      <attribute name="position">568 279</attribute>
+      <attribute name="size">180 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">0</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@IFE_COUNT_WO.WO_COUNT@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@IFE_COUNT_WO.WO_COUNT@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>229</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="232">
+      <attribute name="name">Label_19</attribute>
+      <attribute name="position">748 279</attribute>
+      <attribute name="size">180 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">0</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@IFE_COUNT_WO.WO_C_COUNT@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@IFE_COUNT_WO.WO_C_COUNT@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>231</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="233">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">388 253</attribute>
+      <attribute name="size">180 26</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">3</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>237</anchor_view>
+        <anchor_location>BOTTOM_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="234">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">748 253</attribute>
+      <attribute name="size">180 26</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">5</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>235</anchor_view>
+        <anchor_location>BOTTOM_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="235">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">568 203</attribute>
+      <attribute name="size">180 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">2</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">2</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">Количество открытых WO
+за день (из столбца 1)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>241</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="236">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">748 203</attribute>
+      <attribute name="size">180 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">2</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">2</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">2</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">Количество закрытых WO
+из столбца 4</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>235</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="237">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">208 203</attribute>
+      <attribute name="size">180 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">2</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">2</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">WO в статусе OPEN
+на дату из столбца 1</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>238</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="238">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">128 203</attribute>
+      <attribute name="size">80 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">CCCCCC</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">2 SOLID 000000</attribute>
+      <attribute name="text">Дата</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>227</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>128</x_offset>
+        <y_offset>63</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="239">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">128 253</attribute>
+      <attribute name="size">80 26</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">1</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>238</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="240">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">208 253</attribute>
+      <attribute name="size">180 26</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">2</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>239</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="241">
+      <attribute name="name">Label_9</attribute>
+      <attribute name="position">388 203</attribute>
+      <attribute name="size">180 50</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <border class="StyledReportBorder">
+        <attribute name="border-top-width">2</attribute>
+        <attribute name="border-top-style">SOLID</attribute>
+        <attribute name="border-top-color">000000</attribute>
+        <attribute name="border-left-width">1</attribute>
+        <attribute name="border-left-style">SOLID</attribute>
+        <attribute name="border-left-color">000000</attribute>
+        <attribute name="border-bottom-width">2</attribute>
+        <attribute name="border-bottom-style">SOLID</attribute>
+        <attribute name="border-bottom-color">000000</attribute>
+        <attribute name="border-right-width">1</attribute>
+        <attribute name="border-right-style">SOLID</attribute>
+        <attribute name="border-right-color">000000</attribute>
+      </border>
+      <attribute name="text">Уникальные ВС типа (@VAR.ac_type@)
+из столбца 2</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>237</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="242">
+      <attribute name="name">Label_10</attribute>
+      <attribute name="position">568 253</attribute>
+      <attribute name="size">180 26</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">4</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 12</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>241</anchor_view>
+        <anchor_location>BOTTOM_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="ac_type"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="date_to"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="date_from"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="AC Type" id="ac_type">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>A32S&amp;=&amp;A32S;A330&amp;=&amp;A330;A350&amp;=&amp;A350;B737&amp;=&amp;B737;B777&amp;=&amp;B777;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Date To" id="date_to">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Date From" id="date_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="IFE_PERIOD" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('01.01.1970''DD.MM.YYYY') + (@VAR.date_from@ + LEVEL -1 +729)) as rdates" id="rdates"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="@VAR.date_from@ + LEVEL -1 as dates" id="dates"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_from@">
+          <ds:object>@VAR.date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_to@">
+          <ds:object>@VAR.date_to@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.date_from@ + LEVEL -1 +729)) as rdates,
+@VAR.date_from@ + LEVEL -1 as dates
+FROM DUAL
+CONNECT BY LEVEL &lt;= @VAR.date_to@-@VAR.date_from@ +1</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="IFE_AC_COUNT" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="COUNT (ife.ac_registr) as AC_COUNT" id="AC_COUNT"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@IFE_PERIOD.dates@">
+          <ds:object>@IFE_PERIOD.dates@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_type@">
+          <ds:object>@VAR.ac_type@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT COUNT (ife.ac_registr) as AC_COUNT
+FROM (
+SELECT DISTINCT wo_header.ac_registr 
+FROM wo_header
+LEFT JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+LEFT JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+LEFT JOIN (
+                    SELECT workstep_link.event_perfno_i as event_perfno_i,
+                                 RTRIM(XMLAGG(XMLELEMENT(E, TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wo_text_action.action_date+729), 'DD.MM.YYYY')||': '||TO_CHAR(wo_text_action.text), '.'||CHR(10)||CHR(10)).EXTRACT('//text()') ORDER BY workstep_link.sequenceno).GetClobVal(), CHR(10)) as action_text
+                    FROM wo_header
+                    JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+                    JOIN wo_text_action ON workstep_link.workstep_linkno_i=wo_text_action.workstep_linkno_i
+                    JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+                    LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+                    JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+                    WHERE wo_text_action.action_date IS NOT NULL
+                                  AND wo_header.type NOT IN ('S', 'T', 'PD')
+                                  AND wo_header.issue_date&lt;=@IFE_PERIOD.dates@
+                                  AND (wo_header.closing_date&gt;@IFE_PERIOD.dates@ OR wo_header.closing_date IS NULL)
+                                  AND aircraft.ac_typ IN ('@VAR.ac_type@')
+                                  AND (
+                                            wo_header.ata_chapter LIKE ('44%') AND aircraft.ac_typ IN ('B737', 'B777')
+                                            OR wo_header.ata_chapter LIKE ('23%') AND aircraft.ac_typ IN ('A330', 'B737')
+                                            OR aircraft.ac_typ IN ('A32S') 
+                                                  AND (wo_header.ata_chapter LIKE ('23%') OR wo_header.ata_chapter LIKE ('44%'))
+                                                  AND (wo_header_more.mel_chapter NOT LIKE ('23%') OR wo_header_more.mel_chapter IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.header, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.header IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text_html IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_action.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_action.text IS NULL)
+                                          )
+                    GROUP BY workstep_link.event_perfno_i
+                   ) action_text ON wo_header.event_perfno_i=action_text.event_perfno_i
+LEFT JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+WHERE wo_header.issue_date&lt;=@IFE_PERIOD.dates@
+               AND (wo_header.closing_date&gt;@IFE_PERIOD.dates@ OR wo_header.closing_date IS NULL)
+               AND aircraft.ac_typ IN ('@VAR.ac_type@')
+               AND wo_header.type NOT IN ('S', 'T', 'PD')
+               AND workstep_link.sequenceno='1'
+               AND (
+                          wo_header.ata_chapter LIKE ('44%') AND aircraft.ac_typ IN ('B737', 'B777')
+                          OR wo_header.ata_chapter LIKE ('23%') AND aircraft.ac_typ IN ('A330', 'B737')
+                          OR aircraft.ac_typ IN ('A32S') 
+                                 AND (wo_header.ata_chapter LIKE ('23%') OR wo_header.ata_chapter LIKE ('44%'))
+                                 AND (wo_header_more.mel_chapter NOT LIKE ('23%') OR wo_header_more.mel_chapter IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.header, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.header IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text_html IS NULL)
+                                 AND (NOT REGEXP_LIKE(action_text.action_text, '(COCKPIT|OCCUPANT)','i') OR action_text.action_text IS NULL)
+                         )
+               AND (
+REGEXP_LIKE(wo_text_description.header, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS |CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(wo_text_description.text, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS |CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(wo_text_description.text_html, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(action_text.action_text, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+
+OR (REGEXP_LIKE(wo_text_description.header, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.header, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.text, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(action_text.action_text, '(CREW TERMINAL)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.header, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.text, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(UPLOAD)','i') AND REGEXP_LIKE(action_text.action_text, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.header, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.text, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(action_text.action_text, '(SYSTEM)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.header, '(BUTTON)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.text, '(BUTTON)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(BUTTON)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(CALL)','i') AND REGEXP_LIKE(action_text.action_text, '(BUTTON)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.header, '(POWER)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.text, '(POWER)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(POWER)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(VCC)','i') AND REGEXP_LIKE(action_text.action_text, '(POWER)','i'))
+
+          )
+
+      AND (NOT REGEXP_LIKE(wo_text_description.header, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.header IS NULL)
+      AND (NOT REGEXP_LIKE(wo_text_description.text, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.text IS NULL)
+      AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.text_html IS NULL)
+      AND (NOT REGEXP_LIKE(action_text.action_text, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.header, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.text, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.text_html, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(action_text.action_text, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR action_text.action_text IS NULL)
+          
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.header, '(HORN)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.text, '(HORN)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(HORN)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(EXT)','i') AND REGEXP_LIKE(action_text.action_text, '(HORN)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.header, '(PRERECORDED)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.text, '(PRERECORDED)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(PRERECORDED)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(action_text.action_text, '(PRERECORDED)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.header, '(LIGHT-OUTLET)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.text, '(LIGHT-OUTLET)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(LIGHT-OUTLET)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(IUL)','i') AND REGEXP_LIKE(action_text.action_text, '(LIGHT-OUTLET)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.header, '(SEB)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.text, '(SEB)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(SEB)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(DOOR)','i') AND REGEXP_LIKE(action_text.action_text, '(SEB)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.header, '(VOICE)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.text, '(VOICE)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(VOICE)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(SATCOM)','i') AND REGEXP_LIKE(action_text.action_text, '(VOICE)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.header, '(CALL BUTTON)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.text, '(CALL BUTTON)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(CALL BUTTON)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(LAV)','i') AND REGEXP_LIKE(action_text.action_text, '(CALL BUTTON)','i')) OR action_text.action_text IS NULL)
+) ife</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="IFE_COUNT_WO" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ife.issue_date" id="ife.issue_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="COUNT (ife.event_perfno_i) as WO_COUNT" id="WO_COUNT"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="COUNT (ife.open) as WO_O_COUNT" id="WO_O_COUNT"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="COUNT (ife.closed) as WO_C_COUNT" id="WO_C_COUNT"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@IFE_PERIOD.dates@">
+          <ds:object>@IFE_PERIOD.dates@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_type@">
+          <ds:object>@VAR.ac_type@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT ife.issue_date,
+              COUNT (ife.event_perfno_i) as WO_COUNT,
+              COUNT (ife.open) as WO_O_COUNT,
+              COUNT (ife.closed) as WO_C_COUNT
+FROM (
+SELECT DISTINCT wo_header.event_perfno_i,
+               wo_header.issue_date,
+               CASE WHEN wo_header.issue_date!=wo_header.closing_date OR wo_header.closing_date IS NULL THEN 'O' ELSE '' END as open,
+               CASE WHEN wo_header.issue_date=wo_header.closing_date THEN 'C' ELSE '' END as closed
+FROM wo_header
+LEFT JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+LEFT JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+LEFT JOIN (
+                    SELECT workstep_link.event_perfno_i as event_perfno_i,
+                                 RTRIM(XMLAGG(XMLELEMENT(E, TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wo_text_action.action_date+729), 'DD.MM.YYYY')||': '||TO_CHAR(wo_text_action.text), '.'||CHR(10)||CHR(10)).EXTRACT('//text()') ORDER BY workstep_link.sequenceno).GetClobVal(), CHR(10)) as action_text
+                    FROM wo_header
+                    JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+                    JOIN wo_text_action ON workstep_link.workstep_linkno_i=wo_text_action.workstep_linkno_i
+                    JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+                    LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+                    JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+                    WHERE wo_text_action.action_date IS NOT NULL
+                                  AND wo_header.type NOT IN ('S', 'T', 'PD')
+                                  AND wo_header.issue_date=@IFE_PERIOD.dates@
+                                  AND aircraft.ac_typ IN ('@VAR.ac_type@')
+                                  AND (
+                                            wo_header.ata_chapter LIKE ('44%') AND aircraft.ac_typ IN ('B737', 'B777')
+                                            OR wo_header.ata_chapter LIKE ('23%') AND aircraft.ac_typ IN ('A330', 'B737')
+                                            OR aircraft.ac_typ IN ('A32S') 
+                                                  AND (wo_header.ata_chapter LIKE ('23%') OR wo_header.ata_chapter LIKE ('44%'))
+                                                  AND (wo_header_more.mel_chapter NOT LIKE ('23%') OR wo_header_more.mel_chapter IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.header, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.header IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text_html IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_action.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_action.text IS NULL)
+                                          )
+                    GROUP BY workstep_link.event_perfno_i
+                   ) action_text ON wo_header.event_perfno_i=action_text.event_perfno_i
+LEFT JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+WHERE wo_header.issue_date=@IFE_PERIOD.dates@
+               AND aircraft.ac_typ IN ('@VAR.ac_type@')
+               AND wo_header.type NOT IN ('S', 'T', 'PD')
+               AND workstep_link.sequenceno='1'
+               AND (
+                          wo_header.ata_chapter LIKE ('44%') AND aircraft.ac_typ IN ('B737', 'B777')
+                          OR wo_header.ata_chapter LIKE ('23%') AND aircraft.ac_typ IN ('A330', 'B737')
+                          OR aircraft.ac_typ IN ('A32S') 
+                                 AND (wo_header.ata_chapter LIKE ('23%') OR wo_header.ata_chapter LIKE ('44%'))
+                                 AND (wo_header_more.mel_chapter NOT LIKE ('23%') OR wo_header_more.mel_chapter IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.header, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.header IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text_html IS NULL)
+                                 AND (NOT REGEXP_LIKE(action_text.action_text, '(COCKPIT|OCCUPANT)','i') OR action_text.action_text IS NULL)
+                         )
+               AND (
+REGEXP_LIKE(wo_text_description.header, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS |CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(wo_text_description.text, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS |CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(wo_text_description.text_html, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(action_text.action_text, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+
+OR (REGEXP_LIKE(wo_text_description.header, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.header, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.text, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(action_text.action_text, '(CREW TERMINAL)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.header, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.text, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(UPLOAD)','i') AND REGEXP_LIKE(action_text.action_text, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.header, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.text, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(action_text.action_text, '(SYSTEM)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.header, '(BUTTON)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.text, '(BUTTON)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(BUTTON)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(CALL)','i') AND REGEXP_LIKE(action_text.action_text, '(BUTTON)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.header, '(POWER)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.text, '(POWER)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(POWER)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(VCC)','i') AND REGEXP_LIKE(action_text.action_text, '(POWER)','i'))
+
+          )
+
+      AND (NOT REGEXP_LIKE(wo_text_description.header, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.header IS NULL)
+      AND (NOT REGEXP_LIKE(wo_text_description.text, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.text IS NULL)
+      AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.text_html IS NULL)
+      AND (NOT REGEXP_LIKE(action_text.action_text, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.header, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.text, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.text_html, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(action_text.action_text, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR action_text.action_text IS NULL)
+          
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.header, '(HORN)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.text, '(HORN)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(HORN)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(EXT)','i') AND REGEXP_LIKE(action_text.action_text, '(HORN)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.header, '(PRERECORDED)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.text, '(PRERECORDED)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(PRERECORDED)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(action_text.action_text, '(PRERECORDED)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.header, '(LIGHT-OUTLET)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.text, '(LIGHT-OUTLET)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(LIGHT-OUTLET)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(IUL)','i') AND REGEXP_LIKE(action_text.action_text, '(LIGHT-OUTLET)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.header, '(SEB)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.text, '(SEB)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(SEB)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(DOOR)','i') AND REGEXP_LIKE(action_text.action_text, '(SEB)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.header, '(VOICE)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.text, '(VOICE)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(VOICE)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(SATCOM)','i') AND REGEXP_LIKE(action_text.action_text, '(VOICE)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.header, '(CALL BUTTON)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.text, '(CALL BUTTON)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(CALL BUTTON)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(LAV)','i') AND REGEXP_LIKE(action_text.action_text, '(CALL BUTTON)','i')) OR action_text.action_text IS NULL)
+) ife
+GROUP BY ife.issue_date</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="date_conv" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('01.01.1970''DD.MM.YYYY') + (@VAR.date_from@ +729)) as date_from" id="date_from"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;TO_CHAR(TO_DATE('01.01.1970''DD.MM.YYYY') + (@VAR.date_to@ +729)) as date_to" id="date_to"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_from@">
+          <ds:object>@VAR.date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.date_to@">
+          <ds:object>@VAR.date_to@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.date_from@ +729)) as date_from,
+TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.date_to@ +729)) as date_to
+FROM DUAL</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="IFE_COUNT_WO_ALL" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="COUNT (ife.event_perfno_i) as WO_COUNT" id="WO_COUNT"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@IFE_PERIOD.dates@">
+          <ds:object>@IFE_PERIOD.dates@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_type@">
+          <ds:object>@VAR.ac_type@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT COUNT (ife.event_perfno_i) as WO_COUNT
+FROM (
+SELECT DISTINCT wo_header.event_perfno_i
+FROM wo_header
+LEFT JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+LEFT JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+LEFT JOIN (
+                    SELECT workstep_link.event_perfno_i as event_perfno_i,
+                                 RTRIM(XMLAGG(XMLELEMENT(E, TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wo_text_action.action_date+729), 'DD.MM.YYYY')||': '||TO_CHAR(wo_text_action.text), '.'||CHR(10)||CHR(10)).EXTRACT('//text()') ORDER BY workstep_link.sequenceno).GetClobVal(), CHR(10)) as action_text
+                    FROM wo_header
+                    JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+                    JOIN wo_text_action ON workstep_link.workstep_linkno_i=wo_text_action.workstep_linkno_i
+                    JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+                    LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+                    JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+                    WHERE wo_text_action.action_date IS NOT NULL
+                                  AND wo_header.type NOT IN ('S', 'T', 'PD')
+                                  AND wo_header.issue_date&lt;=@IFE_PERIOD.dates@
+                                  AND (wo_header.closing_date&gt;@IFE_PERIOD.dates@ OR wo_header.closing_date IS NULL)
+                                  AND aircraft.ac_typ IN ('@VAR.ac_type@')
+                                  AND (
+                                            wo_header.ata_chapter LIKE ('44%') AND aircraft.ac_typ IN ('B737', 'B777')
+                                            OR wo_header.ata_chapter LIKE ('23%') AND aircraft.ac_typ IN ('A330', 'B737')
+                                            OR aircraft.ac_typ IN ('A32S') 
+                                                  AND (wo_header.ata_chapter LIKE ('23%') OR wo_header.ata_chapter LIKE ('44%'))
+                                                  AND (wo_header_more.mel_chapter NOT LIKE ('23%') OR wo_header_more.mel_chapter IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.header, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.header IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text_html IS NULL)
+                                                  AND (NOT REGEXP_LIKE(wo_text_action.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_action.text IS NULL)
+                                          )
+                    GROUP BY workstep_link.event_perfno_i
+                   ) action_text ON wo_header.event_perfno_i=action_text.event_perfno_i
+LEFT JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+LEFT JOIN wo_header_more ON wo_header.event_perfno_i = wo_header_more.event_perfno_i
+WHERE wo_header.issue_date&lt;=@IFE_PERIOD.dates@
+               AND (wo_header.closing_date&gt;@IFE_PERIOD.dates@ OR wo_header.closing_date IS NULL)
+               AND aircraft.ac_typ IN ('@VAR.ac_type@')
+               AND wo_header.type NOT IN ('S', 'T', 'PD')
+               AND workstep_link.sequenceno='1'
+               AND (
+                          wo_header.ata_chapter LIKE ('44%') AND aircraft.ac_typ IN ('B737', 'B777')
+                          OR wo_header.ata_chapter LIKE ('23%') AND aircraft.ac_typ IN ('A330', 'B737')
+                          OR aircraft.ac_typ IN ('A32S') 
+                                 AND (wo_header.ata_chapter LIKE ('23%') OR wo_header.ata_chapter LIKE ('44%'))
+                                 AND (wo_header_more.mel_chapter NOT LIKE ('23%') OR wo_header_more.mel_chapter IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.header, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.header IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.text, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text IS NULL)
+                                 AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(COCKPIT|OCCUPANT)','i') OR wo_text_description.text_html IS NULL)
+                                 AND (NOT REGEXP_LIKE(action_text.action_text, '(COCKPIT|OCCUPANT)','i') OR action_text.action_text IS NULL)
+                         )
+               AND (
+REGEXP_LIKE(wo_text_description.header, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS |CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(wo_text_description.text, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS |CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(wo_text_description.text_html, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+OR
+REGEXP_LIKE(action_text.action_text, '(SVDU|SDU|QSEB|CONTROL|JACK|TPMU|PCU|WIFI|IFE|USB|PED|SOCKET|MCU|SOUND|OML|OUTLET UNIT|ENTERTAINMENT SYSTEM|VIDEO|CORD|DART|CABLE|REMOTE|MONITOR|MONITORES|MONITORS CONTR|SEB|CORD|HAND SET|AUDIO)|((H)([A-Za-z0-9]{3})(PHON)([A-Za-z0-9]{1}|\s|\.))|((H)([A-Za-z0-9]{2,4})(SET)([A-Za-z0-9]{1}|\s|\.))|((WI)((-)|\s{1})(FI)|GSM|CRADLE)','i')
+
+OR (REGEXP_LIKE(wo_text_description.header, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.header, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.text, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(CREW TERMINAL)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(VCI MAIN PUSHBUTTON)','i') AND REGEXP_LIKE(action_text.action_text, '(CREW TERMINAL)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.header, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.text, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(UPLOAD)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(UPLOAD)','i') AND REGEXP_LIKE(action_text.action_text, '(ADVERTI)([A-Za-z0-9]{1})(ING DATA)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.header, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.text, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(SYSTEM)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '([A-Za-z0-9]{1})(FE)','i') AND REGEXP_LIKE(action_text.action_text, '(SYSTEM)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.header, '(BUTTON)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.text, '(BUTTON)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(CALL)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(BUTTON)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(CALL)','i') AND REGEXP_LIKE(action_text.action_text, '(BUTTON)','i'))
+
+OR (REGEXP_LIKE(wo_text_description.header, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.header, '(POWER)','i'))
+OR (REGEXP_LIKE(wo_text_description.text, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.text, '(POWER)','i'))
+OR (REGEXP_LIKE(wo_text_description.text_html, '(VCC)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(POWER)','i'))
+OR (REGEXP_LIKE(action_text.action_text, '(VCC)','i') AND REGEXP_LIKE(action_text.action_text, '(POWER)','i'))
+
+          )
+
+      AND (NOT REGEXP_LIKE(wo_text_description.header, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.header IS NULL)
+      AND (NOT REGEXP_LIKE(wo_text_description.text, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.text IS NULL)
+      AND (NOT REGEXP_LIKE(wo_text_description.text_html, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR wo_text_description.text_html IS NULL)
+      AND (NOT REGEXP_LIKE(action_text.action_text, '(CDSS|ENG#|PRAM|ACARS|INTERPHONE|LAV L|VHF)','i') OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.header, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.text, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(wo_text_description.text_html, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(HANDSET|((H)([A-Za-z0-9]{3})(SET)))','i') AND REGEXP_LIKE(action_text.action_text, '(OBSERVER|OBSERVERS|OBSERVER\WS)','i')) OR action_text.action_text IS NULL)
+          
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.header, '(HORN)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.text, '(HORN)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(EXT)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(HORN)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(EXT)','i') AND REGEXP_LIKE(action_text.action_text, '(HORN)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.header, '(PRERECORDED)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.text, '(PRERECORDED)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(PRERECORDED)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(ANNOUNCEMENT)','i') AND REGEXP_LIKE(action_text.action_text, '(PRERECORDED)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.header, '(LIGHT-OUTLET)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.text, '(LIGHT-OUTLET)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(IUL)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(LIGHT-OUTLET)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(IUL)','i') AND REGEXP_LIKE(action_text.action_text, '(LIGHT-OUTLET)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.header, '(SEB)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.text, '(SEB)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(DOOR)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(SEB)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(DOOR)','i') AND REGEXP_LIKE(action_text.action_text, '(SEB)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.header, '(VOICE)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.text, '(VOICE)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(SATCOM)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(VOICE)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(SATCOM)','i') AND REGEXP_LIKE(action_text.action_text, '(VOICE)','i')) OR action_text.action_text IS NULL)
+
+      AND (NOT (REGEXP_LIKE(wo_text_description.header, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.header, '(CALL BUTTON)','i')) OR wo_text_description.header IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.text, '(CALL BUTTON)','i')) OR wo_text_description.text IS NULL)
+      AND (NOT (REGEXP_LIKE(wo_text_description.text_html, '(LAV)','i') AND REGEXP_LIKE(wo_text_description.text_html, '(CALL BUTTON)','i')) OR wo_text_description.text_html IS NULL)
+      AND (NOT (REGEXP_LIKE(action_text.action_text, '(LAV)','i') AND REGEXP_LIKE(action_text.action_text, '(CALL BUTTON)','i')) OR action_text.action_text IS NULL)
+) ife</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

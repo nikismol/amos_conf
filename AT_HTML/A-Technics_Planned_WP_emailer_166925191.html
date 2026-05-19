@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : A-Technics_Planned_WP_emailer</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : A-Technics_Planned_WP_emailer
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on июл. 23, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT TO_CHAR(wp_header.internal_remarks)                                                       as internal_remarks,
+       TO_CHAR(wp_header.quotationno_i)                                                          as quotationno_i,
+       TO_CHAR(wp_header.wp_type)                                                                as wp_type,
+       TO_CHAR(wp_header.drop_locationno_i)                                                      as drop_locationno_i,
+       TO_CHAR(wp_header.wpno_i)                                                                 as wpno_i,
+       wp_header.wpno,
+       wp_header.ac_registr,
+       wp_header.ac_typ,
+       wp_header.projectno,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.est_groundtime) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.est_groundtime), 60)), &#39;FM00&#39;)                      as est_groundtime,
+       wp_header.station,
+       TO_CHAR(to_date(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + wp_header.start_date, &#39;DD.MM.YYYY&#39;)         as start_date,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.start_time) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.start_time), 60)), &#39;FM00&#39;)                          as start_time,
+       wp_header.arrival_fltno,
+       TO_CHAR(to_date(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + wp_header.end_date, &#39;DD.MM.YYYY&#39;)           as end_date,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.end_time) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.end_time), 60)), &#39;FM00&#39;)                            as end_time,
+       wp_header.description,
+       wp_header.owner,
+       TO_CHAR(wp_header.event_id)                                                               as event_id,
+       TO_CHAR(wp_header.astra_id)                                                               as astra_id,
+       TO_CHAR(wp_header.paperwork_expected)                                                     as paperwork_expected,
+       TO_CHAR(to_date(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + wp_header.paperwork_del_date, &#39;DD.MM.YYYY&#39;) as paperwork_del_date,
+       wp_header.hangar,
+       wp_header.hidden,
+       TO_CHAR(to_date(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + wp_header.mutation, &#39;DD.MM.YYYY&#39;)           as mutation,
+       wp_header.mutator,
+       TO_CHAR(wp_header.status)                                                                 as status,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.mutation_time / 1000 / 60) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.mutation_time / 1000 / 60), 60)), &#39;FM00&#39;)           as mutation_time,
+       wp_header.created_by,
+       TO_CHAR(to_date(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + wp_header.created_date, &#39;DD.MM.YYYY&#39;)       as created_date,
+       TO_CHAR(to_date(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + wp_header.act_start_date, &#39;DD.MM.YYYY&#39;)     as act_start_date,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.act_start_time / 1000 / 60) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.act_start_time / 1000 / 60), 60)), &#39;FM00&#39;)          as act_start_time,
+       TO_CHAR(to_date(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + wp_header.act_end_date, &#39;DD.MM.YYYY&#39;)       as act_end_date,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.act_end_time / 1000 / 60) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.act_end_time / 1000 / 60), 60)), &#39;FM00&#39;)            as act_end_time,
+       wp_header.responsible,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.delay / 1000 / 60) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.delay / 1000 / 60), 60)), &#39;FM00&#39;)                   as delay,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.non_routine_time / 1000 / 60) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.non_routine_time / 1000 / 60), 60)), &#39;FM00&#39;)        as non_routine_time,
+       wp_header.engrun,
+       wp_header.ratfunc,
+       wp_header.acweigh,
+       wp_header.ndt_req,
+       wp_header.def_req,
+       wp_header.jack_req,
+       wp_header.change_eng1,
+       wp_header.change_eng2,
+       wp_header.change_apu,
+       wp_header.borr_eng1,
+       wp_header.borr_eng2,
+       wp_header.borr_apu,
+       wp_header.dirty_sequence,
+       wp_header.release_sign,
+       wp_header.release_sign_to,
+       TO_CHAR(to_date(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + wp_header.closing_date, &#39;DD.MM.YYYY&#39;)       as closing_date,
+       wp_header.maintprov_address,
+       wp_header.cust_wpno,
+       wp_header.ops_status,
+       wp_header.priority_code,
+       TO_CHAR(wp_header.remarks)                                                                as remarks,
+       wp_header.amm_reference,
+       TO_CHAR(wp_header.amm_publication_noi)                                                    as amm_publication_noi,
+       TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wp_header.extension_time / 1000 / 60) / 60), &#39;FM9900&#39;)) || &#39;:&#39; ||
+       TO_CHAR(TRUNC(MOD(TO_NUMBER(wp_header.extension_time / 1000 / 60), 60)), &#39;FM00&#39;)          as extension_time,
+       TO_CHAR(wp_header.extension_reason)                                                       as extension_reason,
+       TO_CHAR(wp_header.mpno_i)                                                                 as mpno_i,
+       TO_CHAR(wp_header.mp_revision)                                                            as mp_revision,
+       TO_CHAR(wp_header.wp_sequence_config_id)                                                  as wp_sequence_config_id,
+       TO_CHAR(wp_header.sequence_on_assignment)                                                 as sequence_on_assignment,
+       TO_CHAR(wp_header.wp_status)                                                              as wp_status,
+       wp_header.uuid,
+       TO_CHAR(wp_header.flight_legno_i)                                                         as flight_legno_i,
+       TO_CHAR(wp_header.approvalno_i)                                                           as approvalno_i
+FROM wp_header
+         JOIN aircraft ON wp_header.ac_registr = aircraft.ac_registr AND
+                          (aircraft.maintenance_provider = &#39;0011026298&#39; OR
+                           aircraft.ac_typ = &#39;B777&#39; AND wp_header.maintprov_address = &#39;0011026298&#39;)
+WHERE 1 = 1
+  AND (
+    wp_header.start_date &lt;= trunc(sysdate + 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) and
+    wp_header.start_date &gt;= trunc(sysdate - 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;)
+        or
+    wp_header.act_start_date &lt;= trunc(sysdate + 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) and
+    wp_header.act_start_date &gt;= trunc(sysdate - 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;)
+        or
+    wp_header.end_date &lt;= trunc(sysdate + 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) and
+    wp_header.end_date &gt;= trunc(sysdate - 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;)
+        or
+    wp_header.act_end_date &lt;= trunc(sysdate + 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) and
+    wp_header.act_end_date &gt;= trunc(sysdate - 3) - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;)
+        or
+    (
+        FLOOR(sysdate - to_date(&#39;19711231&#39;, &#39;yyyymmdd&#39;)) * (24 * 60) + TO_CHAR(SYSTIMESTAMP, &#39;SSSSS&#39;) / 60 &gt;=
+        wp_header.start_date * 24 * 60 + wp_header.start_time
+            AND (wp_header.end_date is null or
+                 FLOOR(sysdate - to_date(&#39;19711231&#39;, &#39;yyyymmdd&#39;)) * (24 * 60) + TO_CHAR(SYSTIMESTAMP, &#39;SSSSS&#39;) / 60 &lt;=
+                 wp_header.end_date * 24 * 60 + wp_header.end_time)
+        )
+        or
+    (
+        FLOOR(sysdate - to_date(&#39;19711231&#39;, &#39;yyyymmdd&#39;)) * (24 * 60) + TO_CHAR(SYSTIMESTAMP, &#39;SSSSS&#39;) / 60 &gt;=
+        wp_header.act_start_date * 24 * 60 + wp_header.act_start_time
+            AND (wp_header.act_end_date is null OR
+                 FLOOR(sysdate - to_date(&#39;19711231&#39;, &#39;yyyymmdd&#39;)) * (24 * 60) + TO_CHAR(SYSTIMESTAMP, &#39;SSSSS&#39;) / 60 &lt;=
+                 wp_header.act_end_date * 24 * 60 + wp_header.act_end_time)
+        )
+    )</pre>
+</div></div><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

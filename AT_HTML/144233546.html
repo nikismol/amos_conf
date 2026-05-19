@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Получение сертификата с Web Drive и локальной папки</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Reports_136258914.html">AMOS Reports</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="136252106.html">Учебные материалы и наработки для создания отчетов</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="103036240.html">Запрос для получения сертификата с Web Drive.</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Получение сертификата с Web Drive и локальной папки
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on сент. 28, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    *
+FROM (
+    SELECT
+        r.partno,
+        r.serialno,
+        h.voucherno || &#39; &#39; || &#39;см в APN 188&#39; AS doc,
+        &#39;web://&#39;||cert_link.destination_key AS path
+    FROM rotables r
+    LEFT JOIN history h ON r.psn=h.psn AND h.VM=&#39;B1&#39;
+    LEFT JOIN db_link cert_link ON h.recdetailno_i=cert_link.source_pk AND cert_link.source_type IN (&#39;RD&#39;, &#39;HI&#39;) AND cert_link.link_type=&#39;D&#39;
+    LEFT JOIN location ON r.locationno_i=LOCATION.LOCATIONNO_I
+    WHERE location.station=&#39;SHRM&#39;
+      AND location.store=&#39;1221&#39;
+      AND cert_link.LINKNO_I is not null
+    UNION
+    SELECT
+        r.partno,
+        r.serialno,
+        &#39;form tracking no:&#39; ||&#39; &#39;|| cert.form_tracking_no ,
+        &#39;\\msk.aeroflot.ru\amos\PROD\WEB_DRIVE\&#39;||ste_content_list.engine_id AS path
+    FROM rotables r
+    LEFT JOIN certificate_link cert_link ON r.psn=cert_link.source_key
+    LEFT JOIN certificate cert ON cert.certificate_i = cert_link.certificate_i
+    LEFT JOIN db_link ON db_link.source_type = &#39;CERT&#39; AND db_link.source_pk = cert.certificate_i AND db_link.link_type = &#39;S&#39;
+    LEFT JOIN ste_content_list ON ste_content_list.storage_id = db_link.destination_key
+    LEFT JOIN location ON r.locationno_i=location.locationno_i
+    WHERE location.station=&#39;SHRM&#39;
+      AND location.store=&#39;1221&#39;
+      AND cert_link.source_type = &#39;RO&#39;
+      AND ste_content_list.engine_id IS NOT NULL
+    )
+ORDER BY partno, serialno</pre>
+</div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

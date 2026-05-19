@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Получение TSI и CSI для Rotables</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Reports_136258914.html">AMOS Reports</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="136252106.html">Учебные материалы и наработки для создания отчетов</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Получение TSI и CSI для Rotables
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on авг. 18, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    rotables.partno,
+    rotables.serialno,
+    rotables.ac_registr as AC_install,
+    TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(hist.msn)/60),&#39;FM999999999900&#39;)) || &#39;:&#39;
+        ||TO_CHAR(TRUNC(MOD(TO_NUMBER(hist.msn),60)),&#39;FM00&#39;) as tsn,
+    hist.csn AS csn,
+    TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(tam_ac.tam_ac-hist.tam)/60),&#39;FM999999999900&#39;)) || &#39;:&#39;
+        ||TO_CHAR(TRUNC(MOD(TO_NUMBER(tam_ac.tam_ac-hist.tam),60)),&#39;FM00&#39;) as tsi,
+    (tac_ac.tac_ac-hist.tac) AS csi
+FROM rotables
+FULL JOIN aircraft ON rotables.ac_registr=aircraft.ac_registr
+LEFT JOIN (
+    SELECT
+        history.psn,
+        max(history.historyno_i) AS historyno_i
+    FROM history
+    WHERE history.VM=&#39;YE&#39;
+    GROUP BY  history.psn
+) history ON rotables.psn=history.psn
+LEFT JOIN history hist ON history.historyno_i=hist.historyno_i
+LEFT JOIN (
+    SELECT
+        counter.life_value as tac_ac,
+        counter.ref_key
+    FROM counter
+    LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+    LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+    WHERE counter.ref_type=&#39;AC_INT&#39;
+      AND counter_definition.counter_defno_i=&#39;2&#39;
+) tac_ac on aircraft.aircraftno_i=tac_ac.ref_key
+LEFT JOIN (
+    SELECT
+        counter.life_value as tam_ac,
+        counter.ref_key
+    FROM counter
+    LEFT JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+    LEFT JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+    WHERE counter.ref_type=&#39;AC_INT&#39;
+      AND counter_definition.counter_defno_i=&#39;1&#39;
+) tam_ac on aircraft.aircraftno_i=tam_ac.ref_key</pre>
+</div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

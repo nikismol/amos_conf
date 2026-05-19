@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : A-Technics_TimeCaptured_emailer</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : A-Technics_TimeCaptured_emailer
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified on авг. 22, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-left-sidebar" data-layout="two-left-sidebar">
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Результат запроса возвращает список TQs, обработанных специалистами RAMAX за период с 1 по 22 число</p></div></div></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;">
+ <div class="codeHeader panelHeader pdl hide-border-bottom">
+  <b class="code-title"></b>
+  <span class="collapse-source expand-control" style="display:none;"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Развернуть исходный код</span></span>
+  <span class="collapse-spinner-wrapper"></span>
+ </div>
+ <div class="codeContent panelContent pdl hide-toolbar"> 
+  <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: false; theme: Confluence; collapse: true" data-theme="Confluence">SELECT 
+               Станция_пакета
+,              Дата_начала
+,	Время_начала
+,	Дата_окончания
+,	Время_окончания
+,	Дата_закрытия_WO
+,              Модель_ВС
+,	Рег_номер_ВС
+,	N_Рейса
+,	Название_работы
+,	Описание_работы
+,	N_пакета_работ
+,	N_работы
+,	Трудозатраты
+,	Таб_N
+,	Цех
+,	Вид_работ
+,	Квалификация
+,              Тип_задач
+FROM
+(SELECT * FROM
+(
+  SELECT
+  2 AS head,
+  TO_CHAR(wp_header.station) AS Станция_пакета,
+  TO_CHAR(to_date('31.12.1971','DD.MM.YYYY')+time_captured.start_date, 'DD.MM.YYYY') AS Дата_начала,
+  LPAD((time_captured.start_time-MOD(time_captured.start_time,60))/60, 2, 0)
+  ||':'|| LPAD(MOD(time_captured.start_time,60), 2, 0) AS Время_начала,
+   TO_CHAR(to_date('31.12.1971', 'DD.MM.YYYY') + time_captured.end_date,'DD.MM.YYYY') AS Дата_окончания,
+  LPAD((time_captured.end_time - MOD(time_captured.end_time,60))/60, 2, 0)
+  ||':'|| LPAD(MOD(time_captured.end_time,60), 2, 0) AS Время_окончания,
+  TO_CHAR(to_date('31.12.1971', 'DD.MM.YYYY') + wo_header.closing_date,'DD.MM.YYYY') AS Дата_закрытия_WO,
+       TO_CHAR(aircraft.ac_model) AS Модель_ВС,
+       TO_CHAR(wo_header.ac_registr) AS Рег_номер_ВС,
+       TO_CHAR(wo_header.closing_leg) AS N_Рейса,
+       TO_CHAR(wo_text_description.header) AS Название_работы,
+       TO_CHAR(REPLACE(REPLACE(DBMS_LOB.SUBSTR(wo_text_description.text, 2000, 1), CHR(10), ' '), CHR(13), '')) AS Описание_работы,
+  TO_CHAR(wp_header.wpno) AS N_пакета_работ,
+  TO_CHAR(time_captured.primkey) AS N_работы,
+  TO_CHAR(REPLACE(ROUND(time_captured.duration / 60,2), '.',','))                             AS Трудозатраты, 
+  TO_CHAR(time_captured.user_sign) AS Таб_N,
+  TO_CHAR(wp_header.hidden) AS Цех,
+  TO_CHAR(time_captured.type_of_work_no) AS Вид_работ,
+  TO_CHAR(time_captured.qualification) AS Квалификация,
+  TO_CHAR(time_captured.scope) AS Тип_задач
+FROM time_captured
+LEFT JOIN workstep_link 
+                  ON time_captured.primkey = workstep_link.event_perfno_i
+                  AND workstep_link.sequenceno = 1
+LEFT JOIN wo_text_description
+                  ON workstep_link.descno_i = wo_text_description.descno_i
+LEFT JOIN wo_header
+                  ON time_captured.primkey = wo_header.event_perfno_i
+LEFT JOIN wp_assignment
+                  ON wp_assignment.event_perfno_i=wo_header.event_perfno_i
+LEFT JOIN wp_header
+                  ON wp_assignment.wpno_i=wp_header.wpno_i
+LEFT JOIN aircraft
+                  ON aircraft.ac_registr = wo_header.ac_registr
+LEFT JOIN SIGN
+                  ON time_captured.user_sign =sign.user_sign
+WHERE (sign.company_new = '0011026298' OR sign.department = '11026298')
+               AND time_captured.start_date = TRUNC (SYSDATE) - TO_DATE ('31.12.1971', 'dd.mm.yyyy') - 3
+ORDER BY 1, 2 ASC
+)
+  
+UNION 
+SELECT 1 as head
+,              'Станция_пакета' as Станция_пакета
+,              'Дата_начала' as Дата_начала
+,	'Время_начала' as Время_начала
+,	'Дата_окончания' as Дата_окончания
+,	'Время_окончания' as Время_окончания
+,	'Дата_закрытия_WO' as Дата_закрытия_WO
+,              'Модель_ВС' as Модель_ВС
+,	'Рег_номер_ВС' as Рег_номер_ВС
+,	'N_Рейса' as N_Рейса
+,	'Название_работы' as Название_работы
+,	'Описание_работы' as Описание_работы
+,	'N_пакета_работ' as N_пакета_работ
+,	'N_работы' as N_работы
+,	'Трудозатраты' as Трудозатраты
+,	'Таб_N' as Таб_N
+,	'Цех' as Цех
+,	'Вид_работ' as Вид_работ
+,	'Квалификация' as Квалификация
+,              'Тип_задач' as Тип_задач
+FROM dual
+ORDER BY 1)</pre> 
+ </div>
+</div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

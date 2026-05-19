@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Carpet_supply_plan</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Carpet_supply_plan
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    part_forecast.event_display AS event
+    ,aircraft.ac_typ
+    ,part_forecast.receiver AS receiver
+    ,CASE WHEN REGEXP_LIKE(part_forecast.partno, &#39;^[0-9]+$&#39;) THEN chr(39)||part_forecast.partno ELSE part_forecast.partno END AS partno
+    ,part_forecast.part_description as part_description
+    ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + part_forecast.expected_date, &#39;DD.MM.YYYY&#39;) AS due_date
+    ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + part_forecast.planned_date, &#39;DD.MM.YYYY&#39;) AS planned_date
+    ,TO_NUMBER(part_forecast.requested_qty) AS requested_qty
+    ,part_forecast.measure_unit AS measure_unit
+    , CASE
+        WHEN part_forecast.planned_date IS not NULL THEN TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (part_forecast.planned_date-4), &#39;DD.MM.YYYY&#39;)
+        END AS delivery_date
+    ,od_header.orderno
+    ,od_header.ext_state
+    ,TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + od_header.orderdate, &#39;DD.MM.YYYY&#39;) AS orderdate
+FROM part_forecast
+LEFT JOIN part_request_2 ON part_forecast.part_requestno_i=part_request_2.part_requestno_i and part_request_2.event_type=&#39;WSL&#39;
+LEFT JOIN allocation_link ON part_request_2.part_requestno_i=allocation_link.source_key AND allocation_link.ref_type=&#39;ORDER_DE&#39;
+LEFT JOIN aircraft ON part_forecast.receiver=aircraft.ac_registr
+LEFT JOIN od_detail ON allocation_link.ref_key=od_detail.detailno_i
+LEFT JOIN od_header ON od_detail.orderno_i=od_header.orderno_i AND od_header.order_type=&#39;P&#39; AND od_header.ext_state IN (&#39;O&#39;, &#39;D&#39;)
+WHERE
+   (
+       part_forecast.part_request_part_cond &lt;&gt; &#39;US&#39; OR part_forecast.part_request_part_cond IS NULL
+       )
+  AND aircraft.status=0
+  AND
+    (
+        part_forecast.EXPECTED_DATE &gt;= FLOOR(TRUNC(sysdate, &#39;dd&#39;)-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))
+        AND part_forecast.EXPECTED_DATE &lt;= FLOOR(TRUNC(ADD_MONTHS(sysdate, 12), &#39;dd&#39;)-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))
+        )
+  AND
+    (
+        (/*A32S*/
+            part_forecast.event_display LIKE (&#39;A20-25-0622-01%&#39;)
+                OR part_forecast.event_display LIKE (&#39;A20-25-0622-02%&#39;)
+                OR part_forecast.event_display LIKE (&#39;A20-25-0622-03%&#39;)
+            )
+        OR
+        (/*A330*/
+            part_forecast.event_display LIKE (&#39;A30-25-0079-01%&#39;)
+                OR part_forecast.event_display LIKE (&#39;A30-25-0079-02%&#39;)
+                OR part_forecast.event_display LIKE (&#39;A30-25-0079-03%&#39;)
+                OR part_forecast.event_display LIKE (&#39;A30-25-0079-04%&#39;)
+            )
+        OR
+        (/*A350*/
+            part_forecast.event_display LIKE (&#39;252861-00M01-AFL%&#39;)
+                OR part_forecast.event_display LIKE (&#39;252861-00M02-AFL%&#39;)
+                OR part_forecast.event_display LIKE (&#39;252861-00M03-AFL%&#39;)
+                OR part_forecast.event_display LIKE (&#39;252861-00M04-AFL%&#39;)
+            )
+        OR
+        (/*B737*/
+            part_forecast.event_display LIKE (&#39;B3-25-0043-01%&#39;)
+                OR part_forecast.event_display LIKE (&#39;B3-25-0043-02%&#39;)
+                OR part_forecast.event_display LIKE (&#39;B3-25-0043-03%&#39;)
+            )
+        OR
+        (/*B777*/
+            part_forecast.event_display LIKE(&#39;%B7-25-0066/01%&#39;)
+                OR part_forecast.event_display LIKE (&#39;B7-25-0066/02%&#39;)
+                OR part_forecast.event_display LIKE (&#39;B7-25-0066/04%&#39;)
+                OR part_forecast.event_display LIKE (&#39;B7-25-0066/05%&#39;)
+            )
+        )
+ORDER BY aircraft.ac_typ, part_forecast.receiver, part_forecast.partno, part_forecast.event_display</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

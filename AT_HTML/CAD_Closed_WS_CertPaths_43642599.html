@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : CAD_Closed_WS_CertPaths</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Reports_43642559.html">Reports</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : CAD_Closed_WS_CertPaths
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified by <span class='editor'> Филипенков Никита Константинович</span> on сент. 28, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Task Action</td><td class="confluenceTd">DatasourceExporterTask</td></tr><tr><td class="confluenceTd">Source Type</td><td class="confluenceTd">Plain SQL</td></tr><tr><td class="confluenceTd">Output format</td><td class="confluenceTd">excel 2007</td></tr><tr><td class="confluenceTd">Store in folder</td><td class="confluenceTd">\\<a class="external-link" href="http://msk.aeroflot.ru" rel="nofollow">msk.aeroflot.ru</a>\amos\PROD\WEB_DRIVE\ДПЛГ\CAD\Closed_WS_CertPaths\</td></tr><tr><td class="confluenceTd">Filenames</td><td class="confluenceTd">Closed_WS_CertPaths</td></tr><tr><td class="confluenceTd">Attach timestamp to filenames</td><td class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">Timestamp</td><td class="confluenceTd">yyyy-MM-dd</td></tr><tr><td colspan="1" class="confluenceTd">Scheduling | Rec. pattern | Hourly</td><td colspan="1" class="confluenceTd">24:00</td></tr></tbody></table></div><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT 
+  wp_header.wpno,
+  wo_header.ac_registr,
+  wp_sequence.seqno_i,
+  wo_header.event_perfno_i as met_link,
+  pickslip_booked.pickslipno, 
+  pickslip_booked.partno,
+  pickslip_booked.serialno,
+  pickslip_booked.batchno,
+  CASE WHEN dbl.linkno_i IS NULL THEN &#39;Certificate_not_found&#39; 
+    ELSE
+      TO_CHAR(&#39;\\msk.aeroflot.ru\amos\PROD\WEB_DRIVE\&#39;)||
+      CASE WHEN (dbl.link_type = &#39;D&#39;) THEN REPLACE(dbl.destination_key, &#39;/&#39;, &#39;\&#39;) ELSE TO_CHAR(ste_content_list.engine_id) END
+    END as certificate_path
+FROM wo_header
+LEFT JOIN wp_assignment ON wp_assignment.event_perfno_i = wo_header.event_perfno_i
+LEFT JOIN wp_sequence ON wo_header.event_perfno_i = wp_sequence.event_perfno_i AND wp_sequence.status = 0
+LEFT JOIN wp_header ON wp_header.wpno_i = wp_assignment.wpno_i
+LEFT JOIN workstep_link ON workstep_link.event_perfno_i = wo_header.event_perfno_i
+LEFT JOIN wo_text_action ON wo_text_action.workstep_linkno_i = workstep_link.workstep_linkno_i
+LEFT JOIN part_request_2 ON part_request_2.event_type = &#39;WSL&#39; AND part_request_2.event_key = workstep_link.workstep_linkno_i
+LEFT JOIN pickslip_detail ON (pickslip_detail.part_requestno_i = part_request_2.part_requestno_i)
+LEFT JOIN pickslip_booked ON pickslip_booked.recno = pickslip_detail.recno AND pickslip_booked.pickslipno = pickslip_detail.pickslipno
+LEFT JOIN history ON history.recdetailno_i = pickslip_booked.recdetailno_i AND history.vm = &#39;B1&#39;
+LEFT JOIN rotables ON rotables.psn = history.psn
+LEFT JOIN certificate ON certificate.source_type = &#39;RO&#39; AND certificate.source_key = rotables.psn
+LEFT JOIN db_link dbl_cert ON dbl_cert.source_type = &#39;CERT&#39; AND dbl_cert.source_pk = certificate.certificate_i
+LEFT JOIN db_link dbl_rec ON dbl_rec.source_type = &#39;RD&#39; AND dbl_rec.source_pk = pickslip_booked.recdetailno_i
+LEFT JOIN db_link dbl ON (dbl_rec.linkno_i IS NULL AND dbl_cert.linkno_i = dbl.linkno_i) OR (dbl_rec.linkno_i IS NOT NULL AND dbl_rec.linkno_i = dbl.linkno_i)
+LEFT JOIN ste_content_list ON dbl.link_type = &#39;S&#39; AND TO_CHAR(ste_content_list.storage_id) = dbl.destination_key
+WHERE
+workstep_link.workstep_state = &#39;C&#39;
+AND wo_text_action.mutation = FLOOR(sysdate-to_date(&#39;19711231&#39;,&#39;yyyymmdd&#39;))-1
+AND pickslip_booked.pickslipno IS NOT NULL
+AND pickslip_booked.qty_booked &gt; 0
+</pre>
+</div></div><br/><br/></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

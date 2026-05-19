@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000339</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="12">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="ClonerReportView" id="21">
+      <attribute name="name">Cloner_1</attribute>
+      <attribute name="position">452 1</attribute>
+      <attribute name="size">548 46</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_MP_CHECK_LIST</attribute>
+      <attribute name="tiling-mode">LIMITED_WIDTH</attribute>
+    </view>
+    <view class="LabelReportView" id="22">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">454 16</attribute>
+      <attribute name="size">23 30</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@AFL_MP_CHECK_LIST.internal_check@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>21</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>2</x_offset>
+        <y_offset>15</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors/>
+      <ds:configurationParameters/>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_MP_CHECK_LIST" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DISTINCT&#10;                          check_type_int.internal_check internal_check" id="internal_check"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters/>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT DISTINCT
+                          check_type_int.internal_check internal_check
+              FROM
+              check_type_int
+              JOIN check_type ON check_type.checkno_i=check_type_int.checkno_i
+              JOIN event_effectivity_link ON check_type_int.check_intno_i=event_effectivity_link.event_key
+                                                                  AND event_effectivity_link.event_type = 'CHTI' 
+              JOIN event_effectivity ON event_effectivity.effectivityno_i=event_effectivity_link.effectivityno_i
+                                                          AND event_effectivity.parent_effectivityno_i IS NULL 
+                                                          AND (event_effectivity.status NOT IN (1, 2) OR event_effectivity.revision_effectivityno_i IS NULL)
+              WHERE event_effectivity.aircraft_typ = 'A350'
+                           AND check_type_int.status&lt;&gt;9
+              ORDER BY NLSSORT(internal_check, 'NLS_SORT=BINARY')</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Настройка Export Component History</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-AIM-Configuration_143131870.html">AMOS AIM Configuration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Настройка Export Component History
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on мар. 07, 2024
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div id="expander-828829557" class="expand-container"><div id="expander-control-828829557" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">AFL</span></div><div id="expander-content-828829557" class="expand-content"><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">В APN 1404 Main&amp;Traceability</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><ul><li>На вкладке <em><strong>MAIN</strong> </em>необходимо заполнить в соответсвии со скриншотом ниже:<br/><br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263644/136263757.png" data-image-src="attachments/136263644/136263757.png" data-unresolved-comment-count="0" data-linked-resource-id="136263757" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-5-2_15-19-57.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263644" data-linked-resource-container-version="26"></span></li><li>На вкладке <em><strong>Traceability</strong></em> настроить в соответсвии со скриншотом ниже:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263644/136263759.png" data-image-src="attachments/136263644/136263759.png" data-unresolved-comment-count="0" data-linked-resource-id="136263759" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-5-2_15-31-48.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263644" data-linked-resource-container-version="26"></span></li></ul></div></div><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка селектора в APN 1404</p><div class="confluence-information-macro-body"><ul><li class="auto-cursor-target">В Configuration Detail выбираем подвкладку <strong><em>selector</em></strong> и в окне <strong><em>Export Selector</em></strong> заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263644/143132343.png" data-image-src="attachments/136263644/143132343.png" data-unresolved-comment-count="0" data-linked-resource-id="143132343" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-31_13-21-2.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263644" data-linked-resource-container-version="26"></span></li><li class="auto-cursor-target"><p class="auto-cursor-target"><span style="letter-spacing: 0.0px;">Ниже представлен </span><em style="letter-spacing: 0.0px;"><strong>SQL запрос</strong></em><span style="letter-spacing: 0.0px;"> для указания в </span><em style="letter-spacing: 0.0px;"><strong>Selector Options</strong></em><span style="letter-spacing: 0.0px;"><span style="letter-spacing: 0.0px;">:<br/><br/></span></span></p><div id="expander-286742316" class="expand-container"><div id="expander-control-286742316" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">SQL запрос(NEW)</span></div><div id="expander-content-286742316" class="expand-content"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT distinct history.historyno_i
+FROM history
+LEFT JOIN od_header ON history.orderno = od_header.orderno
+LEFT JOIN od_rec_header ON DECODE(
+                                                                     LENGTH(TRIM(TRANSLATE(SUBSTR(history.voucherno, 3),`1234567890`,` `))),
+                                                                     null, substr(history.voucherno, 3),
+                                                                     `0`
+                                                                    ) = od_rec_header.receivingno   /*могут быть не только числа*/
+LEFT JOIN aim_transfer_history ON history.historyno_i = aim_transfer_history.source_key     /*Transfer history*/
+                                                               AND aim_transfer_history.success = `Y`
+                                                               AND aim_transfer_history.source_type = `HI`
+                                                               AND aim_transfer_history.service = `EXPORT_COMPONENT_HISTORY`
+                                                               AND (aim_transfer_history.aim_configno_i = `2`)
+                                                               AND aim_transfer_history.source_key IS NOT NULL
+LEFT JOIN history_text ON history.historyno_i = history_text.historyno_i AND short_text like `Previous Location: %`
+ where 1=1
+              AND to_date(`31.12.1971`, `dd.mm.yyyy`) + history.created_date &gt;= TRUNC(sysdate - 30)
+              AND to_date(`31.12.1971`, `dd.mm.yyyy`) + history.del_date &gt; to_date(`01.03.2022`, `dd.mm.yyyy`)
+              AND (history.store != `EXTERNAL` OR history.store IS NULL)
+              AND aim_transfer_history.source_key IS NULL
+              AND history.created_by &lt;&gt; `MIGRUSR`
+              AND (
+                        history.vm in (`BN`,`CE`,`CR`,`CS`,`D`,`EA`,`ES`,`LC`,`LE`,`PS`,`SC`,`SX`,`TC`,`TS`,`TR`,`B8`,`YA`,`SI`,`SR`,`RS`,`SE`,`YR`,`DE`, `SN`, `T`)
+                        OR
+                        (
+                         history.vm = `B1`
+                         AND od_rec_header.awbno IN (`RELEASE REPAIRABLE`,`RELEASE ROTABLE`)
+                         AND nvl(history.higher_partno, chr(160)) in (chr(49824), chr(160))
+                        )
+                        OR
+                        ( /* B7 (комплектование) выгружать только с пустым orderno или по R заказу */
+                         history.vm = `B7`
+                         AND (nvl(history.orderno, chr(160)) in (chr(49824), chr(160)) or substr(history.orderno, 1, 1) = `R`)
+                        ) 
+                        OR
+                        (/* для внутренних ремонтов МО выгружать все же надо */
+                         /* MO только без ремонтного заказа, если нет ссылки на заказ - невидимый пробел, с самолетов не делаем */
+                         history.vm = `MO`
+                         AND (nvl(history.orderno, chr(160)) in (chr(49824), chr(160)) OR od_header.internal_repair=`Y` )
+                         AND nvl(history.station, chr(160)) not in (chr(49824), chr(160))
+                        ) 
+                        OR
+                        ( /* иначе при загрузке данных по самолету выгрузится куча монтажей */
+                         history.vm = `YE`
+                         AND nvl(history.station, chr(160)) not in (chr(49824), chr(160))
+                         AND nvl(history.store, chr(160)) not in (chr(49824), chr(160))
+                        ) 
+                        OR
+                        ( /* исключение перемещений внутри LISTOFTL */
+                         history.vm IN (`T`, `LC`, `TS`, `TR`)
+                         AND history.store != `LISTOFTL`
+                         AND regexp_replace(history_text.short_text,`Previous Location: ([[:alnum:]]+)/([[:alnum:]]+)/(.*)`,`\2`) = `LISTOFTL` 
+                        ) 
+                        OR
+                        (
+                         history.vm IN (`AA`, `AS`)
+                         AND history.store &lt;&gt; `123A`
+                        )
+                        OR
+                        (
+                         history.vm IN (`CI`)
+                         AND od_header.order_type = `R` AND od_header.vendor = `CLOSED`
+                        )
+                        OR
+                        (
+                         history.vm in (`V`)
+                         AND history.created_date &gt;= 18899
+                        )
+                       )</pre>
+</div></div></div></div><div id="expander-457533426" class="expand-container"><div id="expander-control-457533426" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">SQL запрос(OLD)</span></div><div id="expander-content-457533426" class="expand-content"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">select distinct hs.historyno_i
+from history hs
+left join (
+    select
+        orderno,
+        internal_repair
+    from od_header) ord on hs.orderno = ord.orderno
+left join od_rec_header rec
+    on decode( /* могут быть не только числа */
+        length(trim(translate(substr(hs.voucherno,3),
+        &#39;1234567890&#39;,
+            &#39; &#39;))),
+        null,
+        substr(hs.voucherno, 3),
+        &#39;0&#39;) = rec.receivingno
+left join /* Transfer history */ (
+    select hist.source_key
+    from aim_transfer_history hist
+    where hist.success = &#39;Y&#39;
+      and hist.source_type = &#39;HI&#39;
+      and hist.service = &#39;EXPORT_COMPONENT_HISTORY&#39;
+      and hist.aim_configno_i = &#39;2&#39;
+      and hist.source_key is not null
+    group by hist.source_key) hist on hs.historyno_i = hist.source_key
+left join /* from-to locations */(
+    select
+        historyno_i,
+           /*      regexp_replace(t.short_text,
+         `Previous Location: ([[:alnum:]]+)/([[:alnum:]]+)/(.*)`,
+         `\1`) station_from, */
+        regexp_replace(t.short_text,
+                        &#39;Previous Location: ([[:alnum:]]+)/([[:alnum:]]+)/(.*)&#39;,
+                        &#39;\2&#39;) store_from
+                        /*      regexp_replace(t.short_text,`Previous Location: ([[:alnum:]]+)/([[:alnum:]]+)/(.*)`,`\3`) location_from */
+    from history_text t
+    where short_text like &#39;Previous Location: %&#39;) loc on hs.historyno_i = loc.historyno_i
+where	(hs.created_date &gt;= 17839) AND /*after 02-11-2020*/
+	 (hs.vm in (
+                  &#39;BN&#39;,
+                  &#39;CE&#39;,
+                  &#39;CR&#39;,
+                  &#39;CS&#39;,
+                  &#39;D&#39;,
+                  &#39;EA&#39;,
+                  &#39;ES&#39;,
+                  &#39;LC&#39;,
+                  &#39;LE&#39;,
+                  &#39;PS&#39;,
+                  &#39;SC&#39;,
+                  &#39;SX&#39;,
+                  &#39;TC&#39;,
+                  &#39;TS&#39;,
+                  &#39;TR&#39;,
+				  &#39;B8&#39;,
+                  &#39;YA&#39;,
+                  &#39;SI&#39;,
+                  &#39;SR&#39;,
+                  &#39;RS&#39;,
+                  &#39;SE&#39;,
+                  &#39;YR&#39;,
+                  &#39;DE&#39;, 
+                  &#39;SN&#39;, 
+	               &#39;PE&#39;) 
+	      or
+	  (hs.vm = &#39;B1&#39; and ( rec.awbno = &#39;RELEASE REPAIRABLE&#39; OR rec.awbno = &#39;RELEASE ROTABLE&#39; ) 
+            and
+	   nvl(hs.higher_partno, chr(160)) in (chr(49824), chr(160))) /* higher part - пустое aka равно пробелу или пустоте*/or (hs.vm = &#39;B7&#39; and
+       (nvl(hs.orderno, chr(160)) in (chr(49824), chr(160)) or
+       substr(hs.orderno, 1, 1) = &#39;R&#39;)) /* B7 (комплектование) выгружать только с пустым orderno или по R заказу */
+       or (hs.vm = &#39;MO&#39; and
+       (  (nvl(hs.orderno, chr(160)) in (chr(49824), chr(160))) OR ord.internal_repair=&#39;Y&#39; ) and  /*заказ пустой И он не внутренний*/
+       nvl(hs.station, chr(160)) not in (chr(49824), chr(160))) /* MO только без ремонтного заказа, если нет ссылки на заказ - невидимый пробел, с самолетов не делаем */
+   /* для внутренних ремонтов МО выгружать все же надо */
+       or (hs.vm = &#39;YE&#39; and
+       nvl(hs.station, chr(160)) not in (chr(49824), chr(160)) and
+       nvl(hs.store, chr(160)) not in (chr(49824), chr(160))) /* иначе при загрузке данных по самолету выгрузится куча монтажей */
+       or (hs.vm IN (&#39;T&#39;, &#39;LC&#39;, &#39;TS&#39;, &#39;TR&#39;) and
+       NOT (hs.store = &#39;LISTOFTL&#39; and loc.store_from = &#39;LISTOFTL&#39;)) /* исключение перемещений внутри LISTOFTL */
+       or (hs.vm IN (&#39;AA&#39;, &#39;AS&#39;) AND hs.store &lt;&gt; &#39;123A&#39;)
+)
+AND (hs.store != &#39;EXTERNAL&#39; OR hs.store IS NULL)
+   and hist.source_key is null
+   and to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + hs.del_date &gt;
+       to_date(&#39;01.01.2020&#39;, &#39;dd.mm.yyyy&#39;)
+  and hs.created_by &lt;&gt; &#39;MIGRUSR&#39;</pre>
+</div></div></div></div></li></ul></div></div><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка Transport в APN 1404</p><div class="confluence-information-macro-body"><ul><li>В Configuration Detail выбираем подвкладку <em><strong>transport</strong></em> и в главном окне заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263644/143132344.png" data-image-src="attachments/136263644/143132344.png" data-unresolved-comment-count="0" data-linked-resource-id="143132344" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-31_13-22-6.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263644" data-linked-resource-container-version="26"></span></li></ul></div></div></div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div id="expander-594773756" class="expand-container"><div id="expander-control-594773756" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">INTEGR_LC</span></div><div id="expander-content-594773756" class="expand-content"><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">В APN 1404 Main&amp;Traceability</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><ul><li><span style="color: rgb(51,51,51);text-decoration: none;">На вкладке </span><em style="text-decoration: none;text-align: left;"><strong>MAIN</strong> </em><span style="color: rgb(51,51,51);text-decoration: none;">необходимо заполнить в соответсвии со скриншотом ниже:<br/><br/></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263644/143131745.png" data-image-src="attachments/136263644/143131745.png" data-unresolved-comment-count="0" data-linked-resource-id="143131745" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_13-26-50.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263644" data-linked-resource-container-version="26"></span></li><li><span style="color: rgb(51,51,51);text-decoration: none;">На вкладке </span><em style="text-decoration: none;text-align: left;"><strong>Traceability</strong></em><span style="color: rgb(51,51,51);text-decoration: none;"> настроить в соответсвии со скриншотом ниже:<br/></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263644/143131746.png" data-image-src="attachments/136263644/143131746.png" data-unresolved-comment-count="0" data-linked-resource-id="143131746" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_13-27-29.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263644" data-linked-resource-container-version="26"></span></li></ul></div></div><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">Настройка селектора в APN 1404</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><ul><li><span style="color: rgb(51,51,51);text-decoration: none;">В Configuration Detail выбираем подвкладку </span><strong style="text-decoration: none;"><em>selector</em></strong><span style="color: rgb(51,51,51);text-decoration: none;"> и в окне </span><strong style="text-decoration: none;"><em>Export Selector</em></strong><span style="color: rgb(51,51,51);text-decoration: none;"> заполнить данные:<br/></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263644/143132345.png" data-image-src="attachments/136263644/143132345.png" data-unresolved-comment-count="0" data-linked-resource-id="143132345" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-31_13-23-13.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263644" data-linked-resource-container-version="26"></span></li><li><p class="auto-cursor-target"><span style="color: rgb(51,51,51);text-decoration: none;">Ниже представлен <em style="text-decoration: none;"><strong>SQL запрос</strong></em> для указания в <em style="text-decoration: none;"><strong>Selector Options</strong></em>:<br/></span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">select 
+    distinct hs.historyno_i, 
+             hs.del_date, 
+             hs.vm, 
+             hs.voucherno 
+from history hs
+    left join /* Transfer history */
+        (
+        select 
+            hist.source_key
+        from aim_transfer_history hist
+        where hist.success = &#39;Y&#39;
+          and hist.source_type = &#39;HI&#39;
+          and hist.service = &#39;EXPORT_COMPONENT_HISTORY&#39;
+          and hist.aim_configno_i = &#39;808&#39;
+          and hist.source_key is not null
+        group by hist.source_key) hist on hs.historyno_i = hist.source_key
+    left join /* from-to locations */
+        (
+        select 
+            historyno_i,
+            /*regexp_replace(t.short_text,&#39;Previous Location: ([[:alnum:]]+)/([[:alnum:]]+)/(.*)&#39;,&#39;\1&#39;) station_from, */
+            regexp_replace(t.short_text,&#39;Previous Location: ([[:alnum:]]+)/([[:alnum:]]+)/(.*)&#39;,&#39;\2&#39;) store_from
+            /*regexp_replace(t.short_text,&#39;Previous Location: ([[:alnum:]]+)/([[:alnum:]]+)/(.*)&#39;,&#39;\3&#39;) location_from */
+        from history_text t
+        where short_text like &#39;Previous Location: %&#39;) loc on hs.historyno_i = loc.historyno_i
+where 
+    (
+        hs.vm in ( &#39;TC&#39;,  &#39;YA&#39;, &#39;CR&#39;) 
+            or 
+        (
+            hs.vm = &#39;YE&#39; 
+                and
+            nvl(hs.station, chr(160)) not in (chr(49824), chr(160)) 
+                and
+            nvl(hs.store, chr(160)) not in (chr(49824), chr(160))
+            ) /* иначе при загрузке данных по самолету выгрузится куча монтажей */
+            or 
+        (
+            (
+                hs.vm IN (&#39;T&#39;, &#39;LC&#39;,  &#39;TR&#39;, &#39;TS&#39;)
+                    or 
+                hs.vm IN (&#39;LE&#39;, &#39;PS&#39;, &#39;SX&#39;)
+                    and 
+                to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + hs.del_date &gt;= to_date(&#39;27.09.2021&#39;, &#39;dd.mm.yyyy&#39;)
+            )
+                and 
+            NOT (hs.store = &#39;LISTOFTL&#39; and loc.store_from = &#39;LISTOFTL&#39;) /* исключение перемещений внутри LISTOFTL */
+            ) 
+            or 
+        (
+            hs.vm IN (&#39;AA&#39;, &#39;AS&#39;) 
+                AND hs.store &lt;&gt; &#39;123A&#39;
+            )
+        )
+  AND (hs.store != &#39;EXTERNAL&#39; OR hs.store IS NULL)
+  and hist.source_key is null 
+  and to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + hs.del_date &gt; to_date(&#39;01.09.2020&#39;, &#39;dd.mm.yyyy&#39;)
+  and hs.created_by &lt;&gt; &#39;MIGRUSR&#39;</pre>
+</div></div><p class="auto-cursor-target"><span style="color: rgb(51,51,51);text-decoration: none;"><br/></span></p></li></ul></div></div><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">Настройка Transport в APN 1404</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><ul><li><span style="color: rgb(51,51,51);text-decoration: none;">В Configuration Detail выбираем подвкладку </span><em style="text-decoration: none;"><strong>transport</strong></em><span style="color: rgb(51,51,51);text-decoration: none;"> и в главном окне заполнить данные:<br/></span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263644/143131749.png" data-image-src="attachments/136263644/143131749.png" data-unresolved-comment-count="0" data-linked-resource-id="143131749" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_13-43-1.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263644" data-linked-resource-container-version="26"></span></li></ul></div></div></div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/136263757.png">image2023-5-2_15-19-57.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/136263759.png">image2023-5-2_15-31-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/136263765.png">image2023-5-2_15-37-48.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/136263817.png">image2023-5-2_17-15-27.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143131745.png">image2023-7-28_13-26-50.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143131746.png">image2023-7-28_13-27-29.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143131747.png">image2023-7-28_13-30-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143131748.png">image2023-7-28_13-42-16.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143131749.png">image2023-7-28_13-43-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143131754.png">image2023-7-28_13-54-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143131755.png">image2023-7-28_13-55-15.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143132343.png">image2023-7-31_13-21-2.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143132344.png">image2023-7-31_13-22-6.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263644/143132345.png">image2023-7-31_13-23-13.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:07</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

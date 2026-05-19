@@ -1,0 +1,3428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000091</report_id>
+    <revision_number>0</revision_number>
+    <meta name="2019-06-27 tq 9935 vtsymbal">изменены наименования колонок Threshold &amp; Interval</meta>
+    <meta name="2019-08-15 vtsymbal">исправлена ошибка нахождения интервалов</meta>
+    <meta name="2019-08-20 vtsymbal">скорректирован поиск запланированных wo &amp; wp</meta>
+    <meta name="2019-12-17 vtsymbal">в DS 38_Taskcard_Status удалено условие wp_status = -1</meta>
+    <meta name="2020-01-10 vtsymbal">добавлен поиск исторических тасков</meta>
+    <meta name="2020-03-23 vtsymbal">информация по запланированным wp/wo отображалась не у всех тасков из-за условия mv.taskcard_verno_i = plan.verno</meta>
+    <meta name="2020-04-17 vtsymbal">В запросе по историческим данным добавлено условие связки таблиц rev и hist по revisionno_i, в операторе EXISTS удалена связка с таблицей forecast, а также исправлена связь с left join на join у таблицы hist</meta>
+    <meta name="2020-04-19 vtsymbal">Решен найденный баг в дублировании данных таска (отображение данных по нескольким ревизиям одной карты)</meta>
+    <meta name="2020-04-20 vtsymbal">В условие связывания таблицы hist добавлено rev.revisionno_i = hist.revicionno_i</meta>
+    <meta name="author">vtsymbal</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="353566">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">33</attribute>
+      <attribute name="footer-size">15</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content>
+      <view class="BoxReportView" id="353567">
+        <attribute name="name">Box_2</attribute>
+        <attribute name="position">0 685</attribute>
+        <attribute name="size">1000 15</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+      </view>
+      <view class="LabelReportView" id="353568">
+        <attribute name="name">Label_3</attribute>
+        <attribute name="position">22 685</attribute>
+        <attribute name="size">261 15</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@38_taskcard_status_GROUPED_AC.ac_model@ MSN  @38_taskcard_status_GROUPED_AC.serialno@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>353567</anchor_view>
+          <anchor_location>TOP_LEFT</anchor_location>
+          <x_offset>22</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="353569">
+        <attribute name="name">Label_4</attribute>
+        <attribute name="position">0 685</attribute>
+        <attribute name="size">1000 15</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Preliminary Status of @38_taskcard_status_GROUPED_AC.program_type@ Section @38_taskcard_status_GROUPED_AC.section_code@ Tasks</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>353567</anchor_view>
+          <anchor_location>TOP_LEFT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="353570">
+        <attribute name="name">Label_5</attribute>
+        <attribute name="position">843 685</attribute>
+        <attribute name="size">157 15</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Page @PAGE_NO@ of @PAGE_COUNT@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_RIGHT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_RIGHT</location>
+          <anchor_view>353569</anchor_view>
+          <anchor_location>TOP_RIGHT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="353571">
+        <attribute name="name">Label_1</attribute>
+        <attribute name="position">116 8</attribute>
+        <attribute name="size">523 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@38_taskcard_status_GROUPED_AC.ac_model@ MSN @38_taskcard_status_GROUPED_AC.serialno@ Status of @38_taskcard_status_GROUPED_AC.program_type@ Section @38_taskcard_status_GROUPED_AC.section_code@ Tasks</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 14</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="353572">
+        <attribute name="name">Label_2</attribute>
+        <attribute name="position">711 11</attribute>
+        <attribute name="size">142 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Aircraft CY: @38_taskcard_status_GROUPED_AC.tac@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>353573</anchor_view>
+          <anchor_location>TOP_RIGHT</anchor_location>
+          <x_offset>1</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="353573">
+        <attribute name="name">Label_3</attribute>
+        <attribute name="position">594 11</attribute>
+        <attribute name="size">116 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Aircraft FH: @38_taskcard_status_GROUPED_AC.tah@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>353571</anchor_view>
+          <anchor_location>TOP_RIGHT</anchor_location>
+          <x_offset>-45</x_offset>
+          <y_offset>3</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="353574">
+        <attribute name="name">Label_4</attribute>
+        <attribute name="position">858 2</attribute>
+        <attribute name="size">142 31</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Status as on 
+Date:  @DATE@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>353572</anchor_view>
+          <anchor_location>TOP_RIGHT</anchor_location>
+          <x_offset>5</x_offset>
+          <y_offset>-9</y_offset>
+        </anchor>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="353575">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 142</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">YES</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.history@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="header-height">44</attribute>
+      <attribute name="row-height">50</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="353578" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">MP Task No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353579" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.mp_task_no@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">45</attribute>
+          <view class="LabelReportView" id="353582" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">45 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">Task Source</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353583" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">45 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@38_Taskcard_Status_hist.task_source@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">52</attribute>
+          <view class="LabelReportView" id="353586" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">52 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Threshold</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353587" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">52 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.threshold@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">47</attribute>
+          <view class="LabelReportView" id="353590" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">47 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">Interval</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353591" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">47 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@38_Taskcard_Status_hist.intervals@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="353594" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perf, FH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353595" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.last_perf_fh@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="353598" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perf, CY</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353599" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.last_perf_cy@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353602" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perfomed, Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353603" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.last_perf_date@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.last_perf_date@</field>
+                    <field id="2">@DATE@</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.last_perf_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353606" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perfomed WP(WO)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353607" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.last_perf_wp@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353610" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perfomed item(s)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353611" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color"/>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.wp_items@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="background-color">E9E9DE</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.wp_items@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">53</attribute>
+          <view class="LabelReportView" id="353614" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">53 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Deadline, FH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353615" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">53 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.deadline_cy@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.deadline_date@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.deadline_fh@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="background-color">B0B0B0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.deadline_fh@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">53</attribute>
+          <view class="LabelReportView" id="353618" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">53 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Deadline, CY</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353619" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">53 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.deadline_cy@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.deadline_date@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.deadline_fh@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="background-color">B0B0B0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.deadline_cy@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353622" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Deadline, Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353623" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.check_dl@</field>
+                    <field id="2">wtf</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.deadline_cy@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status_hist.deadline_fh@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_cy@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_date@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_fh@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="background-color">B0B0B0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.deadline_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353626" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Planned WP(WO)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353627" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.planned_wp@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353630" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Planned WP, item(s)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353631" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.planned_items@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">202</attribute>
+          <view class="LabelReportView" id="353634" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">202 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">FF8A50</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">NOTES</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353635" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">202 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status_hist.notes@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP_LEFT</attribute>
+            <attribute name="line-break">BLOCK</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">38_Taskcard_Status_hist</attribute>
+    </view>
+    <view class="DatasourceTableView" id="353636">
+      <attribute name="name">DatasourceTable_1</attribute>
+      <attribute name="position">0 143</attribute>
+      <attribute name="size">1000 142</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.history@</field>
+              <field id="2">Y</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="header-height">44</attribute>
+      <attribute name="row-height">50</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">66</attribute>
+          <view class="LabelReportView" id="353639" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">66 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">MP Task No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353640" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">66 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.mp_task_no@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">45</attribute>
+          <view class="LabelReportView" id="353643" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">45 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">Task Source</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353644" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">45 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@38_Taskcard_Status.task_source@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">52</attribute>
+          <view class="LabelReportView" id="353647" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">52 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Threshold</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353648" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">52 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.threshold@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">47</attribute>
+          <view class="LabelReportView" id="353651" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">47 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">Interval</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353652" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">47 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@38_Taskcard_Status.intervals@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="353655" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perf, FH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353656" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.last_perf_fh@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="353659" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perf, CY</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353660" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.last_perf_cy@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353663" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perfomed, Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353664" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.last_perf_date@</field>
+                    <field id="2">@DATE@</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.last_perf_date@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.last_perf_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353667" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perfomed WP(WO)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353668" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.last_perf_wp@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353671" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Last Perfomed item(s)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353672" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color"/>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.wp_items@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="background-color">FCFBB5</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.wp_items@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">53</attribute>
+          <view class="LabelReportView" id="353675" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">53 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Deadline, FH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353676" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">53 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_cy@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_date@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_fh@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="background-color">BAF6BA</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.deadline_fh@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">53</attribute>
+          <view class="LabelReportView" id="353679" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">53 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Deadline, CY</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353680" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">53 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_cy@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_date@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_fh@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="background-color">BAF6BA</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.deadline_cy@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353683" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Deadline, Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353684" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.check_dl@</field>
+                    <field id="2">wtf</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_cy@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_fh@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">FFB4B4</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_cy@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_date@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.deadline_fh@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="3">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="background-color">BAF6BA</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.deadline_date@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353687" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Planned WP(WO)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353688" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.planned_wp_wo@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">58</attribute>
+          <view class="LabelReportView" id="353691" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Planned WP, item(s)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353692" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">58 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.planned_items@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="353695" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">Rem FH</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353696" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">2</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@38_Taskcard_Status.remain_fh@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="353699" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Rem CY</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353700" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.remain_cy@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">50</attribute>
+          <view class="LabelReportView" id="353703" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Rem Days</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353704" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">50 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.remain_days@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">46</attribute>
+          <view class="LabelReportView" id="353707" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">46 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">NOTES</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353708" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">46 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.notes@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">TOP_LEFT</attribute>
+            <attribute name="line-break">BLOCK</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">40</attribute>
+          <view class="LabelReportView" id="353711" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 44</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">7EC07E</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Hist
+data</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="353712" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">40 50</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="color">FF0000</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@38_Taskcard_Status.red_row@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 2 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@38_Taskcard_Status.historical_data@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 9</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">38_Taskcard_Status</attribute>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="AC" description="Aircraft" id="ac_reg"/>
+        <ds:columnDescriptor amosType="TC" description="Taskcard" id="task"/>
+        <ds:columnDescriptor amosType="BOOL" description="Просроченные таски" id="overdue"/>
+        <ds:columnDescriptor amosType="AT" description="a/c type" id="ac_typ"/>
+        <ds:columnDescriptor amosType="BOOL" description="Исторические данные" id="history"/>
+        <ds:columnDescriptor amosType="TSEC" description="Section code" id="sec_code"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Aircraft" id="ac_reg">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Taskcard" id="task">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Overdue task (non historical events)" id="overdue">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="A/C Type" id="ac_typ">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>A32S</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Historical data" id="history">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Section code" id="sec_code">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>3</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_Taskcard_Status" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>main query</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.ac_registr" id="a.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.taskcardno_i" id="s.taskcardno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.taskcardno mp_task_no" id="mp_task_no"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" (select listagg(description '') within&#10;        group (order by description) amazing&#10;         from db_link&#10;        where mv.taskcard_verno_i = db_link.source_pk&#10;          and db_link.source_type = 'TCLS'&#10;     group by db_link.source_pk) task_source" id="task_source"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="threshold" id="threshold"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="intervals" id="intervals"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="last_perf_fh" id="last_perf_fh"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="last_perf_cy" id="last_perf_cy"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="last_perf_date" id="last_perf_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wp_wo last_perf_wp" id="last_perf_wp"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="seq_no wp_items" id="wp_items"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="deadline_fh" id="deadline_fh"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="deadline_cy" id="deadline_cy"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="due_date deadline_date" id="deadline_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" case when due_date &lt; to_date(sysdate'dd.mm.yyyy') then 'wtf'&#10;           when due_date is null and deadline_fh is null and deadline_cy is null then 'wtf'&#10;           else 'ok' end check_dl" id="check_dl"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="planned_wp_wo" id="planned_wp_wo"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="planned_items" id="planned_items"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when trunc(deadline_fh_round - util.tah) &gt; 0 then&#10;                trunc(deadline_fh_round - util.tah) || ':' || round(((deadline_fh_round - util.tah) - trunc(deadline_fh_round - util.tah))*60)&#10;        else null end remain_fh" id="remain_fh"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when deadline_cy - util.tac &gt; 0 then&#10;                 deadline_cy - util.tac else null&#10;        end remain_cy" id="remain_cy"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" case when trunc(((to_date(due_date 'dd.mm.yyyy') - sysdate) + 1) / 365) &gt; 0 then&#10;                trunc(((to_date(due_date 'dd.mm.yyyy') - sysdate) + 1) / 365) || 'y' || ' ' &#10;                || round(round((to_date(due_date 'dd.mm.yyyy') - sysdate)) - (trunc((to_date(due_date'dd.mm.yyyy') - sysdate) / 365)*365 )) || 'd'&#10;        else null&#10;      end remain_days" id="remain_days"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when to_char(mv.internal_remarks) &lt;&gt; 'В ' and to_char(mv.notes) &lt;&gt; 'В ' then 'Notes: ' || to_char(mv.notes) || chr(13)|| chr(10)|| &#10;             'Int. Remarks: ' || to_char(mv.internal_remarks)&#10;              when to_char(mv.internal_remarks) &lt;&gt; 'В ' then 'Int. Remarks: ' || to_char(mv.internal_remarks)&#10;              when to_char(mv.notes) &lt;&gt; 'В ' then 'Notes: ' || to_char(mv.notes)&#10;            else null&#10;         end notes" id="notes"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when hist.revision_no &lt;&gt; 'В ' and hist.revision_date &lt;&gt; 'В '&#10;                then hist.revision_no || ' / (' ||  hist.revision_date || ')' &#10;      else ' ' end historical_data" id="historical_data"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="1 red_row" id="red_row"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.history@">
+          <ds:object>@VAR.history@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_reg@">
+          <ds:object>@VAR.ac_reg@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.sec_code@">
+          <ds:object>@VAR.sec_code@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_typ@">
+          <ds:object>@VAR.ac_typ@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.task@">
+          <ds:object>@VAR.task@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.overdue@">
+          <ds:object>@VAR.overdue@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select a.ac_registr
+     , s.taskcardno_i
+     , s.taskcardno mp_task_no
+     , (select listagg(description, ', ') within
+        group (order by description) amazing
+         from db_link
+        where mv.taskcard_verno_i = db_link.source_pk
+          and db_link.source_type = 'TCLS'
+     group by db_link.source_pk) task_source
+    , threshold
+    , intervals
+    , last_perf_fh
+    , last_perf_cy
+    , last_perf_date
+    , wp_wo last_perf_wp
+    , seq_no wp_items
+    , deadline_fh
+    , deadline_cy
+    , due_date deadline_date
+    , case when due_date &lt; to_date(sysdate, 'dd.mm.yyyy') then 'wtf'
+           when due_date is null and deadline_fh is null and deadline_cy is null then 'wtf'
+           else 'ok' end check_dl
+    , planned_wp_wo
+    , planned_items
+    , case when trunc(deadline_fh_round - util.tah) &gt; 0 then
+                trunc(deadline_fh_round - util.tah) || ':' || round(((deadline_fh_round - util.tah) - trunc(deadline_fh_round - util.tah))*60)
+        else null end remain_fh
+    , case when deadline_cy - util.tac &gt; 0 then
+                 deadline_cy - util.tac else null
+        end remain_cy
+    , case when trunc(((to_date(due_date, 'dd.mm.yyyy') - sysdate) + 1) / 365) &gt; 0 then
+                trunc(((to_date(due_date, 'dd.mm.yyyy') - sysdate) + 1) / 365) || 'y' || ' ' 
+                || round(round((to_date(due_date, 'dd.mm.yyyy') - sysdate)) - (trunc((to_date(due_date, 'dd.mm.yyyy') - sysdate) / 365)*365 )) || 'd'
+		   when trunc(((to_date(due_date, 'dd.mm.yyyy') - sysdate) + 1) / 365) &lt;= 0
+             and round((to_date(due_date, 'dd.mm.yyyy') - sysdate)) &gt; 0 then
+                 round((to_date(due_date, 'dd.mm.yyyy') - sysdate)) || 'd'
+        else null
+      end remain_days
+    , case when to_char(mv.internal_remarks) &lt;&gt; 'В ' and to_char(mv.notes) &lt;&gt; 'В ' then 'Notes: ' || to_char(mv.notes) || chr(13)|| chr(10)|| 
+             'Int. Remarks: ' || to_char(mv.internal_remarks)
+              when to_char(mv.internal_remarks) &lt;&gt; 'В ' then 'Int. Remarks: ' || to_char(mv.internal_remarks)
+              when to_char(mv.notes) &lt;&gt; 'В ' then 'Notes: ' || to_char(mv.notes)
+            else null
+         end notes
+    , case when hist.revision_no &lt;&gt; 'В ' and hist.revision_date &lt;&gt; 'В '
+                then hist.revision_no || ' / (' ||  hist.revision_date || ')' 
+      else ' ' end historical_data
+    , case when deadline_fh_round &lt; util.tah 
+             or deadline_cy &lt; util.tac 
+             or due_date &lt; sysdate
+           then '1'
+           else '0'
+       end red_row
+ from msc_taskcard s /* taskcards */
+ join msc_taskcard_version mv on s.taskcardno_i = mv.taskcardno_i /* task version */
+ join msc_maintenance_program m on s.mpno_i = m.mpno_i
+ join msc_section_code c on m.mpno_i = c.mpno_i /* section code */
+ join msc_mprev_taskcards mp_rev on mv.taskcard_verno_i = mp_rev.taskcard_verno_i
+ join msc_mp_revision rev on mp_rev.revisionno_i = rev.revisionno_i 
+                         and revision_status not in ('i', 't') /* only actual revision */
+ join aircraft a on m.mpno = a.ac_typ
+ /* 2019-04-23
+    vtsymbal
+    TRESHOLD &amp; INTERVALS
+ */
+ left join (
+            select taskcard_verno_i, threshold, intervals
+              from (
+                    select taskcard_verno_i
+                         , threshold
+                         , listagg(
+                                   case when threshold = 'N' then
+                                                              case when ( (unit = accuracy) or (unit is null and accuracy is null) ) 
+                                                                                           and amount_interval &gt; 0  
+                                                                   then dimension_type || ': ' || amount_interval ||  ' ' || code
+                                                                   when unit &lt;&gt; accuracy and due_at is null
+                                                                   then dimension_type || ': ' || amount_interval ||  ' ' || unit
+                                                                   else dimension_type || ': ' || amount_interval ||  ' ' || unit
+                                                               end
+                                        when threshold = 'Y' 
+                                        then
+                                             case when (unit &lt;&gt; accuracy and due_at is not null) or 
+                                              ( ((unit &lt;&gt; accuracy) or (accuracy is null and unit is not null)) 
+                                                                   and due_at is null and amount_interval &gt; 0 )
+                                                  then dimension_type || ': ' || amount_interval || ' ' || unit
+                                                  when ( unit = accuracy or unit is null and accuracy is null ) 
+                                                                        and amount_interval &lt; 0
+                                                  then dimension_type || ': ' || due_at || ' ' || code
+                                                  when ( (unit = accuracy) or (due_at is null and accuracy is null and unit is null) ) 
+                                                                          and amount_interval &gt; 0
+                                                  then dimension_type || ': ' || amount_interval || ' ' || code
+                                                  else dimension_type || ': ' || amount_interval ||  ' ' || unit      
+                                              end
+                                    end, '; '
+                                  ) within group (order by threshold desc) unit
+                      from msc_taskcard_version mv
+                      join treq_time_requirement ttr on mv.taskcard_verno_i = ttr.event_key 
+                                                    and ttr.event_type in ('TCREV') 
+                                                    and ttr.status = 0
+                      join treq_interval_group tig on ttr.timerequirementno_i = tig.timerequirementno_i
+                      join (
+                            select interval_groupno_i
+                                 , counter_defno_i
+                                 , amount_interval
+                                 , accuracy
+                                 , due_at
+                                 , case when dimension_type = 'W' then 'WithIn'
+                                        when dimension_type = 'I' then 'Interval'
+                                        when dimension_type = 'B' then 'Before'
+                                        else null
+                                    end dimension_type
+                                 , unit
+                              from treq_interval
+                           ) ti on tig.interval_groupno_i = ti.interval_groupno_i
+                      join (
+                            select counter_defno_i
+                                 , case when code = 'H' then 'FH'
+                                        when code = 'C' then 'CY'
+                                        else code 
+                                    end code 
+                              from counter_definition
+                           ) cd on ti.counter_defno_i = cd.counter_defno_i
+                     group by taskcard_verno_i, threshold, taskcard_verno_i
+                   )c
+             pivot (max(unit) for threshold in ('Y' as threshold, 'N' as intervals))
+           ) r on mv.taskcard_verno_i = r.taskcard_verno_i
+ /* tah|tac */
+ left join (
+            select ac_registr, round(max(tah)/60, 2) tah, max(tac) tac
+              from ac_utilization ac_util
+             group by ac_registr
+           ) util on a.ac_registr = util.ac_registr
+/* last perfomed */
+ left join (
+            select rnk
+                 , last_perf_date
+                 , event_name
+                 , ac_registr
+                 , last_perf_cy
+                 , last_perf_fh
+              from (
+                    select rank() over(partition by event_name, ac_registr order by absolute_due_date desc ) rnk 
+                         , h.ac_registr, event_name
+                         , case when th.release_tah &gt; 0 
+                                then trunc(th.release_tah/60, 0) || ':'  || trunc(  ( mod(th.release_tah/60, 1) * (60/100) ) * 100, 0) 
+                                else null
+                            end last_perf_fh
+                         , c.release_tac last_perf_cy
+                         , to_char(to_date('31.12.1971', 'dd.mm.yyyy') + absolute_due_date, 'dd.mm.yyyy') last_perf_date
+                      from wo_event_link e 
+                      join wo_header h on e.event_perfno_i = h.event_perfno_i
+                      join wo_transfer t on t.event_perfno_i = e.event_perfno_i and t.transfer_type = 'R'
+                      left join (
+                                 select event_transferno_i
+                                      , trunc(due_at, 0) release_tah
+                                   from wo_transfer_dimension d
+                                   join counter c on d.counterno_i = c.counterno_i
+                                   join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+                                   join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i 
+                                                             and code = 'H'
+                                ) th on t.event_transferno_i = th.event_transferno_i
+                      left join (
+                                 select event_transferno_i, trunc(due_at, 0) release_tac
+                                   from wo_transfer_dimension d
+                                   join counter c on d.counterno_i = c.counterno_i
+                                   join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+                                   join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i and code = 'C'
+                                ) c on t.event_transferno_i = c.event_transferno_i
+                     where e.event_type in ('TCEFFLI') 
+                       and e.event_status &lt;&gt; 'Z'
+                       and absolute_due_date &gt; 0
+                       and state = 'C'
+                     group by h.ac_registr
+                            , event_name
+                            , th.release_tah
+                            , c.release_tac
+                            , absolute_due_date
+                     order by absolute_due_date desc
+                   )x
+             where rnk = 1
+           ) q on s.taskcardno = q.event_name and a.ac_registr = q.ac_registr
+ /* last done wp/wo */
+ left join ( 
+            select wp_wo
+                 , closing_date
+                 , event_name
+                 , ac_registr
+                 , tag
+                 , seq_no
+              from (
+                    select rank() over(partition by event_name, ac_registr order by closing_date desc) rnk
+                         , wp_wo
+                         , closing_date
+                         , event_name
+                         , ac_registr
+                         , tag
+                         , seq_no
+                      from (
+                            /* last done wp */
+                            select wpno wp_wo
+                                 , act_end_date closing_date
+                                 , event_name
+                                 , ac_registr
+                                 , 'wp' tag
+                                 , seq_no
+                              from (
+                                    select wpno
+                                         , act_end_date
+                                         , event_name
+                                         , ac_registr
+                                         , seqno_i seq_no
+                                      from wp_header h
+                                      join wp_assignment wa on h.wpno_i = wa.wpno_i
+                                      join wo_event_link e on wa.event_perfno_i = e.event_perfno_i
+                                      left join wp_sequence q on e.event_perfno_i = q.event_perfno_i
+                                     where e.event_type = 'TCEFFLI'
+                                       and e.event_status &lt;&gt; 'Z'
+                                       and act_end_date &gt; 0
+                                    ) x
+                            union
+                            /* last done wo */
+                           select to_char(event_perfno_i) wp_wo
+                                , issue_date closing_date
+                                , event_name
+                                , ac_registr
+                                , 'wo' tag
+                                , seq_no
+                             from (
+                                   select e.event_perfno_i
+                                        , issue_date
+                                        , event_name
+                                        , ac_registr
+                                        , null seq_no
+                                     from wo_header h
+                                     join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+                                    where h.type &lt;&gt; 'PD'
+                                      and event_status &lt;&gt; 'Z'
+                                      and e.event_type = 'TCEFFLI'
+                                      and state = 'C'
+                                  ) x
+                           )t 
+                   )tt
+             where rnk = 1
+             group by wp_wo, closing_date, event_name, ac_registr, tag, seq_no
+           ) wp on a.ac_registr = wp.ac_registr 
+               and s.taskcardno = wp.event_name
+ /* deadline */
+ join (
+       select h.ac_registr
+            , round(hours.due_at/60, 2) deadline_fh_round
+            , event_name
+            , case when hours.due_at &gt; 0
+                   then (trunc(to_char(hours.due_at)/60)) || ':' ||(to_char(hours.due_at) - (trunc(to_char(hours.due_at)/60) * 60) )
+                   else null end deadline_fh
+            , trunc(cycles.due_at, 0) deadline_cy
+            , (to_char(to_date('31.12.1971', 'dd.mm.yyyy') + absolute_due_date,'dd.mm.yyyy')) due_date
+         from wo_event_link e
+         join wo_header h on e.event_perfno_i = h.event_perfno_i
+         join wo_transfer t on h.event_perfno_i = t.event_perfno_i
+         /* tah */
+         left join (
+                    select event_transferno_i
+                         , due_at
+                         , life_value
+                      from wo_transfer_dimension 
+                      join counter c on wo_transfer_dimension.counterno_i = c.counterno_i 
+                                    and c.readout_ref_type = 'LEG'
+                      join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+                      join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i
+                     where code = 'H'
+                   ) hours on t.event_transferno_i = hours.event_transferno_i
+         /* tac */
+         left join (
+                    select event_transferno_i
+                         , due_at
+                         , life_value
+                      from wo_transfer_dimension 
+                      join counter c on wo_transfer_dimension.counterno_i = c.counterno_i 
+                                    and c.readout_ref_type = 'LEG'
+                      join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+                      join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i
+                     where code = 'C'
+                   ) cycles on t.event_transferno_i = cycles.event_transferno_i            
+        where e.pending_status = 0
+          and e.event_type = 'TCEFFLI'
+          and is_last_transfer = 'Y'
+      )d on a.ac_registr = d.ac_registr 
+        and s.taskcardno = d.event_name
+ /*  planned wp/wo */
+ left join (  
+            select listagg(planned_wp_wo, ' / ') within group (order by tag) planned_wp_wo
+                 , verno
+                 , event_name
+                 , ac_registr
+                 , listagg(planned_items, ' / ') within group (order by ac_registr, event_name, planned_items) planned_items
+              from (
+                    select row_number() over(partition by h.ac_registr, event_name 
+                                                 order by absolute_due_date desc) num
+                         , taskcard_verno_i_mri verno
+                         , event_name
+                         , h.ac_registr
+                         , to_char(h.event_perfno_i) planned_wp_wo
+                         , null planned_items
+                         , absolute_due_date planned_date
+                         , 'wo' tag
+                      from wo_header h
+                      join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+                      left join msc_requirement_tc_link l on e.event_key_parent = l.req_linkno_i
+                      join wo_transfer t on e.event_perfno_i = t.event_perfno_i
+                      join aircraft i on h.ac_registr = i.ac_registr
+                     where e.event_type = 'TCEFFLI'
+                      and state = 'O'
+                      and is_last_transfer = 'Y'
+                      and (
+                           absolute_due_date &gt; to_char(round(sysdate - to_date('31.12.1971', 'dd.mm.yyyy')) ) or
+                           absolute_due_date is null
+                          )
+                      and h.type &lt;&gt; 'PD'
+                    union
+                   select row_number() over(partition by ac_registr, event_name 
+                                                order by start_date desc) num
+                        , taskcard_verno_i_mri verno
+                        , event_name
+                        , h.ac_registr
+                        , wpno planned_wp_wo
+                        , seqno_i planned_items
+                        , start_date planned_date
+                        , 'wp' tag
+                     from wp_header h
+                     join wp_assignment wa on h.wpno_i = wa.wpno_i
+                     join wo_event_link e on wa.event_perfno_i = e.event_perfno_i
+                     left join msc_requirement_tc_link l on e.event_key_parent = l.req_linkno_i
+                     left join wp_sequence q on e.event_perfno_i = q.event_perfno_i
+                    where e.event_type = 'TCEFFLI'
+            /* 2019-12-17 delete condition wp_status = -1 */
+                      and e.pending_status = 0
+                   )x
+             where num = 1
+             group by verno
+                    , event_name
+                    , ac_registr
+           ) plan on s.taskcardno = plan.event_name
+                 and a.ac_registr = plan.ac_registr
+ /* historical data */
+ left join (
+            select rank() over(partition by v.taskcard_verno_i
+                                          , ac_registr 
+                                   order by rev.revision_date desc
+                                          , e.event_perfno_i desc
+                                  ) rnk
+                 , ac_registr
+                 , s.taskcardno_i
+                 , v.taskcard_verno_i
+                 , s.taskcardno
+                 , rev.revisionno_i
+                 , rev.revision_no
+                 , rev.revision_status
+                 , to_char(to_date('31.12.1971', 'dd.mm.yyyy') + rev.revision_date, 'dd.mm.yyyy') revision_date
+              from msc_taskcard s
+              join msc_taskcard_version v on s.taskcardno_i = v.taskcardno_i
+              join msc_mprev_taskcards mp_rev on v.taskcard_verno_i = mp_rev.taskcard_verno_i
+              join msc_mp_revision rev on mp_rev.revisionno_i = rev.revisionno_i
+              join msc_requirement_tc_link t on rev.revisionno_i = t.revisionno_i_mrs
+                                            and v.taskcard_verno_i = t.taskcard_verno_i_mri
+              join wo_event_link e on req_linkno_i = e.event_key_parent
+                                  and event_name = s.taskcardno
+                                  and pending_status &lt; 0
+                                  and event_type = 'TCEFFLI'
+              join wo_header h on e.event_perfno_i = h.event_perfno_i
+            ) hist on mv.taskcard_verno_i = hist.taskcard_verno_i
+                  and a.ac_registr = hist.ac_registr
+                  and hist.rnk = 1
+where  '@VAR.history@'='N'
+ and  a.ac_registr in ('@VAR.ac_reg@')
+  and section_code in ('@VAR.sec_code@')
+  and (to_char('@VAR.ac_typ@') is null or a.ac_typ in ('@VAR.ac_typ@'))
+  and (to_char('@VAR.task@') is null or  s.taskcardno_i in ('@VAR.task@'))
+  and exists (
+              select wo_header.ac_registr
+                from wo_event_link
+                join wo_header on wo_event_link.event_perfno_i = wo_header.event_perfno_i 
+                              and wo_event_link.event_type = 'TCEFFLI' 
+                join forecast on wo_event_link.event_perfno_i = forecast.event_perfno_i
+               where s.taskcardno = wo_event_link.event_name
+                 and a.ac_registr = wo_header.ac_registr
+                 and a.ac_typ = forecast.ac_typ
+                 and pending_status = 0
+               group by wo_header.ac_registr
+               )
+  and ( 
+       nvl('@VAR.overdue@', 'N') = 'N'  
+       or ( 
+           '@VAR.overdue@' = 'Y'  
+           and (deadline_fh_round &lt; util.tah 
+            or deadline_cy &lt; util.tac
+            or due_date &lt; sysdate )
+          ) 
+      )
+order by a.ac_registr
+    , s.taskcardno desc</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_taskcard_status_GROUPED_AC" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>query for grouping ac_registr</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_model" id="ac_model"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="trim(leading '0' from serialno) serialno" id="serialno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="program_type" id="program_type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="section_code" id="section_code"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.ac_registr ac_reg" id="ac_reg"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="trunc(max(util.tah)/60) || ':' ||(max(util.tah) - (trunc(max(util.tah)/60) * 60) ) tah" id="tah"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="max(tac) tac" id="tac"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_reg@">
+          <ds:object>@VAR.ac_reg@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.sec_code@">
+          <ds:object>@VAR.sec_code@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_typ@">
+          <ds:object>@VAR.ac_typ@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select ac_model
+	 , trim(leading '0' from serialno) serialno
+	 , program_type
+	 , section_code
+	 , a.ac_registr ac_reg
+	 , trunc(max(util.tah)/60) || ':' ||(max(util.tah) - (trunc(max(util.tah)/60) * 60) ) tah
+	 , max(tac) tac
+    from aircraft a /* ac_model, serialno */
+    join msc_maintenance_program m on a.ac_typ = m.mpno /* присоединяю msc_maintenance_program */
+    join msc_section_code c on m.mpno_i = c.mpno_i /* чтобы выбрать нужный section code */
+    join ac_utilization util on a.ac_registr = util.ac_registr /* нахожу текущий tah/tac */
+	where /* Aircraft */
+	      a.ac_registr in ('@VAR.ac_reg@')
+	  and section_code = '@VAR.sec_code@'
+ and (to_char('@VAR.ac_typ@') is null or a.ac_typ in ('@VAR.ac_typ@'))
+	group by ac_model, serialno, program_type, section_code, a.ac_registr</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_Taskcard_Status_hist" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Historical data</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.ac_registr" id="a.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.taskcardno_i" id="s.taskcardno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="mp_task_no" id="mp_task_no"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="task_source" id="task_source"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="threshold" id="threshold"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="intervals" id="intervals"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="last_perf_fh" id="last_perf_fh"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="last_perf_cy" id="last_perf_cy"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" to_char(to_date('31.12.1971' 'dd.mm.yyyy') + q.absolute_due_date'dd.mm.yyyy') last_perf_date" id="last_perf_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wp_wo last_perf_wp" id="last_perf_wp"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="seq_no wp_items" id="wp_items"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="deadline_fh" id="deadline_fh"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="deadline_cy" id="deadline_cy"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" to_char(to_date('31.12.1971' 'dd.mm.yyyy') + deadline_date'dd.mm.yyyy') deadline_date" id="deadline_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description=" case when to_char(to_date('31.12.1971' 'dd.mm.yyyy') + deadline_date 'dd.mm.yyyy') &lt; to_date(sysdate'dd.mm.yyyy') then 'wtf'&#10;            when deadline_date is null and deadline_fh is null and deadline_cy is null then 'wtf'&#10;            else 'ok' end check_dl" id="check_dl"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="planned_wp_wo" id="planned_wp_wo"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.seqno_i planned_items" id="planned_items"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="notes" id="notes"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when hist.revision_no &lt;&gt; 'В ' and hist.revision_date &lt;&gt; 'В '&#10;                then hist.revision_no || ' / (' ||  hist.revision_date || ')' &#10;      else ' ' end historical_data" id="historical_data"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.history@">
+          <ds:object>@VAR.history@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_reg@">
+          <ds:object>@VAR.ac_reg@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.sec_code@">
+          <ds:object>@VAR.sec_code@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.task@">
+          <ds:object>@VAR.task@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac_typ@">
+          <ds:object>@VAR.ac_typ@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select a.ac_registr
+     , s.taskcardno_i
+     , s.taskcardno mp_task_no
+     , (select listagg(description, ', ') within
+        group (order by description) amazing
+         from db_link
+        where mv.taskcard_verno_i = db_link.source_pk
+          and db_link.source_type = 'TCLS'
+     group by db_link.source_pk) task_source
+    , threshold
+    , intervals
+    , last_perf_fh
+    , last_perf_cy
+    , last_perf_date
+    , wp_wo last_perf_wp
+    , seq_no wp_items
+    , deadline_fh
+    , deadline_cy
+    , due_date deadline_date
+    , case when due_date &lt; to_date(sysdate, 'dd.mm.yyyy') then 'wtf'
+           when due_date is null and deadline_fh is null and deadline_cy is null then 'wtf'
+           else 'ok' end check_dl
+    , planned_wp_wo
+    , planned_items
+    , case when to_char(mv.internal_remarks) &lt;&gt; 'В ' and to_char(mv.notes) &lt;&gt; 'В ' then 'Notes: ' || to_char(mv.notes) || chr(13)|| chr(10)|| 
+             'Int. Remarks: ' || to_char(mv.internal_remarks)
+              when to_char(mv.internal_remarks) &lt;&gt; 'В ' then 'Int. Remarks: ' || to_char(mv.internal_remarks)
+              when to_char(mv.notes) &lt;&gt; 'В ' then 'Notes: ' || to_char(mv.notes)
+            else null
+         end notes
+    , case when hist.revision_no &lt;&gt; 'В ' and hist.revision_date &lt;&gt; 'В '
+                then hist.revision_no || ' / (' ||  hist.revision_date || ')' 
+      else ' ' end historical_data
+ from msc_taskcard s /* taskcards */
+ join msc_taskcard_version mv on s.taskcardno_i = mv.taskcardno_i /* task version */
+ join msc_maintenance_program m on s.mpno_i = m.mpno_i
+ join msc_section_code c on m.mpno_i = c.mpno_i /* section code */
+ join msc_mprev_taskcards mp_rev on mv.taskcard_verno_i = mp_rev.taskcard_verno_i
+ join msc_mp_revision rev on mp_rev.revisionno_i = rev.revisionno_i 
+                         and revision_status in ('i', 't') /* only actual revision */
+                         and mv.revision_date = (
+                                              select max(msc_taskcard_version.revision_date)
+                                                from msc_taskcard
+                                                   , msc_taskcard_version
+                                               where msc_taskcard.taskcardno_i = msc_taskcard_version.taskcardno_i
+                                                 and s.taskcardno_i = msc_taskcard.taskcardno_i
+                                               group by msc_taskcard.taskcardno_i
+                                               )
+ join aircraft a on m.mpno = a.ac_typ
+ /* 2019-04-23
+    vtsymbal
+    TRESHOLD &amp; INTERVALS
+ */
+ left join (
+            select taskcard_verno_i
+                 , threshold
+                 , intervals
+              from (
+                    select taskcard_verno_i
+                         , threshold
+                         , listagg(
+                                  case when threshold = 'N' then
+                                                                case when ( (unit = accuracy) or (unit is null and accuracy is null) ) 
+                                                                                             and amount_interval &gt; 0  
+                                                                     then dimension_type || ': ' || amount_interval ||  ' ' || code
+                                                                     when unit &lt;&gt; accuracy and due_at is null
+                                                                     then dimension_type || ': ' || amount_interval ||  ' ' || unit
+                                                                     else dimension_type || ': ' || amount_interval ||  ' ' || unit
+                                                                 end
+                                       when threshold = 'Y' then
+                                                                case when (unit &lt;&gt; accuracy and due_at is not null) or 
+                                                                ( ((unit &lt;&gt; accuracy) or (accuracy is null and unit is not null)) 
+                                                                                     and due_at is null and amount_interval &gt; 0 )
+                                                                     then dimension_type || ': ' || amount_interval || ' ' || unit
+                                                                     when ( unit = accuracy or unit is null and accuracy is null ) 
+                                                                                           and amount_interval &lt; 0
+                                                                     then dimension_type || ': ' || due_at || ' ' || code
+                                                                     when ( (unit = accuracy) or (due_at is null and accuracy is null and unit is null) ) and amount_interval &gt; 0
+                                                                     then dimension_type || ': ' || amount_interval || ' ' || code
+                                                                     else dimension_type || ': ' || amount_interval ||  ' ' || unit      
+                                                                 end
+                                   end
+                                  , '; ') within group (order by threshold desc) unit
+                      from msc_taskcard_version mv
+                      join treq_time_requirement ttr on mv.taskcard_verno_i = ttr.event_key 
+                                                    and ttr.event_type in ('TCREV') 
+                                                    and ttr.status = 0
+                      join treq_interval_group tig on ttr.timerequirementno_i = tig.timerequirementno_i
+                      join (
+                            select interval_groupno_i
+                                 , counter_defno_i
+                                 , amount_interval
+                                 , accuracy
+                                 , due_at
+                                 , case when dimension_type = 'W' then 'WithIn'
+                                        when dimension_type = 'I' then 'Interval'
+                                        when dimension_type = 'B' then 'Before'
+                                        else null
+                                    end dimension_type
+                                 , unit
+                              from treq_interval
+                            ) ti on tig.interval_groupno_i = ti.interval_groupno_i
+                      join (
+                            select counter_defno_i
+                                 , case when code = 'H' then 'FH'
+                                        when code = 'C' then 'CY'
+                                        else code 
+                                    end code 
+                              from counter_definition
+                           ) cd on ti.counter_defno_i = cd.counter_defno_i
+                      group by taskcard_verno_i, threshold, taskcard_verno_i
+                   )c
+             pivot (max(unit) for threshold in ('Y' as threshold, 'N' as intervals))
+           ) r on mv.taskcard_verno_i = r.taskcard_verno_i
+ /* tah|tac */
+ left join (
+            select ac_registr
+                 , round(max(tah)/60, 2) tah
+                 , max(tac) tac
+              from ac_utilization ac_util
+             group by ac_registr
+           ) util on a.ac_registr = util.ac_registr
+ /* last perfomed */
+ left join (
+            select rnk
+                 , last_perf_date
+                 , event_name
+                 , ac_registr
+                 , last_perf_cy
+                 , last_perf_fh
+              from (
+                    select rank() over(partition by event_name, ac_registr 
+                                           order by absolute_due_date desc ) rnk 
+                         , h.ac_registr, event_name
+                         , case when th.release_tah &gt; 0 
+                                   then trunc(th.release_tah/60, 0) || ':'  || trunc(  ( mod(th.release_tah/60, 1) * (60/100) ) * 100, 0) 
+                                   else null
+                            end last_perf_fh
+                         , c.release_tac last_perf_cy
+                         , to_char(to_date('31.12.1971', 'dd.mm.yyyy') + absolute_due_date, 'dd.mm.yyyy') last_perf_date
+                      from wo_event_link e 
+                      join wo_header h on e.event_perfno_i = h.event_perfno_i
+                      join wo_transfer t on t.event_perfno_i = e.event_perfno_i and t.transfer_type = 'R'
+                      left join (
+                                 select event_transferno_i
+                                      , trunc(due_at, 0) release_tah
+                                   from wo_transfer_dimension d
+                                   join counter c on d.counterno_i = c.counterno_i
+                                   join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+                                   join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i and code = 'H'
+                                ) th on t.event_transferno_i = th.event_transferno_i
+                     left join (
+                                select event_transferno_i, trunc(due_at, 0) release_tac
+                                  from wo_transfer_dimension d
+                                  join counter c on d.counterno_i = c.counterno_i
+                                  join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+                                  join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i and code = 'C'
+                               ) c on t.event_transferno_i = c.event_transferno_i
+                    where e.event_type in ('TCEFFLI') 
+                      and e.event_status &lt;&gt; 'Z'
+                      and absolute_due_date &gt; 0
+                      and state = 'C'
+                    group by h.ac_registr
+                           , event_name
+                           , th.release_tah
+                           , c.release_tac
+                           , absolute_due_date
+                    order by absolute_due_date desc
+                   )x where rnk = 1
+           ) q on s.taskcardno = q.event_name 
+              and a.ac_registr = q.ac_registr
+ /* last done wp/wo  */
+ left join (
+            select wp_wo
+                 , closing_date
+                 , event_name
+                 , ac_registr
+                 , tag
+                 , seq_no
+              from (
+                    select rank() over(partition by event_name, ac_registr 
+                                           order by closing_date desc) rnk
+                         , wp_wo
+                         , closing_date
+                         , event_name
+                         , ac_registr
+                         , tag
+                         , seq_no
+                      from (
+                            /* last done wp */
+                        select wpno wp_wo
+                             , act_end_date closing_date
+                             , event_name
+                             , ac_registr
+                             , 'wp' tag
+                             , seq_no
+                          from (
+                                select wpno, act_end_date, event_name, ac_registr, seqno_i seq_no
+                                  from wp_header h
+                                  join wp_assignment wa on h.wpno_i = wa.wpno_i
+                                  join wo_event_link e on wa.event_perfno_i = e.event_perfno_i
+                                  left join wp_sequence q on e.event_perfno_i = q.event_perfno_i
+                                 where e.event_type = 'TCEFFLI'
+                                   and e.event_status &lt;&gt; 'Z'
+                                   and act_end_date &gt; 0
+                               ) x
+                        union
+                        /* last done wo */
+                        select to_char(event_perfno_i) wp_wo
+                            , issue_date closing_date
+                            , event_name, ac_registr, 'wo' tag, seq_no
+                          from (select e.event_perfno_i, issue_date, event_name, ac_registr, null seq_no
+                                  from wo_header h
+                                  join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+                                 where h.type &lt;&gt; 'PD'
+                                   and event_status &lt;&gt; 'Z'
+                                   and e.event_type = 'TCEFFLI'
+                                   and state = 'C') x
+                        )t )tt
+                where rnk = 1
+                group by wp_wo, closing_date, event_name, ac_registr, tag, seq_no
+              ) wp on a.ac_registr = wp.ac_registr and s.taskcardno = wp.event_name
+        /* deadline */
+      join ( 
+            select rank() over(partition by event_name, ac_registr order by t.event_transferno_i desc) rnk
+                  , h.ac_registr
+                  , round(hours.due_at/60, 2) deadline_fh_round
+                  , event_name
+                  , case when hours.due_at &gt; 0
+                         then (trunc(to_char(hours.due_at)/60)) || ':' ||(to_char(hours.due_at) - (trunc(to_char(hours.due_at)/60) * 60) )
+                         else null 
+                     end deadline_fh
+                  , trunc(cycles.due_at, 0) deadline_cy
+                  , (to_char(to_date('31.12.1971', 'dd.mm.yyyy') + absolute_due_date,'dd.mm.yyyy')) due_date
+               from wo_event_link e
+               join wo_header h on e.event_perfno_i = h.event_perfno_i
+               join wo_transfer t on h.event_perfno_i = t.event_perfno_i
+               /* tah */
+               left join (
+                          select event_transferno_i
+                                , due_at
+                                , life_value
+                            from wo_transfer_dimension 
+                            join counter c on wo_transfer_dimension.counterno_i = c.counterno_i and c.readout_ref_type = 'LEG'
+                            join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+                            join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i
+                           where code = 'H'
+                        ) hours on t.event_transferno_i = hours.event_transferno_i
+                        /* С†РёРєР»С‹ */
+               left join (
+                          select event_transferno_i
+                               , due_at
+                               , life_value
+                            from wo_transfer_dimension 
+                            join counter c on wo_transfer_dimension.counterno_i = c.counterno_i and c.readout_ref_type = 'LEG'
+                            join counter_template ct on c.counter_templateno_i = ct.counter_templateno_i
+                            join counter_definition cd on ct.counter_defno_i = cd.counter_defno_i
+                           where code = 'C'
+                         ) cycles on t.event_transferno_i = cycles.event_transferno_i            
+              where e.pending_status &lt; 0
+                and e.event_type = 'TCEFFLI'
+                and transfer_type = 'T'
+                and is_last_transfer = 'Y' 
+           )d on a.ac_registr = d.ac_registr 
+             and s.taskcardno = d.event_name
+             and d.rnk = 1
+ /* planned wp/wo */
+ left join (  
+            select listagg(planned_wp_wo, ' / ') within group (order by tag) planned_wp_wo
+                 , verno
+                 , event_name
+                 , ac_registr
+                 , listagg(planned_items, ' / ') within group (order by ac_registr, event_name, planned_items) planned_items
+              from (
+                    select row_number() over(partition by h.ac_registr, event_name 
+                                                 order by absolute_due_date desc) num
+                         , taskcard_verno_i_mri verno
+                         , event_name
+                         , h.ac_registr
+                         , to_char(h.event_perfno_i) planned_wp_wo
+                         , null planned_items
+                         , absolute_due_date planned_date
+                         , 'wo' tag
+                      from wo_header h
+                      join wo_event_link e on h.event_perfno_i = e.event_perfno_i
+                      left join msc_requirement_tc_link l on e.event_key_parent = l.req_linkno_i
+                      join wo_transfer t on e.event_perfno_i = t.event_perfno_i
+                      join aircraft i on h.ac_registr = i.ac_registr
+                     where e.event_type = 'TCEFFLI'
+                       and state = 'O'
+                       and is_last_transfer = 'Y'
+                       and (
+                            absolute_due_date &gt; to_char(round(sysdate - to_date('31.12.1971', 'dd.mm.yyyy')) ) or
+                            absolute_due_date is null
+                           )
+                       and h.type &lt;&gt; 'PD'
+                     union
+                    select row_number() over(partition by ac_registr, event_name 
+                                                 order by start_date desc) num
+                         , taskcard_verno_i_mri verno
+                         , event_name
+                         , h.ac_registr
+                         , wpno planned_wp_wo
+                         , seqno_i planned_items
+                         , start_date planned_date
+                         , 'wp' tag
+                      from wp_header h
+                      join wp_assignment wa on h.wpno_i = wa.wpno_i
+                      join wo_event_link e on wa.event_perfno_i = e.event_perfno_i
+                      left join msc_requirement_tc_link l on e.event_key_parent = l.req_linkno_i
+                      left join wp_sequence q on e.event_perfno_i = q.event_perfno_i
+                     where e.event_type = 'TCEFFLI'
+                    /* 2019-12-17 delete condition wp_status = -1 */
+                       and e.pending_status = 0
+                   )x
+             where num = 1
+             group by verno
+                    , event_name
+                    , ac_registr
+           ) plan on s.taskcardno = plan.event_name
+                 and mv.taskcard_verno_i = plan.verno
+                 and a.ac_registr = plan.ac_registr
+ /* historical data  */
+ join (
+            select rank() over(partition by v.taskcard_verno_i, ac_registr 
+                                   order by rev.revision_date desc
+                                          , e.event_perfno_i desc
+                              ) rnk
+                 , ac_registr
+                 , s.taskcardno_i
+                 , v.taskcard_verno_i
+                 , s.taskcardno
+                 , rev.revisionno_i
+                 , rev.revision_no
+                 , rev.revision_status
+                 , to_char(to_date('31.12.1971', 'dd.mm.yyyy') + rev.revision_date, 'dd.mm.yyyy') revision_date
+              from msc_taskcard s
+              join msc_taskcard_version v on s.taskcardno_i = v.taskcardno_i
+              join msc_mprev_taskcards mp_rev on v.taskcard_verno_i = mp_rev.taskcard_verno_i
+              join msc_mp_revision rev on mp_rev.revisionno_i = rev.revisionno_i
+              join msc_requirement_tc_link t on rev.revisionno_i = t.revisionno_i_mrs
+                                            and v.taskcard_verno_i = t.taskcard_verno_i_mri
+              join wo_event_link e on req_linkno_i = e.event_key_parent
+                                  and event_name = s.taskcardno
+                                  and pending_status &lt; 0
+                                  and event_type = 'TCEFFLI'
+              join wo_header h on e.event_perfno_i = h.event_perfno_i
+           ) hist on mv.taskcard_verno_i = hist.taskcard_verno_i
+                 and a.ac_registr = hist.ac_registr
+                 and rev.revisionno_i = hist.revisionno_i
+                 and hist.rnk = 1
+where 1=1
+  and '@VAR.history@'='Y'
+  and a.ac_registr in ('@VAR.ac_reg@')
+  and section_code in ('@VAR.sec_code@')
+  /* Taskcard */ 
+  and (to_char('@VAR.task@') is null or s.taskcardno_i in ('@VAR.task@'))
+  and exists (
+              select wo_header.ac_registr
+                from wo_event_link
+                join wo_header on wo_event_link.event_perfno_i = wo_header.event_perfno_i 
+                              and wo_event_link.event_type = 'TCEFFLI' 
+               where s.taskcardno = wo_event_link.event_name
+                 and a.ac_registr = wo_header.ac_registr
+                 and pending_status &lt; 0
+               group by wo_header.ac_registr
+             )
+  and (to_char('@VAR.ac_typ@') is null or a.ac_typ in ('@VAR.ac_typ@'))
+order by a.ac_registr, s.taskcardno desc</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

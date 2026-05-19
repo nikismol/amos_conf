@@ -1,0 +1,2348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000012</report_id>
+    <revision_number>0</revision_number>
+    <meta name="JOB CARDS OUT OF PHASE (wo_event_chain)">v3</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="3">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">216</attribute>
+      <attribute name="footer-size">35</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content>
+      <view class="BoxReportView" id="4">
+        <attribute name="name">Box_1</attribute>
+        <attribute name="position">23 15</attribute>
+        <attribute name="size">650 100</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+      </view>
+      <view class="ImageReportView" id="5">
+        <attribute name="name">Image_2</attribute>
+        <attribute name="position">31 23</attribute>
+        <attribute name="size">156 49</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="image-source">@SYSTEM.CUSTOMER_LOGO@</attribute>
+        <attribute name="scale-mode">FILL</attribute>
+      </view>
+      <view class="LabelReportView" id="6">
+        <attribute name="name">Label_3</attribute>
+        <attribute name="position">207 20</attribute>
+        <attribute name="size">457 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_WPH@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 16</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>5</anchor_view>
+          <anchor_location>TOP_RIGHT</anchor_location>
+          <x_offset>20</x_offset>
+          <y_offset>-3</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="7">
+        <attribute name="name">Label_4</attribute>
+        <attribute name="position">206 72</attribute>
+        <attribute name="size">459 21</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_WP@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 14</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="8">
+        <attribute name="name">Label_5</attribute>
+        <attribute name="position">207 93</attribute>
+        <attribute name="size">454 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_revnum@ _________ @WO_RRJ.lb_prepar@ @SYSTEM.LASTNAME@ @SYSTEM.FIRSTNAME@ / @SYSTEM.LOGIN_SIGN@ @WO_RRJ.lb_nsign@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="BoxReportView" id="9">
+        <attribute name="name">Box_6</attribute>
+        <attribute name="position">23 115</attribute>
+        <attribute name="size">650 101</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">1 SOLID 000000</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>4</anchor_view>
+          <anchor_location>BOTTOM_LEFT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="10">
+        <attribute name="name">Label_7</attribute>
+        <attribute name="position">62 123</attribute>
+        <attribute name="size">303 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_worktype@ @HIGH.wph.description@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="11">
+        <attribute name="name">Label_8</attribute>
+        <attribute name="position">524 123</attribute>
+        <attribute name="size">142 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_print@ @SYSTEM.DATE@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_RIGHT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="12">
+        <attribute name="name">Label_9</attribute>
+        <attribute name="position">63 147</attribute>
+        <attribute name="size">75 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_vctype@ @HIGH.wph.ac_typ@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="13">
+        <attribute name="name">Label_10</attribute>
+        <attribute name="position">240 147</attribute>
+        <attribute name="size">193 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_acreg@ @HIGH.wph.ac_registr@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="14">
+        <attribute name="name">Label_11</attribute>
+        <attribute name="position">522 147</attribute>
+        <attribute name="size">143 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_msn@ @HIGH.at.serialno@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_RIGHT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="15">
+        <attribute name="name">Label_12</attribute>
+        <attribute name="position">62 170</attribute>
+        <attribute name="size">601 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_amp@ @WO_RRJ.lb_mp@ </attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="16">
+        <attribute name="name">Label_13</attribute>
+        <attribute name="position">97 192</attribute>
+        <attribute name="size">567 20</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_iss@  @High_ver.rev_no@  @WO_RRJ.lb_ot@ @High_ver.rev_date@     @WO_RRJ.lb_approve@   @High_ver.issue_date@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="17">
+        <attribute name="name">Label_1</attribute>
+        <attribute name="position">41 986</attribute>
+        <attribute name="size">75 12</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes>
+          <conditional_attribute id="1">
+            <attribute name="visible">NO</attribute>
+            <conditions>
+              <condition class="GenericStyleCondition">
+                <field id="1">@WO_RRJ.a.ac_typ@</field>
+                <field id="2">RRJ</field>
+                <operator negated="NO">EQUALS</operator>
+              </condition>
+            </conditions>
+          </conditional_attribute>
+        </conditional_attributes>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Revision L</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="18">
+        <attribute name="name">Label_6</attribute>
+        <attribute name="position">619 986</attribute>
+        <attribute name="size">75 12</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes>
+          <conditional_attribute id="1">
+            <attribute name="visible">NO</attribute>
+            <conditions>
+              <condition class="GenericStyleCondition">
+                <field id="1">@WO_RRJ.a.ac_typ@</field>
+                <field id="2">RRJ</field>
+                <operator negated="NO">EQUALS</operator>
+              </condition>
+            </conditions>
+          </conditional_attribute>
+        </conditional_attributes>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">Form 2.320.15</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="19">
+        <attribute name="name">Label_1</attribute>
+        <attribute name="position">208 45</attribute>
+        <attribute name="size">455 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_WPH2@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 16</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+        <anchor>
+          <location>TOP_LEFT</location>
+          <anchor_view>6</anchor_view>
+          <anchor_location>BOTTOM_LEFT</anchor_location>
+          <x_offset>1</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="20">
+        <attribute name="name">Label_2</attribute>
+        <attribute name="position">210 47</attribute>
+        <attribute name="size">454 21</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_WP2@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif BOLD 14</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+      <view class="LabelReportView" id="21">
+        <attribute name="name">Label_6</attribute>
+        <attribute name="position">483 966</attribute>
+        <attribute name="size">215 15</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <attribute name="rotation">0.0</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">@WO_RRJ.lb_page@  @SYSTEM.PAGE_NO@ / @SYSTEM.PAGE_COUNT@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_RIGHT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <attribute name="antialias">false</attribute>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="22">
+      <attribute name="name">DatasourceTable_21</attribute>
+      <attribute name="position">23 53</attribute>
+      <attribute name="size">650 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="25" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="26" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@WPCHECK.seq@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">110</attribute>
+          <view class="LabelReportView" id="29" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="30" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@WPCHECK.event_name@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">440</attribute>
+          <view class="LabelReportView" id="33" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">440 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">1</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="34" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">440 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">1</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@WPCHECK.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">WPCHECK</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>83</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="35">
+      <attribute name="name">DatasourceTable_23</attribute>
+      <attribute name="position">23 123</attribute>
+      <attribute name="size">650 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="">
+          <attribute name="width">70</attribute>
+          <view class="LabelReportView" id="38" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="39" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">70 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@JCOP.seqno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">110</attribute>
+          <view class="LabelReportView" id="42" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="43" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@JCOP.name@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="46" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="47" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@JCOP.tzone@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">120</attribute>
+          <view class="LabelReportView" id="50" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">120 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="51" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">120 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@JCOP.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">250</attribute>
+          <view class="LabelReportView" id="54" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">250 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">1</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="55" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">250 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">1</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@JCOP.title@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">JCOP</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>56</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="56">
+      <attribute name="name">DatasourceTable_22</attribute>
+      <attribute name="position">23 88</attribute>
+      <attribute name="size">650 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="59" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="60" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">1</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@WOHIGH.seq@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="63" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="64" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@WOHIGH.wo_nom@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="67" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="68" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">0</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@WOHIGH.partno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">370</attribute>
+          <view class="LabelReportView" id="71" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">370 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">1</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="72" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">370 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <border class="StyledReportBorder">
+              <attribute name="border-top-width">1</attribute>
+              <attribute name="border-top-style">SOLID</attribute>
+              <attribute name="border-top-color">000000</attribute>
+              <attribute name="border-left-width">0</attribute>
+              <attribute name="border-left-style">SOLID</attribute>
+              <attribute name="border-left-color">000000</attribute>
+              <attribute name="border-bottom-width">1</attribute>
+              <attribute name="border-bottom-style">SOLID</attribute>
+              <attribute name="border-bottom-color">000000</attribute>
+              <attribute name="border-right-width">1</attribute>
+              <attribute name="border-right-style">SOLID</attribute>
+              <attribute name="border-right-color">000000</attribute>
+            </border>
+            <attribute name="text">@WOHIGH.text@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">FORCED</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">WOHIGH</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="73">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">218 54</attribute>
+      <attribute name="size">304 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_check@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 11</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="74">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">48 88</attribute>
+      <attribute name="size">602 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_WO@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 11</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>56</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>25</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="75">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">151 123</attribute>
+      <attribute name="size">406 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_jcop@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 11</attribute>
+      <attribute name="text-align">LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>35</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>128</x_offset>
+        <y_offset>7</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="76">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">320 54</attribute>
+      <attribute name="size">114 13</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_check2@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 11</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="77">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">304 88</attribute>
+      <attribute name="size">141 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_WO2@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 11</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>74</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>256</x_offset>
+        <y_offset>-15</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="78">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">275 124</attribute>
+      <attribute name="size">187 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_jcop2@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 11</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>75</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>124</x_offset>
+        <y_offset>-14</y_offset>
+      </anchor>
+    </view>
+    <view class="BoxReportView" id="79">
+      <attribute name="name">Box_1</attribute>
+      <attribute name="position">23 0</attribute>
+      <attribute name="size">154 53</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>82</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="BoxReportView" id="80">
+      <attribute name="name">Box_2</attribute>
+      <attribute name="position">177 0</attribute>
+      <attribute name="size">153 53</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>79</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="BoxReportView" id="81">
+      <attribute name="name">Box_3</attribute>
+      <attribute name="position">330 0</attribute>
+      <attribute name="size">152 53</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>80</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="BoxReportView" id="82">
+      <attribute name="name">Box_4</attribute>
+      <attribute name="position">23 0</attribute>
+      <attribute name="size">650 22</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+    </view>
+    <view class="BoxReportView" id="83">
+      <attribute name="name">Box_5</attribute>
+      <attribute name="position">23 22</attribute>
+      <attribute name="size">650 31</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+    </view>
+    <view class="LabelReportView" id="84">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">49 3</attribute>
+      <attribute name="size">113 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_accby@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>79</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>26</x_offset>
+        <y_offset>3</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="85">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">219 4</attribute>
+      <attribute name="size">69 15</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_date@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>LEFT</location>
+        <anchor_view>80</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>42</x_offset>
+        <y_offset>11</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="86">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">358 4</attribute>
+      <attribute name="size">105 14</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_name@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>81</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>28</x_offset>
+        <y_offset>4</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="87">
+      <attribute name="name">Label_9</attribute>
+      <attribute name="position">522 3</attribute>
+      <attribute name="size">113 17</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_sign@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>81</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>40</x_offset>
+        <y_offset>3</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="88">
+      <attribute name="name">DatasourceTable_2</attribute>
+      <attribute name="position">23 193</attribute>
+      <attribute name="size">650 35</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="91" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_RRJ.lb_ad_works_seqno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="92" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WP_HL_AD_Works.seqno_i@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="95" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_RRJ.lb_ad_works_eventno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="96" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WP_HL_AD_Works.event_perfno_i@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">450</attribute>
+          <view class="LabelReportView" id="99" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">450 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_RRJ.lb_ad_works_title@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="100" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">450 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text">@WP_HL_AD_Works.wo_text@</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@WP_HL_AD_Works.event_display@</field>
+                    <field id="2"/>
+                    <operator negated="NO">EQUALS</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WP_HL_AD_Works.event_display@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">WP_HL_AD_Works</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>101</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>1</x_offset>
+        <y_offset>-1</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="101">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">22 178</attribute>
+      <attribute name="size">650 16</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="background-color">C0C0C0</attribute>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@WO_RRJ.lb_ad_works@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 11</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>102</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>22</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="PageBreakView" id="102">
+      <attribute name="name">PageBreak_4</attribute>
+      <attribute name="position">0 158</attribute>
+      <attribute name="size">700 20</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>35</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-23</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="WP" description="" id="WP"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Work package" id="WP">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="HIGH" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.ac_typ" id="wph.ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.ac_registr" id="wph.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.wpno" id="wph.wpno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wph.description" id="wph.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="at.serialno" id="at.serialno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.WP@">
+          <ds:object>@VAR.WP@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT wph.ac_typ,
+       wph.ac_registr,
+       wph.wpno,
+       wph.description,
+       at.serialno
+FROM wp_header wph
+JOIN aircraft at ON at.ac_registr = wph.ac_registr
+WHERE wph.wpno_i = '@VAR.WP@'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="JCOP" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ws.seqno_i as seqno" id="seqno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wel.event_name as name" id="name"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="mt.title as title" id="title"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i" id="wo_header.event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="tb_part.partno as partno" id="partno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="zn.tzone" id="zn.tzone"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AMOS_VERSION@">
+          <ds:object>@AMOS_VERSION@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.WP@">
+          <ds:object>@VAR.WP@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT  wp_sequence.seqno_i as seqno,
+                wo_event_link.event_name as name,
+                msc_taskcard.title as title,
+                wo_header.event_perfno_i,
+                REGEXP_REPLACE (
+                                RTRIM(XMLAGG(XMLELEMENT(E, part_request_template.partno, decode(part_request_template.partno, null, null, ', ')).EXTRACT('//text()') ORDER BY part_request_template.partno).GetClobVal(), CHR(10))
+                                , '(, )$'
+                                , '') as partno,
+                zn.tzone
+FROM wp_header 
+LEFT JOIN wp_assignment ON wp_header.wpno_i = wp_assignment.wpno_i 
+LEFT JOIN wo_header ON  wo_header.event_perfno_i = wp_assignment.event_perfno_i 
+LEFT JOIN wo_event_link ON wo_header.event_perfno_i = wo_event_link.event_perfno_i 
+LEFT JOIN wp_sequence ON wp_sequence.event_perfno_i = wo_header.event_perfno_i and wp_sequence.wpno_i = wp_header.wpno_i
+LEFT JOIN workstep_link ON workstep_link.event_perfno_i = wp_assignment.event_perfno_i 
+LEFT JOIN (
+                    SELECT workstep_link.event_perfno_i,
+                                  LISTAGG(zone_code_link.zone, ', ') WITHIN GROUP (ORDER BY zone_code_link.zone) as tzone
+                    FROM zone_code_link 
+                    JOIN workstep_link ON zone_code_link.source_pk = workstep_link.descno_i
+                    WHERE 1=1
+                                   AND  zone_code_link.source_type = 'WS'
+                    GROUP BY workstep_link.event_perfno_i
+                   ) zn ON zn.event_perfno_i = wo_header.event_perfno_i
+LEFT JOIN msc_requirement_tc_link ON  msc_requirement_tc_link.req_linkno_i=wo_event_link.event_key_parent AND (wo_event_link.event_type = 'TCEFFLI' AND '@AMOS_VERSION@' LIKE '19.12%' OR wo_event_link.event_type = 'MET' AND '@AMOS_VERSION@' NOT LIKE '19.12%')
+LEFT JOIN msc_taskcard_version ON msc_taskcard_version.taskcard_verno_i = msc_requirement_tc_link.taskcard_verno_i_mri
+LEFT JOIN msc_taskcard ON msc_taskcard.taskcardno_i = msc_taskcard_version.taskcardno_i 
+LEFT JOIN part_request_template ON workstep_link.descno_i = part_request_template.event_key AND part_request_template.event_type = 'WS' AND part_request_template.partno IS NOT NULL
+WHERE wp_header.wpno_i = @VAR.WP@ 
+               AND (wo_event_link.event_type = 'TCEFFLI' AND '@AMOS_VERSION@' LIKE '19.12%' OR wo_event_link.event_type = 'MET' AND '@AMOS_VERSION@' NOT LIKE '19.12%')
+               AND wp_assignment.event_perfno_i NOT IN (
+                                                                                                   SELECT wo_event_chain.source_event_perfno_i     
+                                                                                                   FROM wo_event_chain 
+                                                                                                   WHERE wo_event_chain.source_event_perfno_i IN (
+                                                                                                                                                                                                  SELECT wp_assignment.event_perfno_i 
+                                                                                                                                                                                                  FROM wp_assignment 
+                                                                                                                                                                                                  WHERE wp_assignment.wpno_i = @VAR.WP@
+                                                                                                                                                                                                 ) 
+                                                                                                                  OR
+                                                                                                                  wo_event_chain.target_event_perfno_i IN (
+                                                                                                                                                                                                 SELECT wp_assignment.event_perfno_i 
+                                                                                                                                                                                                 FROM wp_assignment
+                                                                                                                                                                                                 WHERE wp_assignment.wpno_i = @VAR.WP@ 
+                                                                                                                                                                                                ) 
+                                                                                                  )
+GROUP BY wp_sequence.seqno_i, wo_event_link.event_name, msc_taskcard.title, wo_header.event_perfno_i, zn.tzone
+ORDER BY wp_sequence.seqno_i asc</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="WPCHECK" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.seqno_i as seq" id="seq"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="event_name as event_name" id="event_name"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="cti.description as description" id="description"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.WP@">
+          <ds:object>@VAR.WP@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT wps.seqno_i as seq,
+       wel.event_name as event_name,
+       (
+          SELECT distinct cti.description            
+          FROM check_type_int cti            
+          WHERE cti.check_intno_i = wel.event_key_parent        
+       ) as description      
+FROM wp_header wph  
+JOIN wp_assignment ass ON wph.wpno_i = ass.wpno_i    
+JOIN wo_header wo ON wo.event_perfno_i = ass.event_perfno_i    
+JOIN wo_event_link wel ON wel.event_perfno_i = wo.event_perfno_i  
+LEFT JOIN wp_sequence wps ON wps.event_perfno_i = wo.event_perfno_i
+JOIN aircraft air ON air.ac_registr = wph.ac_registr  
+WHERE wph.wpno_i = '@VAR.WP@'                     
+      and wo.event_type = 'C' 
+ORDER BY 
+             CASE        
+             WHEN wel.event_name = '12YE' AND air.ac_model = 'A320' THEN 1         
+             WHEN wel.event_name = '6YE'  AND air.ac_model = 'A320' THEN 2        
+             WHEN wel.event_name = '1C' AND air.ac_model = 'A320' THEN 3        
+             WHEN wel.event_name = '2C' AND air.ac_model = 'A320' THEN 4        
+             WHEN wel.event_name = '3C' AND air.ac_model = 'A320' THEN 5        
+             WHEN wel.event_name = '4C' AND air.ac_model = 'A320' THEN 6        
+             WHEN wel.event_name = 'A (A01)' AND air.ac_model = 'A320' THEN 7        
+             WHEN wel.event_name = 'A (A02)' AND air.ac_model = 'A320' THEN 8        
+             WHEN wel.event_name = 'A (A03)' AND air.ac_model = 'A320' THEN 9        
+             WHEN wel.event_name = 'A (A04)' AND air.ac_model = 'A320' THEN 10        
+             WHEN wel.event_name = 'A (A05)' AND air.ac_model = 'A320' THEN 11        
+             WHEN wel.event_name = 'A (A06)' AND air.ac_model = 'A320' THEN 12        
+             WHEN wel.event_name = 'A (A07)' AND air.ac_model = 'A320' THEN 13        
+             WHEN wel.event_name = 'A (A08)' AND air.ac_model = 'A320' THEN 14        
+             WHEN wel.event_name = 'A (A09)' AND air.ac_model = 'A320' THEN 15        
+             WHEN wel.event_name = 'A (A10)' AND air.ac_model = 'A320' THEN 16        
+             WHEN wel.event_name = 'A (A11)' AND air.ac_model = 'A320' THEN 17        
+             WHEN wel.event_name = 'A (A12)' AND air.ac_model = 'A320' THEN 18         
+             WHEN wel.event_name = '341300 (34130001)' AND air.ac_model = 'A320' THEN 19        
+             WHEN wel.event_name = '341300 (34130002)' AND air.ac_model = 'A320' THEN 20        
+             WHEN wel.event_name = '341300 (34130003)' AND air.ac_model = 'A320' THEN 21        
+             WHEN wel.event_name = 'A320FAM-WINT.PREP.' AND air.ac_model = 'A320' THEN 22        
+             WHEN wel.event_name = '8DY' AND air.ac_model = 'A320' THEN 23  
+               
+             WHEN wel.event_name = 'D' AND air.ac_typ = 'B737' THEN 24         
+             WHEN wel.event_name = '1C' AND air.ac_typ = 'B737' THEN 25        
+             WHEN wel.event_name = '2C' AND air.ac_typ = 'B737' THEN 26        
+             WHEN wel.event_name = '4C' AND air.ac_typ = 'B737' THEN 27        
+             WHEN wel.event_name = 'A (A01)' AND air.ac_typ = 'B737' THEN 28        
+             WHEN wel.event_name = 'A (A02)' AND air.ac_typ = 'B737' THEN 29        
+             WHEN wel.event_name = 'A (A03)' AND air.ac_typ = 'B737' THEN 30        
+             WHEN wel.event_name = 'A (A04)' AND air.ac_typ = 'B737' THEN 31        
+             WHEN wel.event_name = 'A (A05)' AND air.ac_typ = 'B737' THEN 32        
+             WHEN wel.event_name = 'A (A06)' AND air.ac_typ = 'B737' THEN 33        
+             WHEN wel.event_name = 'A (A07)' AND air.ac_typ = 'B737' THEN 34        
+             WHEN wel.event_name = 'A (A08)' AND air.ac_typ = 'B737' THEN 35        
+             WHEN wel.event_name = 'A (A09)' AND air.ac_typ = 'B737' THEN 36        
+             WHEN wel.event_name = 'A (A10)' AND air.ac_typ = 'B737' THEN 37        
+             WHEN wel.event_name = 'A (A11)' AND air.ac_typ = 'B737' THEN 38        
+             WHEN wel.event_name = 'A (A12)' AND air.ac_typ = 'B737' THEN 39         
+             WHEN wel.event_name = 'S' AND air.ac_typ = 'B737' THEN 40  
+       
+             WHEN wel.event_name = '1C' AND air.ac_typ = 'B777' THEN 41        
+             WHEN wel.event_name = '2C' AND air.ac_typ = 'B777' THEN 42        
+             WHEN wel.event_name = '4C' AND air.ac_typ = 'B777' THEN 43        
+             WHEN wel.event_name = 'A (A01)' AND air.ac_typ = 'B777' THEN 44       
+             WHEN wel.event_name = 'A (A02)' AND air.ac_typ = 'B777' THEN 45        
+             WHEN wel.event_name = 'A (A03)' AND air.ac_typ = 'B777' THEN 46        
+             WHEN wel.event_name = 'A (A04)' AND air.ac_typ = 'B777' THEN 47        
+             WHEN wel.event_name = 'A (A05)' AND air.ac_typ = 'B777' THEN 48        
+             WHEN wel.event_name = 'A (A06)' AND air.ac_typ = 'B777' THEN 49        
+             WHEN wel.event_name = 'A (A07)' AND air.ac_typ = 'B777' THEN 50        
+             WHEN wel.event_name = 'A (A08)' AND air.ac_typ = 'B777' THEN 51        
+             WHEN wel.event_name = 'A (A09)' AND air.ac_typ = 'B777' THEN 52        
+             WHEN wel.event_name = 'A (A10)' AND air.ac_typ = 'B777' THEN 53        
+             WHEN wel.event_name = 'A (A11)' AND air.ac_typ = 'B777' THEN 54        
+             WHEN wel.event_name = 'A (A12)' AND air.ac_typ = 'B777' THEN 55         
+             WHEN wel.event_name = 'S' AND air.ac_typ = 'B777' THEN 56 
+        
+             WHEN wel.event_name = '1C' AND air.ac_typ = 'A330' THEN 57        
+             WHEN wel.event_name = '2C' AND air.ac_typ = 'A330' THEN 58        
+             WHEN wel.event_name = '4C' AND air.ac_typ = 'A330' THEN 59        
+             WHEN wel.event_name = '8C' AND air.ac_typ = 'A330' THEN 60        
+             WHEN wel.event_name = 'A (A01)' AND air.ac_typ = 'A330' THEN 61        
+             WHEN wel.event_name = 'A (A02)' AND air.ac_typ = 'A330' THEN 62        
+             WHEN wel.event_name = 'A (A03)' AND air.ac_typ = 'A330' THEN 63        
+             WHEN wel.event_name = 'A (A04)' AND air.ac_typ = 'A330' THEN 64        
+             WHEN wel.event_name = 'A (A05)' AND air.ac_typ = 'A330' THEN 65        
+             WHEN wel.event_name = 'A (A06)' AND air.ac_typ = 'A330' THEN 66        
+             WHEN wel.event_name = 'A (A07)' AND air.ac_typ = 'A330' THEN 67        
+             WHEN wel.event_name = 'A (A08)' AND air.ac_typ = 'A330' THEN 68        
+             WHEN wel.event_name = 'A (A09)' AND air.ac_typ = 'A330' THEN 69        
+             WHEN wel.event_name = 'A (A10)' AND air.ac_typ = 'A330' THEN 70        
+             WHEN wel.event_name = 'A (A11)' AND air.ac_typ = 'A330' THEN 71        
+             WHEN wel.event_name = 'A (A12)' AND air.ac_typ = 'A330' THEN 72         
+             WHEN wel.event_name = '341300 (34130001)' AND air.ac_typ = 'A330' THEN 73        
+             WHEN wel.event_name = '341300 (34130002)' AND air.ac_typ = 'A330' THEN 74        
+             WHEN wel.event_name = '341300 (34130003)' AND air.ac_typ = 'A330' THEN 75        
+             WHEN wel.event_name = 'A330-WINT.PREP.' AND air.ac_typ = 'A330' THEN 76        
+             WHEN wel.event_name = '7DY' AND air.ac_typ = 'A330' THEN 77              
+             
+             WHEN wel.event_name = 'C1' AND air.ac_typ = 'RRJ' THEN 78        
+             WHEN wel.event_name = 'C2' AND air.ac_typ = 'RRJ' THEN 79        
+             WHEN wel.event_name = 'C4' AND air.ac_typ = 'RRJ' THEN 80        
+             WHEN wel.event_name = 'A (A01)' AND air.ac_typ = 'RRJ' THEN 81        
+             WHEN wel.event_name = 'A (A02)' AND air.ac_typ = 'RRJ' THEN 82        
+             WHEN wel.event_name = 'A (A03)' AND air.ac_typ = 'RRJ' THEN 83        
+             WHEN wel.event_name = 'A (A04)' AND air.ac_typ = 'RRJ' THEN 84        
+             WHEN wel.event_name = 'A (A05)' AND air.ac_typ = 'RRJ' THEN 85        
+             WHEN wel.event_name = 'A (A06)' AND air.ac_typ = 'RRJ' THEN 86        
+             WHEN wel.event_name = 'A (A07)' AND air.ac_typ = 'RRJ' THEN 87        
+             WHEN wel.event_name = 'A (A08)' AND air.ac_typ = 'RRJ' THEN 88        
+             WHEN wel.event_name = 'A (A09)' AND air.ac_typ = 'RRJ' THEN 89        
+             WHEN wel.event_name = 'A (A10)' AND air.ac_typ = 'RRJ' THEN 90        
+             WHEN wel.event_name = 'A (A11)' AND air.ac_typ = 'RRJ' THEN 91        
+             WHEN wel.event_name = 'A (A12)' AND air.ac_typ = 'RRJ' THEN 92         
+             WHEN wel.event_name = '375FH' AND air.ac_typ = 'RRJ' THEN 93             
+             WHEN wel.event_name = 'WEEKLY' AND air.ac_typ = 'RRJ' THEN 94        
+             
+ELSE 95     END</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="WOHIGH" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.seqno_i as seq" id="seq"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo.ext_workorderno as wo_nom" id="wo_nom"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="des.text as text" id="text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="tb_part.partno as partno" id="partno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.WP@">
+          <ds:object>@VAR.WP@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT s.seqno_i as seq,
+       wo.workorderno_display as wo_nom,
+       des.text as text,
+       tb_part.partno as partno
+FROM wp_header wph
+JOIN wp_assignment wpa ON wph.wpno_i = wpa.wpno_i
+JOIN wo_header wo ON wo.event_perfno_i = wpa.event_perfno_i 
+JOIN wp_sequence s ON s.event_perfno_i = wo.event_perfno_i and s.wpno_i = wph.wpno_i 
+JOIN workstep_link ws ON ws.event_perfno_i = wo.event_perfno_i
+JOIN wo_text_description des ON des.descno_i = ws.descno_i
+LEFT JOIN 
+(SELECT wpas.event_perfno_i, LISTAGG (pr.partno, ', ') WITHIN GROUP (ORDER BY pr.partno) as partno
+FROM part_request_2 pr
+JOIN workstep_link wl ON wl.workstep_linkno_i = pr.event_key
+JOIN  wp_assignment wpas ON wpas.event_perfno_i = wl.event_perfno_i
+JOIN wp_header wh ON wh.wpno_i = wpas.wpno_i
+JOIN wo_header woh ON woh.event_perfno_i = wpas.event_perfno_i 
+WHERE wh.wpno_i = '@VAR.WP@'
+GROUP BY wpas.event_perfno_i) tb_part
+ON tb_part.event_perfno_i = wpa.event_perfno_i
+WHERE wph.wpno_i = '@VAR.WP@'
+AND wo.type in ('S','M','C','P')
+AND wo.workorderno_display is not null
+AND wo.event_type not in ('C','T','Q')
+AND ws.sequenceno  = 1
+order by seq asc</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="WO_RRJ" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>WO for RRJ</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="a.ac_typ" id="a.ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#10;CASE when regexp_like(a.ac_typ 'RRJ*') THEN 'ПЕРЕЧЕНЬ ЗАДАЧ ТО ДОПОЛНИТЕЛЬНЫХ &#10;РАБОТВКЛЮЧЕННЫХ В ФОРМУ ТО&#10;'ELSE 'WORK PACKAGE HIGHLIGHT (WORK ORDER)' END as lb_WPH" id="lb_WPH"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ 'RRJ*') THEN 'РАБОТВКЛЮЧЕННЫХ В ФОРМУ ТО' ELSE '' END as lb_WPH2" id="lb_WPH2"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Комплект производственной документации:' ELSE 'Work Package :' END as lb_WP" id="lb_WP"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN '' ELSE 'Work Package: @HIGH.wph.wpno@' END as lb_WP2" id="lb_WP2"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Рев. №' ELSE 'Rev №' END as lb_revnum" id="lb_revnum"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Подготовлен' ELSE 'PREPARED BY' END as lb_prepar" id="lb_prepar"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN '(Фамилия/Подпись)' ELSE '(Name/Signature)' END as lb_nsign" id="lb_nsign"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Форма ТО:' ELSE 'Type of work :'  END as lb_worktype" id="lb_worktype"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Распечатан:' ELSE 'Printed:' END as lb_print" id="lb_print"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Тип ВС:' ELSE 'A/C Type :'  END as lb_vctype" id="lb_vctype"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Регистрационный номер ВС:' ELSE 'A/C Reg :' END as lb_acreg" id="lb_acreg"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Зав. №'  ELSE 'MSN' END as lb_msn" id="lb_msn"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Согласно программе ТО:' ELSE 'According to Maintenance Programme:' END as lb_amp" id="lb_amp"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'АЭРОФЛОТ - РОССИЙСКИЕ АВИАЛИНИИ' ELSE 'AEROFLOT-RUSSIAN AIRLINES BDCA APPR.NO.BDA/MP/' END as lb_mp" id="lb_mp"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'от:' ELSE 'on the' END as lb_ot" id="lb_ot"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Одобрена:' ELSE 'Approved on the' END as lb_approve" id="lb_approve"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'СОГЛАСОВАНО С' ELSE 'ACCEPTED BY' END as lb_accby" id="lb_accby"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'ДАТА' ELSE 'DATE'  END as lb_date" id="lb_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'ФАМИЛИЯ' ELSE 'NAME'  END as lb_name" id="lb_name"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Подпись' ELSE 'Sign' END as lb_sign" id="lb_sign"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'ФОРМА ТЕХНИЧЕСКОГО ОБСЛУЖИВАНИЯ' ELSE 'CHECK' END as lb_check" id="lb_check"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN '' ELSE 'CHECK' END as lb_check2" id="lb_check2"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ 'RRJ*') THEN 'НАРЯДЫ НА РАБОТЫ ПО УКАЗАНИЯМ БЮЛЛЕТЕНЯМ ЗАМЕНАМ КОМПОНЕНТОВУСТРАНЕНИЮ ДЕФЕКТОВ'  ELSE 'WORK ORDERS' END as lb_WO" id="lb_WO"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN ''  ELSE 'WORK ORDERS' END as lb_WO2" id="lb_WO2"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ 'RRJ*') THEN 'РЕГЛАМЕНТНЫЕ РАБОТЫНЕ ВКЛЮЧЕННЫЕ В ОБЪЕМ ФОРМЫ ТО' ELSE 'JOB CARDS OUT OF PHASE' END as lb_jcop" id="lb_jcop"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN '' ELSE 'JOB CARDS OUT OF PHASE' END as lb_jcop2" id="lb_jcop2"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Страница' ELSE 'Page' END as lb_page" id="lb_page"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'АД Работы' ELSE 'AD Works' END as lb_ad_works" id="lb_ad_works"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Порядковый номер' ELSE 'Sequence No' END as lb_ad_works_seqno" id="lb_ad_works_seqno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Номер работы' ELSE 'Event Number' END as lb_ad_works_eventno" id="lb_ad_works_eventno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;CASE when regexp_like(a.ac_typ'RRJ*') THEN 'Описание работы' ELSE 'Title' END as lb_ad_works_title" id="lb_ad_works_title"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@HIGH.wph.wpno@">
+          <ds:object>@HIGH.wph.wpno@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.WP@">
+          <ds:object>@VAR.WP@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT a.ac_typ,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'ПЕРЕЧЕНЬ ЗАДАЧ ТО, ДОПОЛНИТЕЛЬНЫХ ' ELSE 'WORK PACKAGE HIGHLIGHT (WORK ORDER)' END as lb_WPH,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'РАБОТ, ВКЛЮЧЕННЫХ В ФОРМУ ТО' ELSE '' END as lb_WPH2,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Комплект производственной документации:@HIGH.wph.wpno@' ELSE '' END as lb_WP,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN '' ELSE 'Work Package: @HIGH.wph.wpno@' END as lb_WP2,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Рев. №' ELSE 'Rev №' END as lb_revnum,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Подготовлен' ELSE 'PREPARED BY' END as lb_prepar,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN '(Фамилия/Подпись)' ELSE '(Name/Signature)' END as lb_nsign,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Форма ТО:' ELSE 'Type of work :'  END as lb_worktype,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Распечатан:' ELSE 'Printed:' END as lb_print,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Тип ВС:' ELSE 'A/C Type :'  END as lb_vctype,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Регистрационный номер ВС:' ELSE 'A/C Reg :' END as lb_acreg,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Заводской номер ВС:' ELSE 'MSN:' END as lb_msn,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Согласно программе ТО:' ELSE 'According to Maintenance Programme:' END as lb_amp,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'АЭРОФЛОТ - РОССИЙСКИЕ АВИАЛИНИИ' ELSE 'AEROFLOT-RUSSIAN AIRLINES' END as lb_mp,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'от:' ELSE 'on the' END as lb_ot,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Одобрена:' ELSE 'Approved on the' END as lb_approve,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'СОГЛАСОВАНО С' ELSE 'ACCEPTED BY' END as lb_accby,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'ДАТА' ELSE 'DATE'  END as lb_date,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'ФАМИЛИЯ' ELSE 'NAME'  END as lb_name,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'ПОДПИСЬ' ELSE 'SIGNATURE' END as lb_sign,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'ФОРМА ТЕХНИЧЕСКОГО ОБСЛУЖИВАНИЯ' ELSE '' END as lb_check,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN '' ELSE 'CHECK' END as lb_check2,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'НАРЯДЫ НА РАБОТЫ ПО УКАЗАНИЯМ, БЮЛЛЕТЕНЯМ, ЗАМЕНАМ КОМПОНЕНТОВ, УСТРАНЕНИЮ ДЕФЕКТОВ' ELSE '' END as lb_WO,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN '' ELSE 'WORK ORDERS' END as lb_WO2,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'РЕГЛАМЕНТНЫЕ РАБОТЫ, НЕ ВКЛЮЧЕННЫЕ В ОБЪЁМ  ФОРМЫ ТО' ELSE '' END as lb_jcop,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN '' ELSE 'JOB CARDS OUT OF PHASE' END as lb_jcop2,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Страница' ELSE 'Page' END as lb_page,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'АД Работы' ELSE 'AD Works' END as lb_ad_works,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Порядковый номер' ELSE 'Sequence No' END as lb_ad_works_seqno,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Номер работы' ELSE 'Event Number' END as lb_ad_works_eventno,
+CASE when regexp_like(a.ac_typ, 'RRJ*') THEN 'Описание работы' ELSE 'Title' END as lb_ad_works_title
+FROM wp_header wph
+JOIN aircraft a ON wph.ac_registr=a.ac_registr
+WHERE wph.wpno_i = @VAR.WP@</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="High_ver" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rev.revision_no as rev_no" id="rev_no"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="iss.issue_no as issue" id="issue"/>
+        <ds:columnDescriptor amosType="DATE" description="rev.revision_date as rev_date" id="rev_date"/>
+        <ds:columnDescriptor amosType="DATE" description="iss.issue_date as issue_date" id="issue_date"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@HIGH.wph.ac_typ@">
+          <ds:object>@HIGH.wph.ac_typ@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT rev.revision_no as rev_no, iss.issue_no as issue, rev.revision_date as rev_date, iss.issue_date as issue_date
+FROM msc_mp_revision rev
+JOIN msc_mp_issue iss ON rev.issueno_i = iss.issueno_i
+JOIN msc_maintenance_program mp ON iss.mpno_i = mp.mpno_i
+WHERE mp.mpno = '@HIGH.wph.ac_typ@'
+AND mp.program_type = 'MP' 
+AND (rev.revision_status = 'a' or rev.revision_status = 'b')</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="WP_HL_AD_Works" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wp_sequence.seqno_i as seqno_i" id="seqno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i as event_perfno_i" id="event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_event_link.event_display as event_display" id="event_display"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_description.header||' '||TO_CHAR(DBMS_LOB.SUBSTR(NVL(wo_text_description.text wo_text_description.text_html) 20001)) as wo_text" id="wo_text"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.WP@">
+          <ds:object>@VAR.WP@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT wp_sequence.seqno_i as seqno_i
+              ,wo_header.event_perfno_i as event_perfno_i
+              ,wo_event_link.event_display as event_display
+              ,wo_text_description.header||' '||TO_CHAR(DBMS_LOB.SUBSTR(NVL(wo_text_description.text, wo_text_description.text_html), 2000, 1)) as wo_text
+FROM wp_header
+JOIN wp_assignment ON wp_header.wpno_i = wp_assignment.wpno_i
+JOIN wo_header ON wo_header.event_perfno_i = wp_assignment.event_perfno_i 
+JOIN wp_sequence ON wp_sequence.event_perfno_i = wo_header.event_perfno_i AND wp_sequence.wpno_i = wp_header.wpno_i 
+JOIN workstep_link ws_text ON ws_text.event_perfno_i = wo_header.event_perfno_i AND ws_text.sequenceno = 1
+JOIN wo_text_description ON ws_text.descno_i = wo_text_description.descno_i
+LEFT JOIN wo_event_link ON wo_header.event_perfno_i=wo_event_link.event_perfno_i
+JOIN workstep_link ON workstep_link.event_perfno_i = wo_header.event_perfno_i
+JOIN db_link ON db_link.source_pk = TO_CHAR(wo_header.event_perfno_i) AND db_link.source_type = 'WO'
+                              OR
+                              db_link.source_pk = TO_CHAR(workstep_link.descno_i) AND db_link.source_type = 'WS'
+WHERE 1=1
+               AND TO_CHAR(db_link.link_remarks)='AD'
+               AND wp_header.wpno_i = '@VAR.WP@'
+order by seqno_i asc</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

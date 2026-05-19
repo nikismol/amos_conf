@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Receiving_Reports_tq71719</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Reports_43642559.html">Reports</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Receiving_Reports_tq71719
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on сент. 28, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="table-wrap"><table class="confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Task Action</td><td class="confluenceTd">DatasourceExporterTask</td></tr><tr><td class="confluenceTd">Source Type</td><td class="confluenceTd">Plain SQL</td></tr><tr><td class="confluenceTd">Output format</td><td class="confluenceTd">excel 2007</td></tr><tr><td class="confluenceTd">Store in folder</td><td class="confluenceTd">\\msk\afl\ДУЗД\КПП</td></tr><tr><td class="confluenceTd">Filenames</td><td class="confluenceTd">receiving_reports</td></tr><tr><td colspan="1" class="confluenceTd"><span style="color: rgb(23,43,77);text-decoration: none;">Scheduling | Rec. pattern | Hourly</span></td><td colspan="1" class="confluenceTd">06:00</td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT od_rec_detail.receivingno,
+       od_rec_detail.recdetailno_i,
+       od_rec_detail.orderno,
+       od_detail.posno,
+       od_rec_detail.partno,
+       od_rec_detail.condition,
+       od_rec_detail.labelno,
+       od_rec_header.awbno,
+       od_detail.projectno,
+       part.description,
+       od_rec_detail.qty AS qty,
+       od_rec_detail.mat_class,
+       part.repairable,
+       part.tool,
+       ps.special,
+       od_rec_detail.vendor,
+       od_rec_detail.owner,
+       history.del_date,
+       history.station,
+       history.store,
+       history.location,
+       od_header.address_bill,
+       od_header.priority,
+       TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (od_rec_detail.created_date), &#39;DD.MM.YYYY&#39;) as created_date,
+       od_rec_detail.created_by,
+       TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (od_rec_detail.mutation), &#39;DD.MM.YYYY&#39;) as mutation_date,
+       floor(od_rec_detail.mutation_time / 3600000) || &#39;:&#39; || substr(mod(od_rec_detail.mutation_time, 3600000), 1, 2) as mutation_time,
+       history.vm,
+       od_rec_detail.serialno,
+       od_rec_detail.psn,
+       od_rec_detail.batchno,
+       od_rec_detail.recno,
+       od_rec_detail.ext_purch_pricec,
+       od_rec_detail.currency
+FROM od_rec_detail
+JOIN history ON od_rec_detail.recdetailno_i = history.recdetailno_i
+JOIN od_rec_header ON od_rec_detail.receivingno = od_rec_header.receivingno
+JOIN part ON od_rec_detail.partno = part.partno
+--left join part_special on part.partno = part_special.partno
+LEFT JOIN ( 
+        select 
+                part_special.partno
+                , LISTAGG (part_special.special, &#39;;&#39;) WITHIN GROUP (ORDER BY part_special.partno) as special
+        from part_special
+        group by part_special.partno
+) ps on part.partno = ps.partno
+LEFT JOIN od_detail ON od_rec_detail.detailno_i = od_detail.detailno_i
+LEFT JOIN od_header ON od_detail.orderno_i = od_header.orderno_i
+LEFT JOIN inspection_detail ON inspection_detail.source_type = &#39;RD&#39; AND inspection_detail.source_key = od_rec_detail.recdetailno_i OR (
+             inspection_detail.source_type = &#39;ORDER_DE&#39;
+             AND inspection_detail.source_key = od_rec_detail.detailno_i
+          ) OR (
+             inspection_detail.source_type = &#39;LB&#39;
+             AND inspection_detail.source_key = od_detail.labelno
+          )
+WHERE history.vm IN (
+         &#39;B1&#39;,
+         &#39;B6&#39;,
+         &#39;B7&#39;,
+         &#39;B5&#39;
+      )
+      AND od_rec_detail.status = 0
+      AND od_header.order_type = &#39;P&#39;
+      AND history.del_date &gt;= 18323
+      AND history.del_date &lt;= (FLOOR(TRUNC((sysdate)-to_date(&#39;31121970&#39;,&#39;ddmmyyyy&#39;))))
+  </pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

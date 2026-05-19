@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : PPCD_Open_Events_Notifier_tq79109</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : PPCD_Open_Events_Notifier_tq79109
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT ac_typ,
+              ac_registr,
+              station,
+              wpno,
+              wp_end_at,
+              event_no,
+              event_type,
+              event_state,
+              flight_number,
+              departure_at
+FROM (
+             SELECT wp_header.ac_typ,
+                           wp_header.ac_registr,
+                           wp_header.wpno,
+                           wp_header.station,
+                           CASE WHEN wo_header.workorderno_display &gt; 0 THEN TO_CHAR(wo_header.workorderno_display) ELSE event_name END as event_no,
+                           CASE WHEN wo_header.workorderno_display &gt; 0 THEN &#39;WO&#39; ELSE &#39;TC&#39; END as event_type,
+                           &#39;Open&#39; as event_state,
+                           ac_utilization.fn_number as flight_number,
+                           DENSE_RANK() over(PARTITION BY ac_utilization.ac_registr ORDER BY ac_utilization.departure_date*24*60 + ac_utilization.departure_time ASC) as num,
+                           TO_CHAR(TO_DATE(&#39;31.12.1971&#39;,&#39;dd.mm.yyyy&#39;) + wp_header.end_date, &#39;dd.mm.yyyy&#39;) ||&#39; &#39;|| to_char(trunc(sysdate) + interval &#39;1&#39; minute * wp_header.end_time, &#39;hh24:mi&#39;) as wp_end_at,
+                           TO_CHAR(TO_DATE(&#39;31.12.1971&#39;,&#39;dd.mm.yyyy&#39;) + ac_utilization.departure_date, &#39;dd.mm.yyyy&#39;) ||&#39; &#39;|| to_char(trunc(sysdate) + interval &#39;1&#39; minute * ac_utilization.departure_time, &#39;hh24:mi&#39;) as departure_at
+             FROM wp_header
+             JOIN aircraft ON wp_header.ac_registr = aircraft.ac_registr AND aircraft.status &lt;&gt; 9
+             JOIN wp_assignment ON wp_header.wpno_i = wp_assignment.wpno_i
+             JOIN wo_header ON wp_assignment.event_perfno_i = wo_header.event_perfno_i
+             LEFT JOIN wo_event_link ON wo_header.event_perfno_i = wo_event_link.event_perfno_i AND wo_event_link.event_type = &#39;TCEFFLI&#39;
+             JOIN ac_utilization ON wp_header.ac_registr = ac_utilization.ac_registr
+                                                      AND ac_utilization.departure_date*24*60 + ac_utilization.departure_time &gt;= wp_header.end_date*24*60 + wp_header.end_time
+                                                      AND ac_utilization.recno &gt; 0
+             WHERE 1=1
+                            AND wp_header.wp_status IN (-1, -2, -3)
+                            AND (wo_header.workorderno_display &gt; 0 OR wo_event_link.event_perfno_i &gt; 0)
+                            AND wo_header.state IN (&#39;O&#39;)
+             ORDER BY 1, 2, 3
+            )
+WHERE 1=1
+               AND num = 1
+               AND (EXTRACT(DAY FROM (SYSTIMESTAMP AT TIME ZONE &#39;UTC&#39; - TO_TIMESTAMP_TZ(departure_at||&#39; GMT&#39;, &#39;DD.MM.YYYY HH24:MI TZR&#39;))) * 24) +
+                         EXTRACT(HOUR FROM (SYSTIMESTAMP AT TIME ZONE &#39;UTC&#39; - TO_TIMESTAMP_TZ(departure_at||&#39; GMT&#39;, &#39;DD.MM.YYYY HH24:MI TZR&#39;))) &gt;= 15</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

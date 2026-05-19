@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="UTF-8"?><report xmlns="http://www.swiss-as.com/xml/report_2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_2.0 http://www.swiss-as.com/xml/report_2.0.xsd http://www.swiss-as.com/xml/datasource_1.0 http://www.swiss-as.com/xml/datasource_1.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000127</report_id>
+    <revision_number>0</revision_number>
+    <meta name="author">vtsymbal</meta>
+    <meta name="serialization">v2</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="3">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">35</attribute>
+      <attribute name="footer-size">30</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content>
+      <view class="ImageReportView" id="4">
+        <attribute name="name">Image_1</attribute>
+        <attribute name="position">570 972</attribute>
+        <attribute name="size">115 26</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="image-source">web://img/Aeroflot_logo.png</attribute>
+        <attribute name="scale-mode">FILL</attribute>
+      </view>
+      <view class="LabelReportView" id="5">
+        <attribute name="name">Label_2</attribute>
+        <attribute name="position">8 971</attribute>
+        <attribute name="size">338 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">PREPAIRED BY @LOGIN_SIGN@ / @FIRSTNAME@ @LASTNAME@ 
+DATE @DATE@ @TIME@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">LEFT</attribute>
+        <attribute name="line-break">WORD</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+      <view class="LabelReportView" id="6">
+        <attribute name="name">Label_3</attribute>
+        <attribute name="position">400 972</attribute>
+        <attribute name="size">170 25</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">3 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">PAGE @PAGE_NO@ / @PAGE_COUNT@</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 10</attribute>
+        <attribute name="text-align">TOP_LEFT</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+        <anchor>
+          <location>TOP_RIGHT</location>
+          <anchor_view>4</anchor_view>
+          <anchor_location>TOP_LEFT</anchor_location>
+          <x_offset>0</x_offset>
+          <y_offset>0</y_offset>
+        </anchor>
+      </view>
+      <view class="LabelReportView" id="7">
+        <attribute name="name">Label_5</attribute>
+        <attribute name="position">0 0</attribute>
+        <attribute name="size">700 35</attribute>
+        <attribute name="visible">YES</attribute>
+        <attribute name="auto-resize">NO</attribute>
+        <conditional_attributes/>
+        <attribute name="background-color">EAEAEA</attribute>
+        <attribute name="color">000000</attribute>
+        <attribute name="margin">0 0 0 0</attribute>
+        <attribute name="padding">0 0 0 0</attribute>
+        <attribute name="border">0 SOLID 000000</attribute>
+        <attribute name="text">НАЛИЧИЕ ДЕТАЛЕЙ</attribute>
+        <attribute name="text-decoration">NONE</attribute>
+        <attribute name="font">SansSerif PLAIN 11</attribute>
+        <attribute name="text-align">CENTER</attribute>
+        <attribute name="line-break">AS_IS</attribute>
+        <attribute name="splitable">NO</attribute>
+        <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      </view>
+    </content>
+  </page_master>
+  <content>
+    <view class="DatasourceTableView" id="8">
+      <attribute name="name">DatasourceTable_6</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 48</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">45</attribute>
+          <view class="LabelReportView" id="11" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">45 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">№ п/п</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="12" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">45 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFBBBB</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.total@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">B0F6B0</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.qty_parts@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 5 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_Availability_of_parts.num@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">150</attribute>
+          <view class="LabelReportView" id="15" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">150 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Партийный номер</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="16" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">150 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFBBBB</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.total@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">B0F6B0</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.qty_parts@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 5 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_Availability_of_parts.partno_high@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="19" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Мат. класс</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="20" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFBBBB</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.total@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">B0F6B0</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.qty_parts@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_Availability_of_parts.mat_class@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">80</attribute>
+          <view class="LabelReportView" id="23" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Запас</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="24" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">80 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFBBBB</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.total@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">B0F6B0</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.qty_parts@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 2</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_Availability_of_parts.qty_parts@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">RIGHT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">110</attribute>
+          <view class="LabelReportView" id="27" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Неисправные (U/S)</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="28" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFBBBB</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.total@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">B0F6B0</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.qty_parts@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 2</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_Availability_of_parts.us_qty@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">RIGHT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="31" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">OUTGOING</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="32" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFBBBB</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.total@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">B0F6B0</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.qty_parts@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 2</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_Availability_of_parts.outgoing_qty@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">RIGHT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">115</attribute>
+          <view class="LabelReportView" id="35" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">115 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Заказано</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 11</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+          <view class="LabelReportView" id="36" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">115 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="background-color">FFBBBB</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.total@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_SMALLER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+              <conditional_attribute id="2">
+                <attribute name="background-color">B0F6B0</attribute>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@RMX_Availability_of_parts.qty_parts@</field>
+                    <field id="2">0</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 2</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@RMX_Availability_of_parts.orders_qty@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">RIGHT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">RMX_Availability_of_parts</attribute>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="VAR" type="PARAMETER_DATASOURCE" version="1.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="BOOL" description="Включая альтернативные парты" id="altpart"/>
+        <ds:columnDescriptor amosType="PA" description="Партийные номера" id="partno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Include alternate part`s" id="altpart">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Partnumber`s" id="partno">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_1.0" id="RMX_Availability_of_parts" type="SQL_EDITOR_DATASOURCE" version="1.0">
+      <ds:description>Наличие зпч и компонентов</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="row_number() over(ORDER BY partno_high) num" id="num"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="partno_high" id="partno_high"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="mat_class" id="mat_class"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="qty_parts" id="qty_parts"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="us_qty" id="us_qty"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="outgoing_qty" id="outgoing_qty"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="orders_qty" id="orders_qty"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="qty_parts + us_qty + outgoing_qty + orders_qty total" id="total"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.altpart@">
+          <ds:object>@VAR.altpart@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.partno@">
+          <ds:object>@VAR.partno@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_1.0" type="TEXT_EDITOR" version="1.0">
+          <se:textStatement>select row_number() over(ORDER BY partno_high) num
+, partno_high
+, case when mat_class = 'C' then 'Consumable'
+	   when mat_class = 'R' then 'Rotable'
+	   when mat_class = 'E' then 'Expendable'
+	  else 'Other mat. class'
+   end mat_class
+, qty_parts
+, us_qty
+, outgoing_qty
+, orders_qty
+, qty_parts + us_qty + outgoing_qty + orders_qty total
+  from (select x.partno partno_high, x.partno, mat_class, qty_parts, us_qty, outgoing_qty, orders_qty
+	from (select c.partno
+  , case when qty_parts is null then 0 else qty_parts end qty_parts
+  , case when us_qty is null then 0 else us_qty end us_qty
+  , case when outgoing_qty is null then 0 else outgoing_qty end outgoing_qty
+  , case when orders_qty is null then 0 else orders_qty end orders_qty
+			from consumables c
+	   left join (select sum(round(qty, 0)) qty_parts, partno
+					from consumables c
+					join location l on c.locationno_i = l.locationno_i 
+				   where location_restriction in (0, 1)
+		        group by partno) stand on c.partno = stand.partno
+	   left join (select sum(round(qty,0)) us_qty, partno
+					from consumables c
+				   where condition = 'US'
+				 group by partno) us on c.partno = us.partno
+	   left join (select sum(round(qty, 0)) outgoing_qty, partno
+					from consumables c
+					join location l on c.locationno_i = l.locationno_i 
+				   where l.location = 'OUTGOING' 
+				     and l.station = ' '
+					 and l.store = ' '
+		        group by partno) out on c.partno = out.partno
+	   left join (select sum(d.qty) orders_qty, d.partno
+					from od_detail d 
+					join part p on d.partno = p.partno and p.mat_class = 'C'
+				   where order_type in ('P', 'PR', 'L', 'Y')
+				   and ext_state = 'O'
+		        group by d.partno) ord on c.partno = ord.partno
+    union 
+		  select r.partno
+  , case when qty_parts is null then 0 else qty_parts end qty_parts
+  , case when us_qty is null then 0 else us_qty end us_qty
+  , case when outgoing_qty is null then 0 else outgoing_qty end outgoing_qty
+  , case when orders_qty is null then 0 else orders_qty end orders_qty
+			from rotables r
+	   left join (select count(partno) qty_parts, partno
+					from rotables r
+					join location l on r.locationno_i = l.locationno_i 
+				   where location_restriction in (0, 1)
+				group by partno) stand on r.partno = stand.partno
+	   left join (select count(partno) us_qty, partno
+					from rotables r
+				   where condition = 'US'
+				group by partno) us on r.partno = us.partno
+	   left join (select count(partno) outgoing_qty, partno
+					from rotables r
+					join location l on r.locationno_i = l.locationno_i 
+				   where l.location = 'OUTGOING' 
+				     and l.station = ' '
+					 and l.store = ' '
+		        group by partno) out on r.partno = out.partno
+	   left join (select sum(round(qty, 0)) orders_qty, d.partno, d.orderno_i
+					from od_detail d
+					join od_header h on d.orderno_i = h.orderno_i
+					join rotables r on d.partno = r.partno and h.orderno = r.orderno 
+				   where d.order_type in ('P', 'PR', 'L', 'Y')
+				   and d.ext_state = 'O'
+		        group by d.partno, d.orderno_i) ord on r.partno = ord.partno) x
+	join part p on x.partno = p.partno
+ UNION
+select p.partno partno_high, x.partno, mat_class, qty_parts, us_qty, outgoing_qty, orders_qty
+	from (select pa.altpartno, pa.partno
+  , case when qty_parts is null then 0 else qty_parts end qty_parts
+  , case when us_qty is null then 0 else us_qty end us_qty
+  , case when outgoing_qty is null then 0 else outgoing_qty end outgoing_qty
+  , case when orders_qty is null then 0 else orders_qty end orders_qty
+			from part_alternate pa
+	   left join (select sum(round(qty, 0)) qty_parts, partno
+					from consumables c
+					join location l on c.locationno_i = l.locationno_i 
+				   where location_restriction in (0, 1)
+		        group by partno) stand on pa.altpartno = stand.partno
+	   left join (select sum(round(qty,0)) us_qty, partno
+					from consumables c
+				   where condition = 'US'
+				 group by partno) us on pa.altpartno = us.partno
+	   left join (select sum(round(qty, 0)) outgoing_qty, partno
+					from consumables c
+					join location l on c.locationno_i = l.locationno_i 
+				   where l.location = 'OUTGOING' 
+				     and l.station = ' '
+					 and l.store = ' '
+		        group by partno) out on pa.altpartno = out.partno
+	   left join (select sum(d.qty) orders_qty, d.partno
+					from od_detail d 
+					join part p on d.partno = p.partno and p.mat_class = 'C'
+				   where order_type in ('P', 'PR', 'L', 'Y')
+				   and ext_state = 'O'
+		        group by d.partno) ord on pa.altpartno = ord.partno
+	   join part p on pa.altpartno = p.partno and mat_class = 'C'
+    union 
+		  select pa.altpartno, pa.partno
+  , case when qty_parts is null then 0 else qty_parts end qty_parts
+  , case when us_qty is null then 0 else us_qty end us_qty
+  , case when outgoing_qty is null then 0 else outgoing_qty end outgoing_qty
+  , case when orders_qty is null then 0 else orders_qty end orders_qty
+			from part_alternate pa
+	   left join (select count(partno) qty_parts, partno
+					from rotables r
+					join location l on r.locationno_i = l.locationno_i 
+				   where location_restriction in (0, 1)
+				group by partno) stand on pa.altpartno = stand.partno
+	   left join (select count(partno) us_qty, partno
+					from rotables r
+				   where condition = 'US'
+				group by partno) us on pa.altpartno = us.partno
+	   left join (select count(partno) outgoing_qty, partno
+					from rotables r
+					join location l on r.locationno_i = l.locationno_i 
+				   where l.location = 'OUTGOING' 
+				     and l.station = ' '
+					 and l.store = ' '
+		        group by partno) out on pa.altpartno = out.partno
+	   left join (select sum(round(qty, 0)) orders_qty, d.partno, d.orderno_i
+					from od_detail d
+					join od_header h on d.orderno_i = h.orderno_i
+					join rotables r on d.partno = r.partno and h.orderno = r.orderno 
+				   where d.order_type in ('P', 'PR', 'L', 'Y')
+				   and d.ext_state = 'O'
+		        group by d.partno, d.orderno_i) ord on pa.altpartno = ord.partno) x
+	join part p on x.altpartno = p.partno
+	where '@VAR.altpart@' = 'Y') t
+where /* Партийный номер */
+	('@VAR.partno@' is null or
+	  partno in
+	 (select trim(substr('@VAR.partno@' || ',',
+						  decode(level,
+								 1,
+								 0,
+								 instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2),
+						  instr('@VAR.partno@' || ',', ',', 1, level) -
+						  decode(level,
+								 1,
+								 1,
+								 instr('@VAR.partno@' || ',', ',', 1, level - 1) + 2)))
+		 from dual
+	   connect by level &lt;= length('@VAR.partno@') -
+				  length(replace('@VAR.partno@', ',', '')) + 1))</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

@@ -1,0 +1,1746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000243</report_id>
+    <revision_number>0</revision_number>
+    <meta name="15-01-2020 vtsymbal">add new ac_typ A350</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="37778">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">700 1000</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">PORTRAIT</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="37779">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">1 11</attribute>
+      <attribute name="size">700 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">AFL Report for AC Type: @VAR.ac@ (@AFL_Date.f_start_date@ - @AFL_Date.f_end_date@)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 16</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="DatasourceTableView" id="37780">
+      <attribute name="name">DatasourceTable_2</attribute>
+      <attribute name="position">113 57</attribute>
+      <attribute name="size">482 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="37783" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">WP No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37784" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@dcheck.wh.wpno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="37787" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">A/C</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37788" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@dcheck.wh.ac_registr@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="37791" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Description</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37792" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@dcheck.wh.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">182</attribute>
+          <view class="LabelReportView" id="37795" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">182 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Classification</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37796" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">182 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@dcheck.wh.hidden@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">dcheck</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>37779</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>3</x_offset>
+        <y_offset>11</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="37797">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">4 104</attribute>
+      <attribute name="size">700 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Total Checks</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 16</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>37780</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>12</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="37798">
+      <attribute name="name">DatasourceTable_4</attribute>
+      <attribute name="position">113 151</attribute>
+      <attribute name="size">212 43</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="37801" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">CHECK TYPE</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37802" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@check_count.type@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">112</attribute>
+          <view class="LabelReportView" id="37805" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">112 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">TOTAL</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37806" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">112 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@check_count.cnt@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">check_count</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>37797</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>-135</x_offset>
+        <y_offset>12</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="37807">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">0 244</attribute>
+      <attribute name="size">700 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ac@</field>
+              <field id="2">RRJ95B</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.A_TECH@</field>
+              <field id="2">Y</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">A-Technick Report for AC Type: @VAR.ac@ (@AFL_Date.f_start_date@ - @AFL_Date.f_end_date@)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 16</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>37798</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>131</x_offset>
+        <y_offset>50</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="37808">
+      <attribute name="name">DatasourceTable_6</attribute>
+      <attribute name="position">120 289</attribute>
+      <attribute name="size">482 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ac@</field>
+              <field id="2">RRJ95B</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.A_TECH@</field>
+              <field id="2">Y</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="37811" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">WP No</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37812" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_dcheck.wh.wpno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="37815" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">A/C</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37816" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_dcheck.wh.ac_registr@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="37819" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Description</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37820" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_dcheck.wh.description@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">182</attribute>
+          <view class="LabelReportView" id="37823" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">182 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Classification</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37824" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">182 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_dcheck.wh.hidden@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">AT_dcheck</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>37807</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>11</x_offset>
+        <y_offset>10</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="37825">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">1 357</attribute>
+      <attribute name="size">700 35</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ac@</field>
+              <field id="2">RRJ95B</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.A_TECH@</field>
+              <field id="2">Y</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Total Checks</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 16</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>37808</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>-10</x_offset>
+        <y_offset>33</y_offset>
+      </anchor>
+    </view>
+    <view class="DatasourceTableView" id="37826">
+      <attribute name="name">DatasourceTable_8</attribute>
+      <attribute name="position">121 407</attribute>
+      <attribute name="size">212 43</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.ac@</field>
+              <field id="2">RRJ95B</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="visible">NO</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.A_TECH@</field>
+              <field id="2">Y</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="header-height">16</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">YES</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">100</attribute>
+          <view class="LabelReportView" id="37829" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">CHECK TYPE</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37830" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">100 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_check_count.type@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL3">
+          <attribute name="width">112</attribute>
+          <view class="LabelReportView" id="37833" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">112 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">TOTAL</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="37834" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">112 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@AT_check_count.cnt@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">AT_check_count</attribute>
+      <anchor>
+        <location>TOP</location>
+        <anchor_view>37825</anchor_view>
+        <anchor_location>BOTTOM</anchor_location>
+        <x_offset>-124</x_offset>
+        <y_offset>15</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="ac"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="classif"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="fromd"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="tod"/>
+        <ds:columnDescriptor amosType="BOOL" description="" id="A_TECH"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="Тип ВС" id="ac">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>A320</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>A320&amp;=&amp;A320;A320N&amp;=&amp;A320N;A321&amp;=&amp;A321;A321NX&amp;=&amp;A321NX;A332&amp;=&amp;A330-200;A333&amp;=&amp;A330-300;A350&amp;=&amp;A350;B738&amp;=&amp;B737;B763&amp;=&amp;B767;B77W&amp;=&amp;B777;RRJ95B&amp;=&amp;RRJ95B;</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Classification" id="classif">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>H&amp;=&amp;Heavy;L&amp;=&amp;Line;</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Date From" id="fromd">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Date To" id="tod">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="Отбразить ВС, переданные на обслуживание в A-Техник" id="A_TECH">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="dcheck" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="at.ac_model" id="at.ac_model"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.ac_registr" id="wh.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.wpno" id="wh.wpno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.description" id="wh.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.hidden" id="wh.hidden"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.start_date" id="wh.start_date"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac@">
+          <ds:object>@VAR.ac@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.fromd@">
+          <ds:object>@VAR.fromd@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.tod@">
+          <ds:object>@VAR.tod@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.classif@">
+          <ds:object>@VAR.classif@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT at.ac_model,
+               wh.ac_registr,
+               wh.wpno,
+               wh.description,
+               wh.hidden,
+               wh.start_date
+FROM wp_header wh
+JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND wh.station='SVO'
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="check_count" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="'DY' as type" id="type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="COUNT(wh.description) as cnt" id="cnt"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac@">
+          <ds:object>@VAR.ac@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.fromd@">
+          <ds:object>@VAR.fromd@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.tod@">
+          <ds:object>@VAR.tod@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.classif@">
+          <ds:object>@VAR.classif@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT  'DY' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^DY|\+DY|\sDY|\,DY', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  '3DY' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^3D|\+3D|\s3D|\,3D', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  '8DY' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO' 
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^8D|\+8D|\s8D|\,8D', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  'ADD' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^ADD|\+ADD|\sADD|\,ADD', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  'AOG' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^AOG|\+AOG|\sAOG|\,AOG', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  'BDCA' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^BDCA|\+BDCA|\sBDCA|\,BDCA', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  'F' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^F|\+F|\sF|\,F', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  'МОЙКА' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^МОЙКА|\+МОЙКА|\sМОЙКА|\,МОЙКА', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  'W' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^W|\+W|\sW|\,W', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  '7D' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^7D|\+7D|\s7D|\,7D', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+UNION
+SELECT  'S' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^S|\+S|\sS|\,S', 'i')
+               AND (
+                        (
+                            at.ac_registr = '89115' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89116' AND (wh.start_date &lt; 17163)
+                            OR at.ac_registr = '89114' AND (wh.start_date &lt; 17165)
+                            OR at.ac_registr = '89023' AND (wh.start_date &lt; 17177)       
+                            OR at.ac_registr = '89047' AND (wh.start_date &lt; 17181)
+                            OR at.ac_registr = '89112' AND (wh.start_date &lt; 17182)
+                            OR at.ac_registr = '89113' AND (wh.start_date &lt; 17190)
+                            OR at.ac_registr = '89057' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89111' AND (wh.start_date &lt; 17203)
+                            OR at.ac_registr = '89108' AND (wh.start_date &lt; 17216)
+                            OR at.ac_registr = '89109' AND (wh.start_date &lt; 17223)
+                            OR at.ac_registr = '89110' AND (wh.start_date &lt; 17224)   
+                        )
+                    OR at.ac_registr NOT IN ('89115','89116','89114','89023','89047','89112','89113','89057','89111','89108','89109','89110')
+                    )
+ORDER BY cnt DESC, type</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AT_dcheck" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>for a-tech</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="at.ac_model" id="at.ac_model"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.ac_registr" id="wh.ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.wpno" id="wh.wpno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.description" id="wh.description"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.hidden" id="wh.hidden"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wh.start_date" id="wh.start_date"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac@">
+          <ds:object>@VAR.ac@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.fromd@">
+          <ds:object>@VAR.fromd@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.tod@">
+          <ds:object>@VAR.tod@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.classif@">
+          <ds:object>@VAR.classif@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.A_TECH@">
+          <ds:object>@VAR.A_TECH@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT at.ac_model,
+               wh.ac_registr,
+               wh.wpno,
+               wh.description,
+               wh.hidden,
+               wh.start_date
+FROM wp_header wh
+JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND wh.station='SVO'
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           	
+                    )
+                AND '@VAR.A_TECH@' = 'Y'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AT_check_count" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>for a-tech</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="'DY' as type" id="type"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="COUNT(wh.description) as cnt" id="cnt"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.ac@">
+          <ds:object>@VAR.ac@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.fromd@">
+          <ds:object>@VAR.fromd@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.tod@">
+          <ds:object>@VAR.tod@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.classif@">
+          <ds:object>@VAR.classif@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.A_TECH@">
+          <ds:object>@VAR.A_TECH@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT  'DY' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^DY|\+DY|\sDY|\,DY', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  '3DY' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^3D|\+3D|\s3D|\,3D', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  '8DY' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO' 
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^8D|\+8D|\s8D|\,8D', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  'ADD' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^ADD|\+ADD|\sADD|\,ADD', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  'AOG' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^AOG|\+AOG|\sAOG|\,AOG', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  'BDCA' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^BDCA|\+BDCA|\sBDCA|\,BDCA', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  'F' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^F|\+F|\sF|\,F', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  'МОЙКА' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^МОЙКА|\+МОЙКА|\sМОЙКА|\,МОЙКА', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  'W' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^W|\+W|\sW|\,W', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  '7D' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^7D|\+7D|\s7D|\,7D', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+UNION
+SELECT  'S' as type, COUNT(wh.description) as cnt
+FROM wp_header wh
+LEFT JOIN aircraft at ON at.ac_registr = wh.ac_registr
+WHERE at.ac_model = '@VAR.ac@'
+               AND wh.station='SVO'
+               AND wh.start_date &gt;= '@VAR.fromd@' 
+               AND wh.start_date &lt;= '@VAR.tod@' 
+               AND wh.hidden = '@VAR.classif@'
+               AND REGEXP_LIKE (wh.description, '^S|\+S|\sS|\,S', 'i')
+               AND (                          
+                        at.ac_registr = '89115' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89116' AND (wh.start_date &gt;= 17163)
+                        OR at.ac_registr = '89114' AND (wh.start_date &gt;= 17165)
+                        OR at.ac_registr = '89023' AND (wh.start_date &gt;= 17177)       
+                        OR at.ac_registr = '89047' AND (wh.start_date &gt;= 17181)
+                        OR at.ac_registr = '89112' AND (wh.start_date &gt;= 17182)
+                        OR at.ac_registr = '89113' AND (wh.start_date &gt;= 17190)
+                        OR at.ac_registr = '89057' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89111' AND (wh.start_date &gt;= 17203)
+                        OR at.ac_registr = '89108' AND (wh.start_date &gt;= 17216)
+                        OR at.ac_registr = '89109' AND (wh.start_date &gt;= 17223)
+                        OR at.ac_registr = '89110' AND (wh.start_date &gt;= 17224)           		
+                    )
+	AND '@VAR.A_TECH@' = 'Y'
+ORDER BY cnt DESC, type</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_Date" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (@VAR.fromd@+729)'DD.MM.YYYY') as f_start_date" id="f_start_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;TO_CHAR(TO_DATE('01.01.1970' 'DD.MM.YYYY') + (@VAR.tod@+729)'DD.MM.YYYY') as f_end_date" id="f_end_date"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.fromd@">
+          <ds:object>@VAR.fromd@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.tod@">
+          <ds:object>@VAR.tod@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT
+	TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.fromd@+729), 'DD.MM.YYYY') as f_start_date,
+	TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (@VAR.tod@+729), 'DD.MM.YYYY') as f_end_date
+FROM dual</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

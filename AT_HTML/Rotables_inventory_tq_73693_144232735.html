@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Rotables_inventory_tq_73693</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Rotables_inventory_tq_73693
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">select
+    inventory.partno,
+    inventory.serialno,
+    inventory.ac_registr,
+    inventory.labelno,
+    inventory.intall_date,
+    inventory.tsn,
+    inventory.csn,
+    inventory.tsi,
+    inventory.csi
+from
+(select distinct
+    rotables.partno as Partno,
+    rotables.serialno as Serialno,
+    rotables.ac_registr as Ac_Registr,
+    rotables.labelno as Labelno,
+    TO_CHAR(TO_DATE(&#39;01.01.1970&#39;, &#39;dd.Mm.yyyy&#39;) + (history.del_date+729), &#39;dd-Mon-yyyy&#39;) as Intall_Date,
+    case when rotables.ac_registr=&#39; &#39; then TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter_rh_rem.life_value_msn)/60),&#39;FM999999999900&#39;)) || &#39;:&#39;
+                            ||TO_CHAR(TRUNC(MOD(TO_NUMBER(counter_rh_rem.life_value_msn),60)),&#39;FM00&#39;)
+        else TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter_rh.life_value_msn + (counter_rh.life_value-counter_rh.life_value_on))/60),&#39;FM999999999900&#39;)) || &#39;:&#39;
+                            ||TO_CHAR(TRUNC(MOD(TO_NUMBER(counter_rh.life_value_msn + (counter_rh.life_value-counter_rh.life_value_on)),60)),&#39;FM00&#39;) end as TSN,
+    case when rotables.ac_registr=&#39; &#39; then TO_CHAR(TO_NUMBER(counter_rc_rem.life_value_csn))
+        else TO_CHAR(TO_NUMBER(counter_rc.life_value_csn + (counter_rc.life_value - counter_rc.life_value_on))) end as CSN,
+    case when rotables.ac_registr=&#39; &#39; then &#39;&#39;
+        else TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER((counter_rh.life_value-counter_rh.life_value_on))/60),&#39;FM999999999900&#39;)) || &#39;:&#39;
+                            ||TO_CHAR(TRUNC(MOD(TO_NUMBER((counter_rh.life_value-counter_rh.life_value_on)),60)),&#39;FM00&#39;) end as TSI,
+    case when rotables.ac_registr=&#39; &#39; then &#39;&#39;
+        else TO_CHAR(TO_NUMBER((counter_rc.life_value - counter_rc.life_value_on))) end as CSI
+from rotables
+left join location on rotables.locationno_i = location.locationno_i
+left join aircraft on rotables.ac_registr = aircraft.ac_registr
+left join history on rotables.labelno=history.labelno and rotables.psn=history.psn and history.VM = &#39;YE&#39;
+/*получаю наработки в минутах при установке*/
+left join (
+    select
+        counter_value_m_h.life_value,
+        counter_h.life_value_on,
+        counter_h.life_value as life_value_msn,
+        counter_h.ref_key
+    from (
+          select counter.ref_key,
+                 counter.counterno_i,
+                 counter.is_unknown,
+                 counter.master_counterno_i,
+                 counter_value.on_counter_valueno_i,
+                 counter_definition.code,
+                 nvl(counter_value.life_value, 0) as life_value,
+                 nvl(counter_value_on.life_value, 0) as life_value_on,
+                 max (counter_value.readout_date*86400000+counter_value.readout_time) over (partition by counter_value.counterno_i) as max_readout,
+                 counter_value.readout_date*86400000+counter_value.readout_time as readout
+          from counter
+          join counter_template on counter.counter_templateno_i=counter_template.counter_templateno_i
+          join counter_definition on counter_template.counter_defno_i=counter_definition.counter_defno_i
+          left join counter_value on counter_value.counterno_i=counter.counterno_i
+          left join counter_value counter_value_on on counter_value.on_counter_valueno_i=counter_value_on.counter_valueno_i
+          where 1=1
+                and counter.ref_type=&#39;RO&#39;
+                and counter_definition.counter_defno_i=&#39;1&#39;
+                and counter_value.on_counter_valueno_i IS NOT NULL
+          order by counter_value.counterno_i
+         ) counter_h
+    left join counter counter_m_h ON counter_h.master_counterno_i=counter_m_h.counterno_i
+    left join counter counter_value_m_h ON counter_m_h.counterno_i=counter_value_m_h.counterno_i
+    where 1=1
+          and counter_h.readout=counter_h.max_readout
+) counter_rh on rotables.psn = counter_rh.ref_key
+/*получаю наработки в циклах при установке*/
+left join (
+    select
+        counter_value_m_h.life_value,
+        counter_h.life_value_on,
+        counter_h.life_value as life_value_csn,
+        counter_h.ref_key
+    from (
+          select counter.ref_key,
+                 counter.counterno_i,
+                 counter.is_unknown,
+                 counter.master_counterno_i,
+                 counter_value.on_counter_valueno_i,
+                 counter_definition.code,
+                 nvl(counter_value.life_value, 0) as life_value,
+                 nvl(counter_value_on.life_value, 0) as life_value_on,
+                 max (counter_value.readout_date*86400000+counter_value.readout_time) over (partition by counter_value.counterno_i) as max_readout,
+                 counter_value.readout_date*86400000+counter_value.readout_time as readout
+          from counter
+          join counter_template on counter.counter_templateno_i=counter_template.counter_templateno_i
+          join counter_definition on counter_template.counter_defno_i=counter_definition.counter_defno_i
+          left join counter_value on counter_value.counterno_i=counter.counterno_i
+          left join counter_value counter_value_on on counter_value.on_counter_valueno_i=counter_value_on.counter_valueno_i
+          where 1=1
+                and counter.ref_type=&#39;RO&#39;
+                and counter_definition.counter_defno_i=&#39;2&#39;
+                and counter_value.on_counter_valueno_i IS NOT NULL
+          order by counter_value.counterno_i
+         ) counter_h
+    left join counter counter_m_h ON counter_h.master_counterno_i=counter_m_h.counterno_i
+    left join counter counter_value_m_h ON counter_m_h.counterno_i=counter_value_m_h.counterno_i
+    where 1=1
+          and counter_h.readout=counter_h.max_readout
+) counter_rc on rotables.psn = counter_rc.ref_key
+/*получаю наработки в минутах при снятии*/
+left join (
+    select
+        counter_h.life_value_off,
+        counter_h.life_value as life_value_msn,
+        counter_h.ref_key
+    from (
+          select counter.ref_key,
+                 nvl(counter_value.life_value, 0) as life_value,
+                 nvl(counter_value_off.life_value, 0) as life_value_off,
+                 max (counter_value.readout_date*86400000+counter_value.readout_time) over (partition by counter_value.counterno_i) as max_readout,
+                 counter_value.readout_date*86400000+counter_value.readout_time as readout
+          from counter
+          join counter_template on counter.counter_templateno_i=counter_template.counter_templateno_i
+          join counter_definition on counter_template.counter_defno_i=counter_definition.counter_defno_i
+          left join counter_value on counter_value.counterno_i=counter.counterno_i
+          left join counter_value counter_value_off on counter_value.off_counter_valueno_i=counter_value_off.counter_valueno_i
+          where 1=1
+                and counter.ref_type=&#39;RO&#39;
+                and counter_definition.counter_defno_i=&#39;1&#39;
+                and counter_value.off_counter_valueno_i IS NOT NULL
+          order by counter_value.counterno_i
+         ) counter_h
+    where 1=1
+          and counter_h.readout=counter_h.max_readout
+) counter_rh_rem on rotables.psn = counter_rh_rem.ref_key
+/*получаю наработки в циклах при снятии*/
+left join (
+    select
+        counter_h.life_value_off,
+        counter_h.life_value as life_value_csn,
+        counter_h.ref_key
+    from (
+          select counter.ref_key,
+                 nvl(counter_value.life_value, 0) as life_value,
+                 nvl(counter_value_off.life_value, 0) as life_value_off,
+                 max (counter_value.readout_date*86400000+counter_value.readout_time) over (partition by counter_value.counterno_i) as max_readout,
+                 counter_value.readout_date*86400000+counter_value.readout_time as readout
+          from counter
+          join counter_template on counter.counter_templateno_i=counter_template.counter_templateno_i
+          join counter_definition on counter_template.counter_defno_i=counter_definition.counter_defno_i
+          left join counter_value on counter_value.counterno_i=counter.counterno_i
+          left join counter_value counter_value_off on counter_value.off_counter_valueno_i=counter_value_off.counter_valueno_i
+          where 1=1
+                and counter.ref_type=&#39;RO&#39;
+                and counter_definition.counter_defno_i=&#39;2&#39;
+                and counter_value.off_counter_valueno_i IS NOT NULL
+          order by counter_value.counterno_i
+         ) counter_h
+    where 1=1
+          and counter_h.readout=counter_h.max_readout
+) counter_rc_rem on rotables.psn = counter_rc_rem.ref_key
+where rotables.partno in
+      (
+       &#39;3-1559&#39;,
+       &#39;3-1674&#39;,
+       &#39;2-1740-1&#39;,
+       &#39;3-1619&#39;,
+       &#39;3-1666&#39;,
+       &#39;2-1693-1&#39;,
+       &#39;3-1531-3&#39;,
+       &#39;3-1530&#39;,
+       &#39;2-1684&#39;,
+       &#39;3-1531-3&#39;,
+       &#39;3-1530&#39;,
+       &#39;2-1684&#39;,
+       &#39;C20500100&#39;,
+       &#39;C20534100&#39;,
+       &#39;3-1596&#39;,
+       &#39;3-1546&#39;,
+       &#39;2-1577-9&#39;,
+       &#39;3-1659&#39;,
+       &#39;3-1678-1&#39;,
+       &#39;2-1756-1N&#39;
+      )
+UNION
+select distinct
+    rotables.partno as Partno,
+    rotables.serialno as Serialno,
+    rotables.ac_registr as Ac_Regist,
+    rotables.labelno as Labelno,
+    TO_CHAR(TO_DATE(&#39;01.01.1970&#39;, &#39;dd.Mm.yyyy&#39;) + (history.del_date+729), &#39;dd-Mon-yyyy&#39;) as Intall_Date,
+    case when rotables.ac_registr=&#39; &#39; then TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter_rh_rem.life_value_msn)/60),&#39;FM999999999900&#39;)) || &#39;:&#39;
+                            ||TO_CHAR(TRUNC(MOD(TO_NUMBER(counter_rh_rem.life_value_msn),60)),&#39;FM00&#39;)
+        else TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(counter_rh.life_value_msn + (counter_rh.life_value-counter_rh.life_value_on))/60),&#39;FM999999999900&#39;)) || &#39;:&#39;
+                            ||TO_CHAR(TRUNC(MOD(TO_NUMBER(counter_rh.life_value_msn + (counter_rh.life_value-counter_rh.life_value_on)),60)),&#39;FM00&#39;) end as TSN,
+    case when rotables.ac_registr=&#39; &#39; then TO_CHAR(TO_NUMBER(counter_rc_rem.life_value_csn))
+        else TO_CHAR(TO_NUMBER(counter_rc.life_value_csn + (counter_rc.life_value - counter_rc.life_value_on))) end as CSN,
+    case when rotables.ac_registr=&#39; &#39; then &#39;&#39;
+        else TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER((counter_rh.life_value-counter_rh.life_value_on))/60),&#39;FM999999999900&#39;)) || &#39;:&#39;
+                            ||TO_CHAR(TRUNC(MOD(TO_NUMBER((counter_rh.life_value-counter_rh.life_value_on)),60)),&#39;FM00&#39;) end as TSI,
+    case when rotables.ac_registr=&#39; &#39; then &#39;&#39;
+        else TO_CHAR(TO_NUMBER((counter_rc.life_value - counter_rc.life_value_on))) end as CSI
+from part_alternate
+join rotables on part_alternate.altpartno = rotables.partno
+left join location on rotables.locationno_i = location.locationno_i
+left join aircraft on rotables.ac_registr = aircraft.ac_registr
+left join history on rotables.labelno=history.labelno and rotables.psn=history.psn and history.VM = &#39;YE&#39;
+/*получаю наработки в минутах при установке*/
+left join (
+    select
+        counter_value_m_h.life_value,
+        counter_h.life_value_on,
+        counter_h.life_value as life_value_msn,
+        counter_h.ref_key
+    from (
+          select counter.ref_key,
+                 counter.counterno_i,
+                 counter.is_unknown,
+                 counter.master_counterno_i,
+                 counter_value.on_counter_valueno_i,
+                 counter_definition.code,
+                 nvl(counter_value.life_value, 0) as life_value,
+                 nvl(counter_value_on.life_value, 0) as life_value_on,
+                 max (counter_value.readout_date*86400000+counter_value.readout_time) over (partition by counter_value.counterno_i) as max_readout,
+                 counter_value.readout_date*86400000+counter_value.readout_time as readout
+          from counter
+          join counter_template on counter.counter_templateno_i=counter_template.counter_templateno_i
+          join counter_definition on counter_template.counter_defno_i=counter_definition.counter_defno_i
+          left join counter_value on counter_value.counterno_i=counter.counterno_i
+          left join counter_value counter_value_on on counter_value.on_counter_valueno_i=counter_value_on.counter_valueno_i
+          where 1=1
+                and counter.ref_type=&#39;RO&#39;
+                and counter_definition.counter_defno_i=&#39;1&#39;
+                and counter_value.on_counter_valueno_i IS NOT NULL
+          order by counter_value.counterno_i
+         ) counter_h
+    left join counter counter_m_h ON counter_h.master_counterno_i=counter_m_h.counterno_i
+    left join counter counter_value_m_h ON counter_m_h.counterno_i=counter_value_m_h.counterno_i
+    where 1=1
+          and counter_h.readout=counter_h.max_readout
+) counter_rh on rotables.psn = counter_rh.ref_key
+/*получаю наработки в циклах при установке*/
+left join (
+    select
+        counter_value_m_h.life_value,
+        counter_h.life_value_on,
+        counter_h.life_value as life_value_csn,
+        counter_h.ref_key
+    from (
+          select counter.ref_key,
+                 counter.counterno_i,
+                 counter.is_unknown,
+                 counter.master_counterno_i,
+                 counter_value.on_counter_valueno_i,
+                 counter_definition.code,
+                 nvl(counter_value.life_value, 0) as life_value,
+                 nvl(counter_value_on.life_value, 0) as life_value_on,
+                 max (counter_value.readout_date*86400000+counter_value.readout_time) over (partition by counter_value.counterno_i) as max_readout,
+                 counter_value.readout_date*86400000+counter_value.readout_time as readout
+          from counter
+          join counter_template on counter.counter_templateno_i=counter_template.counter_templateno_i
+          join counter_definition on counter_template.counter_defno_i=counter_definition.counter_defno_i
+          left join counter_value on counter_value.counterno_i=counter.counterno_i
+          left join counter_value counter_value_on on counter_value.on_counter_valueno_i=counter_value_on.counter_valueno_i
+          where 1=1
+                and counter.ref_type=&#39;RO&#39;
+                and counter_definition.counter_defno_i=&#39;2&#39;
+                and counter_value.on_counter_valueno_i IS NOT NULL
+          order by counter_value.counterno_i
+         ) counter_h
+    left join counter counter_m_h ON counter_h.master_counterno_i=counter_m_h.counterno_i
+    left join counter counter_value_m_h ON counter_m_h.counterno_i=counter_value_m_h.counterno_i
+    where 1=1
+          and counter_h.readout=counter_h.max_readout
+) counter_rc on rotables.psn = counter_rc.ref_key
+/*получаю наработки в минутах при снятии*/
+left join (
+    select
+        counter_h.life_value_off,
+        counter_h.life_value as life_value_msn,
+        counter_h.ref_key
+    from (
+          select counter.ref_key,
+                 nvl(counter_value.life_value, 0) as life_value,
+                 nvl(counter_value_off.life_value, 0) as life_value_off,
+                 max (counter_value.readout_date*86400000+counter_value.readout_time) over (partition by counter_value.counterno_i) as max_readout,
+                 counter_value.readout_date*86400000+counter_value.readout_time as readout
+          from counter
+          join counter_template on counter.counter_templateno_i=counter_template.counter_templateno_i
+          join counter_definition on counter_template.counter_defno_i=counter_definition.counter_defno_i
+          left join counter_value on counter_value.counterno_i=counter.counterno_i
+          left join counter_value counter_value_off on counter_value.off_counter_valueno_i=counter_value_off.counter_valueno_i
+          where 1=1
+                and counter.ref_type=&#39;RO&#39;
+                and counter_definition.counter_defno_i=&#39;1&#39;
+                and counter_value.off_counter_valueno_i IS NOT NULL
+          order by counter_value.counterno_i
+         ) counter_h
+    where 1=1
+          and counter_h.readout=counter_h.max_readout
+) counter_rh_rem on rotables.psn = counter_rh_rem.ref_key
+/*получаю наработки в циклах при снятии*/
+left join (
+    select
+        counter_h.life_value_off,
+        counter_h.life_value as life_value_csn,
+        counter_h.ref_key
+    from (
+          select counter.ref_key,
+                 nvl(counter_value.life_value, 0) as life_value,
+                 nvl(counter_value_off.life_value, 0) as life_value_off,
+                 max (counter_value.readout_date*86400000+counter_value.readout_time) over (partition by counter_value.counterno_i) as max_readout,
+                 counter_value.readout_date*86400000+counter_value.readout_time as readout
+          from counter
+          join counter_template on counter.counter_templateno_i=counter_template.counter_templateno_i
+          join counter_definition on counter_template.counter_defno_i=counter_definition.counter_defno_i
+          left join counter_value on counter_value.counterno_i=counter.counterno_i
+          left join counter_value counter_value_off on counter_value.off_counter_valueno_i=counter_value_off.counter_valueno_i
+          where 1=1
+                and counter.ref_type=&#39;RO&#39;
+                and counter_definition.counter_defno_i=&#39;2&#39;
+                and counter_value.off_counter_valueno_i IS NOT NULL
+          order by counter_value.counterno_i
+         ) counter_h
+    where 1=1
+          and counter_h.readout=counter_h.max_readout
+) counter_rc_rem on rotables.psn = counter_rc_rem.ref_key
+where part_alternate.partno in
+      (
+       &#39;3-1559&#39;,
+       &#39;3-1674&#39;,
+       &#39;2-1740-1&#39;,
+       &#39;3-1619&#39;,
+       &#39;3-1666&#39;,
+       &#39;2-1693-1&#39;,
+       &#39;3-1531-3&#39;,
+       &#39;3-1530&#39;,
+       &#39;2-1684&#39;,
+       &#39;3-1531-3&#39;,
+       &#39;3-1530&#39;,
+       &#39;2-1684&#39;,
+       &#39;C20500100&#39;,
+       &#39;C20534100&#39;,
+       &#39;3-1596&#39;,
+       &#39;3-1546&#39;,
+       &#39;2-1577-9&#39;,
+       &#39;3-1659&#39;,
+       &#39;3-1678-1&#39;,
+       &#39;2-1756-1N&#39;
+      )
+    ) inventory
+order by inventory.partno</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

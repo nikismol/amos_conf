@@ -1,0 +1,2375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000482</report_id>
+    <revision_number>0</revision_number>
+    <meta name="2019-06-27 tq 9935 vtsymbal">изменены наименования колонок Threshold &amp; Interval</meta>
+    <meta name="2019-08-15 vtsymbal">исправлена ошибка нахождения интервалов</meta>
+    <meta name="2019-08-20 vtsymbal">скорректирован поиск запланированных wo &amp; wp</meta>
+    <meta name="2019-12-17 vtsymbal">в DS 38_Taskcard_Status удалено условие wp_status = -1</meta>
+    <meta name="2020-01-10 vtsymbal">добавлен поиск исторических тасков</meta>
+    <meta name="2020-03-23 vtsymbal">информация по запланированным wp/wo отображалась не у всех тасков из-за условия mv.taskcard_verno_i = plan.verno</meta>
+    <meta name="2020-04-17 vtsymbal">В запросе по историческим данным добавлено условие связки таблиц rev и hist по revisionno_i, в операторе EXISTS удалена связка с таблицей forecast, а также исправлена связь с left join на join у таблицы hist</meta>
+    <meta name="2020-04-19 vtsymbal">Решен найденный баг в дублировании данных таска (отображение данных по нескольким ревизиям одной карты)</meta>
+    <meta name="2020-04-20 vtsymbal">В условие связывания таблицы hist добавлено rev.revisionno_i = hist.revicionno_i</meta>
+    <meta name="author">vtsymbal</meta>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="22031">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="ClonerReportView" id="22032">
+      <attribute name="name">Cloner_4</attribute>
+      <attribute name="position">-42 63</attribute>
+      <attribute name="size">1416 219</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">38_TC_Status_MAIN</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22055</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-42</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="YResizerReportView" id="22033">
+      <attribute name="name">YResizer_3</attribute>
+      <attribute name="position">-22 63</attribute>
+      <attribute name="size">1377 77</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22032</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>20</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22034">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">0 63</attribute>
+      <attribute name="size">66 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_MAIN.taskcardno@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22033</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>22</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22035">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">66 63</attribute>
+      <attribute name="size">45 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_tcSource.source@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22034</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22036">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">111 63</attribute>
+      <attribute name="size">52 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_Threshold.threshold@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22035</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22037">
+      <attribute name="name">Label_16</attribute>
+      <attribute name="position">260 63</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_Last_Perf.perf_tac@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22038</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22038">
+      <attribute name="name">Label_17</attribute>
+      <attribute name="position">210 63</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_Last_Perf.perf_tah_formated@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22039</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22039">
+      <attribute name="name">Label_18</attribute>
+      <attribute name="position">163 63</attribute>
+      <attribute name="size">47 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_Interval.interval@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22036</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22040">
+      <attribute name="name">Label_19</attribute>
+      <attribute name="position">426 63</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_Last_Perf.seqno_i@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22042</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22041">
+      <attribute name="name">Label_20</attribute>
+      <attribute name="position">310 63</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_Last_Perf.perf_date@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22037</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22042">
+      <attribute name="name">Label_21</attribute>
+      <attribute name="position">368 63</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_Last_Perf.wpno@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22041</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22043">
+      <attribute name="name">Label_22</attribute>
+      <attribute name="position">764 63</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_NextPerf.remain_fh@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22045</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22044">
+      <attribute name="name">Label_23</attribute>
+      <attribute name="position">648 63</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_NextPerf.wpno@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22046</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22045">
+      <attribute name="name">Label_24</attribute>
+      <attribute name="position">706 63</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_NextPerf.seqno_i@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22044</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22046">
+      <attribute name="name">Label_25</attribute>
+      <attribute name="position">590 63</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_NextPerf.due_date@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22048</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22047">
+      <attribute name="name">Label_26</attribute>
+      <attribute name="position">484 63</attribute>
+      <attribute name="size">53 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_NextPerf.due_tah_formated@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22040</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22048">
+      <attribute name="name">Label_27</attribute>
+      <attribute name="position">537 63</attribute>
+      <attribute name="size">53 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_NextPerf.due_tac@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22047</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22049">
+      <attribute name="name">Label_28</attribute>
+      <attribute name="position">814 63</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_NextPerf.remain_fc@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22043</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22050">
+      <attribute name="name">Label_29</attribute>
+      <attribute name="position">864 63</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_NextPerf.remain_dy@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22049</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22051">
+      <attribute name="name">Label_30</attribute>
+      <attribute name="position">914 63</attribute>
+      <attribute name="size">46 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_Notes.notes@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22050</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22052">
+      <attribute name="name">Label_31</attribute>
+      <attribute name="position">1080 63</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_MAIN.finding_event_perfno_i@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22084</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22053">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">260 0</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Last Perf, CY</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22070</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22054">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">310 0</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Last Perfomed, Date</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22053</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22055">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">66 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">MP Task No</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="22056">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">484 0</attribute>
+      <attribute name="size">53 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Deadline, FH</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22066</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22057">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">537 0</attribute>
+      <attribute name="size">53 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Deadline, CY</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22056</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22058">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">590 0</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Deadline, Date</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22057</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22059">
+      <attribute name="name">Label_9</attribute>
+      <attribute name="position">706 0</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Planned WP, item(s)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22060</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22060">
+      <attribute name="name">Label_10</attribute>
+      <attribute name="position">648 0</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Planned WP(WO)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22058</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22061">
+      <attribute name="name">Label_11</attribute>
+      <attribute name="position">814 0</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Rem CY</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22069</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22062">
+      <attribute name="name">Label_12</attribute>
+      <attribute name="position">66 0</attribute>
+      <attribute name="size">45 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Task Source</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22055</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22063">
+      <attribute name="name">Label_13</attribute>
+      <attribute name="position">864 0</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Rem Days</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22061</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22064">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">914 0</attribute>
+      <attribute name="size">46 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">NOTES</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22063</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22065">
+      <attribute name="name">Label_16</attribute>
+      <attribute name="position">368 0</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Last Perfomed WP(WO)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22054</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22066">
+      <attribute name="name">Label_17</attribute>
+      <attribute name="position">426 0</attribute>
+      <attribute name="size">58 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Last Perfomed item(s)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22065</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22067">
+      <attribute name="name">Label_18</attribute>
+      <attribute name="position">163 0</attribute>
+      <attribute name="size">47 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Interval</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22068</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22068">
+      <attribute name="name">Label_19</attribute>
+      <attribute name="position">111 0</attribute>
+      <attribute name="size">52 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Threshold</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22062</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22069">
+      <attribute name="name">Label_20</attribute>
+      <attribute name="position">764 0</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Rem FH</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22059</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22070">
+      <attribute name="name">Label_21</attribute>
+      <attribute name="position">210 0</attribute>
+      <attribute name="size">50 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Last Perf, FH</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22067</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22071">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">1080 0</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Finding WO</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22085</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22072">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">1120 0</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Finding WO State</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22071</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22073">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">1160 0</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Finding WO Text</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22072</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22074">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">1120 63</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@268_TC_Status_Findings.state@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22052</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22075">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">1160 63</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@268_TC_Status_Findings.header@
+@268_TC_Status_Findings.ws_text@ @268_TC_Status_Findings.ws_text_html@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22074</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22076">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">1200 0</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Finding WO Action</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22073</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22077">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">1200 63</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@268_TC_Status_Finding_Action.action_text@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22075</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22078">
+      <attribute name="name">Label_10</attribute>
+      <attribute name="position">1240 0</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">ADHOC-JIC</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22076</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22079">
+      <attribute name="name">Label_11</attribute>
+      <attribute name="position">1240 63</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text"/>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@268_TC_Status_Finding_JIC.taskcardno@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@268_TC_Status_Finding_JIC.taskcardno@ (@268_TC_Status_Finding_JIC.msc_taskcard.title@)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22077</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22080">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">1000 0</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">TC Code</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22082</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22081">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">960 63</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_MAIN.section@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22051</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22082">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">960 0</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">TC Section</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22064</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22083">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">1000 63</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_MAIN.code@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22081</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22084">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">1040 63</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@38_TC_Status_MAIN.msg@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22083</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="22085">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">1040 0</attribute>
+      <attribute name="size">40 63</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">TC MSG</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>22080</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v08_tc_msg"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v03_delimeter"/>
+        <ds:columnDescriptor amosType="BOOL" description="" id="v05_hide_hist_events"/>
+        <ds:columnDescriptor amosType="AC" description="" id="v04_ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v07_tc_code"/>
+        <ds:columnDescriptor amosType="TSEC" description="" id="v06_tc_section"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="v09_finding_issue_date_from"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="v10_finding_issue_date_to"/>
+        <ds:columnDescriptor amosType="DESC_TXT" description="" id="v02_taskcardno_list"/>
+        <ds:columnDescriptor amosType="MPA" description="" id="v01_mpno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="08. Taskcard MSG" id="v08_tc_msg">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="03. Delimeter" id="v03_delimeter">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>comma&amp;=&amp;Comma (Запятая);line_feed&amp;=&amp;Line Feed (Перенос строки - при копировании колонки Excel);space&amp;=&amp;Space (Пробел);</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>line_feed</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="05. Show only latest history record" id="v05_hide_hist_events">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="04. Aircraft" id="v04_ac_registr">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="07. Taskcard Type Code" id="v07_tc_code">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="06. Taskcard Section" id="v06_tc_section">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>3</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="09. Finding Issue Date From" id="v09_finding_issue_date_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="10. Finding Issue Date To" id="v10_finding_issue_date_to">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="02. List of Taskcards" id="v02_taskcardno_list">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>ALL</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="01. Maintenance Program" id="v01_mpno">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_TC_Status_MAIN" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_taskcard.taskcardno as taskcardno" id="taskcardno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_taskcard_version.taskcard_verno_i as taskcard_verno_i" id="taskcard_verno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_requirement_tc_link.req_linkno_i as req_linkno_i" id="req_linkno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_requirement_tc_link.req_link_headerno_i as req_link_headerno_i" id="req_link_headerno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_event_link.event_perfno_i as event_perfno_i" id="event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;               DECODE(wo_event_link.pending_status 0 nullwo_event_link.pending_status) as pending_status" id="pending_status"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="f.event_perfno_i as finding_event_perfno_i" id="finding_event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_section_code.section_code as section" id="section"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_section_code.section_code as section&#10;               msc_type_code.typecode as code" id="code"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_msg_code.msgno as msg" id="msg"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AMOS_VERSION@">
+          <ds:object>@AMOS_VERSION@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v05_hide_hist_events@">
+          <ds:object>@VAR.v05_hide_hist_events@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v09_finding_issue_date_from@">
+          <ds:object>@VAR.v09_finding_issue_date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v10_finding_issue_date_to@">
+          <ds:object>@VAR.v10_finding_issue_date_to@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v01_mpno@">
+          <ds:object>@VAR.v01_mpno@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v02_taskcardno_list@">
+          <ds:object>@VAR.v02_taskcardno_list@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v03_delimeter@">
+          <ds:object>@VAR.v03_delimeter@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v04_ac_registr@">
+          <ds:object>@VAR.v04_ac_registr@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v06_tc_section@">
+          <ds:object>@VAR.v06_tc_section@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v07_tc_code@">
+          <ds:object>@VAR.v07_tc_code@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v08_tc_msg@">
+          <ds:object>@VAR.v08_tc_msg@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT msc_taskcard.taskcardno as taskcardno,
+               msc_taskcard_version.taskcard_verno_i as taskcard_verno_i,
+               msc_requirement_tc_link.req_linkno_i as req_linkno_i,
+               msc_requirement_tc_link.req_link_headerno_i as req_link_headerno_i,
+               wo_event_link.event_perfno_i as event_perfno_i,
+               DECODE(wo_event_link.pending_status, 0, null, wo_event_link.pending_status) as pending_status,
+               f.event_perfno_i as finding_event_perfno_i,
+               msc_section_code.section_code as section,
+               msc_type_code.typecode as code,
+               msc_msg_code.msgno as msg
+
+FROM msc_taskcard
+JOIN msc_taskcard_version ON msc_taskcard.taskcardno_i = msc_taskcard_version.taskcardno_i
+JOIN msc_mprev_taskcards ON msc_taskcard_version.taskcard_verno_i = msc_mprev_taskcards.taskcard_verno_i
+JOIN msc_mp_revision ON msc_mprev_taskcards.revisionno_i = msc_mp_revision.revisionno_i
+JOIN msc_mp_issue ON msc_mp_revision.issueno_i = msc_mp_issue.issueno_i
+JOIN msc_maintenance_program ON msc_mp_issue.mpno_i = msc_maintenance_program.mpno_i
+                                                                   AND msc_taskcard.mpno_i=msc_maintenance_program.mpno_i
+                                                                   AND msc_maintenance_program.program_type='MP'
+JOIN msc_requirement_tc_link ON msc_requirement_tc_link.taskcard_verno_i_mri = msc_taskcard_version.taskcard_verno_i
+                                                              AND (msc_requirement_tc_link.mpno_i_operator=6 AND msc_maintenance_program.mpno='B737' 
+                                                                        OR msc_requirement_tc_link.mpno_i_operator=7 AND msc_maintenance_program.mpno='B777'
+                                                                        OR msc_requirement_tc_link.mpno_i_operator=8 AND msc_maintenance_program.mpno='RRJ'
+                                                                        OR msc_requirement_tc_link.mpno_i_operator=9 AND msc_maintenance_program.mpno='A32S'
+                                                                        OR msc_requirement_tc_link.mpno_i_operator=10 AND msc_maintenance_program.mpno='A330'
+                                                                        OR msc_requirement_tc_link.mpno_i_operator=407 AND msc_maintenance_program.mpno='A350')
+JOIN wo_event_link ON (wo_event_link.event_key_root = msc_requirement_tc_link.req_link_headerno_i)
+                                                     AND (wo_event_link.event_type = 'TCEFFLI' AND '@AMOS_VERSION@' LIKE '19.12%' OR wo_event_link.event_type = 'MET' AND '@AMOS_VERSION@' NOT LIKE '19.12%')
+                                                     AND (wo_event_link.pending_status = 0 AND '@VAR.v05_hide_hist_events@' = 'Y' /* load only current pending events */
+                                                                OR wo_event_link.pending_status &lt; 0 AND '@VAR.v05_hide_hist_events@' = 'N' /* load all performed events */)
+                                                     AND wo_event_link.event_status &lt;&gt; 'Z'
+LEFT JOIN wo_header ON wo_event_link.event_perfno_i = wo_header.event_perfno_i
+LEFT JOIN (
+                   SELECT wo_event_link.event_key_parent,
+                                 finding.event_perfno_i,
+                                 aircraft.ac_registr
+                   FROM wo_event_link                                                                                                                            
+                   JOIN wo_transfer ON wo_transfer.event_perfno_i = wo_event_link.event_perfno_i
+                   JOIN wo_transfer_dimension ON wo_transfer.event_transferno_i = wo_transfer_dimension.event_transferno_i AND wo_transfer.transfer_type = 'R'
+                   JOIN treq_interval ON wo_transfer_dimension.treq_intervalno_i=treq_interval.intervalno_i AND treq_interval.dimension_type IN ('W', 'B', 'I')
+                   JOIN treq_dimension_group ON treq_interval.dimension_groupno_i=treq_dimension_group.dimension_groupno_i
+                   JOIN treq_interval_group ON treq_interval_group.interval_groupno_i=treq_dimension_group.interval_groupno_i
+                   JOIN treq_time_requirement ON treq_interval_group.timerequirementno_i=treq_time_requirement.timerequirementno_i AND treq_time_requirement.event_type = 'REQH' AND treq_time_requirement.type = 'OP'
+                   JOIN event_finding ON wo_event_link.effectivity_linkno_i = event_finding.headerno_i AND event_finding.primkey = wo_event_link.event_perfno_i AND event_finding.header_type = 'EFL' AND event_finding.type &lt;&gt; 'TC'
+                   JOIN wo_header ON wo_event_link.event_perfno_i = wo_header.event_perfno_i
+                   JOIN wo_header finding ON event_finding.event_perfno_i=finding.event_perfno_i
+                   LEFT JOIN wo_header_more ON finding.event_perfno_i=wo_header_more.event_perfno_i
+                   JOIN aircraft ON aircraft.ac_registr=finding.ac_registr
+                   WHERE 1=1
+                                 AND wo_event_link.pending_status &lt; 0 AND wo_event_link.event_status &lt;&gt; 'Z'
+                                 AND wo_header.closing_date BETWEEN @VAR.v09_finding_issue_date_from@ AND @VAR.v10_finding_issue_date_to@
+                                 AND finding.state&lt;&gt;'V'
+                                 AND NVL(wo_header_more.nonrelevant_finding, 'N')&lt;&gt;'Y'
+                                 AND (wo_event_link.event_type = 'TCEFFLI' AND '@AMOS_VERSION@' LIKE '19.12%' OR wo_event_link.event_type = 'MET' AND '@AMOS_VERSION@' NOT LIKE '19.12%')
+                     ) f ON f.event_key_parent = msc_requirement_tc_link.req_linkno_i AND f.ac_registr = wo_header.ac_registr
+
+LEFT JOIN msc_task_type ON msc_taskcard_version.taskcard_verno_i=msc_task_type.taskcard_verno_i
+LEFT JOIN msc_type_code ON msc_task_type.typecodeno_i=msc_type_code.typecodeno_i
+
+LEFT JOIN msc_task_section ON msc_taskcard_version.taskcard_verno_i=msc_task_section.taskcard_verno_i
+LEFT JOIN msc_section_code ON msc_task_section.sectionno_i=msc_section_code.sectionno_i
+
+LEFT JOIN msc_task_msg ON msc_taskcard_version.taskcard_verno_i=msc_task_msg.taskcard_verno_i
+LEFT JOIN msc_msg_code ON msc_task_msg.msgno_i=msc_msg_code.msgno_i
+
+WHERE 1=1
+               AND msc_maintenance_program.mpno_i = @VAR.v01_mpno@
+               AND ('@VAR.v02_taskcardno_list@' = 'ALL'
+                          OR
+                          msc_taskcard.taskcardno IN (
+                                                                                SELECT t.v
+                                                                                FROM (
+                                                                                             SELECT column_value as v
+                                                                                             FROM TABLE(amosserver_prod.string_splitter('@VAR.v02_taskcardno_list@','@VAR.v03_delimeter@'))
+                                                                                            ) t
+                                                                                WHERE t.v is not null
+                                                                               )
+                        )
+               AND msc_mp_revision.revision_status IN ('a','b') /* load tasks: which have current pending event and contained in active MP */ 
+               AND (REGEXP_LIKE(wo_header.ac_registr, REPLACE('@VAR.v04_ac_registr@', ', ', '|')) OR '@VAR.v04_ac_registr@' IS NULL)
+               AND (REGEXP_LIKE(msc_section_code.section_code, REPLACE('@VAR.v06_tc_section@', ', ', '|')) OR '@VAR.v06_tc_section@' IS NULL)
+               AND (REGEXP_LIKE(msc_type_code.typecode, REPLACE('@VAR.v07_tc_code@', ', ', '|')) OR '@VAR.v07_tc_code@' IS NULL)
+               AND (REGEXP_LIKE(msc_msg_code.msgno, REPLACE('@VAR.v08_tc_msg@', ', ', '|')) OR '@VAR.v08_tc_msg@' IS NULL)
+ORDER BY taskcardno, pending_status DESC NULLS FIRST</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_TC_Status_tcSource" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="LISTAGG (db_link.descriptionCHR(10)) WITHIN GROUP (ORDER BY db_link.description) as source" id="source"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.taskcard_verno_i@">
+          <ds:object>@38_TC_Status_MAIN.taskcard_verno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT LISTAGG (db_link.description, CHR(10)) WITHIN GROUP (ORDER BY db_link.description) as source
+FROM db_link 
+WHERE 1=1
+               AND db_link.source_pk = '@38_TC_Status_MAIN.taskcard_verno_i@'
+               AND db_link.source_type = 'TCLS'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_TC_Status_Threshold" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="treq_time_requirement.timerequirementno_i" id="treq_time_requirement.timerequirementno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             LISTAGG (&#10;                              CASE WHEN treq_interval.amount_interval=-1 AND (treq_interval.counter_defno_i&lt;&gt;3 OR treq_interval.unit&lt;&gt;'D') THEN TO_CHAR(treq_interval.due_at)&#10;                                            WHEN treq_interval.amount_interval=-1 AND treq_interval.counter_defno_i=3 AND treq_interval.unit='D' THEN TO_CHAR(TO_DATE('31.12.1971' 'DD.MM.YYYY') + treq_interval.due_at 'DD.MM.YYYY')&#10;                                            ELSE TO_CHAR(treq_interval.amount_interval)&#10;                                   END&#10;                              ||' '&#10;                              ||CASE WHEN treq_interval.counter_defno_i=1 THEN 'FH'&#10;                                            WHEN treq_interval.counter_defno_i=2 THEN 'FC'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit IS NULL AND treq_interval.accuracy IS NULL THEN 'DY'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='D' THEN 'DY'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='H' THEN 'HRS'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='MT' THEN 'MO'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='YR' THEN 'YE'&#10;                                            WHEN treq_interval.counter_defno_i=101 THEN 'AH'&#10;                                            WHEN treq_interval.counter_defno_i=102 THEN 'AC'&#10;                                            WHEN treq_interval.counter_defno_i=103 THEN 'SD'&#10;                                            WHEN treq_interval.counter_defno_i=104 THEN 'ID'&#10;                                            ELSE ''&#10;                                  END ''&#10;                             ) WITHIN GROUP (ORDER BY treq_interval.amount_interval) as threshold" id="threshold"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.event_perfno_i@">
+          <ds:object>@38_TC_Status_MAIN.event_perfno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT treq_time_requirement.timerequirementno_i,
+             LISTAGG (
+                              CASE WHEN treq_interval.amount_interval=-1 AND (treq_interval.counter_defno_i&lt;&gt;3 OR treq_interval.unit&lt;&gt;'D') THEN TO_CHAR(treq_interval.due_at)
+                                            WHEN treq_interval.amount_interval=-1 AND treq_interval.counter_defno_i=3 AND treq_interval.unit='D' THEN TO_CHAR(TO_DATE('31.12.1971', 'DD.MM.YYYY') + treq_interval.due_at, 'DD.MM.YYYY')
+                                            ELSE TO_CHAR(treq_interval.amount_interval)
+                                   END
+                              ||' '
+                              ||CASE WHEN treq_interval.counter_defno_i=1 THEN 'FH'
+                                            WHEN treq_interval.counter_defno_i=2 THEN 'FC'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit IS NULL AND treq_interval.accuracy IS NULL THEN 'DY'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='D' THEN 'DY'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='H' THEN 'HRS'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='MT' THEN 'MO'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='YR' THEN 'YE'
+                                            WHEN treq_interval.counter_defno_i=101 THEN 'AH'
+                                            WHEN treq_interval.counter_defno_i=102 THEN 'AC'
+                                            WHEN treq_interval.counter_defno_i=103 THEN 'SD'
+                                            WHEN treq_interval.counter_defno_i=104 THEN 'ID'
+                                            ELSE ''
+                                  END, ', '
+                             ) WITHIN GROUP (ORDER BY treq_interval.amount_interval) as threshold
+FROM treq_time_requirement 
+JOIN treq_interval_group ON treq_interval_group.timerequirementno_i=treq_time_requirement.timerequirementno_i
+JOIN treq_dimension_group ON treq_interval_group.interval_groupno_i=treq_dimension_group.interval_groupno_i
+JOIN treq_interval ON treq_interval.dimension_groupno_i=treq_dimension_group.dimension_groupno_i AND treq_interval.dimension_type IN ('W', 'B')
+JOIN counter_definition ON treq_interval.counter_defno_i=counter_definition.counter_defno_i
+WHERE 1=1
+               AND treq_time_requirement.event_type = 'REQH'
+               AND treq_time_requirement.type = 'OP'
+               AND treq_time_requirement.timerequirementno_i IN (
+                                                                                                                     SELECT DISTINCT treq_interval_group.timerequirementno_i
+                                                                                                                     FROM wo_transfer
+                                                                                                                     JOIN wo_transfer_dimension ON wo_transfer.event_transferno_i = wo_transfer_dimension.event_transferno_i 
+                                                                                                                     JOIN treq_interval ON wo_transfer_dimension.treq_intervalno_i=treq_interval.intervalno_i AND treq_interval.dimension_type IN ('W', 'B', 'I')
+                                                                                                                     JOIN treq_dimension_group ON treq_interval.dimension_groupno_i=treq_dimension_group.dimension_groupno_i
+                                                                                                                     JOIN treq_interval_group ON treq_interval_group.interval_groupno_i=treq_dimension_group.interval_groupno_i
+                                                                                                                     WHERE 1=1
+                                                                                                                                   AND wo_transfer.event_perfno_i = @38_TC_Status_MAIN.event_perfno_i@
+                                                                                                                                   AND wo_transfer.is_last_transfer='Y'
+                                                                                                                                   AND wo_transfer.transfer_type IN ('T', 'E')
+                                                                                                                   ) 
+GROUP BY treq_time_requirement.timerequirementno_i</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_TC_Status_Interval" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="treq_time_requirement.timerequirementno_i" id="treq_time_requirement.timerequirementno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             LISTAGG (&#10;                              CASE WHEN treq_interval.amount_interval=-1 AND (treq_interval.counter_defno_i&lt;&gt;3 OR treq_interval.unit&lt;&gt;'D') THEN TO_CHAR(treq_interval.due_at)&#10;                                            WHEN treq_interval.amount_interval=-1 AND treq_interval.counter_defno_i=3 AND treq_interval.unit='D' THEN TO_CHAR(TO_DATE('31.12.1971' 'DD.MM.YYYY') + treq_interval.due_at 'DD.MM.YYYY')&#10;                                            ELSE TO_CHAR(treq_interval.amount_interval)&#10;                                   END&#10;                              ||' '&#10;                              ||CASE WHEN treq_interval.counter_defno_i=1 THEN 'FH'&#10;                                            WHEN treq_interval.counter_defno_i=2 THEN 'FC'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit IS NULL AND treq_interval.accuracy IS NULL THEN 'DY'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='D' THEN 'DY'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='H' THEN 'HRS'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='MT' THEN 'MO'&#10;                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='YR' THEN 'YE'&#10;                                            WHEN treq_interval.counter_defno_i=101 THEN 'AH'&#10;                                            WHEN treq_interval.counter_defno_i=102 THEN 'AC'&#10;                                            WHEN treq_interval.counter_defno_i=103 THEN 'SD'&#10;                                            WHEN treq_interval.counter_defno_i=104 THEN 'ID'&#10;                                            ELSE ''&#10;                                  END ''&#10;                             ) WITHIN GROUP (ORDER BY treq_interval.amount_interval) as interval" id="interval"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.event_perfno_i@">
+          <ds:object>@38_TC_Status_MAIN.event_perfno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT treq_time_requirement.timerequirementno_i,
+             LISTAGG (
+                              CASE WHEN treq_interval.amount_interval=-1 AND (treq_interval.counter_defno_i&lt;&gt;3 OR treq_interval.unit&lt;&gt;'D') THEN TO_CHAR(treq_interval.due_at)
+                                            WHEN treq_interval.amount_interval=-1 AND treq_interval.counter_defno_i=3 AND treq_interval.unit='D' THEN TO_CHAR(TO_DATE('31.12.1971', 'DD.MM.YYYY') + treq_interval.due_at, 'DD.MM.YYYY')
+                                            ELSE TO_CHAR(treq_interval.amount_interval)
+                                   END
+                              ||' '
+                              ||CASE WHEN treq_interval.counter_defno_i=1 THEN 'FH'
+                                            WHEN treq_interval.counter_defno_i=2 THEN 'FC'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit IS NULL AND treq_interval.accuracy IS NULL THEN 'DY'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='D' THEN 'DY'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='H' THEN 'HRS'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='MT' THEN 'MO'
+                                            WHEN treq_interval.counter_defno_i=3 AND treq_interval.unit='YR' THEN 'YE'
+                                            WHEN treq_interval.counter_defno_i=101 THEN 'AH'
+                                            WHEN treq_interval.counter_defno_i=102 THEN 'AC'
+                                            WHEN treq_interval.counter_defno_i=103 THEN 'SD'
+                                            WHEN treq_interval.counter_defno_i=104 THEN 'ID'
+                                            ELSE ''
+                                  END, ', '
+                             ) WITHIN GROUP (ORDER BY treq_interval.amount_interval) as interval
+FROM treq_time_requirement 
+JOIN treq_interval_group ON treq_interval_group.timerequirementno_i=treq_time_requirement.timerequirementno_i
+JOIN treq_dimension_group ON treq_interval_group.interval_groupno_i=treq_dimension_group.interval_groupno_i
+JOIN treq_interval ON treq_interval.dimension_groupno_i=treq_dimension_group.dimension_groupno_i AND treq_interval.dimension_type IN ('I')
+JOIN counter_definition ON treq_interval.counter_defno_i=counter_definition.counter_defno_i
+WHERE 1=1
+               AND treq_time_requirement.event_type = 'REQH'
+               AND treq_time_requirement.type = 'OP'
+               AND treq_time_requirement.timerequirementno_i IN (
+                                                                                                                     SELECT DISTINCT treq_interval_group.timerequirementno_i
+                                                                                                                     FROM wo_transfer
+                                                                                                                     JOIN wo_transfer_dimension ON wo_transfer.event_transferno_i = wo_transfer_dimension.event_transferno_i 
+                                                                                                                     JOIN treq_interval ON wo_transfer_dimension.treq_intervalno_i=treq_interval.intervalno_i AND treq_interval.dimension_type IN ('W', 'B', 'I')
+                                                                                                                     JOIN treq_dimension_group ON treq_interval.dimension_groupno_i=treq_dimension_group.dimension_groupno_i
+                                                                                                                     JOIN treq_interval_group ON treq_interval_group.interval_groupno_i=treq_dimension_group.interval_groupno_i
+                                                                                                                     WHERE 1=1
+                                                                                                                                   AND wo_transfer.event_perfno_i = @38_TC_Status_MAIN.event_perfno_i@
+                                                                                                                                   AND wo_transfer.is_last_transfer='Y'
+                                                                                                                                   AND wo_transfer.transfer_type IN ('T', 'E')
+                                                                                                                   ) 
+GROUP BY treq_time_requirement.timerequirementno_i</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_TC_Status_Last_Perf" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_transfer_dimension_h.due_at as perf_tah" id="perf_tah"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_transfer_dimension_c.due_at as perf_tac" id="perf_tac"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;               to_char(to_date('31.12.1971' 'dd.mm.yyyy') + (wo_transfer.absolute_due_date)'dd.mm.yyyy') as perf_date" id="perf_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wp_header.wpno as wpno" id="wpno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wp_sequence.seqno_i as seqno_i" id="seqno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="perf_tah_formated" id="perf_tah_formated"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.req_link_headerno_i@">
+          <ds:object>@38_TC_Status_MAIN.req_link_headerno_i@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AMOS_VERSION@">
+          <ds:object>@AMOS_VERSION@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v04_ac_registr@">
+          <ds:object>@VAR.v04_ac_registr@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v05_hide_hist_events@">
+          <ds:object>@VAR.v05_hide_hist_events@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT perf_tah,  perf_tac, perf_date, wpno, seqno_i, perf_tah_formated
+FROM (
+             SELECT TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wo_transfer_dimension_h.due_at)/60),'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wo_transfer_dimension_h.due_at),60)),'FM00') as perf_tah_formated,
+                            wo_transfer_dimension_h.due_at as perf_tah,
+                            wo_transfer_dimension_c.due_at as perf_tac,
+                            to_char(to_date('31.12.1971', 'dd.mm.yyyy') + (wo_transfer.absolute_due_date),'dd.mm.yyyy') as perf_date,
+                            wp_header.wpno as wpno,
+                            wp_sequence.seqno_i as seqno_i,
+                            wo_event_link.event_key_parent,
+                            wo_event_link.pending_status as pending_status,
+                            min(wo_event_link.pending_status) over (partition by wo_event_link.event_key_root) as min_pending_status
+             FROM wo_event_link
+             LEFT JOIN wo_header ON wo_event_link.event_perfno_i = wo_header.event_perfno_i
+             JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+             JOIN wo_transfer on wo_transfer.event_perfno_i=wo_event_link.event_perfno_i and wo_transfer.is_last_transfer='Y' AND wo_transfer.transfer_type='R'
+             LEFT JOIN wp_assignment ON wo_header.event_perfno_i = wp_assignment.event_perfno_i
+             LEFT JOIN wp_header ON wp_assignment.wpno_i = wp_header.wpno_i
+             LEFT JOIN wp_sequence ON wp_sequence.event_perfno_i = wo_header.event_perfno_i AND wp_sequence.wpno_i = wp_header.wpno_i AND wp_sequence.status&lt;&gt;9
+             LEFT JOIN (
+                                 select wo_transfer_dimension.due_at,
+                                             wo_transfer_dimension.event_transferno_i
+                                 from wo_transfer_dimension
+                                 join counter ON wo_transfer_dimension.counterno_i=counter.counterno_i
+                                 join counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+                                 join counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+                     				   where counter_definition.code='H'
+                               ) wo_transfer_dimension_h on wo_transfer.event_transferno_i=wo_transfer_dimension_h.event_transferno_i
+             LEFT JOIN (
+                                 select wo_transfer_dimension.due_at,
+                                              wo_transfer_dimension.event_transferno_i
+                                 from wo_transfer_dimension
+                                 join counter ON wo_transfer_dimension.counterno_i=counter.counterno_i
+                                 join counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+                                 join counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+                     				   where counter_definition.code='C'
+                               ) wo_transfer_dimension_c on wo_transfer.event_transferno_i=wo_transfer_dimension_c.event_transferno_i
+             LEFT JOIN (
+                                 select wo_transfer_dimension.due_at,
+                                             wo_transfer_dimension.event_transferno_i
+                                 from wo_transfer_dimension
+                                 join counter ON wo_transfer_dimension.counterno_i=counter.counterno_i
+                                 join counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+                                 join counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+                    				   where counter_definition.code='D'
+                                ) wo_transfer_dimension_d on wo_transfer.event_transferno_i=wo_transfer_dimension_d.event_transferno_i
+             WHERE 1=1
+                            AND wo_event_link.event_key_root = @38_TC_Status_MAIN.req_link_headerno_i@
+                            AND (wo_event_link.event_type = 'TCEFFLI' AND '@AMOS_VERSION@' LIKE '19.12%' OR wo_event_link.event_type = 'MET' AND '@AMOS_VERSION@' NOT LIKE '19.12%')
+                            AND wo_event_link.pending_status &lt; 0
+                            AND wo_event_link.event_status &lt;&gt; 'Z'
+                            AND aircraft.ac_registr = '@VAR.v04_ac_registr@'
+            )
+WHERE pending_status = min_pending_status OR '@VAR.v05_hide_hist_events@'='N'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_TC_Status_NextPerf" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_transfer_dimension_h.due_at as due_tah" id="due_tah"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;              TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wo_transfer_dimension_h.due_at)/60)'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wo_transfer_dimension_h.due_at)60))'FM00') as due_tah_formated" id="due_tah_formated"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;              (SELECT DECODE(wo_transfer_dimension_h.due_at &#10;                                               NULL NULL&#10;                                               TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wo_transfer_dimension_h.due_at - counter.life_value)/60)'FM999999999900'))&#10;                                               || ':' &#10;                                               ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wo_transfer_dimension_h.due_at - counter.life_value)60))'FM00')&#10;                                              )&#10;               FROM counter &#10;               JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i&#10;               JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i&#10;               WHERE 1=1&#10;                              AND counter.ref_type='AC_INT'&#10;                              AND counter.ref_key = (SELECT aircraftno_i from aircraft where ac_registr = '@VAR.v04_ac_registr@')&#10;                              AND counter_definition.counter_defno_i='1') as  as remain_fh" id="remain_fh"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_transfer_dimension_c.due_at as due_tac" id="due_tac"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="(SELECT CASE WHEN wo_transfer_dimension_c.due_at &gt; 0 THEN wo_transfer_dimension_c.due_at - counter.life_value ELSE NULL END &#10;               FROM counter &#10;               JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i&#10;               JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i&#10;               WHERE 1=1&#10;                              AND counter.ref_type='AC_INT'&#10;                              AND counter.ref_key = (SELECT aircraftno_i from aircraft where ac_registr = '@VAR.v04_ac_registr@')&#10;                              AND counter_definition.counter_defno_i='2'&#10;              ) as remain_fc" id="remain_fc"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;               to_char(to_date('31.12.1971' 'dd.mm.yyyy') + (wo_transfer.absolute_due_date)'dd.mm.yyyy') as due_date" id="due_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#10;               DECODE(wo_transfer.absolute_due_date NULL NULL TO_DATE('31.12.1971''dd.mm.yyyy') + wo_transfer.absolute_due_date - TRUNC(SYSDATE)) as remain_dy" id="remain_dy"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wp_header.wpno as wpno" id="wpno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wp_sequence.seqno_i as seqno_i" id="seqno_i"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v04_ac_registr@">
+          <ds:object>@VAR.v04_ac_registr@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.event_perfno_i@">
+          <ds:object>@38_TC_Status_MAIN.event_perfno_i@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AMOS_VERSION@">
+          <ds:object>@AMOS_VERSION@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT wo_transfer_dimension_h.due_at as due_tah,
+              CASE WHEN wo_transfer_dimension_h.due_at &gt; 0
+                         THEN TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wo_transfer_dimension_h.due_at)/60),'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wo_transfer_dimension_h.due_at),60)),'FM00')
+                         ELSE NULL
+              END as due_tah_formated,
+
+              (SELECT DECODE(wo_transfer_dimension_h.due_at, 
+                                               NULL, NULL,
+                                               TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(wo_transfer_dimension_h.due_at - counter.life_value)/60),'FM999999999900'))
+                                               || ':' 
+                                               ||TO_CHAR(TRUNC(MOD(TO_NUMBER(wo_transfer_dimension_h.due_at - counter.life_value),60)),'FM00')
+                                              )
+               FROM counter 
+               JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+               JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+               WHERE 1=1
+                              AND counter.ref_type='AC_INT'
+                              AND counter.ref_key = (SELECT aircraftno_i from aircraft where ac_registr = '@VAR.v04_ac_registr@')
+                              AND counter_definition.counter_defno_i='1') as remain_fh,
+
+               wo_transfer_dimension_c.due_at as due_tac,
+
+              (SELECT CASE WHEN wo_transfer_dimension_c.due_at &gt; 0 THEN wo_transfer_dimension_c.due_at - counter.life_value ELSE NULL END 
+               FROM counter 
+               JOIN counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+               JOIN counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+               WHERE 1=1
+                              AND counter.ref_type='AC_INT'
+                              AND counter.ref_key = (SELECT aircraftno_i from aircraft where ac_registr = '@VAR.v04_ac_registr@')
+                              AND counter_definition.counter_defno_i='2'
+              ) as remain_fc,
+
+               to_char(to_date('31.12.1971', 'dd.mm.yyyy') + (wo_transfer.absolute_due_date),'dd.mm.yyyy') as due_date,
+
+               DECODE(wo_transfer.absolute_due_date, NULL, NULL, TO_DATE('31.12.1971', 'dd.mm.yyyy') + wo_transfer.absolute_due_date - TRUNC(SYSDATE)) as remain_dy,
+               wp_header.wpno as wpno,
+               wp_sequence.seqno_i as seqno_i
+FROM wo_event_link
+LEFT JOIN wo_header ON wo_event_link.event_perfno_i = wo_header.event_perfno_i
+JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+JOIN wo_transfer on wo_transfer.event_perfno_i=wo_event_link.event_perfno_i and wo_transfer.is_last_transfer='Y' AND wo_transfer.transfer_type in ('T', 'E')
+LEFT JOIN wp_assignment ON wo_header.event_perfno_i = wp_assignment.event_perfno_i
+LEFT JOIN wp_header ON wp_assignment.wpno_i = wp_header.wpno_i
+LEFT JOIN wp_sequence ON wp_sequence.event_perfno_i = wo_header.event_perfno_i AND wp_sequence.wpno_i = wp_header.wpno_i AND wp_sequence.status&lt;&gt;9
+LEFT JOIN (
+                   select wo_transfer_dimension.due_at,
+                               wo_transfer_dimension.event_transferno_i
+                   from wo_transfer_dimension
+                   join counter ON wo_transfer_dimension.counterno_i=counter.counterno_i
+                   join counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+                   join counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				   where counter_definition.code='H'
+                  ) wo_transfer_dimension_h on wo_transfer.event_transferno_i=wo_transfer_dimension_h.event_transferno_i
+LEFT JOIN (
+                   select wo_transfer_dimension.due_at,
+                          wo_transfer_dimension.event_transferno_i
+                   from wo_transfer_dimension
+                   join counter ON wo_transfer_dimension.counterno_i=counter.counterno_i
+                   join counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+                   join counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				   where counter_definition.code='C'
+                  ) wo_transfer_dimension_c on wo_transfer.event_transferno_i=wo_transfer_dimension_c.event_transferno_i
+LEFT JOIN (
+                   select wo_transfer_dimension.due_at,
+                          wo_transfer_dimension.event_transferno_i
+                   from wo_transfer_dimension
+                   join counter ON wo_transfer_dimension.counterno_i=counter.counterno_i
+                   join counter_template ON counter.counter_templateno_i=counter_template.counter_templateno_i
+                   join counter_definition ON counter_template.counter_defno_i=counter_definition.counter_defno_i
+				   where counter_definition.code='D'
+                  ) wo_transfer_dimension_d on wo_transfer.event_transferno_i=wo_transfer_dimension_d.event_transferno_i
+WHERE 1=1
+               AND wo_event_link.event_perfno_i = @38_TC_Status_MAIN.event_perfno_i@
+               AND (wo_event_link.event_type = 'TCEFFLI' AND '@AMOS_VERSION@' LIKE '19.12%' OR wo_event_link.event_type = 'MET' AND '@AMOS_VERSION@' NOT LIKE '19.12%')
+               AND wo_event_link.pending_status = 0
+               AND aircraft.ac_registr = '@VAR.v04_ac_registr@'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="38_TC_Status_Notes" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="case when to_char(internal_remarks) &lt;&gt; 'В ' and to_char(notes) &lt;&gt; 'В ' then 'Notes: ' || to_char(notes) || chr(13)|| chr(10)|| &#10;             'Int. Remarks: ' || to_char(internal_remarks)&#10;              when to_char(internal_remarks) &lt;&gt; 'В ' then 'Int. Remarks: ' || to_char(internal_remarks)&#10;              when to_char(notes) &lt;&gt; 'В ' then 'Notes: ' || to_char(notes)&#10;            else null&#10;         end notes" id="notes"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.taskcard_verno_i@">
+          <ds:object>@38_TC_Status_MAIN.taskcard_verno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT CASE
+                        WHEN TO_CHAR(internal_remarks) &lt;&gt; 'В '
+                                     AND TO_CHAR(notes) &lt;&gt; 'В '
+                        THEN 'Notes: ' || TO_CHAR(notes)
+                                                  || chr(13)
+                                                  || chr(10)
+                                                  || 'Int. Remarks: ' 
+                                                  || TO_CHAR(internal_remarks)
+                        WHEN TO_CHAR(internal_remarks) &lt;&gt; 'В '
+                        THEN 'Int. Remarks: ' || to_char(internal_remarks)
+                        WHEN TO_CHAR(notes) &lt;&gt; 'В '
+                        THEN 'Notes: ' || TO_CHAR(notes)
+                        ELSE NULL
+              END as notes
+FROM (
+             SELECT DBMS_lob.substr(msc_taskcard_version.internal_remarks,2000,1) as internal_remarks,
+                           DBMS_lob.substr(msc_taskcard_version.notes,2000,1) as notes
+             FROM msc_taskcard_version
+             WHERE msc_taskcard_version.taskcard_verno_i = @38_TC_Status_MAIN.taskcard_verno_i@
+            ) r</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="268_TC_Status_Findings" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i as event_perfno_i" id="event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             DECODE(wo_text_description.headerNULL NULLwo_text_description.header||CHR(10)) as header" id="header"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_description.text as ws_text" id="ws_text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_description.text_html as ws_text_html" id="ws_text_html"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             DECODE(wo_header.state 'O' 'Open' 'C' 'Closed'wo_header.state) as state" id="state"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.finding_event_perfno_i@">
+          <ds:object>@38_TC_Status_MAIN.finding_event_perfno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT wo_header.event_perfno_i as event_perfno_i,
+             DECODE(wo_text_description.header,NULL, NULL, wo_text_description.header||CHR(10)) as header,
+             wo_text_description.text as ws_text,
+             wo_text_description.text_html as ws_text_html,
+             DECODE(wo_header.state, 'O', 'Open', 'C', 'Closed', wo_header.state) as state
+FROM wo_header
+JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i AND workstep_link.sequenceno=1
+JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+WHERE 1=1
+              AND wo_header.event_perfno_i=@38_TC_Status_MAIN.finding_event_perfno_i@</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="268_TC_Status_Finding_Action" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i as event_perfno_i" id="event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             RTRIM(&#10;                         XMLAGG(&#10;                                          XMLELEMENT(Ewo_text_action.text CHR(10) ).EXTRACT('//text()')&#10;                                                          ORDER BY workstep_link.sequenceno wo_text_action.actionno_i&#10;                                                         ).GetClobVal()CHR(10)&#10;                                       ) as action_text" id="action_text"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.finding_event_perfno_i@">
+          <ds:object>@38_TC_Status_MAIN.finding_event_perfno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT wo_header.event_perfno_i as event_perfno_i,
+             RTRIM(
+                         XMLAGG(
+                                          XMLELEMENT(E,wo_text_action.text, CHR(10) ).EXTRACT('//text()')
+                                                          ORDER BY workstep_link.sequenceno, wo_text_action.actionno_i
+                                                         ).GetClobVal(), CHR(10)
+                                       ) as action_text
+FROM wo_header
+JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+JOIN wo_text_action ON wo_text_action.workstep_linkno_i=workstep_link.workstep_linkno_i
+WHERE 1=1
+              AND wo_header.event_perfno_i=@38_TC_Status_MAIN.finding_event_perfno_i@
+GROUP BY 
+              wo_header.event_perfno_i</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="268_TC_Status_Finding_JIC" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_taskcard.taskcardno as taskcardno" id="taskcardno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="msc_taskcard.title" id="msc_taskcard.title"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@38_TC_Status_MAIN.finding_event_perfno_i@">
+          <ds:object>@38_TC_Status_MAIN.finding_event_perfno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT msc_taskcard.taskcardno as taskcardno,
+              msc_taskcard.title
+FROM db_link
+JOIN msc_taskcard_version ON AMOS_TRUNC (db_link.source_pk) = msc_taskcard_version.taskcard_verno_i AND db_link.source_type = 'TCLS'
+JOIN msc_taskcard ON msc_taskcard.taskcardno_i = msc_taskcard_version.taskcardno_i
+WHERE db_link.destination_key = '@38_TC_Status_MAIN.finding_event_perfno_i@'
+      AND db_link.destination_type = 'WO'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

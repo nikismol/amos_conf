@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Настройка Transfer Order (Export)</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-AIM-Configuration_143131870.html">AMOS AIM Configuration</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Настройка Transfer Order (Export)
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on апр. 14, 2025
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div id="expander-65873071" class="expand-container"><div id="expander-control-65873071" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">AFL</span></div><div id="expander-content-65873071" class="expand-content"><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">В APN 1404 Main&amp;Traceability</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><div class="content-wrapper"><ul><li>На вкладке <em><strong>MAIN</strong> </em>необходимо заполнить в соответсвии со скриншотом ниже:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263694/143132041.png" data-image-src="attachments/136263694/143132041.png" data-unresolved-comment-count="0" data-linked-resource-id="143132041" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-57-43.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263694" data-linked-resource-container-version="15"></span></li></ul><ul><li>На вкладке <em><strong>Traceability</strong></em> настроить в соответсвии со скриншотом ниже:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263694/143132042.png" data-image-src="attachments/136263694/143132042.png" data-unresolved-comment-count="0" data-linked-resource-id="143132042" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-58-4.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263694" data-linked-resource-container-version="15"></span></li></ul></div></div></div><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка селектора в APN 1404</p><div class="confluence-information-macro-body"><div class="content-wrapper"><ul><li class="auto-cursor-target">В Configuration Detail выбираем подвкладку <strong><em>selector</em></strong> и в окне <strong><em>Export Selector</em></strong> заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263694/143132036.png" data-image-src="attachments/136263694/143132036.png" data-unresolved-comment-count="0" data-linked-resource-id="143132036" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-49-51.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263694" data-linked-resource-container-version="15"></span></li><li class="auto-cursor-target"><p class="auto-cursor-target">Ниже представлен <em><strong>SQL запрос</strong></em> для указания в <em><strong>Selector Options</strong></em>:</p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT 
+    ord.orderno_i, 
+    ord.orderno
+FROM 
+    (/* Specified orders in state &quot;open&quot; or draft orders (T) */
+        SELECT 
+            od_header.orderno_i, 
+            od_header.orderno,         
+            to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + NVL(GREATEST(
+                (/* get last od_detail change */
+                SELECT MAX(od_detail.mutation + od_detail.mutation_time / 24 / 60 / 60 / 1000)
+                FROM od_detail 
+                WHERE 1=1
+                  AND od_detail.orderno_i = od_header.orderno_i
+                  AND od_detail.mutator NOT IN (&#39;MIGRUSR&#39;, &#39;RAMAX_AC&#39;, &#39;AMOS_SRV&#39;)
+                ),
+                NVL(
+                    (/* get last &quot;issued by address&quot; change - the only field in od_header that needs to be checked*/
+                        SELECT 
+                            MAX(bohi_changes.changes_date + bohi_changes.changes_time / 24 / 60) as address_issue_last_change_date
+                        FROM bohi_changes
+                        WHERE 1=1
+                          AND bohi_changes.action = &#39;Saved from OrderSaveAction&#39;
+                          AND bohi_changes.user_sign NOT IN (&#39;MIGRUSR&#39;, &#39;RAMAX_AC&#39;, &#39;AMOS_SRV&#39;)
+                          AND bohi_changes.changes LIKE (&#39;%&lt;transactionType&gt;UPDATE&lt;/transactionType&gt;%&#39;)
+                          AND bohi_changes.changes LIKE (&#39;%&lt;name&gt;address_issue&lt;/name&gt;%&#39;)                
+                          AND bohi_changes.versionno_i in (
+                            SELECT bohi_version.versionno_i
+                            FROM bohi_version
+                            WHERE 1=1
+                              AND bohi_version.primkey = od_header.orderno_i
+                              AND bohi_version.mime_type = &#39;ORDER&#39;  
+                            )  
+                        ), 
+                    0)
+                ),
+                od_header.mutation + od_header.mutation_time / 24 / 60 / 60 / 1000) as last_mutation_date, /* Last mutation date and time */
+            od_header.ext_state,
+            od_header.order_type,
+            od_header.vendor
+        FROM od_header 
+        WHERE 1=1
+          AND (to_date(&#39;31.12.1971&#39;,&#39;DD.MM.YYYY&#39;) + od_header.mutation) &gt; trunc(sysdate-7)
+          AND od_header.mutator NOT IN (&#39;MIGRUSR&#39;, &#39;RAMAX_AC&#39;, &#39;AMOS_SRV&#39;)
+          AND od_header.vendor NOT IN (&#39;CLOSED&#39;, &#39;TECH_V&#39;, &#39;DUZD_TECH&#39;, &#39;DUZD_WSP&#39;) 
+          AND (
+              od_header.order_type IN (&#39;P&#39;, &#39;PX&#39;, &#39;PR&#39;, &#39;PU&#39;, &#39;L&#39;, &#39;LU&#39;, &#39;Y&#39;, &#39;YU&#39;, &#39;R&#39;, &#39;X&#39;, &#39;RC&#39;, &#39;RU&#39;, &#39;CP&#39;, &#39;CU&#39;) 
+                  AND (
+                      od_header.state = &#39;O&#39; AND od_header.ext_state in (&#39;O&#39;, &#39;BO&#39;)
+                          OR
+                      od_header.state = &#39;C&#39; AND od_header.ext_state = &#39;B&#39;
+                      )
+                  OR  od_header.order_type = &#39;T&#39; 
+                          AND od_header.state = &#39;O&#39; 
+                          AND od_header.ext_state in (&#39;B&#39;, &#39;BO&#39;)
+                  OR od_header.order_type = &#39;D&#39;
+              )
+        ) ord
+        LEFT JOIN (
+                    /* Transfer history */
+            SELECT hist.source_key,
+                   MAX(to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + hist.mutation + hist.mutation_time / 24 / 60 / 60 / 1000) last_mutation_date_time  /* Last date of transfer for source_key */
+            FROM aim_transfer_history hist
+            WHERE 1=1
+              AND hist.success = &#39;Y&#39;
+              AND hist.source_type = &#39;ORDER&#39;
+              AND hist.service = &#39;TRANSFER_ORDER&#39;
+              AND hist.source_key is not null
+              AND (hist.aim_configno_i = &#39;6&#39;)
+            GROUP BY hist.source_key
+            ) hist ON ord.orderno = hist.source_key
+WHERE 1=1
+  AND ord.last_mutation_date &gt; TRUNC(sysdate - 7)
+  AND ( 
+      ord.last_mutation_date &gt; hist.last_mutation_date_time AND ord.ext_state = &#39;O&#39; /* Changed orders (been already loaded) */
+      OR
+      hist.source_key is null AND ord.ext_state in (&#39;B&#39;, &#39;O&#39;, &#39;BO&#39;) /* New Orders (never been loaded) */
+      ) 
+
+
+;
+
+
+/* корректировка 14.04.2025 */
+
+
+SELECT ord.orderno_i, ord.orderno
+FROM ( 
+             /* Specified orders in state &quot;open&quot; or draft orders (T) */
+             SELECT od_header.orderno_i, 
+                           od_header.orderno,         
+                           to_date(`31.12.1971`, `dd.mm.yyyy`) + NVL(
+                                                                                                      GREATEST(
+                                                                                                                          (/* get last od_detail change */
+                                                                                                                           SELECT MAX(od_detail.mutation + od_detail.mutation_time / 24 / 60 / 60 / 1000)
+                                                                                                                           FROM od_detail 
+                                                                                                                           WHERE 1=1
+                                                                                                                                          AND od_detail.orderno_i = od_header.orderno_i
+                                                                                                                                          AND od_detail.mutator NOT IN (`MIGRUSR`, `RAMAX_AC`, `AMOS_SRV`)
+                                                                                                                         ),
+                                                                                                                         NVL(
+                                                                                                                                  (/* get last &quot;issued by address&quot; change - the only field in od_header that needs to be checked*/
+                                                                                                                                   SELECT MAX(bohi_changes.changes_date + bohi_changes.changes_time / 24 / 60) as address_issue_last_change_date
+                                                                                                                                   FROM bohi_changes
+                                                                                                                                   WHERE 1=1
+                                                                                                                                                  AND bohi_changes.action = `Saved from OrderSaveAction`
+                                                                                                                                                  AND bohi_changes.user_sign NOT IN (`MIGRUSR`, `RAMAX_AC`, `AMOS_SRV`)
+                                                                                                                                                  AND bohi_changes.changes LIKE (`%&lt;transactionType&gt;UPDATE&lt;/transactionType&gt;%`)
+                                                                                                                                                  AND bohi_changes.changes LIKE (`%&lt;name&gt;address_issue&lt;/name&gt;%`)                
+                                                                                                                                                  AND bohi_changes.versionno_i in (
+                                                                                                                                                                                                                SELECT bohi_version.versionno_i
+                                                                                                                                                                                                                FROM bohi_version
+                                                                                                                                                                                                                WHERE 1=1
+                                                                                                                                                                                                                               AND bohi_version.primkey = od_header.orderno_i
+                                                                                                                                                                                                                               AND bohi_version.mime_type = `ORDER`  
+                                                                                                                                                                                                               )  
+                                                                                                                                  ), 0)
+                                                                                                    ),
+                                                                                                      od_header.mutation + od_header.mutation_time / 24 / 60 / 60 / 1000) as last_mutation_date, /* Last mutation date and time */
+                           od_header.ext_state,
+                           od_header.order_type,
+                           od_header.vendor
+             FROM od_header 
+             WHERE 1=1
+                           AND (to_date(`31.12.1971`,`DD.MM.YYYY`) + od_header.mutation) &gt; trunc(sysdate-7)
+                           AND od_header.mutator NOT IN (`MIGRUSR`, `RAMAX_AC`, `AMOS_SRV`)
+                           AND od_header.vendor NOT IN (`CLOSED`, `TECH_V`, `DUZD_TECH`, `DUZD_WSP`) 
+                           AND (
+                                     od_header.order_type IN (`P`, `PX`, `PR`, `PU`, `L`, `LU`, `Y`, `YU`, `R`, `X`, `RC`, `RU`, `CP`, `CU`) 
+                                     AND (
+                                               od_header.state = `O` AND od_header.ext_state in (`O`, `BO`)
+                                               OR
+                                               od_header.state = `C` AND od_header.ext_state = `B`
+                                              )
+                                     OR  od_header.order_type = `T` 
+                                            AND od_header.state = `O` 
+                                            AND od_header.ext_state in (`B`, `BO`)
+                                     OR od_header.order_type = `D`
+                                   )
+             ) ord
+LEFT JOIN (
+                    /* Transfer history */
+                    SELECT hist.source_key,
+                                  MAX(to_date(`31.12.1971`, `dd.mm.yyyy`) + hist.mutation + hist.mutation_time / 24 / 60 / 60 / 1000) last_mutation_date_time  /* Last date of transfer for source_key */
+                    FROM aim_transfer_history hist
+                    WHERE 1=1
+                                  AND hist.success = `Y`
+                                  AND hist.source_type = `ORDER`
+                                  AND hist.service = `TRANSFER_ORDER`
+                                  AND hist.source_key is not null
+                                  AND (hist.aim_configno_i = `6`)
+                    GROUP BY hist.source_key
+                   ) hist ON ord.orderno = hist.source_key
+WHERE 1=1
+               AND ord.last_mutation_date &gt; TRUNC(sysdate - 7)
+               AND ( 
+                         ord.last_mutation_date &gt; hist.last_mutation_date_time AND ord.ext_state = `O` /* Changed orders (been already loaded) */
+                         OR
+                         hist.source_key is null AND ord.ext_state in (`B`, `O`, `BO`) /* New Orders (never been loaded) */
+                       ) </pre>
+</div></div></li></ul></div></div></div><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка Transport в APN 1404</p><div class="confluence-information-macro-body"><div class="content-wrapper"><ul><li>В Configuration Detail выбираем подвкладку <em><strong>transport</strong></em> и в главном окне заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263694/143132035.png" data-image-src="attachments/136263694/143132035.png" data-unresolved-comment-count="0" data-linked-resource-id="143132035" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-49-22.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263694" data-linked-resource-container-version="15"></span></li></ul></div></div></div></div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div id="expander-309405136" class="expand-container"><div id="expander-control-309405136" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">INTEGR_LC</span></div><div id="expander-content-309405136" class="expand-content"><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">В APN 1404 Main&amp;Traceability</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><ul><li>На вкладке <em><strong>MAIN</strong> </em>необходимо заполнить в соответсвии со скриншотом ниже:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263694/143132043.png" data-image-src="attachments/136263694/143132043.png" data-unresolved-comment-count="0" data-linked-resource-id="143132043" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-58-52.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263694" data-linked-resource-container-version="15"></span></li></ul><ul><li>На вкладке <em><strong>Traceability</strong></em> настроить в соответсвии со скриншотом ниже:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263694/143132044.png" data-image-src="attachments/136263694/143132044.png" data-unresolved-comment-count="0" data-linked-resource-id="143132044" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-59-13.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263694" data-linked-resource-container-version="15"></span></li></ul></div></div><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка селектора в APN 1404</p><div class="confluence-information-macro-body"><div class="content-wrapper"><ul><li class="auto-cursor-target">В Configuration Detail выбираем подвкладку <strong><em>selector</em></strong> и в окне <strong><em>Export Selector</em></strong> заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="250" src="attachments/136263694/143132045.png" data-image-src="attachments/136263694/143132045.png" data-unresolved-comment-count="0" data-linked-resource-id="143132045" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_18-59-49.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263694" data-linked-resource-container-version="15"></span></li><li class="auto-cursor-target"><p class="auto-cursor-target"><span>Ниже представлен </span><em><strong>SQL запрос</strong></em><span> для указания в </span><em><strong>Selector Options</strong></em><span>:<br/></span></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">select 
+    ord.orderno
+from /* Specified orders in state &quot;open&quot; or draft orders (T) */
+       (
+       select 
+           hr.orderno_i,
+           mutator,
+           hr.orderno,
+           internal_repair,
+           /* Last mutation date and time */
+           to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + nvl((select max(dl.mutation + dl.mutation_time / 24 / 60 / 60 / 1000) from od_detail dl where dl.orderno_i = hr.orderno_i), hr.mutation + hr.mutation_time / 24 / 60 / 60 / 1000) last_mutation_date,
+           hr.ext_state,
+           hr.order_type,
+           hr.vendor
+       from od_header hr
+       where hr.order_type in (&#39;P&#39;, &#39;PX&#39;, &#39;PR&#39;, &#39;PU&#39;, &#39;L&#39;, &#39;LU&#39;, &#39;Y&#39;, &#39;YU&#39;, &#39;R&#39;, &#39;X&#39;)) ord
+           left join /* Transfer history */(
+           select 
+               hist.source_key,
+               /* Last date of transfer for source_key */
+               max(to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) + hist.mutation +
+                   hist.mutation_time / 24 / 60 / 60 / 1000) last_mutation_date_time
+           from aim_transfer_history hist
+           where hist.success = &#39;Y&#39;
+             and hist.source_type = &#39;ORDER&#39;
+             and hist.service = &#39;TRANSFER_ORDER&#39;
+             and hist.source_key is not null
+             and hist.aim_configno_i = &#39;809&#39;
+           group by hist.source_key
+           ) hist on ord.orderno = hist.source_key
+where /* Changed orders (been already loaded)*/
+    (
+        ord.last_mutation_date &gt; hist.last_mutation_date_time 
+            OR  
+        hist.source_key is null
+        ) 
+  and ord.last_mutation_date &gt; to_date(&#39;01.09.2020&#39;, &#39;dd.mm.yyyy&#39;) 
+  AND ord.internal_repair = &#39;N&#39;
+  AND ord.mutator &lt;&gt; &#39;MIGRUSR&#39; 
+  and ord.mutator &lt;&gt; &#39;RAMAX_AC&#39; 
+  and ord.mutator &lt;&gt; &#39;AMOS_SRV&#39; 
+  and ord.mutator &lt;&gt; &#39;ADMINRMX&#39; 
+  AND ord.vendor != &#39;TECH_V&#39; 
+  AND ord.vendor &lt;&gt; &#39;CLOSED&#39; 
+  AND ord.vendor != &#39;OPEN&#39; 
+  AND ord.ext_state &lt;&gt; &#39;PR&#39; 
+  AND ord.ext_state &lt;&gt; &#39;R&#39;
+  AND ord.vendor IS NOT NULL 
+  and ascii(ord.vendor) &lt;&gt; 49824
+  AND ord.vendor &lt;&gt; &#39;CMD_ATEC&#39; 
+  AND ord.vendor &lt;&gt; &#39;CMD_BRS&#39; 
+  AND ord.vendor &lt;&gt; &#39;CMD_BS&#39; 
+  AND ord.vendor &lt;&gt; &#39;C&amp;NES&#39; 
+  AND ord.vendor &lt;&gt; &#39;CMD_EES&#39;
+  AND ord.vendor &lt;&gt; &#39;CMD_EPES&#39; 
+  AND ord.vendor &lt;&gt; &#39;CMD_FS&#39; 
+  AND ord.vendor &lt;&gt; &#39;GES&#39; 
+  AND ord.vendor &lt;&gt; &#39;CMD_OEES&#39; 
+  AND ord.vendor &lt;&gt; &#39;CMD_WS&#39;
+  AND ord.vendor &lt;&gt; &#39;FIPS&#39; 
+  AND ord.vendor &lt;&gt; &#39;SRS&#39; 
+  AND ord.vendor &lt;&gt; &#39;SRT-S7_CH317&#39;</pre>
+</div></div><p class="auto-cursor-target"><span><br/></span></p></li></ul></div></div></div><div class="confluence-information-macro has-no-icon confluence-information-macro-tip"><p class="title">Настройка Transport в APN 1404</p><div class="confluence-information-macro-body"><ul><li>В Configuration Detail выбираем подвкладку <em><strong>transport</strong></em> и в главном окне заполнить данные:<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="400" src="attachments/136263694/143132046.png" data-image-src="attachments/136263694/143132046.png" data-unresolved-comment-count="0" data-linked-resource-id="143132046" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2023-7-28_19-4-58.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="136263694" data-linked-resource-container-version="15"></span></li></ul></div></div></div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/136263873.png">image2023-5-2_17-46-47.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/136263874.png">image2023-5-2_17-47-12.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/136263875.png">image2023-5-2_17-48-35.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/136263876.png">image2023-5-2_17-49-31.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/136263879.png">image2023-5-2_18-24-55.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/136263880.png">image2023-5-2_18-25-21.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/136263881.png">image2023-5-2_18-26-24.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/136263882.png">image2023-5-2_18-27-11.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/143132035.png">image2023-7-28_18-49-22.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/143132036.png">image2023-7-28_18-49-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/143132041.png">image2023-7-28_18-57-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/143132042.png">image2023-7-28_18-58-4.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/143132043.png">image2023-7-28_18-58-52.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/143132044.png">image2023-7-28_18-59-13.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/143132045.png">image2023-7-28_18-59-49.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/136263694/143132046.png">image2023-7-28_19-4-58.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:07</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

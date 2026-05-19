@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : SQL запросы</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="101359032.html">Интеграция AMOS/SAP</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : SQL запросы
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on сент. 29, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Получение historyno_i для выгрузки документов</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    history.partno
+    ,history.serialno
+    ,history.batchno
+    ,history.historyno_i
+    ,history.vm
+FROM history
+WHERE history.voucherno = &#39;@VAR.voucherno@&#39;</pre>
+</div></div><p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>Получение recdetailno_i для прописывания мэппинга</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT 
+    history.partno
+    ,history.batchno
+    ,history.recdetailno_i
+FROM history
+WHERE history.voucherno = &#39;@VAR.voucherno@&#39;</pre>
+</div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>SQL запрос для переноса локаций</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    location.station AS STATION,
+    location.store AS STORE,
+    location.location AS LOCATION,
+    CASE WHEN location.location_restriction=0 THEN &#39;S&#39;
+        WHEN location.location_restriction=1 THEN &#39;R&#39;
+        ELSE &#39;I&#39; END AS RESTRICTION,
+    location.description,
+    location.location_type AS LOC_TYPE,
+    location.location_storage_type AS LOCATION_STORAGE_TYPE,
+    location.owner AS OWNER,
+    location.max_pn_qty AS MAX_PN_QTY,
+    &#39;&#39; as BASKET_PROP,
+    &#39;&#39; as DROPOFF_PROP,
+    location.text AS TEXT
+FROM location
+WHERE location.station = &#39;@VAR.STATION@&#39;
+    AND location.store = &#39;@VAR.STORE@&#39;
+</pre>
+</div></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>SQL запрос для переноса парт линков </b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    part_location.partno AS PARTNO,
+    location.station AS STATION,
+    location.store AS STORE,
+    location.location AS LOCATION,
+    part_location.is_main AS IS_MAIN,
+    CASE WHEN location.location_restriction=0 THEN &#39;S&#39;
+         WHEN location.location_restriction=1 THEN &#39;R&#39;
+         ELSE &#39;I&#39; END AS RESTRICTION,
+    location.description AS DESCRIPTION,
+    part_location.max_qty AS MAX_QTY
+FROM part_location
+LEFT JOIN location ON part_location.locationno_i=location.locationno_i
+WHERE location.station = &#39;@VAR.STATION@&#39;
+ AND location.store = &#39;@VAR.STORE@&#39;</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

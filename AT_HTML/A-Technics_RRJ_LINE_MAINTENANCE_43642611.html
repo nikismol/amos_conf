@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : A-Technics_RRJ_LINE_MAINTENANCE</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : A-Technics_RRJ_LINE_MAINTENANCE
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified on авг. 22, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-left-sidebar" data-layout="two-left-sidebar">
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-information"><span class="aui-icon aui-icon-small aui-iconfont-info confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Результат запроса возвращает список TQs, обработанных специалистами RAMAX за период с 1 по 22 число</p></div></div></div>
+</div>
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;">
+ <div class="codeHeader panelHeader pdl hide-border-bottom">
+  <b class="code-title"></b>
+  <span class="collapse-source expand-control" style="display:none;"><span class="expand-control-icon icon">&nbsp;</span><span class="expand-control-text">Развернуть исходный код</span></span>
+  <span class="collapse-spinner-wrapper"></span>
+ </div>
+ <div class="codeContent panelContent pdl hide-toolbar"> 
+  <pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: false; theme: Confluence; collapse: true" data-theme="Confluence">SELECT
+wpno
+, description
+,wp_status
+,ac_typ
+,ac_registr
+,planned_start_date
+,planned_start_time
+,planned_end_date
+,planned_end_time
+,actual_start_date
+,actual_start_time
+,actual_end_date
+,actual_end_time
+,station
+,event_No
+,event_name
+FROM (
+             SELECT *
+             FROM (
+                          SELECT 2 as head,
+                                         wp_header.wpno,
+                                         wp_header.description,
+                                         DECODE (
+                                                           wp_header.wp_status,
+                                                           '-3', 'In Progress',
+                                                           '-2', 'Closed',
+                                                           '-1', 'Open',
+                                                           wp_header.wp_status
+                                                          ) as wp_status,
+                                         aircraft.ac_typ,
+                                         aircraft.ac_registr,
+                                         TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wp_header.start_date+729), 'DD.MM.YYYY') as planned_start_date,
+                                         TO_CHAR(TO_DATE(wp_header.start_time*60,'sssss'),'hh24:mi') as planned_start_time,
+                                         TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wp_header.end_date+729), 'DD.MM.YYYY') as planned_end_date,
+                                         TO_CHAR(TO_DATE(wp_header.end_time*60,'sssss'),'hh24:mi') as planned_end_time,
+                                         TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wp_header.act_start_date+729), 'DD.MM.YYYY') as actual_start_date,
+                                         TO_CHAR(TO_DATE(wp_header.act_start_time*60,'sssss'),'hh24:mi') as actual_start_time,
+                                         TO_CHAR(TO_DATE('01.01.1970', 'DD.MM.YYYY') + (wp_header.act_end_date+729), 'DD.MM.YYYY') as actual_end_date,
+                                         TO_CHAR(TO_DATE(wp_header.act_end_time*60,'sssss'),'hh24:mi') as actual_end_time,
+                                         wp_header.station,
+                                         TO_CHAR(wo_header.event_perfno_i) as event_No,
+                                         NVL(wo_event_link.event_display, wo_text_description.header) as event_name
+                          FROM wp_header
+                          LEFT JOIN aircraft ON aircraft.ac_registr = wp_header.ac_registr
+                          LEFT JOIN wp_assignment ON wp_header.wpno_i=wp_assignment.wpno_i
+                          LEFT JOIN wo_event_link ON wp_assignment.event_perfno_i=wo_event_link.event_perfno_i
+                          LEFT JOIN wo_header ON wo_header.event_perfno_i = wp_assignment.event_perfno_i
+                          LEFT JOIN check_type_int ON wo_event_link.event_key_parent=check_type_int.check_intno_i
+                          LEFT JOIN workstep_link ON wp_assignment.event_perfno_i = workstep_link.event_perfno_i AND workstep_link.sequenceno = 1
+                          LEFT JOIN wo_text_description ON workstep_link.descno_i = wo_text_description.descno_i
+                          WHERE wp_header.maintprov_address='0011026298'
+                                         AND aircraft.ac_typ='RRJ'
+                                         AND (
+                                                    wp_header.start_date=(TRUNC(SYSDATE) - TO_DATE('31.12.1971', 'dd.mm.yyyy') -1)
+                                                    OR wp_header.end_date=(TRUNC(SYSDATE) - TO_DATE('31.12.1971', 'dd.mm.yyyy') -1)
+                                                    OR wp_header.act_start_date=(TRUNC(SYSDATE) - TO_DATE('31.12.1971', 'dd.mm.yyyy') -1)
+                                                    OR wp_header.act_end_date=(TRUNC(SYSDATE) - TO_DATE('31.12.1971', 'dd.mm.yyyy') -1)
+                                                   )
+                                         AND (
+                                                    REGEXP_LIKE (wp_header.description, '^DY|\+DY|\sDY|\,DY', 'i')
+                                                    OR REGEXP_LIKE (wp_header.description, '^W|\+W|\sW|\,W', 'i')
+                                                   OR REGEXP_LIKE (wp_header.description, '^T|\+T|\sT|\,T', 'i')
+                                                    OR wo_header.event_type = 'C' AND check_type_int.internal_check IN ('DAILY', 'WEEKLY')
+                                                    OR wo_header.event_type = 'Q' AND wo_event_link.event_name='R95-05-0001'
+                                                   )
+                          ORDER BY 1, event_No
+                         )
+
+             UNION ALL 
+
+             SELECT 1 as head,
+                           'wpno',
+                           'description',
+                           'wp_status',
+                           'ac_typ',
+                           'ac_registr',
+                           'planned_start_date',
+                           'planned_start_time',
+                           'planned_end_date',
+                           'planned_end_time',
+                           'actual_start_date',
+                           'actual_start_time',
+                           'actual_end_date',
+                           'actual_end_time',
+                           'station',
+                           'evnet_No',
+                           'event_name'
+             FROM DUAL
+             ORDER BY 1
+            )</pre> 
+ </div>
+</div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

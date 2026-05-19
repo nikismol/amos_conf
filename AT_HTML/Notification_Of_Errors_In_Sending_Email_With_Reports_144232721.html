@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Notification_Of_Errors_In_Sending_Email_With_Reports</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Notification_Of_Errors_In_Sending_Email_With_Reports
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+   to_char(workflow_rule.workflowno_i) AS workflowno,
+   to_char(workflow_rule.rule_name) AS rule_name,
+   to_char(workflow_log_message.message_description) AS message_description,
+   to_char(workflow_log_message.error_message) AS error_message,
+   to_char(workflow_log_action.properties) AS properties
+FROM workflow_rule
+LEFT JOIN workflow_log_rule ON workflow_rule.RULENO_I=workflow_log_rule.workflow_rule_id
+LEFT JOIN workflow_log_message ON workflow_log_rule.workflow_rule_log_id=workflow_log_message.workflow_log_rule
+LEFT JOIN workflow_log_action ON workflow_log_rule.workflow_rule_log_id=workflow_log_action.workflow_log_action_id
+WHERE workflow_rule.workflowno_i = 12
+  AND workflow_rule.rule_name=&#39;MELReport_emailer_2&#39;
+  AND workflow_log_message.workflow_log_message_id IS NOT NULL
+  AND workflow_log_rule.date_executed = (TRUNC(sysdate) - TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;))
+  AND (
+      workflow_log_rule.date_executed &gt;= ((TO_NUMBER(TO_CHAR(sysdate, &#39;HH24&#39;)) * 60) + TO_NUMBER(TO_CHAR(sysdate, &#39;MI&#39;))-10)
+          AND
+      workflow_log_rule.date_executed &lt;= ((TO_NUMBER(TO_CHAR(sysdate, &#39;HH24&#39;)) * 60) + TO_NUMBER(TO_CHAR(sysdate, &#39;MI&#39;)))
+      )
+UNION
+SELECT
+    &#39;EXP_CHK_OK&#39;,
+    null,
+    null,
+    null,
+    null
+FROM dual
+WHERE (
+    SELECT count(1)
+    FROM workflow_rule
+    LEFT JOIN workflow_log_rule ON workflow_rule.RULENO_I=workflow_log_rule.workflow_rule_id
+    LEFT JOIN workflow_log_message ON workflow_log_rule.workflow_rule_log_id=workflow_log_message.workflow_log_rule
+    LEFT JOIN workflow_log_action ON workflow_log_rule.workflow_rule_log_id=workflow_log_action.workflow_log_action_id
+    WHERE workflow_rule.workflowno_i = 12
+      AND workflow_rule.rule_name=&#39;MELReport_emailer_2&#39;
+      AND workflow_log_message.workflow_log_message_id IS NOT NULL
+      AND workflow_log_rule.date_executed = (TRUNC(sysdate) - TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;))
+      AND (
+          workflow_log_rule.date_executed &gt;= ((TO_NUMBER(TO_CHAR(sysdate, &#39;HH24&#39;)) * 60) + TO_NUMBER(TO_CHAR(sysdate, &#39;MI&#39;))-10)
+              AND
+          workflow_log_rule.date_executed &lt;= ((TO_NUMBER(TO_CHAR(sysdate, &#39;HH24&#39;)) * 60) + TO_NUMBER(TO_CHAR(sysdate, &#39;MI&#39;)))
+        )
+    )=&#39;0&#39;</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

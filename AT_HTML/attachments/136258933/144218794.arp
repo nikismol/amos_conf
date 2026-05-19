@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000419</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="280708">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="ClonerReportView" id="280709">
+      <attribute name="name">Cloner_2</attribute>
+      <attribute name="position">-20 22</attribute>
+      <attribute name="size">1051 155</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">WO_PR_Worksteps_MAIN</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+    </view>
+    <view class="DatasourceTableView" id="280710">
+      <attribute name="name">DatasourceTable_3</attribute>
+      <attribute name="position">0 22</attribute>
+      <attribute name="size">1000 70</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="header-height">32</attribute>
+      <attribute name="row-height">16</attribute>
+      <attribute name="column-resize">LAST</attribute>
+      <attribute name="repeat-header">NO</attribute>
+      <attribute name="minimum-rows">0</attribute>
+      <column_model class="TableViewColumnModel">
+        <column class="TableViewColumn" id="COL1">
+          <attribute name="width">65</attribute>
+          <view class="LabelReportView" id="280713" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">65 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Workstep Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="280714" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">65 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text"/>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@WO_PR_Workstep_detail.rn@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_PR_Workstep_detail.ws_date@ @WO_PR_Workstep_detail.ws_time@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="COL2">
+          <attribute name="width">150</attribute>
+          <view class="LabelReportView" id="280717" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">150 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Workstep @WO_PR_Workstep_detail.sequenceno@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="280718" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">150 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text"/>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@WO_PR_Workstep_detail.rn@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_PR_Workstep_detail.ws_text@ @WO_PR_Workstep_detail.ws_text_html@
+Description Sign @WO_PR_Workstep_detail.workstep_sign@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">65</attribute>
+          <view class="LabelReportView" id="280721" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">65 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Action Date</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="280722" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">65 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_PR_Workstep_detail.action_date@ @WO_PR_Workstep_detail.action_time@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">150</attribute>
+          <view class="LabelReportView" id="280725" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">150 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Action Text</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="280726" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">150 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_PR_Workstep_detail.action_text@
+@WO_PR_Workstep_detail.perf_sign@
+@WO_PR_Workstep_detail.insp_sign@
+@WO_PR_Workstep_detail.di_sign@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">60</attribute>
+          <view class="LabelReportView" id="280729" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Remarks</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="280730" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">60 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">AS_IS</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">400</attribute>
+          <view class="LabelReportView" id="280733" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">400 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Part Request</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="280734" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">400 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes>
+              <conditional_attribute id="1">
+                <attribute name="text"/>
+                <conditions>
+                  <condition class="GenericStyleCondition">
+                    <field id="1">@WO_PR_Workstep_detail.rn@</field>
+                    <field id="2">1</field>
+                    <operator negated="NO">IS_BIGGER</operator>
+                  </condition>
+                </conditions>
+              </conditional_attribute>
+            </conditional_attributes>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_PR_Workstep_detail.part_req_info@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+        <column class="TableViewColumn" id="">
+          <attribute name="width">110</attribute>
+          <view class="LabelReportView" id="280737" usage="header">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 32</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">NO</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="background-color">C0C0C0</attribute>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">0 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">Label Booking</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif BOLD 12</attribute>
+            <attribute name="text-align">CENTER</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+          <view class="LabelReportView" id="280738" usage="cell">
+            <attribute name="position">0 0</attribute>
+            <attribute name="size">110 16</attribute>
+            <attribute name="visible">YES</attribute>
+            <attribute name="auto-resize">YES</attribute>
+            <attribute name="rotation">0.0</attribute>
+            <conditional_attributes/>
+            <attribute name="color">000000</attribute>
+            <attribute name="margin">0 0 0 0</attribute>
+            <attribute name="padding">2 0 0 0</attribute>
+            <attribute name="border">1 SOLID 000000</attribute>
+            <attribute name="text">@WO_PR_Workstep_detail.comp_change@</attribute>
+            <attribute name="text-decoration">NONE</attribute>
+            <attribute name="font">SansSerif PLAIN 10</attribute>
+            <attribute name="text-align">LEFT</attribute>
+            <attribute name="line-break">WORD</attribute>
+            <attribute name="splitable">NO</attribute>
+            <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+            <attribute name="antialias">false</attribute>
+          </view>
+        </column>
+      </column_model>
+      <attribute name="data-source">WO_PR_Workstep_detail</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>280709</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>20</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="280739">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 22</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Workorder @VAR.v01_wo@ Progress Report (@DATE@ @TIME@ AMOS SERVER:@AMOS_SERVER@  PORT:@AMOS_PORT@)</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 12</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="WO" description="" id="v01_wo"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="01. Workorder" id="v01_wo">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="WO_PR_Worksteps_MAIN" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i as event_perfno_i" id="event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="workstep_link.workstep_linkno_i as workstep_linkno_i" id="workstep_linkno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('31.12.1971' 'DD.MM.YYYY') + (workstep_link.workstep_date)'DD.MM.YYYY') as ws_date" id="ws_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(trunc(sysdate) + workstep_link.workstep_time/24/60'hh24:mi') as ws_time" id="ws_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="workstep_link.sequenceno as sequenceno" id="sequenceno"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v01_wo@">
+          <ds:object>@VAR.v01_wo@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT  wo_header.event_perfno_i as event_perfno_i
+              ,workstep_link.workstep_linkno_i as workstep_linkno_i
+              ,TO_CHAR(TO_DATE('31.12.1971', 'DD.MM.YYYY') + (workstep_link.workstep_date), 'DD.MM.YYYY') as ws_date
+              ,TO_CHAR(trunc(sysdate) + workstep_link.workstep_time/24/60, 'hh24:mi') as ws_time
+              ,workstep_link.sequenceno as sequenceno
+FROM wo_header
+JOIN workstep_link ON wo_header.event_perfno_i = workstep_link.event_perfno_i
+WHERE wo_header.event_perfno_i = @VAR.v01_wo@
+ORDER BY sequenceno</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="WO_PR_Workstep_detail" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="rownum as rn" id="rn"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('31.12.1971' 'DD.MM.YYYY') + (workstep_link.workstep_date)'DD.MM.YYYY') as ws_date" id="ws_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(trunc(sysdate) + workstep_link.workstep_time/24/60'hh24:mi') as ws_time" id="ws_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="workstep_link.sequenceno as sequenceno" id="sequenceno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_description.text as ws_text" id="ws_text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_description.text_html as ws_text_html" id="ws_text_html"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="workstep_link.workstep_sign as workstep_sign" id="workstep_sign"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(TO_DATE('31.12.1971' 'DD.MM.YYYY') + (wo_text_action.action_date)'DD.MM.YYYY') as action_date" id="action_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(trunc(sysdate) + wo_text_action.action_time/24/60'hh24:mi') as action_time" id="action_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_action.text as action_text" id="action_text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_action.actionno_i" id="wo_text_action.actionno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DECODE(wo_text_action.sign_performed NULL NULL'Performed Sign: '||wo_text_action.sign_performed) as perf_sign" id="perf_sign"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DECODE(wo_text_action.sign_inspected NULL NULL'Inspection Sign: '||wo_text_action.sign_inspected) as insp_sign" id="insp_sign"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DECODE(wo_text_action.sign_double_inspected NULL NULL'Independent Inspection (DI): '||wo_text_action.sign_double_inspected) as di_sign" id="di_sign"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="part_req.part_req_info as part_req_info" id="part_req_info"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ch.comp_change as comp_change" id="comp_change"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@WO_PR_Worksteps_MAIN.event_perfno_i@">
+          <ds:object>@WO_PR_Worksteps_MAIN.event_perfno_i@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@WO_PR_Worksteps_MAIN.workstep_linkno_i@">
+          <ds:object>@WO_PR_Worksteps_MAIN.workstep_linkno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT  row_number () over (order by wo_text_action.actionno_i) as rn
+                ,TO_CHAR(TO_DATE('31.12.1971', 'DD.MM.YYYY') + (workstep_link.workstep_date), 'DD.MM.YYYY') as ws_date
+                ,TO_CHAR(trunc(sysdate) + workstep_link.workstep_time/24/60, 'hh24:mi') as ws_time
+                ,workstep_link.sequenceno as sequenceno
+                ,wo_text_description.text as ws_text
+                ,wo_text_description.text_html as ws_text_html
+                ,workstep_link.workstep_sign as workstep_sign
+                ,TO_CHAR(TO_DATE('31.12.1971', 'DD.MM.YYYY') + (wo_text_action.action_date), 'DD.MM.YYYY') as action_date
+                ,TO_CHAR(trunc(sysdate) + wo_text_action.action_time/24/60, 'hh24:mi') as action_time
+                ,wo_text_action.text as action_text
+                ,wo_text_action.actionno_i
+                ,DECODE(wo_text_action.sign_performed, NULL, NULL, 'Performed Sign: '||wo_text_action.sign_performed) as perf_sign
+                ,DECODE(wo_text_action.sign_inspected, NULL, NULL, 'Inspection Sign: '||wo_text_action.sign_inspected) as insp_sign
+                ,DECODE(wo_text_action.sign_double_inspected, NULL, NULL, 'Independent Inspection (DI): '||wo_text_action.sign_double_inspected) as di_sign
+                ,part_req.part_req_info as part_req_info
+                ,ch.comp_change as comp_change
+FROM workstep_link
+JOIN wo_text_description ON workstep_link.descno_i = wo_text_description.descno_i
+LEFT JOIN wo_text_action ON workstep_link.workstep_linkno_i = wo_text_action.workstep_linkno_i
+LEFT JOIN (
+                    SELECT workstep_link.workstep_linkno_i,
+                                   LISTAGG(
+                                                    'PN: '
+                                                    ||part.partno
+                                                    ||' DESC: '
+                                                    ||CASE WHEN part.description IS NULL THEN '*** UNKNOWN PART ***' ELSE part.description END
+                                                    ||' QTY: '
+                                                    ||TO_CHAR(TRUNC(TO_NUMBER(part_request_2.qty), 2))
+                                                    ||' '
+                                                    ||part.measure_unit
+                                                    ||' ON_STOCK: '
+                                                    ||CASE WHEN part_request_2.status IN ('1', '2') THEN 'Closed'
+                                                                   WHEN part_request_2.status='3' THEN 'Suspended'
+                                                                   ELSE CASE WHEN planned_station IS NULL THEN TO_CHAR(TRUNC(TO_NUMBER(part_forecast.accessable_system_qty), 2))
+                                                                                        ELSE TO_CHAR(TRUNC(TO_NUMBER(part_forecast.accessable_station_qty), 2))
+                                                                             END
+                                                        END
+                                                     ||' FORECAST: '
+                                                     ||DECODE(part_forecast.status,
+                                                                           0, 'New',
+                                                                           1, 'Unavaliable',
+                                                                           2, 'Unavaliable',
+                                                                           3, 'Ordered',
+                                                                           4, 'Needs_Trensfer',
+                                                                           5, '-',
+                                                                           6, 'Avaliable',
+                                                                           7, 'Avaliable',
+                                                                           8, 'Externally_Provisioned',
+                                                                           '-'
+                                                                         ) 
+                                                     , ';'||CHR(10)
+                                                    ) WITHIN GROUP (ORDER BY part_request_2.part_requestno_i) as part_req_info
+                    FROM workstep_link
+                    JOIN part_request_2 ON workstep_link.workstep_linkno_i = part_request_2.event_key and part_request_2.event_type='WSL'
+                    LEFT JOIN part ON part_request_2.partno=part.partno
+                    LEFT JOIN part_forecast ON part_request_2.part_requestno_i=part_forecast.part_requestno_i
+                    WHERE 1=1
+                                   AND workstep_link.event_perfno_i = @WO_PR_Worksteps_MAIN.event_perfno_i@
+                    GROUP BY workstep_link.workstep_linkno_i
+                   ) part_req ON workstep_link.workstep_linkno_i=part_req.workstep_linkno_i
+LEFT JOIN (
+                    SELECT wo_part_on_off.actionno_i,
+                                   LISTAGG (
+                                                     DECODE(wo_part_on_off.partno,
+                                                                      NULL, NULL,
+                                                                      'ON:'
+                                                                     ||CHR(10)
+                                                                     ||'pn '
+                                                                     ||wo_part_on_off.partno
+                                                                     ||CHR(10)
+                                                                     ||'sn '
+                                                                     ||wo_part_on_off.serialno
+                                                                    )
+                                                     || DECODE(wo_part_on_off.partno,
+                                                                            NULL, NULL,
+                                                                            CHR(10)
+                                                                            ||'OFF:'
+                                                                            ||CHR(10)
+                                                                            ||'pn '
+                                                                            ||wo_part_on_off.partno_off
+                                                                            ||CHR(10)
+                                                                            ||'sn '
+                                                                            ||wo_part_on_off.serialno_off
+                                                                            )
+                                                     , ';'||CHR(10)||CHR(10)
+                                                    ) WITHIN GROUP (ORDER BY wo_part_on_off.partno) as comp_change
+                    FROM wo_part_on_off
+                    GROUP BY wo_part_on_off.actionno_i 
+                   ) ch ON ch.actionno_i=wo_text_action.actionno_i
+WHERE 1=1
+               AND workstep_link.event_perfno_i = @WO_PR_Worksteps_MAIN.event_perfno_i@
+               AND workstep_link.workstep_linkno_i = @WO_PR_Worksteps_MAIN.workstep_linkno_i@
+ORDER BY actionno_i</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

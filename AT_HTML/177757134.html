@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Таблица event_effectivity_mapping для документов</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Dev_177757128.html">AMOS Dev</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Таблица event_effectivity_mapping для документов
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on мая 04, 2025
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 class="auto-cursor-target" style="text-align: center;" id="id-Таблицаevent_effectivity_mappingдлядокументов-Структуратаблицы&quot;event_effectivity_mapping&quot;">Структура таблицы &quot;event_effectivity_mapping&quot;</h2><div class="table-wrap"><table class="relative-table wrapped confluenceTable" style="text-decoration: none;width: 70.09482%;"><colgroup><col style="width: 16.666668%;"/><col style="width: 21.5625%;"/><col style="width: 10.3125%;"/><col style="width: 51.458332%;"/><col/><col/></colgroup><tbody><tr><th style="text-align: center;" class="confluenceTh">Name</th><th style="text-align: center;" class="confluenceTh">Type</th><th style="text-align: center;" class="confluenceTh">MimeType</th><th style="text-align: center;" class="confluenceTh">Description</th><th colspan="1" class="confluenceTh">Комментарии</th><th colspan="1" class="confluenceTh">Примечание</th></tr><tr><td style="text-align: center;" class="confluenceTd">event_type</td><td style="text-align: center;" class="confluenceTd">varchar2(20)</td><td style="text-align: center;" class="confluenceTd">ALPHANUM</td><td style="text-align: center;" class="confluenceTd">Maintenance event type -<br/>@see forecast.event_type<br/>@see java enumeration EventTypes.</td><td colspan="1" class="confluenceTd">Указывается 'EFL'.</td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">event_key_parent</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">INT</td><td style="text-align: center;" class="confluenceTd">The parent/grouping key. For checks the checkno_i for documents the docno_i,...</td><td colspan="1" class="confluenceTd">Поле docno_i из таблицы doc_header</td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">affected</td><td style="text-align: center;" class="confluenceTd">varchar2(01)</td><td style="text-align: center;" class="confluenceTd">BOOL</td><td style="text-align: center;" class="confluenceTd">Defined if the entry is affected or not for the linked effectivity</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">needs_recalculation</td><td style="text-align: center;" class="confluenceTd">varchar2(01)</td><td style="text-align: center;" class="confluenceTd">BOOL</td><td style="text-align: center;" class="confluenceTd">Defines if this entry should be recalculated.</td><td colspan="1" class="confluenceTd"><ol><li>При изменении статуса из другой группы статусов(см таблицу ниже) проставляется флаг</li><li>При создании новой ревизии effectivity</li></ol></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">ac_registr</td><td style="text-align: center;" class="confluenceTd">varchar2(06)</td><td style="text-align: center;" class="confluenceTd">AC</td><td style="text-align: center;" class="confluenceTd">this field contains the Aircraft registration related to the mapping</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">aircraftno_i</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">AC_INT</td><td style="text-align: center;" class="confluenceTd">The internal aircraft number</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">psn</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">RO</td><td style="text-align: center;" class="confluenceTd">Unique identifier for a Rotable</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">event_status</td><td style="text-align: center;" class="confluenceTd">varchar2(01)</td><td style="text-align: center;" class="confluenceTd">ALPHANUM</td><td style="text-align: center;" class="confluenceTd">The status of the event calculated within the whole signoff-tree.</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><ol><li>Древо 1 (Проверяется по самому верхнему документу 2024-01-07-AMOC)<br/><strong><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="500" src="attachments/177757134/177759313.png" data-image-src="attachments/177757134/177759313.png" data-unresolved-comment-count="0" data-linked-resource-id="177759313" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2025-3-20_17-34-23.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="177757134" data-linked-resource-container-version="23"></span></strong><ol><li><strong><span style="font-weight: 400;letter-spacing: 0.0px;">Если не стоит галка </span><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="500" src="attachments/177757134/177759314.png" data-image-src="attachments/177757134/177759314.png" data-unresolved-comment-count="0" data-linked-resource-id="177759314" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2025-3-20_17-35-5.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="177757134" data-linked-resource-container-version="23"></span><br/></strong>в документах вышестоящих, то статус древа расчитывается по нижнему документу.<br/><br/>Если 20241220SII01 закрыт(close), то все дерево имеет close(автоматически закрывается. И присваивается CLOSE<br/><br/>После смены статуса проставляется значение 'Y' в поле event_status таблицы event_effectivity_mapping.<br/><br/><br/></li><li>Если в документе АФ-24-1474М-Ф12-01 стоит галка <span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="500" src="attachments/177757134/177759346.png" data-image-src="attachments/177757134/177759346.png" data-unresolved-comment-count="0" data-linked-resource-id="177759346" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2025-3-20_18-36-1.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="177757134" data-linked-resource-container-version="23"></span><br/>, но в документе 2024-01-07-AMOC нет ее, то статус древа будет расчитываться по статусу документа АФ-24-1474М-Ф12-01</li></ol></li><li>Древо 2<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" width="400" src="attachments/177757134/177759355.png" data-image-src="attachments/177757134/177759355.png" data-unresolved-comment-count="0" data-linked-resource-id="177759355" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2025-3-20_19-29-51.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="177757134" data-linked-resource-container-version="23"></span><br/><ol><li>ASB 737-34A3572 - для B737 имеет ReOpened(Open) и нижний ReOpened(Open)<br/>ASB 737-34A3573 - для B737 имеет статус NA нижний NA<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'O' - Open</li><li>ASB 737-34A3572 - для B737 имеет ReOpened(Open) и нижний ReOpened(Open)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижний Not Assign <br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет '!' - '-'</li><li>ASB 737-34A3572 - для B737 имеет ReOpened(Open) и нижний ReOpened(Open)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижний Open<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'O' - Open</li><li>ASB 737-34A3572 - для B737 имеет ReOpened(Open) и нижний ReOpened(Open)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижнему присваиваем Close<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'O' - Open<br/>ASB 737-34A3573 - меняет на 'C' - Close, несмотря на то, что для него не указан ВС в effectivity</li><li>ASB 737-34A3572 - для B737 имеет Close(Close) и нижний Close(Close)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижнему NA<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'C' - Close<br/>2025-02-07 - меняет на 'C' - Close</li><li>ASB 737-34A3572 - для B737 имеет Close(Close) и нижний Close(Close)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижний Not Assign<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет '!' - '-'</li><li>ASB 737-34A3572 - для B737 имеет Close(Close) и нижний Close(Close)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижний Open(Open)<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'O' - 'Open'</li></ol></li></ol></div></td><td colspan="1" class="confluenceTd">Таблица статусов ниже<br/><br/><em><span style="color: rgb(255,0,0);"><strong>Примечание 1. </strong>Если статус меняется с NA на Ext.Fact то значение 'Y' в поле event_status таблицы event_effectivity_mapping не прописывается.</span></em></td></tr><tr><td style="text-align: center;" class="confluenceTd">event_status_single</td><td style="text-align: center;" class="confluenceTd">varchar2(01)</td><td style="text-align: center;" class="confluenceTd">ALPHANUM</td><td style="text-align: center;" class="confluenceTd">The single status of the event.</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><ol><li>Древо 1<br/>Статус индентичен статусу выше(но надо дальше тестировать)</li><li>Древо 2<br/><span class="confluence-embedded-file-wrapper confluence-embedded-manual-size"><img class="confluence-embedded-image" height="241" src="attachments/177757134/177759356.png" data-image-src="attachments/177757134/177759356.png" data-unresolved-comment-count="0" data-linked-resource-id="177759356" data-linked-resource-version="1" data-linked-resource-type="attachment" data-linked-resource-default-alias="image2025-3-20_19-44-29.png" data-base-url="https://confluence.ramax.ru" data-linked-resource-content-type="image/png" data-linked-resource-container-id="177757134" data-linked-resource-container-version="23"></span><ol><li>ASB 737-34A3572 - для B737 имеет ReOpened(Open) и нижний ReOpened(Open)<br/>ASB 737-34A3573 - для B737 имеет статус NA нижний NA<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'N' - Not Applicable</li><li>ASB 737-34A3572 - для B737 имеет ReOpened(Open) и нижний ReOpened(Open)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижний Not Assign <br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет '-' - Not Assign </li><li>ASB 737-34A3572 - для B737 имеет ReOpened и нижний ReOpened<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижний Open<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'O' - Open</li><li>ASB 737-34A3572 - для B737 имеет ReOpened и нижний ReOpened<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижнему присваиваем Close<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'C' - Close<br/>ASB 737-34A3573 - меняет на 'C' - Close, несмотря на то, что для него не указан ВС в effectivity</li><li>ASB 737-34A3572 - для B737 имеет Close(Close) и нижний Close(Close)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижнему NA<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'N' - Not Applicable</li><li>ASB 737-34A3572 - для B737 имеет Close(Close) и нижний Close(Close)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижний Not Assign<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/>То статус будет '-' - 'Not Assignet'</li><li>ASB 737-34A3572 - для B737 имеет Close(Close) и нижний Close(Close)<br/>ASB 737-34A3573 - для B737 имеет статус NA, нижний Open(Open)<br/>ASB 777-34A0385 - для только для B777(в еффективити нет B737) <br/><br/>То статус будет 'O' - 'Open'</li></ol></li></ol></div></td><td colspan="1" class="confluenceTd">Таблица статусов ниже</td></tr><tr><td style="text-align: center;" class="confluenceTd">last_event_perfno_i</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">WO</td><td style="text-align: center;" class="confluenceTd">Foreign key to the last performed event.</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: false; theme: Confluence" data-theme="Confluence">SELECT 
+    wo_event_link.event_perfno_i
+FROM wo_event_link
+JOIN wo_header ON wo_event_link.event_perfno_i=wo_header.event_perfno_i
+WHERE wo_event_link.event_key_parent IN (
+    SELECT docno_i
+    FROM doc_header
+	WHERE docno=:name
+    )
+AND wo_event_link.pending_status IN (
+    SELECT MIN(wel.pending_status)
+        FROM wo_event_link wel
+        JOIN wo_header woh ON wo_event_link.event_perfno_i = woh.event_perfno_i
+        WHERE wel.event_key_parent = wo_event_link.event_key_parent 
+          AND wel.event_type = &#39;TCEFFLI&#39;
+          AND woh.ac_registr = wo_header.ac_registr
+        GROUP BY woh.ac_registr)</pre>
+</div></div></div></td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><p class="auto-cursor-target">Надо доработать запрос:</p><ol><li class="auto-cursor-target">Рекурсией получать номер документа нижнего</li></ol></div></td></tr><tr><td style="text-align: center;" class="confluenceTd">event_perfno_i</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">WO</td><td style="text-align: center;" class="confluenceTd">Foreign key to current pending event.</td><td colspan="1" class="confluenceTd"><div class="content-wrapper"><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    wo_event_link.event_perfno_i
+FROM wo_event_link
+JOIN wo_header ON wo_event_link.event_perfno_i=wo_header.event_perfno_i
+JOIN mevt_header ON mevt_header.mevt_headerno_i = wo_event_link.mevt_headerno_i AND mevt_header.mevt_type = &#39;DO&#39;
+WHERE wo_event_link.event_key_root IN (
+    SELECT d_docno_i
+    FROM doc_header
+    LEFT JOIN (
+    SELECT
+        docno_i,
+        d_docno_i
+    FROM (
+        SELECT DISTINCT
+            parrent.docno_i,
+            sub.docno,
+            sub.docno_i AS d_docno_i,
+            sub.revision,
+            sub.doc_type
+        FROM (
+            SELECT
+                LEVEL AS lev,
+                id AS docno_i,
+                pid,
+                item.docno,
+                item.revision,
+                CONNECT_BY_ISLEAF AS IsLea,
+                CONNECT_BY_ROOT item.docno_i AS root,
+                item.write_off_logic,
+                doc_type
+            FROM (
+                SELECT
+                    main.id,
+                    CASE
+                        WHEN main.id = main.parrent_id THEN NULL
+                        ELSE main.parrent_id
+                    END AS pid,
+                    header.docno_i,
+                    header.docno,
+                    revision,
+                    write_off.write_off_logic,
+                    header.doc_type
+                FROM (
+                    SELECT DISTINCT
+                        tree.docno_i AS id,
+                        CASE
+                            WHEN (
+                                SELECT COUNT(doc_signoff_tree.ref_docno_i) AS cnt
+                                FROM doc_signoff_tree
+                                WHERE tree.docno_i = doc_signoff_tree.ref_docno_i
+                            ) &gt; 0 THEN tree.docno_i
+                            ELSE NULL
+                        END AS parrent_id,
+                        docno
+                    FROM
+                        doc_signoff_tree tree
+                    JOIN
+                        doc_header doc ON tree.docno_i = doc.docno_i
+
+                    UNION
+
+                    SELECT
+                        tree.ref_docno_i AS id,
+                        tree.docno_i AS parrent_id,
+                        doc.docno
+                    FROM
+                        doc_signoff_tree tree
+                    JOIN
+                        doc_header doc ON tree.ref_docno_i = doc.docno_i
+                ) main
+                JOIN
+                    doc_header header ON main.id = header.docno_i
+                /* Document write-off logic */
+                LEFT JOIN (
+                    SELECT
+                        CASE
+                            WHEN COUNT(docno_i) &gt; &#39;0&#39; THEN &#39;Y&#39;
+                            ELSE &#39;N&#39;
+                        END AS write_off_logic,
+                        docno_i
+                    FROM
+                        doc_signoff_tree
+                    WHERE
+                        docno_i = ref_docno_i
+                    GROUP BY
+                        docno_i
+                ) write_off ON header.docno_i = write_off.docno_i
+            ) item
+            CONNECT BY PRIOR item.id = item.pid
+            ORDER SIBLINGS BY item.id, revision
+        ) sub
+        JOIN
+            doc_header parrent ON sub.root = parrent.docno_i
+        WHERE
+            pid IS NOT NULL
+            AND islea = 1
+    ) doc
+) sign_off_doc ON doc_header.docno_i = sign_off_doc.docno_i
+    WHERE doc_header.docno_i=:name
+    )
+AND wo_header.ac_registr=:ac_reg
+AND wo_event_link.PENDING_STATUS &gt;= 0
+AND wo_event_link.planable_status=0
+AND rownum=1
+ORDER BY wo_event_link.created_date, wo_event_link.mutation_time</pre>
+</div></div><br/></div></td><td colspan="1" class="confluenceTd"><p class="auto-cursor-target">Надо доработать запрос:</p><ol><li class="auto-cursor-target">Рекурсией получать номер документа нижнего</li></ol></td></tr><tr><td style="text-align: center;" class="confluenceTd">mutation</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">DATE_INT</td><td style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">mutator</td><td style="text-align: center;" class="confluenceTd">varchar2(08)</td><td style="text-align: center;" class="confluenceTd">SG</td><td style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">status</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">INT</td><td style="text-align: center;" class="confluenceTd">Статус записи (0, 1, 3, null)</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd">Надо понять что за статусы</td></tr><tr><td style="text-align: center;" class="confluenceTd">mutation_time</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">TIME</td><td style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">created_by</td><td style="text-align: center;" class="confluenceTd">varchar2(08)</td><td style="text-align: center;" class="confluenceTd">SG</td><td style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">created_date</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">DATE_INT</td><td style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">effectivity_linkno_i</td><td style="text-align: center;" class="confluenceTd">number(12,0)</td><td style="text-align: center;" class="confluenceTd">EFL</td><td style="text-align: center;" class="confluenceTd">Identifier of the associated Effectivity Link</td><td colspan="1" class="confluenceTd"><br/></td><td colspan="1" class="confluenceTd"><br/></td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 class="auto-cursor-target" style="text-align: center;" id="id-Таблицаevent_effectivity_mappingдлядокументов-Таблицастатусов">Таблица статусов</h2>
+
+
+<div class="tablefilter-outer-wrapper  " data-id="1742484545395_-249987598" data-pageid="177757134" data-export-hash="null" data-sessionid="1962690704"><div id="comboBoxDiv-1742484545395_-249987598-1962690704" class="tableFilterCbStyle"><div class="lockDisabled not-empty"><form class="aui tf-form" name="inlinecommentform" action="javascript: void(0)"><div class="filter-container filter-icon filter-logo default " title="Ничего не отфильтровано. Отображено 0 строк"></div><div class="filter-buttons-container"><div class="tf-menu-buttons aui-toolbar2" role="toolbar"><div class="aui-toolbar2-inner"><div class="aui-toolbar2-primary"><div class="tf-btn-container"><div class="tf-btn-row"><button class="filter-reset aui-button aui-button-subtle" title="Сбросить все фильтры"></button><button class="disableLock aui-button aui-button-subtle" title="Отключить все фильтры"></button></div><div id="tf-settings-row-1742484545395_-249987598-1962690704" class="tf-btn-row"><div class="tf-settings-wrapper"><button id='filter-settings-1742484545395_-249987598-1962690704' class="filter-settings aui-button aui-button-subtle aui-dropdown2-trigger" aria-owns="filter-menu-view-1742484545395_-249987598-177757134-1962690704" aria-haspopup="true" data-container="" resolved="" aria-expanded="false"><span class="aui-icon aui-icon-small aui-iconfont-configure"></span><span class="tfac-unsaved">*</span></button><div id="filter-menu-view-1742484545395_-249987598-177757134-1962690704" class="aui-style-default aui-dropdown2" style="display: none; z-index: 3001;"><div class="aui-dropdown2-section"><ul class="aui-list-truncate first"><li><a class="filter-save cursor-pointer tf-disabled-link">Сохранить изменения<span class="tfac-unsaved">*</span></a></li><li><a class="filter-add cursor-pointer">Добавить фильтр</a></li><li><a class="filter-sort-reset cursor-pointer tf-disabled-link">Сбросить сортировку</a></li><li><a class="export-file-pdf cursor-pointer">Экспорт в PDF</a></li><li><a class="export-file-csv cursor-pointer">Экспорт в CSV</a></li><li><a class="export-file-doc cursor-pointer">Экспорт в Word</a></li><li><a class="get-tf-url cursor-pointer">Скопировать URL фильтра</a></li><li><a class="tf-change-settings cursor-pointer">Изменить настройки</a></li></ul></div><div class="aui-dropdown2-section"><ul class="aui-list-truncate"><li><a target="_blank" href="https://docs.stiltsoft.com/display/TFAC/How+to+use+Table+filter+macro?from=tf-view">Документация</a></li><li><a target="_blank" href="https://docs.stiltsoft.com/display/public/TFAC/Table+Filter+and+Charts+5.4.0?from=tf-view">Что нового</a></li><li><a target="_blank" href="https://www.surveygizmo.com/s3/3338736/Table-Filter-and-Charts-Survey?platform=server" class="tf-menu-star"><span><span class="aui-icon aui-icon-small aui-iconfont-star"></span>Оцените наше приложение</span></a></li></ul></div></div></div></div></div></div></div></div></div><div class="sortable-container"></div><div class="filter-container show-n-rows-only-message"><label>Показать первые  строк</label></div><div class="filter-container empty-message"><label>Начните <a class="tf-add-start">добавлять фильтры</a> в меню инструментов фильтрации.</label></div></form></div><div class="lockEnabled"><div class="filter-container filter-icon filter-logo default" title="Ничего не отфильтровано. Отображено 0 строк"></div><div class="lockPosition"><div class="filter-container"><label class="hideble">В настоящий момент фильтры отключены.</label></div><div class="tf-menu-buttons aui-toolbar2" role="toolbar"><div class="aui-toolbar2-inner"><div class="aui-toolbar2-primary"><div class="tf-btn-container"><div class="tf-btn-row"><button class="filter-reset aui-button aui-button-subtle" disabled="disabled"></button><button class="enableLock aui-button aui-button-subtle" title="Включить все фильтры"></button></div><div class="tf-btn-row settings-row"><div class="tf-settings-wrapper"><button class="filter-settings aui-button aui-button-subtle aui-dropdown2-trigger" aria-owns="filter-menu-view-lock-1742484545395_-249987598-177757134-1962690704"><span class="aui-icon aui-icon-small aui-iconfont-configure"></span></button><div id="filter-menu-view-lock-1742484545395_-249987598-177757134-1962690704" class="aui-style-default aui-dropdown2" style="display: none; z-index: 3001;"><div class="aui-dropdown2-section"><ul class="aui-list-truncate first"><li><a class="export-file-pdf cursor-pointer">Экспорт в PDF</a></li><li><a class="export-file-csv cursor-pointer">Экспорт в CSV</a></li><li><a class="export-file-doc cursor-pointer">Экспорт в Word</a></li></ul></div><div class="aui-dropdown2-section"><ul class="aui-list-truncate"><li><a target="_blank" href="https://docs.stiltsoft.com/display/TFAC/How+to+use+Table+filter+macro?from=tf-view">Документация</a></li><li><a target="_blank" href="https://docs.stiltsoft.com/display/public/TFAC/Table+Filter+and+Charts+5.4.0?from=tf-view">Что нового</a></li><li><a target="_blank" href="https://www.surveygizmo.com/s3/3338736/Table-Filter-and-Charts-Survey?platform=server" class="tf-menu-star"><span><span class="aui-icon aui-icon-small aui-iconfont-star"></span>Оцените наше приложение</span></a></li></ul></div></div></div></div></div></div></div></div></div></div><div class="filter-container no-table-message"><div class="aui-message info aui-message-info"><p>Пожалуйста, разместите таблицу или макрос, генерирующий таблицы, в макросе &quot;Фильтр таблиц&quot;.</p></div></div><div class="filter-container waiting-for-table"><div class="aui-message info aui-message-info"><p>Таблица загружается. Пожалуйста, подождите...<span class="aui-icon aui-icon-wait" style="margin-left: 5px"></span></p></div></div><div class="tf-hider-wrapper" title="Скрыть панель фильтрации"><div class="tf-hider"><span class="tf-hide-show-icon"></span></div></div></div><div id="tf-shower-1742484545395_-249987598" class="tf-shower-wrapper" title="Показать панель фильтрации"><div class="tf-shower"><span class="tf-hide-show-icon"></span></div></div><div id="tf-table-1742484545395_-249987598" class="tablefilter-table-wrapper "><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col style="width: 123.0px;"/><col style="width: 206.0px;"/><col/><col style="width: 81.0px;"/><col style="width: 80.0px;"/></colgroup><tbody><tr><th style="text-align: center;" class="confluenceTh">Code</th><th style="text-align: center;" class="confluenceTh">Name</th><th colspan="1" style="text-align: center;" class="confluenceTh">Description</th><th colspan="1" style="text-align: center;" class="confluenceTh">Status Group</th><th colspan="1" style="text-align: center;" class="confluenceTh">Pre/Post</th></tr><tr><td style="text-align: center;" class="confluenceTd">Не разрывной пробел</td><td style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">!</td><td style="text-align: center;" class="confluenceTd">Unknown</td><td colspan="1" style="text-align: center;" class="confluenceTd">Unknown</td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">-</td><td style="text-align: center;" class="confluenceTd">Not Assignet</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">/</td><td style="text-align: center;" class="confluenceTd">No status/<br/>Component not installed into this Aircraft</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">0</td><td style="text-align: center;" class="confluenceTd">Not performed</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">1</td><td style="text-align: center;" class="confluenceTd">Aircraft group changed</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">2</td><td style="text-align: center;" class="confluenceTd">Aircraft/Rotable deactivated</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">N/A</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">3</td><td style="text-align: center;" class="confluenceTd">Effectivity Historized</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">N/A</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">?</td><td style="text-align: center;" class="confluenceTd">No status</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">A</td><td style="text-align: center;" class="confluenceTd">On Attrition</td><td colspan="1" style="text-align: center;" class="confluenceTd">Indicates that the modification of the rotable is only done in the course of a repair when the unit is removed and sent off, comparable to a maintenance or soft-time limit of a rotable requirement. You would not remove a rotable just for the performance of this document. Status: open. Before reporting back the document, it is possible to change the assignment code to &quot;open&quot; again. Reporting back a document with the status On Attrition, the document can be initialised in Maintenance Event Initialiser and in View/Edit Modifications.</td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td style="text-align: center;" class="confluenceTd">B</td><td style="text-align: center;" class="confluenceTd">Postponed (open)</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">The performance of the document has been postponed. Status: <em class="emphasis">ope</em></p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td style="text-align: center;" class="confluenceTd">C</td><td style="text-align: center;" class="confluenceTd">Closed</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">Closed by your company. The<em class="emphasis"> </em>normal closing procedure is done in <strong class="specialbold">Reporting Back Maintenance Event</strong></p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Closed</td><td colspan="1" style="text-align: center;" class="confluenceTd">Post</td></tr><tr><td style="text-align: center;" class="confluenceTd">D</td><td style="text-align: center;" class="confluenceTd">Delete assignment!</td><td colspan="1" style="text-align: center;" class="confluenceTd">When you need to change the assignment status of an aircraft or component you must delete the assignment first before you can assign a new status.</td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">E</td><td style="text-align: center;" class="confluenceTd">Event-Triggered</td><td colspan="1" style="text-align: center;" class="confluenceTd">Reserved for special cases: Event Triggered Modifications. Indicates that a document is pending and acts as closed until a specific event, for example a hard-landing, occurs. Then you can change the status of that aircraft or rotable to open. This can be done by clicking Start Event Triggered in the Status for Document window.</td><td colspan="1" style="text-align: center;" class="confluenceTd">Closed</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td style="text-align: center;" class="confluenceTd">F</td><td style="text-align: center;" class="confluenceTd">Ex Factory</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">The modification has already been performed by the manufacturer. Status: <em class="emphasis">closed</em>.</p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Closed</td><td colspan="1" style="text-align: center;" class="confluenceTd">Post</td></tr><tr><td style="text-align: center;" class="confluenceTd">G</td><td style="text-align: center;" class="confluenceTd">Term.Action open</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">H</td><td style="text-align: center;" class="confluenceTd">Rotable Driven - Accomplished</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">Closed</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td style="text-align: center;" class="confluenceTd">I</td><td style="text-align: center;" class="confluenceTd">Information Only</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">No status.</p></td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td style="text-align: center;" class="confluenceTd">J</td><td style="text-align: center;" class="confluenceTd">Rejected by Operator</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">Status: <em class="emphasis">open</em>.</p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">K</td><td colspan="1" style="text-align: center;" class="confluenceTd">Rotable Driven - Not Accomplished</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">L</td><td colspan="1" style="text-align: center;" class="confluenceTd">Logbook Controlled</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">Status: <em class="emphasis">open</em>. This document does not appear in the forecast.</p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd">N/A</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">M</td><td colspan="1" style="text-align: center;" class="confluenceTd">Taskcard Controlled</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">A repetitive document might be controlled by a taskcard. Status: <em class="emphasis">open</em>. This document does not appear in the forecast.</p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">N</td><td colspan="1" style="text-align: center;" class="confluenceTd">Not Applicable</td><td colspan="1" style="text-align: center;" class="confluenceTd">Can also be set manually. You must enter a reason for this status in the Initialise Documents window. This reason will also be printed on the Modification Status report.</td><td colspan="1" style="text-align: center;" class="confluenceTd">N/A</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">O</td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">Open.</p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">P</td><td colspan="1" style="text-align: center;" class="confluenceTd">Partly Performed</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">Q</td><td colspan="1" style="text-align: center;" class="confluenceTd">Part-Requirem.Contr.</td><td colspan="1" style="text-align: center;" class="confluenceTd">A repetitive document might be controlled by a part requirement. Status: open. This document does not appear in the forecast.</td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">R</td><td colspan="1" style="text-align: center;" class="confluenceTd">Repetitive</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">S</td><td colspan="1" style="text-align: center;" class="confluenceTd">DOC.IN PREP.</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">T</td><td colspan="1" style="text-align: center;" class="confluenceTd">Terminated by third party</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">The document has been performed by a third party. Status: <em class="emphasis">closed</em>.</p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Closed</td><td colspan="1" style="text-align: center;" class="confluenceTd">Post</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">U</td><td colspan="1" style="text-align: center;" class="confluenceTd">Cancelled</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">This status is automatically set for documents which were cancelled or superseded - see Replacement Information section.</p><p class="tablebodytext">It is also possible to assign this status manually to individual serial numbers. You must enter a reason for this status in the <em class="emphasis">Initialise Documents</em> window. This reason will also be printed on the <strong class="specialbold">Modification Status</strong> report<strong class="specialbold">.</strong></p></td><td colspan="1" style="text-align: center;" class="confluenceTd">N/A</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">V</td><td colspan="1" style="text-align: center;" class="confluenceTd">Performed by prev. Operator</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">The document has been performed by the previous operator of the aircraft or component. Status: <em class="emphasis">closed</em>.</p></td><td colspan="1" style="text-align: center;" class="confluenceTd">Closed</td><td colspan="1" style="text-align: center;" class="confluenceTd">Post</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">W</td><td colspan="1" style="text-align: center;" class="confluenceTd">See prev. Doc. Status</td><td colspan="1" style="text-align: center;" class="confluenceTd">This status indicates that the status of the document has not been entered into AMOS. This status is highlighted orange in View/Edit Modifications.</td><td colspan="1" style="text-align: center;" class="confluenceTd">-</td><td colspan="1" style="text-align: center;" class="confluenceTd">N/A</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">X</td><td colspan="1" style="text-align: center;" class="confluenceTd">Externally Controlled</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td><td colspan="1" style="text-align: center;" class="confluenceTd">N/A</td><td colspan="1" style="text-align: center;" class="confluenceTd"><br/></td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">Y</td><td colspan="1" style="text-align: center;" class="confluenceTd">Reopened</td><td colspan="1" style="text-align: center;" class="confluenceTd">Status of the document is open. Setting the status to reopen is only possible if the document was closed before. When setting this status, a reason can be given.</td><td colspan="1" style="text-align: center;" class="confluenceTd">Open</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr><tr><td colspan="1" style="text-align: center;" class="confluenceTd">Z</td><td colspan="1" style="text-align: center;" class="confluenceTd">Superseded</td><td colspan="1" style="text-align: center;" class="confluenceTd"><p class="tablebodytext">This status is automatically set for documents which were cancelled or superseded - see Replacement Information section.</p><p class="tablebodytext">It is also possible to assign this status manually to individual serial numbers. You must enter a reason for this status in the <em class="emphasis">Initialise Documents</em> window. This reason will also be printed on the <strong class="specialbold">Modification Status</strong> report<strong class="specialbold">.</strong></p></td><td colspan="1" style="text-align: center;" class="confluenceTd">N/A</td><td colspan="1" style="text-align: center;" class="confluenceTd">Pre</td></tr></tbody></table></div></div></div>
+
+<script type="text/javascript" id="tf-init-script-1742484545395_-249987598-177757134-1962690704">
+    (function () {
+        function start($) {
+
+            
+            AJS.toInit(function () {
+                var script = $('#tf-init-script-1742484545395_-249987598-177757134-1962690704');
+                if (!false) { //dd обрезается Panel / section macro
+                    script.parents('.panel, .alertPanel, .infoPanel, .innerCell').css('overflow', 'visible');
+                }
+                script.remove(); //происходила повторная инициализация при открытии редактора
+
+                var sorts = [];
+
+                var init = function () {
+                    var tf = new TableFilter({
+                        showNRows: "",
+                        showNRowsifNotFiltered: "",
+                        rowsPerPage: "",
+                        ignoreFirstNrows: "",
+                        limitHeight: "",
+                        heightValue: "",
+                        numbering: "",
+                        sorts: TableUtils.unescapeStrings(sorts),
+                        datepattern: TableUtils.unescapeString(""),
+                        separator: ".",
+                        id: "1742484545395_-249987598",
+                        pageId: "177757134",
+                        sparkline: false,
+                        sparkName: TableUtils.unescapeString(""),
+                        order: "",
+                        isOR: "AND",
+                        ddSeparator: TableUtils.unescapeString(""),
+                        fixedCols: "",
+                        totalrow: "",
+                        totalcol: "",
+                        isLockEnabled: false,
+                        worklog: "",
+                        updateSelectOptions: false,
+                        totalColName: TableUtils.unescapeString(""),
+                        totalRowName: TableUtils.unescapeString(""),
+                        thousandSeparator: "",
+                        tabs: false,
+                        sessionId: 1962690704
+                    });
+
+                    if (tf == null) return;
+
+                    if ($('div.wiki-content.view-template').length) {
+                        tf.comboBoxDiv.find('button').removeAttr('aria-disabled');
+                        tf.saveBtn.remove();
+                    }
+                };
+
+                var check = function () {
+                    if (window.TableFilter) {
+                        $('.tablefilter-outer-wrapper[data-id="1742484545395_-249987598"][data-pageid="177757134"][data-sessionid="1962690704"] #comboBoxDiv-1742484545395_-249987598').show();
+                        init();
+                    } else {
+                        $('.tablefilter-outer-wrapper[data-id="1742484545395_-249987598"][data-pageid="177757134"][data-sessionid="1962690704"] #comboBoxDiv-1742484545395_-249987598').hide();
+                        WRM.require("wrc!com.stiltsoft.confluence.tablefilter-resources", function() {
+                            check();
+                        });
+                    }
+                };
+
+                check();
+            });
+
+        }
+
+        if (document.readyState === "loading") {
+            document.addEventListener('DOMContentLoaded', function () {
+                start(AJS.$);
+            })
+        } else {
+            start(AJS.$);
+        }
+    })()
+</script>
+<div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/><col/></colgroup><tbody><tr><th style="text-align: center;" class="confluenceTh"><p class="tableheading">Colour</p></th><th style="text-align: center;" class="confluenceTh"><p class="tableheading">Status-Indication</p></th><th style="text-align: center;" class="confluenceTh"><p class="tableheading">Status-Type</p></th></tr><tr><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">red</p></td><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">applicable but not assigned or unknown status</p></td><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext"><br/></p></td></tr><tr><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">yellow</p></td><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">open</p></td><td style="text-align: center;" class="confluenceTd"><ul class="tablelistbullet"><li class="tablelistbullet">open</li><li class="tablelistbullet">on attrition</li><li class="tablelistbullet">postponed</li><li class="tablelistbullet">terminating action open</li><li class="tablelistbullet">rejected by operator</li><li class="tablelistbullet">logbook controlled</li><li class="tablelistbullet">task card controlled</li><li class="tablelistbullet">part requirement controlled</li></ul></td></tr><tr><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">green</p></td><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">closed/performed</p></td><td style="text-align: center;" class="confluenceTd"><ul class="tablelistbullet"><li class="tablelistbullet">closed</li><li class="tablelistbullet">ex factory</li><li class="tablelistbullet">terminated</li><li class="tablelistbullet">event triggered</li><li class="tablelistbullet">terminated by third party</li><li class="tablelistbullet">performed by previous operator</li></ul></td></tr><tr><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">grey</p></td><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">not applicable</p></td><td style="text-align: center;" class="confluenceTd"><ul class="tablelistbullet"><li class="tablelistbullet">not applicable</li><li class="tablelistbullet">information only</li><li class="tablelistbullet">cancelled/superseded<br/>The status Cancelled/Superseded is now split into two different status &quot;<em class="emphasis">Cancelled</em>&quot; and &quot;<em class="emphasis">Superseded&quot;</em>. These status could be defined manually into the status tab of a document or will be defined automatically when cancelling or superseding the document with an other one. Note that the old manually defined status <em class="emphasis">&quot;Cancelled/Superseded&quot;</em> will now be displayed as <em class="emphasis">&quot;Cancelled&quot;</em>. For the cancelled and superseded documents, the new correct status will be automatically defined.</li></ul></td></tr><tr><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">blue</p></td><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext">parts belonging to a third party the code of the owner is displayed in the status box - component documents only</p></td><td style="text-align: center;" class="confluenceTd"><p class="tablebodytext"><br/></p></td></tr></tbody></table></div></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h2 style="text-align: center;" id="id-Таблицаevent_effectivity_mappingдлядокументов-Логикарасчетастатусов">Логика расчета статусов</h2><ol><li>Если АФ-24-1474М-Ф12-01 имеется статус Unknown, статус документа 2024-01-07-AMOC Unknown, а статус документа 20241220SII01 Not Assigne → статус древа в таблице = '!', event_status_single = N ( Для документа  2024-01-07-AMOC)</li></ol></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177757134/177759312.png">image2025-3-20_17-28-43.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177757134/177759313.png">image2025-3-20_17-34-23.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177757134/177759314.png">image2025-3-20_17-35-5.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177757134/177759346.png">image2025-3-20_18-36-1.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177757134/177759355.png">image2025-3-20_19-29-51.png</a> (image/png)
+                                <br/>
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/177757134/177759356.png">image2025-3-20_19-44-29.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

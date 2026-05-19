@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Порядок обезличивания персональных данных</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953709.html">База знаний</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953753.html">Типичные кейсы и способы их разрешения</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Порядок обезличивания персональных данных
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on авг. 15, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="confluence-information-macro confluence-information-macro-tip"><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p> Персональные данные обезличиваются в системе администраторами AMOS на основании запросов ключевых пользователей или координаторов в APN 869. Запросы на обезличивание персональных данных должны содержать имена учетных записей AMOS (sign.user_sign). Для обезличивания персональные данные заменяются на «F_xxxxxxx», где x – случайная буква латинского алфавита. Для обезличивания персональных данных осуществляется замена данных в следующих полях в таблице “SIGN” базы данных AMOS поля:</p><ul><li><span style="letter-spacing: 0.0px;">employee_no</span></li><li><span style="letter-spacing: 0.0px;"> firstname</span></li><li><span style="letter-spacing: 0.0px;"> lastname</span></li><li><span style="letter-spacing: 0.0px;"> birthdate </span></li><li><span style="letter-spacing: 0.0px;">email</span></li><li><span style="letter-spacing: 0.0px;"> badge_number</span></li><li><span style="letter-spacing: 0.0px;"> notes</span></li><li><span style="letter-spacing: 0.0px;"> contract_id</span></li><li><span style="letter-spacing: 0.0px;"> user_sign<br/><br/></span></li></ul><p><span style="letter-spacing: 0.0px;">В таблице «rm_property_value» базы данных AMOS поле char_value</span></p></div></div><p><br/></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeHeader panelHeader pdl" style="border-bottom-width: 1px;"><b>SQL для обезличивания данных</b></div><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">/* 
+** Проверить на стади сначала, потом на выполнить на проде 
+*/
+alter session set current_schema = amosserver_study;
+
+
+/*
+** 1 - готовлю DML-запросы для обновления таблицы sign заданных логинов
+*/
+SELECT &#39;UPDATE sign
+           SET firstname =&#39;|| CHR(39) || &#39;F_&#39; || CHR(39) ||  &#39; ||DBMS_RANDOM.STRING (&#39;|| CHR(39) || &#39;l&#39; || CHR(39) ||&#39;, 7),
+               lastname =&#39; || CHR(39) || &#39;F_&#39; || CHR(39) || &#39; ||DBMS_RANDOM.STRING  (&#39;|| CHR(39) || &#39;l&#39; || CHR(39) ||&#39;, 7),
+               description = NULL,
+               birthdate = NULL,
+               email = NULL,
+               badge_number = NULL,
+               notes = null,
+               url_to_pic = null
+               where user_sign = &#39; || CHR(39) || sign.user_sign || CHR(39)||&#39;;&#39; as sss
+FROM sign
+WHERE 1=1
+      AND sign.user_sign IN ();
+      
+/*
+** 2 - Выполнить update-запросы сформированные в п.1 и !!!ВЫПОЛНИТЬ COMMIT!!! 
+*/      
+  
+
+/*
+** 3 - изменяю ФИО в rm_property_value (указать список логинов) 
+*/              
+SELECT &#39;UPDATE rm_property_value
+           SET char_value = CASE WHEN property_type_no_i = 42 THEN &#39;|| CHR(39) ||sign.lastname|| CHR(39) ||
+                                 &#39; WHEN property_type_no_i = 41 THEN&#39; || CHR(39) || &#39;F_&#39; || CHR(39) ||  &#39; ||DBMS_RANDOM.STRING (&#39;|| CHR(39) || &#39;l&#39; || CHR(39) ||&#39;, 7)
+                                 ELSE &#39;|| CHR(39) ||sign.firstname|| CHR(39) ||&#39; END 
+         WHERE property_value_no_i = &#39; || rm_property_value.property_value_no_i ||&#39;;&#39;as sss
+FROM sign
+JOIN rm_property_value ON sign.employee_no_i = rm_property_value.owner_amos_key AND rm_property_value.owner_amos_type = &#39;SG&#39; AND property_type_no_i IN (40, 41, 42)
+WHERE 1=1
+      AND sign.user_sign IN ();
+
+
+/* Это какие-то черновики      
+UPDATE sign
+           SET firstname =&#39;F_&#39; ||DBMS_RANDOM.STRING (&#39;l&#39;, 7),
+               lastname =&#39;F_&#39; ||DBMS_RANDOM.STRING  (&#39;l&#39;, 7),
+               description = NULL,
+               birthdate = NULL,
+               email = NULL,
+               badge_number = NULL,
+               notes = null,
+               url_to_pic = null
+               where user_sign = &#39;70517&#39;;
+UPDATE sign
+           SET firstname =&#39;F_&#39; ||DBMS_RANDOM.STRING (&#39;l&#39;, 7),
+               lastname =&#39;F_&#39; ||DBMS_RANDOM.STRING  (&#39;l&#39;, 7),
+               description = NULL,
+               birthdate = NULL,
+               email = NULL,
+               badge_number = NULL,
+               notes = null,
+               url_to_pic = null
+               where user_sign = &#39;&#39;;
+               
+               
+               
+UPDATE rm_property_value
+           SET char_value = CASE WHEN property_type_no_i = 42 THEN &#39;F_zwasbqn&#39; WHEN property_type_no_i = 41 THEN&#39;F_&#39; ||DBMS_RANDOM.STRING (&#39;l&#39;, 7)
+                                 ELSE &#39;F_efjzjfs&#39; END 
+         WHERE property_value_no_i = 2437;
+UPDATE rm_property_value
+           SET char_value = CASE WHEN property_type_no_i = 42 THEN &#39;F_zwasbqn&#39; WHEN property_type_no_i = 41 THEN&#39;F_&#39; ||DBMS_RANDOM.STRING (&#39;l&#39;, 7)
+                                 ELSE &#39;F_efjzjfs&#39; END 
+         WHERE property_value_no_i = 4542;
+UPDATE rm_property_value
+           SET char_value = CASE WHEN property_type_no_i = 42 THEN &#39;F_zwasbqn&#39; WHEN property_type_no_i = 41 THEN&#39;F_&#39; ||DBMS_RANDOM.STRING (&#39;l&#39;, 7)
+                                 ELSE &#39;F_efjzjfs&#39; END 
+         WHERE property_value_no_i = 6986;
+UPDATE rm_property_value
+           SET char_value = CASE WHEN property_type_no_i = 42 THEN &#39;F_yqdhcia&#39; WHEN property_type_no_i = 41 THEN&#39;F_&#39; ||DBMS_RANDOM.STRING (&#39;l&#39;, 7)
+                                 ELSE &#39;F_yokkrpn&#39; END 
+         WHERE property_value_no_i = 4225;
+UPDATE rm_property_value
+           SET char_value = CASE WHEN property_type_no_i = 42 THEN &#39;F_yqdhcia&#39; WHEN property_type_no_i = 41 THEN&#39;F_&#39; ||DBMS_RANDOM.STRING (&#39;l&#39;, 7)
+                                 ELSE &#39;F_yokkrpn&#39; END 
+         WHERE property_value_no_i = 5830;
+UPDATE rm_property_value
+           SET char_value = CASE WHEN property_type_no_i = 42 THEN &#39;F_yqdhcia&#39; WHEN property_type_no_i = 41 THEN&#39;F_&#39; ||DBMS_RANDOM.STRING (&#39;l&#39;, 7)
+                                 ELSE &#39;F_yokkrpn&#39; END 
+         WHERE property_value_no_i = 8203;
+*/
+      </pre>
+</div></div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

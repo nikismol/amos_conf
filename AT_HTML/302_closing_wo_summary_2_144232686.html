@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : 302_closing_wo_summary_2</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Scheduled-emails_43642573.html">Scheduled emails</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : 302_closing_wo_summary_2
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span> on сент. 26, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    wo_header.event_perfno_i,
+    wo_header.ac_registr,
+    wo_header.state,
+    TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (wo_header.issue_date), &#39;DD.MM.YYYY&#39;) AS issue_date,
+    TO_CHAR(TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;) + (wo_header.closing_date), &#39;DD.MM.YYYY&#39;) AS close_date,
+    wo_header.ata_chapter as ata_chapter,
+    SUBSTR(wo_header.ata_chapter, 1, 2) AS ata_chapter_2,
+    wo_header.type,
+    CASE WHEN wo_header.HIL IS NULL AND wo_header.mel_code IS NOT NULL THEN &#39;M:&#39; || wo_header.mel_code
+         WHEN wo_header.HIL=&#39;Y&#39; THEN &#39;&#39;
+        ELSE &#39;&#39;
+    END as mel,
+    wo_header_more.mel_chapter AS mel_chap,
+    wo_header.HIL as DD,
+    wo_text_description.header,
+    wo_text_description.text,
+    aircraft.ac_typ,
+    aircraft.ac_model,
+    wo_header.closing_date-wo_header.issue_date AS delta_date
+FROM wo_header
+LEFT JOIN aircraft ON wo_header.ac_registr=aircraft.ac_registr
+LEFT JOIN wo_header_more ON wo_header.event_perfno_i=wo_header_more.event_perfno_i
+LEFT JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i and workstep_link.sequenceno=1
+LEFT JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+WHERE (
+    wo_header.closing_date &gt;= (TRUNC(SYSDATE-7) - TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;))
+        AND
+    wo_header.closing_date&lt;= (TRUNC(SYSDATE) - TO_DATE(&#39;31.12.1971&#39;, &#39;DD.MM.YYYY&#39;))
+    )
+  AND wo_header.state=&#39;C&#39;
+  AND wo_header.type IN (&#39;P&#39;, &#39;C&#39;, &#39;M&#39;)
+  AND aircraft.status &lt;&gt; 9
+  AND aircraft.ac_registr NOT IN (
+      &#39;VP-BAC&#39;, &#39;VP-BET&#39;,
+      &#39;VP-BOE&#39;, &#39;VQ-BEH&#39;,
+      &#39;VQ-BEJ&#39;, &#39;VQ-BIT&#39;,
+      &#39;VQ-BIV&#39;
+    )
+  AND aircraft.operator = &#39;AFL&#39;
+ORDER BY aircraft.ac_typ</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

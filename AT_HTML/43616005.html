@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Типовые  вопросы ПДО</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953709.html">База знаний</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="84953753.html">Типичные кейсы и способы их разрешения</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Типовые  вопросы ПДО
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified on июл. 22, 2019
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="confluence-information-macro confluence-information-macro-tip"><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>В данном документе собраны наиболее часто поступающие проблемы/вопросы отдела PPCD (Production Planning &amp; Control Division) в тех. поддержку AMOS. Все описанные решения не являются единственно верными, а лишь возможными решениями типовых проблем. Документ не окончательный и находится в процессе постоянной актуализации.</p><p>Производственно-диспетчерский отдел занимается планированием работ, связанных с регламентным ТО и ремонтом ВС и компонентов, с учётом информации о стоянках ВС.</p><p>Производственно-диспетчерский отдел находится в зоне территории аэропорта Шереметьево (Шереметьево-1), авиационно-технического комплекса, ангар №1, каб. 211. Руководитель отдела: Виноградова Ирина Игоревна, вн. телефон: 42-32.</p><p><br/></p><p>Применимые роли в системе AMOS: PPCD и смежные.</p></div></div><div id="expander-992226610" class="expand-container"><div id="expander-control-992226610" class="expand-control"><span class="expand-icon aui-icon aui-icon-small aui-iconfont-chevron-down"></span><span class="expand-control-text">НЕКОРРЕКТНАЯ НАРАБОТКА TQ 29910</span></div><div id="expander-content-992226610" class="expand-content"><p><br/></p><div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/></colgroup><tbody><tr><th class="confluenceTh"><div class="content-wrapper"><p class="auto-cursor-target"><strong>Описание:</strong> снятие/установка двигателя проведена с некорректной наработкой.</p><div class="confluence-information-macro confluence-information-macro-warning"><p class="title">Корректировка LB</p><span class="aui-icon aui-icon-small aui-iconfont-error confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>TQ 29910</p><p>Коллеги, здравствуйте. Большая просьба выполнить коррекцию LB 183802, 183806, 183547. Для всех этих LB наработка ВС должна быть 33620:33 FH, 14017 FC. Дата выполнения 26.10.2018.</p><p>Примечание. В связи с тем, что данную задачу нет возможности решить базовым функционалом, то корректировки по ней будем вносить, применяя прямое обращение к БД.</p></div></div></div></th></tr></tbody></table></div><div class="confluence-information-macro confluence-information-macro-tip"><p class="title">Решение</p><span class="aui-icon aui-icon-small aui-iconfont-approve confluence-information-macro-icon"></span><div class="confluence-information-macro-body"><p>Для решения данного TQ необходимо использовать APN 29 «SQL-Central», внося исправления в таблицу <strong>history</strong></p><div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: false; theme: Confluence" data-theme="Confluence">commit;
+
+update history h   				   /*Указываем какие значения необходимо обновить*/
+   set tsn = 33620, csn = 14017 
+     , tah = 33620, tac = 14017
+     , tam = (33620*60) /* Total aircraft in MINUTES */
+     , del_date = to_char(round(
+                                to_date(&#39;26.10.2018&#39;, &#39;dd.mm.yyyy&#39;)      
+                              - to_date(&#39;31.12.1971&#39;, &#39;dd.mm.yyyy&#39;) /*запрашиваемая дата*/
+                               ) ) /*AMOS date format*/
+where labelno in (				   /*Выбираем необходимые номера LB*/
+                    183802   
+                  , 183806
+                  , 183547
+                  )
+   and vm = &#39;YA&#39;; /* removal */
+
+commit;</pre>
+</div></div></div></div><p><strong>с фильтрами на полях <em>labelno</em><em>, psn </em>и <em>vm</em><em> (при необходимости), где </em><em>labelno</em> <em>– </em>это номер LB, psn (id rotable), а vm <em>= '</em><em>YE</em><em>' (</em><em>Installation</em> <em>rotables</em><em>).</em></strong></p><p><strong>После внесения корректировок, загружаем APN 150 вводим номер исправленного LB и смотрим, что изменения внесены.</strong></p></div></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                                            <div class="pageSection group">
+                        <div class="pageSectionHeader">
+                            <h2 id="attachments" class="pageSectionTitle">Attachments:</h2>
+                        </div>
+
+                        <div class="greybox" align="left">
+                                                            <img src="images/icons/bullet_blue.gif" height="8" width="8" alt=""/>
+                                <a href="attachments/43616005/43616635.png">image2019-7-17_15-39-12.png</a> (image/png)
+                                <br/>
+                                                    </div>
+                    </div>
+                    
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

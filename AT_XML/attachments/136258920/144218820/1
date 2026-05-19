@@ -1,0 +1,1507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000386</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="5624">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="LabelReportView" id="5625">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 53</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="visible">YES</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@VAR.v08_adapted_to@</field>
+              <field id="2">PDF</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">Parking Report
+Based on data in @SYSTEM.AMOS_SERVER@ environment as of @234_CURRENT_DATE.current_date@ @234_CURRENT_DATE.current_time@UTC</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 14</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="ClonerReportView" id="5626">
+      <attribute name="name">Cloner_1</attribute>
+      <attribute name="position">-26 94</attribute>
+      <attribute name="size">1162 233</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">235_MAIN</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5627</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-26</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5627">
+      <attribute name="name">Label_2</attribute>
+      <attribute name="position">0 69</attribute>
+      <attribute name="size">50 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">AC Type</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="5628">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">160 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Parking Days</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5634</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5629">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">230 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Parking Start</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5628</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5630">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">370 69</attribute>
+      <attribute name="size">90 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Arrival Leg Number</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5652</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5631">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">50 69</attribute>
+      <attribute name="size">60 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">AC Registr</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5627</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5632">
+      <attribute name="name">Label_7</attribute>
+      <attribute name="position">460 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Arrival Date</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5630</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5633">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">930 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Departure To</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5638</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5634">
+      <attribute name="name">Label_11</attribute>
+      <attribute name="position">110 69</attribute>
+      <attribute name="size">50 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Station</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5631</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5635">
+      <attribute name="name">Label_12</attribute>
+      <attribute name="position">530 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Arrival Time</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5632</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5636">
+      <attribute name="name">Label_13</attribute>
+      <attribute name="position">670 69</attribute>
+      <attribute name="size">110 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Departure Leg Number</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5654</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5637">
+      <attribute name="name">Label_14</attribute>
+      <attribute name="position">780 69</attribute>
+      <attribute name="size">75 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Departure Date</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5636</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5638">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">855 69</attribute>
+      <attribute name="size">75 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Departure Time</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5637</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5639">
+      <attribute name="name">Label_16</attribute>
+      <attribute name="position">855 94</attribute>
+      <attribute name="size">75 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Departure_flight.departure_time@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5650</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5640">
+      <attribute name="name">Label_17</attribute>
+      <attribute name="position">110 94</attribute>
+      <attribute name="size">50 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">@235_Departure_flight.station@</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@235_Arrival_flight.station@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Arrival_flight.station@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5642</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5641">
+      <attribute name="name">Label_19</attribute>
+      <attribute name="position">930 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Departure_flight.departure_to@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5639</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5642">
+      <attribute name="name">Label_20</attribute>
+      <attribute name="position">50 94</attribute>
+      <attribute name="size">60 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_MAIN.ac_registr@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5649</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5643">
+      <attribute name="name">Label_21</attribute>
+      <attribute name="position">370 94</attribute>
+      <attribute name="size">90 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Arrival_flight.arrival_leg_number@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5651</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5644">
+      <attribute name="name">Label_23</attribute>
+      <attribute name="position">600 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Arrival_flight.arrival_from@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5647</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5645">
+      <attribute name="name">Label_24</attribute>
+      <attribute name="position">670 94</attribute>
+      <attribute name="size">110 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Departure_flight.departure_leg_number@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5644</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5646">
+      <attribute name="name">Label_25</attribute>
+      <attribute name="position">230 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Arrival_flight.parking_start_date@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5648</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5647">
+      <attribute name="name">Label_26</attribute>
+      <attribute name="position">530 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Arrival_flight.arrival_time@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5653</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5648">
+      <attribute name="name">Label_27</attribute>
+      <attribute name="position">160 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_MAIN.count_null_legs@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5640</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5649">
+      <attribute name="name">Label_28</attribute>
+      <attribute name="position">0 94</attribute>
+      <attribute name="size">50 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_MAIN.ac_typ@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5626</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>26</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5650">
+      <attribute name="name">Label_29</attribute>
+      <attribute name="position">780 94</attribute>
+      <attribute name="size">75 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Departure_flight.departure_date@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5645</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5651">
+      <attribute name="name">Label_31</attribute>
+      <attribute name="position">300 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Departure_flight.parking_end_date@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5646</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5652">
+      <attribute name="name">Label_32</attribute>
+      <attribute name="position">300 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Parking End</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5629</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5653">
+      <attribute name="name">Label_33</attribute>
+      <attribute name="position">460 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@235_Arrival_flight.arrival_date@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5643</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5654">
+      <attribute name="name">Label_34</attribute>
+      <attribute name="position">600 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Arrival From</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5635</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5655">
+      <attribute name="name">Label_36</attribute>
+      <attribute name="position">1000 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">arr</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5633</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5656">
+      <attribute name="name">Label_37</attribute>
+      <attribute name="position">1070 69</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">dep</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5655</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5657">
+      <attribute name="name">Label_38</attribute>
+      <attribute name="position">1000 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@235_MAIN.arrival_legno_i@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5641</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="5658">
+      <attribute name="name">Label_39</attribute>
+      <attribute name="position">1070 94</attribute>
+      <attribute name="size">70 25</attribute>
+      <attribute name="visible">NO</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="text">@235_MAIN.departure_legno_i@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 10</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>5657</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="v02_date_to"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v04_ac_typ"/>
+        <ds:columnDescriptor amosType="INT" description="" id="v03_null_legs"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v08_adapted_to"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v10_is_parked_now_only"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v06_active_ac"/>
+        <ds:columnDescriptor amosType="AC" description="" id="v05_ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="" id="v09_excluded_wp_heavy"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="v01_date_from"/>
+        <ds:columnDescriptor amosType="DESC_TXT" description="" id="v07_show_every_x_parking_day"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="02. Date to" id="v02_date_to">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="04. AC Type" id="v04_ac_typ">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>ALL</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>ALL&amp;=&amp;ALL;A32S&amp;=&amp;A32S;A330&amp;=&amp;A330;A350&amp;=&amp;A350;B737&amp;=&amp;B737;B777&amp;=&amp;B777;RRJ&amp;=&amp;RRJ;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="03. Min Parking Days" id="v03_null_legs">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>1</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="08. (optional) Format Adapted To" id="v08_adapted_to">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>EXCEL&amp;=&amp;EXCEL;PDF&amp;=&amp;PDF;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="10. (optional) Is Parked now only" id="v10_is_parked_now_only">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>YES&amp;=&amp;YES;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="06. Aircraft status" id="v06_active_ac">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data>Y</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>Y&amp;=&amp;ONLY ACTIVE;N&amp;=&amp;ALL;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="05. Aircraft" id="v05_ac_registr">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="09. (optional) Exclude AC`s that have Heavy WP in Progress status" id="v09_excluded_wp_heavy">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>NO&amp;=&amp;NO;YES&amp;=&amp;YES;</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="01. Date From" id="v01_date_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="07. (optional) Show only every x`th parking day" id="v07_show_every_x_parking_day">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="234_CURRENT_DATE" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="TO_CHAR(SYSDATE'MM.DD.YYYY') as current_date" id="current_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;&#9;TO_CHAR(SYSDATE'HH24:MI:SS') as current_time" id="current_time"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters/>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT 
+	TO_CHAR(SYSDATE, 'DD.MM.YYYY') as current_date,
+	TO_CHAR(SYSDATE, 'HH24:MI:SS') as current_time
+FROM DUAL</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="235_MAIN" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="(select ac_typ from aircraft where aircraft.ac_registr=s.ac_registr) as ac_typ" id="ac_typ"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.ac_registr as ac_registr" id="ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.legno_i as arrival_legno_i" id="arrival_legno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s2.root_legno_i as departure_legno_i" id="departure_legno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="s.count_null_legs as count_null_legs" id="count_null_legs"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v06_active_ac@">
+          <ds:object>@VAR.v06_active_ac@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v04_ac_typ@">
+          <ds:object>@VAR.v04_ac_typ@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v01_date_from@">
+          <ds:object>@VAR.v01_date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v02_date_to@">
+          <ds:object>@VAR.v02_date_to@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v05_ac_registr@">
+          <ds:object>@VAR.v05_ac_registr@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v03_null_legs@">
+          <ds:object>@VAR.v03_null_legs@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v07_show_every_x_parking_day@">
+          <ds:object>@VAR.v07_show_every_x_parking_day@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v09_excluded_wp_heavy@">
+          <ds:object>@VAR.v09_excluded_wp_heavy@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v10_is_parked_now_only@">
+          <ds:object>@VAR.v10_is_parked_now_only@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT s.ac_typ as ac_typ,
+             s.ac_registr as ac_registr,
+             s.root_legno_i as arrival_legno_i,
+             s2.legno_i as departure_legno_i,
+             s.count_null_legs as count_null_legs
+FROM (
+             SELECT n.ac_registr,
+                          n.ac_typ,
+                          n.root_legno_i,
+                          n.count_null_legs
+             FROM (
+                          SELECT a.ac_registr,
+                                       a.ac_typ,
+                                       a.legno_i,
+                                       connect_by_root a.legno_i as root_legno_i,
+                                       COUNT(a.legno_i) OVER (PARTITION BY connect_by_root a.legno_i) as count_null_legs,
+                                       level as lev,
+                                       MAX (level) OVER (PARTITION BY connect_by_root a.legno_i) as max_lev
+                          FROM ( 
+                                       SELECT ac_utilization.ac_registr,
+                                                    aircraft.ac_typ,
+                                                    ac_utilization.legno_i,
+                                                    u2.legno_i as parent_legno_i
+                                       FROM ac_utilization /* all null legs */
+                                       JOIN aircraft ON ac_utilization.ac_registr=aircraft.ac_registr AND (aircraft.status&lt;&gt;9 OR '@VAR.v06_active_ac@'='N')
+                                                                                                                                                    AND (aircraft.ac_typ='@VAR.v04_ac_typ@' OR '@VAR.v04_ac_typ@'='ALL')
+                                       LEFT JOIN ac_utilization u2 ON ac_utilization.ac_registr=u2.ac_registr AND u2.validity+1=ac_utilization.validity
+                                                                                                                                                                      AND u2.recno=0
+                                                                                                                                                                      AND u2.validity between @VAR.v01_date_from@ AND @VAR.v02_date_to@
+                                       WHERE 1=1
+                                                     AND ac_utilization.recno=0
+                                                     AND ac_utilization.validity between @VAR.v01_date_from@ AND @VAR.v02_date_to@
+                                                     AND (REGEXP_LIKE(ac_utilization.ac_registr, REPLACE('@VAR.v05_ac_registr@', ', ', '|')) OR '@VAR.v05_ac_registr@' IS NULL)
+                                      ) a
+                          START WITH a.parent_legno_i is NULL
+                          CONNECT BY PRIOR a.legno_i=a.parent_legno_i
+                         ) n
+             WHERE 1=1
+                           AND n.count_null_legs&gt;=@VAR.v03_null_legs@
+                           AND (MOD (n.count_null_legs, '@VAR.v07_show_every_x_parking_day@') = 0 OR '@VAR.v07_show_every_x_parking_day@' IS NULL)
+                           AND n.legno_i=n.root_legno_i
+            ) s
+JOIN (
+          SELECT n.ac_registr,
+                       n.ac_typ,
+                       n.legno_i,
+                       n.root_legno_i
+          FROM (
+                       SELECT a.ac_registr,
+                                    a.ac_typ,
+                                    a.legno_i,
+                                    connect_by_root a.legno_i as root_legno_i,
+                                    COUNT(a.legno_i) OVER (PARTITION BY connect_by_root a.legno_i) as count_null_legs,
+                                    level as lev,
+                                    MAX (level) OVER (PARTITION BY connect_by_root a.legno_i) as max_lev
+                       FROM ( 
+                                    SELECT ac_utilization.ac_registr,
+                                                 aircraft.ac_typ,
+                                                 ac_utilization.legno_i,
+                                                 u2.legno_i as parent_legno_i
+                                    FROM ac_utilization /* all null legs */
+                                    JOIN aircraft ON ac_utilization.ac_registr=aircraft.ac_registr AND (aircraft.status&lt;&gt;9 OR '@VAR.v06_active_ac@'='N')
+                                                                                                                                                 AND (aircraft.ac_typ='@VAR.v04_ac_typ@' OR '@VAR.v04_ac_typ@'='ALL')
+                                    LEFT JOIN ac_utilization u2 ON ac_utilization.ac_registr=u2.ac_registr AND u2.validity+1=ac_utilization.validity 
+                                                                                                                                                                  AND u2.recno=0
+                                                                                                                                                                  AND u2.validity between @VAR.v01_date_from@ AND @VAR.v02_date_to@
+                                    WHERE 1=1
+                                                  AND ac_utilization.recno=0
+                                                  AND ac_utilization.validity between @VAR.v01_date_from@ AND @VAR.v02_date_to@
+                                                  AND (REGEXP_LIKE(ac_utilization.ac_registr, REPLACE('@VAR.v05_ac_registr@', ', ', '|')) OR '@VAR.v05_ac_registr@' IS NULL)
+                                   ) a
+                       START WITH a.parent_legno_i is NULL
+                       CONNECT BY PRIOR a.legno_i=a.parent_legno_i
+                      ) n
+          WHERE 1=1
+                        AND n.count_null_legs&gt;=@VAR.v03_null_legs@
+                        AND (MOD (n.count_null_legs, '@VAR.v07_show_every_x_parking_day@') = 0 OR '@VAR.v07_show_every_x_parking_day@' IS NULL)
+                        AND n.lev=n.max_lev
+         ) s2 ON s.root_legno_i=s2.root_legno_i 
+LEFT JOIN (
+                   SELECT 'Y' as is_current_heavy_wp,
+                                 wp_header.ac_registr
+                   FROM wp_header
+                   WHERE 1=1
+                                 AND '@VAR.v09_excluded_wp_heavy@' = 'YES'
+                                 AND wp_header.hidden = 'H'
+                                 AND wp_header.status = -1
+		    AND (/* выбираю пакеты, которые "выполняются" на момент выгрузки отчета */ 
+                                          NVL(case when wp_header.act_start_date&gt;0 and wp_header.act_start_time&gt;0
+                                                            then TO_TIMESTAMP_TZ('31.12.1971 00:00:00 00:00', 'DD.MM.YYYY HH24:MI:SS TZH:TZM') + numtodsinterval(wp_header.act_start_date, 'day') + NUMTODSINTERVAL(wp_header.act_start_time * 60, 'SECOND')
+                                                            else null
+                                                   end,
+                                                   TO_TIMESTAMP_TZ('31.12.1971 00:00:00 00:00', 'DD.MM.YYYY HH24:MI:SS TZH:TZM') + numtodsinterval(wp_header.start_date, 'day') + NUMTODSINTERVAL(wp_header.start_time * 60, 'SECOND')
+                                                  ) AT TIME ZONE 'Europe/Moscow'
+                                                    BETWEEN from_tz(CAST (TRUNC(systimestamp)+ numtodsinterval(0, 'day') AS TIMESTAMP), 'Europe/Moscow')
+                                                                       AND from_tz(CAST (TRUNC(systimestamp)+ numtodsinterval(0, 'day') AS TIMESTAMP), 'Europe/Moscow')
+                                               OR
+                                                  NVL(
+                                                          case when wp_header.act_start_date&gt;0 and wp_header.act_start_time&gt;0
+                                                                   then TO_TIMESTAMP_TZ('31.12.1971 00:00:00 00:00', 'DD.MM.YYYY HH24:MI:SS TZH:TZM') + numtodsinterval(wp_header.act_start_date, 'day') + NUMTODSINTERVAL(wp_header.act_start_time * 60, 'SECOND')
+                                                                   else null
+                                                          end,
+                                                          TO_TIMESTAMP_TZ('31.12.1971 00:00:00 00:00', 'DD.MM.YYYY HH24:MI:SS TZH:TZM') + numtodsinterval(wp_header.start_date, 'day') + NUMTODSINTERVAL(wp_header.start_time * 60, 'SECOND')
+                                                         ) AT TIME ZONE 'Europe/Moscow' &lt; from_tz(CAST (TRUNC(systimestamp)+ numtodsinterval(0, 'day') AS TIMESTAMP), 'Europe/Moscow')
+                                                  AND NVL(case when wp_header.act_end_date&gt;0 and wp_header.act_end_time&gt;0
+                                                                            then TO_TIMESTAMP_TZ('31.12.1971 00:00:00 00:00', 'DD.MM.YYYY HH24:MI:SS TZH:TZM') + numtodsinterval(wp_header.act_end_date, 'day') + NUMTODSINTERVAL(wp_header.act_end_time * 60, 'SECOND')
+                                                                            else null
+                                                                    end,
+                                                                    TO_TIMESTAMP_TZ('31.12.1971 00:00:00 00:00', 'DD.MM.YYYY HH24:MI:SS TZH:TZM') + numtodsinterval(wp_header.end_date, 'day') + NUMTODSINTERVAL(wp_header.end_time * 60, 'SECOND')
+                                                                   ) AT TIME ZONE 'Europe/Moscow' &gt;= from_tz(CAST (TRUNC(systimestamp)+ numtodsinterval(0, 'day') AS TIMESTAMP), 'Europe/Moscow')
+                                         )
+             ) wp_heavy ON s.ac_registr = wp_heavy.ac_registr
+WHERE 1=1
+              AND (wp_heavy.is_current_heavy_wp IS NULL OR '@VAR.v09_excluded_wp_heavy@' IS NULL)
+              AND (s2.legno_i is NULL OR '@VAR.v10_is_parked_now_only@' IS NULL)
+          
+ORDER BY ac_typ, ac_registr, arrival_legno_i</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="235_Arrival_flight" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_utilization.arrival as station" id="station"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;           decode(ac_utilization.recno&#10;                         0 'earlier than date from'ac_utilization.leg_number&#10;                        ) as arrival_leg_number" id="arrival_leg_number"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="parking_start_date" id="parking_start_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;           decode(nvl(ac_utilization.validity 0)&#10;                         0 to_char(to_date('31.12.1971' 'dd.mm.yyyy') + @VAR.v02_date _from@ 'dd.mm.yyyy')&#10;                         to_char(to_date('31.12.1971' 'dd.mm.yyyy') + ac_utilization.validity'dd.mm.yyyy')&#10;                        ) as arrival_date" id="arrival_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;           TO_CHAR(TO_DATE(ac_utilization.arrival_time*60'sssss')'hh24:mi') as arrival_time" id="arrival_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_utilization.departure as arrival_from" id="arrival_from"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@235_MAIN.arrival_legno_i@">
+          <ds:object>@235_MAIN.arrival_legno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select station,
+           arrival_leg_number,
+           parking_start_date,
+           arrival_date,
+           arrival_time,
+           arrival_from
+from (
+           SELECT TO_CHAR(TO_DATE('31.12.1971', 'dd.mm.yyyy') + ac_utilization.validity, 'dd.mm.yyyy') as parking_start_date,
+                         u_arrival_flight.arrival as station,
+                         u_arrival_flight.leg_number as arrival_leg_number,
+                         TO_CHAR(TO_DATE('31.12.1971', 'dd.mm.yyyy') + u_arrival_flight.validity, 'dd.mm.yyyy') as arrival_date,
+                         TO_CHAR(TO_DATE(u_arrival_flight.arrival_time*60,'sssss'),'hh24:mi') as arrival_time,
+                         u_arrival_flight.departure as arrival_from,
+                         u_arrival_flight.recno as arrival_recno,
+                         u_arrival_flight.validity as arrival_validity,
+                         max(u_arrival_flight.recno) over (partition by u_arrival_flight.validity) as max_arrival_recno,
+                         max(u_arrival_flight.validity) over(partition by ac_utilization.ac_registr) as max_arrival_validity
+           FROM ac_utilization
+           LEFT JOIN ac_utilization u_arrival_flight ON ac_utilization.ac_registr=u_arrival_flight.ac_registr and u_arrival_flight.validity&lt;ac_utilization.validity and u_arrival_flight.recno&gt;0
+           where 1=1
+                       and ac_utilization.legno_i=@235_MAIN.arrival_legno_i@
+          )
+where 1=1
+            and arrival_validity=max_arrival_validity
+            and arrival_recno=max_arrival_recno</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="235_Departure_flight" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="station" id="station"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="decode(ac_utilization.recno&#10;                         0 'вне заданного периода'ac_utilization.leg_number) as departure_leg_number" id="departure_leg_number"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="parking_end_date" id="parking_end_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;           decode (nvl(ac_utilization.departure_date 0)&#10;                         0 to_char(to_date('31.12.1971' 'dd.mm.yyyy') + @VAR.v03_date_to@ 'dd.mm.yyyy')&#10;                         to_char(to_date('31.12.1971' 'dd.mm.yyyy') + ac_utilization.departure_date'dd.mm.yyyy')) as departure_date" id="departure_date"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;           TO_CHAR(TO_DATE(nvl(ac_utilization.departure_time0)*60'sssss')'hh24:mi') as departure_time" id="departure_time"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="ac_utilization.arrival as departure_to" id="departure_to"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@235_MAIN.departure_legno_i@">
+          <ds:object>@235_MAIN.departure_legno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>select station,
+           departure_leg_number,
+           parking_end_date,
+           departure_date,
+           departure_time,
+           departure_to
+from (
+           SELECT TO_CHAR(TO_DATE('31.12.1971', 'dd.mm.yyyy') + ac_utilization.validity, 'dd.mm.yyyy') as parking_end_date,
+                         u_departure_flight.departure as station,
+                         u_departure_flight.leg_number as departure_leg_number,
+                         TO_CHAR(TO_DATE('31.12.1971', 'dd.mm.yyyy') + u_departure_flight.departure_date, 'dd.mm.yyyy') as departure_date,
+                         TO_CHAR(TO_DATE(u_departure_flight.departure_time*60,'sssss'),'hh24:mi') as departure_time,
+                         u_departure_flight.arrival as departure_to,
+                         u_departure_flight.validity as arrival_validity,
+                         u_departure_flight.departure_date*24*60 + u_departure_flight.departure_time as departure_ts,
+                         MIN (u_departure_flight.departure_date*24*60 + u_departure_flight.departure_time) OVER (PARTITION BY ac_utilization.ac_registr)  as min_departure_ts
+           FROM ac_utilization
+           LEFT JOIN ac_utilization u_departure_flight ON ac_utilization.ac_registr=u_departure_flight.ac_registr and u_departure_flight.validity&gt;ac_utilization.validity and u_departure_flight.recno=1
+           where 1=1
+                       and ac_utilization.legno_i=@235_MAIN.departure_legno_i@
+          )
+where 1=1
+            and departure_ts=min_departure_ts</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

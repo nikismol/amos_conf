@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : email_for_inform_ends_expire_date_engine</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Scheduler_136258811.html">AMOS Scheduler</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="Emailer_43642557.html">Emailer</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : email_for_inform_ends_expire_date_engine
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Дамрин Степан Валерьевич</span>, last modified by <span class='editor'> Филипенков Никита Константинович</span> on сент. 28, 2023
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="table-wrap"><table class="wrapped confluenceTable"><colgroup><col/><col/></colgroup><tbody><tr><th class="confluenceTh">Parameter Name</th><th class="confluenceTh">Value</th></tr><tr><td class="confluenceTd">Task Action</td><td class="confluenceTd">DatasourceExporterTask</td></tr><tr><td class="confluenceTd">Source Type</td><td class="confluenceTd">Plain SQL</td></tr><tr><td colspan="1" class="confluenceTd">Include Columns Header</td><td colspan="1" class="confluenceTd">Y</td></tr><tr><td class="confluenceTd">Output format</td><td class="confluenceTd">Log only</td></tr><tr><td colspan="1" class="confluenceTd">Workflow </td><td colspan="1" class="confluenceTd">12 | email_for_inform_ends_expire_date_engine</td></tr><tr><td colspan="1" class="confluenceTd">Scheduling | Rec. pattern | Hourly</td><td colspan="1" class="confluenceTd">24:00</td></tr></tbody></table></div></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p><br/></p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<div class="code panel pdl" style="border-width: 1px;"><div class="codeContent panelContent pdl">
+<pre class="syntaxhighlighter-pre" data-syntaxhighlighter-params="brush: sql; gutter: true; theme: Confluence" data-theme="Confluence">SELECT
+    r.partno,
+    r.serialno,       
+    part.description,
+    part.mat_class,
+    location.station,
+    location.store,
+    location.location,
+    TO_CHAR(TO_DATE(&#39;01.01.1970&#39;, &#39;dd.mm.yyyy&#39;) + (forecast.expected_date+729),&#39;dd.mm.yyyy&#39;) AS expiry_date
+FROM part
+JOIN rotables r ON part.partno = r.partno
+JOIN location ON r.locationno_i = location.locationno_i
+JOIN forecast ON r.psn = forecast.psn AND r.ac_registr IN (&#39;COMP&#39;,&#39;TRANSF&#39;,&#39;DUMMYR&#39;, &#39; &#39;)
+JOIN forecast_dimension ON forecast.event_perfno_i = forecast_dimension.event_perfno_i
+LEFT JOIN wo_event_link ON forecast.event_perfno_i = wo_event_link.event_perfno_i
+LEFT JOIN part_req ON wo_event_link.event_key_parent = part_req.reqseqno_i AND wo_event_link.event_type = &#39;RORE&#39; 
+                          AND wo_event_link.pending_status = 0 AND wo_event_link.planable_status = 0
+WHERE forecast_dimension.dimension IN (&#39;D&#39;, &#39;SD&#39;)
+  AND forecast.event_type IN (&#39;R&#39;)
+  AND location.location_type &lt;&gt; -3
+  AND r.locationno_i &lt;&gt; -200
+  AND r.rotable_status &lt;&gt; 2
+  AND r.partno IN
+      (
+       &#39;3800702-1&#39;,
+       &#39;3800708-1&#39;,
+       &#39;3800454-6&#39;,
+       &#39;3800550-1&#39;,
+       &#39;WE3800770-3&#39;,
+       &#39;SAM146-1S17&#39;,
+       &#39;GE90-115B&#39;,
+       &#39;CFM56-7B26EG05&#39;,
+       &#39;CFM56-7B26&#39;,
+       &#39;FK30858&#39;,
+       &#39;1887M10G05&#39;,
+       &#39;1887M10G06&#39;,
+       &#39;1887M10G07&#39;
+      )
+  AND  forecast.expected_date =FLOOR(SYSDATE-TO_DATE(&#39;19711231&#39;,&#39;yyyymmdd&#39;))+30</pre>
+</div></div></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:08</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>

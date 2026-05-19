@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.swiss-as.com/xml/report_3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" xsi:schemaLocation="http://www.swiss-as.com/xml/report_3.0 http://www.swiss-as.com/xml/report_3.0.xsd http://www.swiss-as.com/xml/datasource_2.0 http://www.swiss-as.com/xml/datasource_2.0.xsd">
+  <header>
+    <report_id>AFL.REP.1000374</report_id>
+    <revision_number>0</revision_number>
+    <meta name="serialization">v3</meta>
+    <rights>
+      <access_right name="visibleToCustomer">true</access_right>
+    </rights>
+  </header>
+  <page_master>
+    <view class="PageReportView" id="1001">
+      <attribute name="position">0 0</attribute>
+      <attribute name="size">1000 700</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">0 SOLID 000000</attribute>
+      <attribute name="header-size">0</attribute>
+      <attribute name="footer-size">0</attribute>
+      <attribute name="orientation">LANDSCAPE</attribute>
+    </view>
+    <content/>
+  </page_master>
+  <content>
+    <view class="ClonerReportView" id="1002">
+      <attribute name="name">Cloner_7</attribute>
+      <attribute name="position">-36 61</attribute>
+      <attribute name="size">1061 268</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="offset-x">0</attribute>
+      <attribute name="offset-y">0</attribute>
+      <attribute name="data-source">AFL_RRJ_MFR_MAIN</attribute>
+      <attribute name="tiling-mode">ROWS_ONLY</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1011</anchor_view>
+        <anchor_location>BOTTOM_LEFT</anchor_location>
+        <x_offset>-36</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="YResizerReportView" id="1003">
+      <attribute name="name">YResizer_18</attribute>
+      <attribute name="position">-14 61</attribute>
+      <attribute name="size">1026 49</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1002</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>22</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1004">
+      <attribute name="name">Label_1</attribute>
+      <attribute name="position">150 61</attribute>
+      <attribute name="size">50 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">2 2 2 2</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_RRJ_MFR_MAIN.serialno@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1014</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1005">
+      <attribute name="name">Label_3</attribute>
+      <attribute name="position">0 61</attribute>
+      <attribute name="size">97 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">@AFL_RRJ_MRF_Taskcards.taskcardno@</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@AFL_RRJ_MFR_MAIN.finding_header_type@</field>
+              <field id="2">EFL</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+            <condition class="GenericStyleCondition">
+              <field id="1">@AFL_RRJ_MFR_MAIN.FND_CHECK@</field>
+              <field id="2">FND</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+        <conditional_attribute id="2">
+          <attribute name="text">@AFL_RRJ_MFR_NO_TC_Findings.event_name@</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@AFL_RRJ_MFR_MAIN.finding_header_type@</field>
+              <field id="2">EFL</field>
+              <operator negated="YES">EQUALS</operator>
+            </condition>
+            <condition class="GenericStyleCondition">
+              <field id="1">@AFL_RRJ_MFR_MAIN.FND_CHECK@</field>
+              <field id="2">FND</field>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">2 2 2 2</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_RRJ_MFR_MAIN.taskcardno@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1003</anchor_view>
+        <anchor_location>TOP_LEFT</anchor_location>
+        <x_offset>14</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1006">
+      <attribute name="name">Label_4</attribute>
+      <attribute name="position">97 28</attribute>
+      <attribute name="size">53 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">АТА</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 8</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1011</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1007">
+      <attribute name="name">Label_5</attribute>
+      <attribute name="position">150 28</attribute>
+      <attribute name="size">50 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">AC REGISTR</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 8</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1006</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1008">
+      <attribute name="name">Label_6</attribute>
+      <attribute name="position">255 61</attribute>
+      <attribute name="size">60 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">2 2 2 2</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_RRJ_MFR_MAIN.issue_date@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1013</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1009">
+      <attribute name="name">Label_8</attribute>
+      <attribute name="position">315 61</attribute>
+      <attribute name="size">250 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">@AFL_RRJ_MRF_Workstep_Text.header@@AFL_RRJ_MRF_Workstep_Text.ws_text_html@</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@AFL_RRJ_MRF_Workstep_Text.ws_text@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">2 2 2 2</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_RRJ_MRF_Workstep_Text.header@@AFL_RRJ_MRF_Workstep_Text.ws_text@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1008</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1010">
+      <attribute name="name">Label_9</attribute>
+      <attribute name="position">255 28</attribute>
+      <attribute name="size">60 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Issue Date</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 8</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1015</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1011">
+      <attribute name="name">Label_11</attribute>
+      <attribute name="position">0 28</attribute>
+      <attribute name="size">97 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Taskcard Reference</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 8</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+    </view>
+    <view class="LabelReportView" id="1012">
+      <attribute name="name">Label_12</attribute>
+      <attribute name="position">315 28</attribute>
+      <attribute name="size">250 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Workorder text</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 8</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1010</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1013">
+      <attribute name="name">Label_13</attribute>
+      <attribute name="position">200 61</attribute>
+      <attribute name="size">55 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">2 2 2 2</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_RRJ_MFR_MAIN.event_perfno_i@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1004</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1014">
+      <attribute name="name">Label_14</attribute>
+      <attribute name="position">97 61</attribute>
+      <attribute name="size">53 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes>
+        <conditional_attribute id="1">
+          <attribute name="text">@AFL_RRJ_MFR_MAIN.ata_chapter@</attribute>
+          <conditions>
+            <condition class="GenericStyleCondition">
+              <field id="1">@AFL_RRJ_MRF_Taskcards.ata_chapter@</field>
+              <field id="2"/>
+              <operator negated="NO">EQUALS</operator>
+            </condition>
+          </conditions>
+        </conditional_attribute>
+      </conditional_attributes>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">2 2 2 2</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_RRJ_MFR_MAIN.ata_chapter@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1005</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1015">
+      <attribute name="name">Label_15</attribute>
+      <attribute name="position">200 28</attribute>
+      <attribute name="size">55 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Workorder</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 8</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1007</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1016">
+      <attribute name="name">Label_16</attribute>
+      <attribute name="position">565 61</attribute>
+      <attribute name="size">435 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">YES</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">2 2 2 2</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">@AFL_RRJ_MRF_Actions.action_text@</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif PLAIN 8</attribute>
+      <attribute name="text-align">TOP_LEFT</attribute>
+      <attribute name="line-break">WORD</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1009</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+    <view class="LabelReportView" id="1017">
+      <attribute name="name">Label_17</attribute>
+      <attribute name="position">565 28</attribute>
+      <attribute name="size">435 33</attribute>
+      <attribute name="visible">YES</attribute>
+      <attribute name="auto-resize">NO</attribute>
+      <attribute name="rotation">0.0</attribute>
+      <conditional_attributes/>
+      <attribute name="color">000000</attribute>
+      <attribute name="margin">0 0 0 0</attribute>
+      <attribute name="padding">0 0 0 0</attribute>
+      <attribute name="border">1 SOLID 000000</attribute>
+      <attribute name="text">Action text</attribute>
+      <attribute name="text-decoration">NONE</attribute>
+      <attribute name="font">SansSerif BOLD 8</attribute>
+      <attribute name="text-align">CENTER</attribute>
+      <attribute name="line-break">AS_IS</attribute>
+      <attribute name="splitable">NO</attribute>
+      <attribute name="trimWhitespaceAroundWildcard">NO</attribute>
+      <attribute name="antialias">false</attribute>
+      <anchor>
+        <location>TOP_LEFT</location>
+        <anchor_view>1012</anchor_view>
+        <anchor_location>TOP_RIGHT</anchor_location>
+        <x_offset>0</x_offset>
+        <y_offset>0</y_offset>
+      </anchor>
+    </view>
+  </content>
+  <dataSourceList>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="VAR" type="PARAMETER_DATASOURCE" version="2.0">
+      <ds:description>Contains all user defined variables and constants.</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="v02_date_to"/>
+        <ds:columnDescriptor amosType="WO" description="" id="v03_wo"/>
+        <ds:columnDescriptor amosType="DATE_INT" description="" id="v01_date_from"/>
+        <ds:columnDescriptor amosType="TC" description="" id="v04_taskcardno_i"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="NONE" description="02. Период по" id="v02_date_to">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="03. Номер WO" id="v03_wo">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="01. Период с" id="v01_date_from">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>true</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+        <ds:value amosType="NONE" description="04. Taskcard" id="v04_taskcardno_i">
+          <ds:map>
+            <ds:keyValuePair>
+              <ds:key>selectionValues</ds:key>
+              <ds:data>*</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>mandatory</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>relativeDate</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>defaultValue</ds:key>
+              <ds:data/>
+            </ds:keyValuePair>
+            <ds:keyValuePair>
+              <ds:key>multi</ds:key>
+              <ds:data>false</ds:data>
+            </ds:keyValuePair>
+          </ds:map>
+        </ds:value>
+      </ds:configurationParameters>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_RRJ_MFR_MAIN" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="DISTINCT&#10;             msc_taskcard.taskcardno as taskcardno" id="taskcardno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.ata_chapter as ata_chapter" id="ata_chapter"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="event_finding.event_perfno_i as event_perfno_i" id="event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="aircraft.serialno as serialno" id="serialno"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.ac_registr as ac_registr" id="ac_registr"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             TO_CHAR(TO_DATE('31.12.1971' 'dd.mm.yyyy') + wo_header.issue_date'dd.mm.yyyy') as issue_date" id="issue_date"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AMOS_VERSION@">
+          <ds:object>@AMOS_VERSION@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v04_taskcardno_i@">
+          <ds:object>@VAR.v04_taskcardno_i@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v01_date_from@">
+          <ds:object>@VAR.v01_date_from@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v02_date_to@">
+          <ds:object>@VAR.v02_date_to@</ds:object>
+        </ds:value>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@VAR.v03_wo@">
+          <ds:object>@VAR.v03_wo@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT DISTINCT
+             msc_taskcard.taskcardno as taskcardno,
+              chr(39)||msc_taskcard.ata_chapter as ata_chapter,
+             event_finding.event_perfno_i as event_perfno_i,
+             aircraft.serialno as serialno,
+             wo_header.ac_registr as ac_registr,
+             TO_CHAR(TO_DATE('31.12.1971', 'dd.mm.yyyy') + finding.issue_date, 'dd.mm.yyyy') as issue_date
+FROM msc_taskcard_version
+JOIN msc_taskcard ON msc_taskcard_version.taskcardno_i=msc_taskcard.taskcardno_i
+JOIN msc_requirement_tc_link ON msc_requirement_tc_link.taskcard_verno_i_mri = msc_taskcard_version.taskcard_verno_i AND msc_requirement_tc_link.mpno_i_operator = 8
+JOIN wo_event_link ON wo_event_link.event_key_parent = msc_requirement_tc_link.req_linkno_i AND (wo_event_link.event_type = 'TCEFFLI' AND '@AMOS_VERSION@' LIKE '19.12%' OR wo_event_link.event_type = 'MET' AND '@AMOS_VERSION@' NOT LIKE '19.12%') AND wo_event_link.pending_status &lt; 0 AND wo_event_link.event_status &lt;&gt; 'Z'
+JOIN wo_transfer ON wo_transfer.event_perfno_i = wo_event_link.event_perfno_i
+JOIN wo_transfer_dimension ON wo_transfer.event_transferno_i = wo_transfer_dimension.event_transferno_i AND wo_transfer.transfer_type = 'R'
+JOIN treq_interval ON wo_transfer_dimension.treq_intervalno_i=treq_interval.intervalno_i AND treq_interval.dimension_type IN ('W', 'B', 'I')
+JOIN treq_interval_group ON treq_interval_group.interval_groupno_i=treq_interval.interval_groupno_i 
+JOIN treq_time_requirement ON treq_interval_group.timerequirementno_i=treq_time_requirement.timerequirementno_i AND treq_time_requirement.event_type = 'TCREV' AND treq_time_requirement.type = 'OP'
+JOIN event_finding ON wo_event_link.effectivity_linkno_i = event_finding.headerno_i AND event_finding.primkey = wo_event_link.event_perfno_i AND event_finding.header_type = 'EFL' AND event_finding.type &lt;&gt; 'TC'
+JOIN wo_header ON wo_event_link.event_perfno_i = wo_header.event_perfno_i
+JOIN wo_header finding ON event_finding.event_perfno_i=finding.event_perfno_i
+LEFT JOIN wo_header_more ON finding.event_perfno_i=wo_header_more.event_perfno_i
+JOIN aircraft ON aircraft.ac_registr=finding.ac_registr
+WHERE 1=1
+              AND (msc_taskcard.taskcardno_i='@VAR.v04_taskcardno_i@' OR '@VAR.v04_taskcardno_i@' IS NULL)
+              AND wo_header.closing_date BETWEEN '@VAR.v01_date_from@' AND '@VAR.v02_date_to@'
+              AND (REGEXP_LIKE(event_finding.event_perfno_i, REPLACE('@VAR.v03_wo@', ', ', '|')) OR '@VAR.v03_wo@' IS NULL)
+              AND finding.state&lt;&gt;'V'
+              AND NVL(wo_header_more.nonrelevant_finding, 'N')&lt;&gt;'Y'
+ORDER BY 1</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_RRJ_MRF_Actions" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i as event_perfno_i" id="event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             RTRIM(&#10;                         XMLAGG(&#10;                                          XMLELEMENT(Ewo_text_action.text CHR(10) ).EXTRACT('//text()')&#10;                                                          ORDER BY workstep_link.sequenceno wo_text_action.actionno_i&#10;                                                         ).GetClobVal()CHR(10)&#10;                                       ) as action_text" id="action_text"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_RRJ_MFR_MAIN.event_perfno_i@">
+          <ds:object>@AFL_RRJ_MFR_MAIN.event_perfno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT wo_header.event_perfno_i as event_perfno_i,
+             RTRIM(
+                         XMLAGG(
+                                          XMLELEMENT(E,wo_text_action.text, CHR(10) ).EXTRACT('//text()')
+                                                          ORDER BY workstep_link.sequenceno, wo_text_action.actionno_i
+                                                         ).GetClobVal(), CHR(10)
+                                       ) as action_text
+FROM wo_header
+JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i
+JOIN wo_text_action ON wo_text_action.workstep_linkno_i=workstep_link.workstep_linkno_i
+WHERE 1=1
+              AND wo_header.event_perfno_i='@AFL_RRJ_MFR_MAIN.event_perfno_i@'
+GROUP BY 
+              wo_header.event_perfno_i</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_RRJ_MRF_Workstep_Text" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_header.event_perfno_i as event_perfno_i" id="event_perfno_i"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="&#10;             DECODE(wo_text_description.headerNULL NULLwo_text_description.header||CHR(10)) as header" id="header"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_description.text as ws_text" id="ws_text"/>
+        <ds:columnDescriptor amosType="ALPHANUM" description="wo_text_description.text_html as ws_text_html" id="ws_text_html"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_RRJ_MFR_MAIN.event_perfno_i@">
+          <ds:object>@AFL_RRJ_MFR_MAIN.event_perfno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT wo_header.event_perfno_i as event_perfno_i,
+             DECODE(wo_text_description.header,NULL, NULL, wo_text_description.header||CHR(10)) as header,
+             wo_text_description.text as ws_text,
+             wo_text_description.text_html as ws_text_html
+FROM wo_header
+JOIN workstep_link ON wo_header.event_perfno_i=workstep_link.event_perfno_i AND workstep_link.sequenceno=1
+JOIN wo_text_description ON workstep_link.descno_i=wo_text_description.descno_i
+WHERE 1=1
+              AND wo_header.event_perfno_i='@AFL_RRJ_MFR_MAIN.event_perfno_i@'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+    <ds:dataSource xmlns:ds="http://www.swiss-as.com/xml/datasource_2.0" id="AFL_RRJ_MRF_Component_change" type="SQL_EDITOR_DATASOURCE" version="2.0">
+      <ds:description>Unknown data source</ds:description>
+      <ds:columnDescriptors>
+        <ds:columnDescriptor amosType="ALPHANUM" description="LISTAGG(history.partno&#10;                              ||'/'&#10;                              ||history.serialno&#10;                              ||':'&#10;                              ||CHR(10)&#10;                              ||CASE WHEN history.tsn_unknown='Y' THEN 'UNK' ELSE TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(history.msn)/60)'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(history.msn)60))'FM00') END&#10;                              ||'H; '&#10;                              ||CASE WHEN history.csn_unknown='Y' THEN 'UNKNOWN' ELSE TO_CHAR(history.csn) END&#10;                              ||'C; '&#10;                              ||CASE WHEN history.mfg_unknown='Y' THEN 'UNK' ELSE TO_CHAR(FLOOR(sysdate-to_date('19711231''yyyymmdd')) - history.dsn) END&#10;                              ||'D; '&#10;                              CHR(10)||CHR(10)) WITHIN GROUP (ORDER BY history.partno) as comp" id="comp"/>
+      </ds:columnDescriptors>
+      <ds:configurationParameters>
+        <ds:value amosType="ALPHANUM" description="string placeholder" id="@AFL_RRJ_MFR_MAIN.event_perfno_i@">
+          <ds:object>@AFL_RRJ_MFR_MAIN.event_perfno_i@</ds:object>
+        </ds:value>
+      </ds:configurationParameters>
+      <ds:sqlEditorDataSource>
+        <se:sqlStatement xmlns:se="http://www.swiss-as.com/xml/sqlStatement_2.0" type="TEXT_EDITOR" version="2.0">
+          <se:textStatement>SELECT LISTAGG(history.partno
+                              ||'/'
+                              ||history.serialno
+                              ||':'
+                              ||CHR(10)
+                              ||CASE WHEN history.tsn_unknown='Y' THEN 'UNK' ELSE TO_CHAR(TO_CHAR(TRUNC(TO_NUMBER(history.msn)/60),'FM999999999900')) || ':' ||TO_CHAR(TRUNC(MOD(TO_NUMBER(history.msn),60)),'FM00') END
+                              ||'H; '
+                              ||CASE WHEN history.csn_unknown='Y' THEN 'UNKNOWN' ELSE TO_CHAR(history.csn) END
+                              ||'C; '
+                              ||CASE WHEN history.mfg_unknown='Y' THEN 'UNK' ELSE TO_CHAR(FLOOR(sysdate-to_date('19711231','yyyymmdd')) - history.dsn) END
+                              ||'D; '
+                              , CHR(10)||CHR(10)) WITHIN GROUP (ORDER BY history.partno) as comp
+FROM history
+WHERE 1=1
+              AND history.vm='YA'
+              AND history.label_start='Y'
+              AND history.event_perfno_i='@AFL_RRJ_MFR_MAIN.event_perfno_i@'</se:textStatement>
+        </se:sqlStatement>
+      </ds:sqlEditorDataSource>
+    </ds:dataSource>
+  </dataSourceList>
+</report>

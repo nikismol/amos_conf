@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AMOS Team : Отчет &quot;Реестр компонентов&quot;</title>
+        <link rel="stylesheet" href="styles/site.css" type="text/css" />
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+
+    <body class="theme-default aui-theme-default">
+        <div id="page">
+            <div id="main" class="aui-page-panel">
+                <div id="main-header">
+                    <div id="breadcrumb-section">
+                        <ol id="breadcrumbs">
+                            <li class="first">
+                                <span><a href="index.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS-Team_41172327.html">AMOS Team</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="AMOS_136263857.html">AMOS</a></span>
+                            </li>
+                                                    <li>
+                                <span><a href="182628214.html">Интеграция AMOS/Форсайт BI</a></span>
+                            </li>
+                                                </ol>
+                    </div>
+                    <h1 id="title-heading" class="pagetitle">
+                                                <span id="title-text">
+                            AMOS Team : Отчет &quot;Реестр компонентов&quot;
+                        </span>
+                    </h1>
+                </div>
+
+                <div id="content" class="view">
+                    <div class="page-metadata">
+                        
+        
+    
+        
+    
+        
+        
+            Created by <span class='author'> Филипенков Никита Константинович</span>, last modified on июн. 11, 2025
+                        </div>
+                    <div id="main-content" class="wiki-content group">
+                    <div class="contentLayout2">
+<div class="columnLayout two-right-sidebar" data-layout="two-right-sidebar">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<p>Реализованы следующие представления(view) для данного отчета:</p><ol><li>AMOS_FSIGHT_BI_USER.R357_COMPONENT_REGISTRY_MATERIALIZED</li><li>AMOSSERVER_PROD.R357_PART_REPAIR_VENDOR</li><li>AMOSSERVER_PROD.R357_PARTNO_AC_TYPES</li><li>AMOSSERVER_PROD.R357_PART_ALTERNATE</li></ol><p><br/></p><p>Для обновления материальной вью (R357_COMPONENT_REGISTRY_MATERIALIZED) настроен Oracle JOB:</p><ul><li>MV_REFRESH_R357_COMPONENT_REGISTRY</li></ul><p>Данный JOB запускается в 4 часа утра и обновляет данные в AMOS_FSIGHT_BI_USER.R357_COMPONENT_REGISTRY_MATERIALIZED.</p><p><br/></p><p><br/></p><p><br/></p></div>
+</div>
+<div class="cell aside" data-type="aside">
+<div class="innerCell">
+<p>SQL запросы находятся на <a class="external-link" href="https://gitlab-dev-a1.ramax.ru/amos/foresite-reports-dplg/-/tree/develop/Отчет%20реестр%20компонентов?ref_type=heads" rel="nofollow">GitLab</a>. </p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 style="text-align: center;" id="id-Отчет&quot;Реестркомпонентов&quot;-AMOS_FSIGHT_BI_USER.R357_COMPONENT_REGISTRY_MATERIALIZED">AMOS_FSIGHT_BI_USER.R357_COMPONENT_REGISTRY_MATERIALIZED</h3><p>Данное представление выводит следующую информацию по материалам имеющие признак <span style="color: rgb(0,82,204);"><span>&quot;</span></span>REPLST&quot;:</p><ol><li>CRIT - уровень критичности</li><li>CRIT_DESCRIPTION -  описание уровня критичности</li><li>PARTNO - партийный номер </li><li>PARTNO_DESCRIPTION - описание </li><li>ALT_PARTNO - альтернативные партийные номера</li><li>C_RATING - С-рейтинг </li><li>C_RATING_DESCRIPTION - описание С-рейтинга</li><li>MAT_CLASS - материальный класс</li><li>REPAIRABLE - ремонтопригодность</li><li>AC_TYPE -  тип ВС к которым применим партийный номер </li><li>ATA_CHAPTER -  глава АТА</li><li>OPERATOR</li><li>CMM -  наименование CMM</li><li>CMM_LINK - путь до СММ</li><li>REPAIR_BASE_IN_RF - перечень организаций, уполномоченные на проведение ремонта по сертификатам Федерального агентства воздушного транспорта (ФАВТ)</li><li>REPAIR_BASE_OUT_OFF_RF - остальные организации</li><li>PLANNED_REQUIREMENT - плановая потребность на год вперед</li><li>UNSCHEDULED_REMOVAL -  кол-во не запланированных снятий</li><li>STOCK_BASE - кол-во исправных материалов(PARTNO)</li><li>STOCK_ALT - <span style="letter-spacing: 0.0px;">кол-во исправных </span>альтернативных<span style="letter-spacing: 0.0px;"> материалов(ALT_PARTNO)</span></li><li>STOCK_US -  кол-во неисправных деталей (PARTNO), исключая находящиеся во внутреннем ремонте</li><li>REFRESH_DATE -  дата обновления view.</li></ol></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 style="text-align: center;" id="id-Отчет&quot;Реестркомпонентов&quot;-AMOSSERVER_PROD.R357_PART_REPAIR_VENDOR">AMOSSERVER_PROD.R357_PART_REPAIR_VENDOR</h3><p>Данное представление реализовано для корректного отображения контрагентов на стороне Форсайт и корректной работы гиперссылок. </p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 style="text-align: center;" id="id-Отчет&quot;Реестркомпонентов&quot;-AMOSSERVER_PROD.R357_PARTNO_AC_TYPES">AMOSSERVER_PROD.R357_PARTNO_AC_TYPES</h3><p style="text-align: left;">Данное представление реализовано для корректной работы фильтров в Форсайт.</p></div>
+</div>
+</div>
+<div class="columnLayout single" data-layout="single">
+<div class="cell normal" data-type="normal">
+<div class="innerCell">
+<h3 style="text-align: center;" id="id-Отчет&quot;Реестркомпонентов&quot;-AMOSSERVER_PROD.R357_PART_ALTERNATE">AMOSSERVER_PROD.R357_PART_ALTERNATE</h3><p>Данное представление реализовано для хранения альтернативных партийных номеров.</p></div>
+</div>
+</div>
+</div>
+                    </div>
+
+                                        
+                                                      
+                </div>             </div> 
+            <div id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <p>Document generated by Confluence on мая 19, 2026 10:09</p>
+                    <div id="footer-logo"><a href="http://www.atlassian.com/">Atlassian</a></div>
+                </section>
+            </div>
+        </div>     </body>
+</html>
